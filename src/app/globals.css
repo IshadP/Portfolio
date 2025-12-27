@@ -1,43 +1,71 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter-mono);
+  --color-white: var(--white);
+  --color-black: var(--black);
+
+  /* --- Button Colors Mapped for Tailwind v4 --- */
+  /* This allows you to use classes like 'bg-btn-primary-base' */
+  --color-btn-primary-base: var(--btn-primary-base);
+  --color-btn-primary-border: var(--btn-primary-border);
+  --color-btn-primary-surface: var(--btn-primary-surface);
+  --color-btn-primary-text: var(--btn-primary-text);
+
+  --color-btn-secondary-base: var(--btn-secondary-base);
+  --color-btn-secondary-border: var(--btn-secondary-border);
+  --color-btn-secondary-surface: var(--btn-secondary-surface);
+  --color-btn-secondary-text: var(--btn-secondary-hover);
+  --color-btn-secondary-hover: var(--btn-secondary-hover-border);
+  --color-btn-secondary-hover-base: var(--btn-secondary-hover-base);
+
+  --color-btn-tertiary-base: var(--btn-tertiary-base);
+  --color-btn-tertiary-border: var(--btn-tertiary-border);
+  --color-btn-tertiary-surface: var(--btn-tertiary-surface);
+  --color-btn-tertiary-text: var(--btn-tertiary-text);
+
+
+
+  /* Font Colors */
+  --color-text-500: var(--text-500);
+  --color-text-on-primary: var(--text-on-primary);
+}
+
 :root {
   --background: #F8F5F1;
   --foreground: #171717;
+  --white: #ffffff;
+  --black: #1e1e1e;
+  /* Button Variables */
 
-  /* Button Colors */
-  --btn-primary-base: #d4bfa4;
-  --btn-primary-border: #7e7a75;
-  --btn-primary-surface: #f8f5f1;
-  --btn-primary-text: #000000;
+  --btn-primary-base: #98c273;
+  --btn-primary-border: #60794b;
+  --btn-primary-surface: #c8ff99;
+  --btn-primary-text: #1e1e1e;
+
 
   --btn-secondary-base: #d4bfa4;
   --btn-secondary-border: #7e7a75;
   --btn-secondary-surface: #f8f5f1;
   --btn-secondary-text: #1e1e1e;
+  --btn-secondary-hover-base: #E6D8C7;
+  --btn-secondary-hover-border: #ED9A00;
 
-  /* Variant: Tertiary (Placeholder - update these later) */
   --btn-tertiary-base: #fb7185;
   --btn-tertiary-border: #be123c;
   --btn-tertiary-surface: #ffe4e6;
   --btn-tertiary-text: #881337;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Font Color */
+  --text-500: #8F8F8F;
+  --text-on-primary: #948C6B;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

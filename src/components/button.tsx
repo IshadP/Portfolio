@@ -1,83 +1,102 @@
-"use client";
-
-import { motion } from "motion/react"
+import * as Icons from "@phosphor-icons/react";
+import { motion, HTMLMotionProps } from "motion/react";
 import Link from "next/link";
 import { ReactNode } from "react";
 
-// 1. Create a Motion-enabled Link component
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
-type ButtonVariant = "primary" | "secondary" | "tertiary";
+// 1. Types: Strictly 3 variants
+export type ButtonVariant = "primary" | "secondary" | "tertiary";
 
-interface ButtonProps {
+// Helper to render icon from name or ReactNode
+const renderIcon = (icon: ReactNode | string) => {
+  if (typeof icon === "string") {
+    const IconComponent = (Icons as any)[icon];
+    if (IconComponent) {
+      return <IconComponent size={20} weight="bold" />;
+    }
+    console.warn(`Icon "${icon}" not found in @phosphor-icons/react`);
+    return null;
+  }
+  return icon;
+};
+
+interface BaseProps {
   children: ReactNode;
   variant?: ButtonVariant;
-  href?: string;         // New: Optional link field
-  onClick?: () => void;  // Optional click handler
-  className?: string;    // Allow external styling overrides
-  type?: "button" | "submit" | "reset";
+  href?: string;
+  leftIcon?: ReactNode | string;
+  rightIcon?: ReactNode | string;
+  className?: string;
 }
+
+// Combine with standard button props (excluding isLoading)
+type ButtonProps = BaseProps & HTMLMotionProps<"button">;
 
 export default function Button({
   children,
-  onClick,
-  href,
-  variant = "primary",
   className = "",
-  type = "button",
+  variant = "primary",
+  href,
+  leftIcon,
+  rightIcon,
+  disabled,
+  ...props
 }: ButtonProps) {
 
-  // 2. Define colors for each variant (Outer Base, Border, Inner Surface, Text)
-  // These use the semantic names we defined in tailwind.config.ts
+  // 2. Styles Mapping
   const variants = {
-    primary: {
-      outer: "bg-btn-primary-base outline-btn-primary-border",
-      inner: "bg-btn-primary-surface text-btn-primary-text",
-    },
-    secondary: {
-      outer: "bg-btn-secondary-base outline-btn-secondary-border",
-      inner: "bg-btn-secondary-surface text-btn-secondary-text",
-    },
-    tertiary: {
-      outer: "bg-btn-tertiary-base outline-btn-tertiary-border",
-      inner: "bg-btn-tertiary-surface text-btn-tertiary-text",
-    },
+    primary: "bg-btn-primary-base outline-btn-primary-border text-btn-primary-text hover:brightness-105",
+    secondary: "bg-btn-secondary-base outline-btn-secondary-border text-btn-secondary-text hover:brightness-105",
+    tertiary: "bg-btn-tertiary-base outline-btn-tertiary-border text-btn-tertiary-text hover:brightness-110",
   };
 
-  const currentVariant = variants[variant];
+  const surfaceVariants = {
+    primary: "bg-btn-primary-surface",
+    secondary: "bg-btn-secondary-surface",
+    tertiary: "bg-btn-tertiary-surface",
+  };
 
-  // 3. Common container styles shared by both Button and Link
-  const containerClasses = `
-    relative group outline outline-1 outline-offset-[-1px] 
-    px-0.5 pt-0.5 pb-1.5 rounded-xl flex-col inline-flex justify-start items-start gap-2 overflow-hidden
-    ${currentVariant.outer} 
+
+
+  // 3. Base Classes
+  const baseClasses = ` group
+    outline outline-1 px-0.5 pt-0.5 pb-1.5 rounded-xl 
+    items-center justify-center font-medium font-sans
+    transition-all overflow-hidden
+    disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed
+    ${variants[variant]}  
     ${className}
   `;
 
-  // 4. Common animation props
+  // 4. Animation Props
   const animationProps = {
-    whileTap: { scale: 0.96, y: 1 },
-    transition: { type: "spring", stiffness: 400, damping: 17 }
+    whileTap: { paddingBottom: "0.125rem", marginTop: "0.250rem" },
+    transition: { duration: 0, type: "tween" as const, bounce: 0 },
   };
 
-  // 5. Inner Content (The face of the button)
+  // 5. Inner Content
   const content = (
-    <div className={`
-      self-stretch flex-1 p-2 rounded-[10px] inline-flex justify-center items-center gap-2 overflow-hidden w-full
-      font-medium font-sans text-base
-      ${currentVariant.inner}
-    `}>
-      {children}
+    <div className={`flex items-center gap-2 justify-center p-3 rounded-[10px] ${surfaceVariants[variant]}`}>
+      {leftIcon && (
+        <span className="flex items-center justify-center ">{renderIcon(leftIcon)}</span>
+      )}
+
+      <span>{children}</span>
+
+      {rightIcon && (
+        <span className="flex items-center justify-center group-hover:rotate-45 transition-all">{renderIcon(rightIcon)}</span>
+      )}
     </div>
   );
 
-  // 6. Conditional Rendering
-  if (href) {
+  // 6. Render as Link or Button
+  if (href && !disabled) {
     return (
       <MotionLink
         href={href}
         {...animationProps}
-        className={containerClasses}
+        className={baseClasses}
       >
         {content}
       </MotionLink>
@@ -86,10 +105,10 @@ export default function Button({
 
   return (
     <motion.button
-      type={type}
-      onClick={onClick}
+      {...props}
+      disabled={disabled}
       {...animationProps}
-      className={containerClasses}
+      className={baseClasses}
     >
       {content}
     </motion.button>
