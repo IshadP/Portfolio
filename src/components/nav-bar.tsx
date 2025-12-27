@@ -13,15 +13,15 @@ export default function NavBar() {
             href: "/",
             Icon: HouseIcon,
             // Fixed width: w-20 (80px)
-            wrapperClass: "w-20 pl-0.5 pt-0.5 pb-1.5 rounded-l-xl",
-            innerClass: "rounded-l-[10px]",
+            wrapperClass: "w-20 sm:pl-0.5 sm:pt-0.5 pb-1.5 sm:rounded-l-xl",
+            innerClass: "sm:rounded-l-[10px]",
         },
         {
             name: "Projects",
             href: "/projects",
             Icon: PuzzlePieceIcon,
             // Fixed width: w-24 (96px)
-            wrapperClass: "w-24 pt-0.5 pb-1.5",
+            wrapperClass: "w-24 px-0.4 sm:px-0 sm:pt-0.5 pb-1.5 z-10 sm:z-0",
             innerClass: "",
         },
         {
@@ -29,8 +29,8 @@ export default function NavBar() {
             href: "/contact",
             Icon: MailboxIcon,
             // Fixed width: w-32 (128px)
-            wrapperClass: "w-32 pr-0.5 pt-0.5 pb-1.5 rounded-r-xl",
-            innerClass: "rounded-r-[10px]",
+            wrapperClass: "w-32 sm:pr-0.5 sm:pt-0.5 pb-1.5 sm:rounded-r-xl",
+            innerClass: "sm:rounded-r-[10px]",
         },
     ];
 
@@ -48,7 +48,7 @@ export default function NavBar() {
                         // 3. Hover styles: bg-btn-hover-base, outline, outline-color
                         className={`
               group relative flex flex-col items-start justify-start overflow-hidden
-              bg-btn-secondary-base w-40 hover:z-10
+              bg-btn-secondary-base w-full sm:w-40 hover:z-10
               hover:bg-btn-secondary-hover-base 
               hover:outline hover:outline-btn-secondary-hover
               transition-colors duration-100
@@ -77,7 +77,7 @@ export default function NavBar() {
                                 />
                             </span>
 
-                            <span className="font-sans text-base font-medium leading-4 text-black transition-colors group-hover:text-btn-secondary-hover">
+                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-black transition-colors group-hover:text-btn-secondary-hover">
                                 {item.name}
                             </span>
                         </div>
