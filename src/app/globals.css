@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F8F5F1;
   --foreground: #171717;
+
+  /* Button Colors */
+  --btn-primary-base: #d4bfa4;
+  --btn-primary-border: #7e7a75;
+  --btn-primary-surface: #f8f5f1;
+  --btn-primary-text: #000000;
+
+  --btn-secondary-base: #d4bfa4;
+  --btn-secondary-border: #7e7a75;
+  --btn-secondary-surface: #f8f5f1;
+  --btn-secondary-text: #1e1e1e;
+
+  /* Variant: Tertiary (Placeholder - update these later) */
+  --btn-tertiary-base: #fb7185;
+  --btn-tertiary-border: #be123c;
+  --btn-tertiary-surface: #ffe4e6;
+  --btn-tertiary-text: #881337;
 }
 
 @theme inline {
@@ -12,7 +29,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
