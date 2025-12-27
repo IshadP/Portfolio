@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const MotionLink = motion.create(Link);
 
 // 1. Types: Strictly 3 variants
-export type ButtonVariant = "primary" | "secondary" | "tertiary";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "linkedin" | "twitter" | "email";
 
 // Helper to render icon from name or ReactNode
 const renderIcon = (icon: ReactNode | string) => {
