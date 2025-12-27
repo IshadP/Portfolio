@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, TargetAndTransition } from "motion/react";
 import { ReactNode } from "react";
 
 interface BentoCardProps {
@@ -8,6 +8,7 @@ interface BentoCardProps {
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
     className?: string;
+    whileHover?: TargetAndTransition;
 }
 
 export default function BentoCard({
@@ -15,6 +16,7 @@ export default function BentoCard({
     colSpan = 1,
     rowSpan = 1,
     className = "",
+    whileHover,
 }: BentoCardProps) {
 
     const colClasses = {
@@ -35,8 +37,9 @@ export default function BentoCard({
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20, boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)" }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={whileHover}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className={`

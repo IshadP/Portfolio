@@ -11,7 +11,7 @@ export type ButtonVariant = "primary" | "secondary" | "tertiary";
 // Helper to render icon from name or ReactNode
 const renderIcon = (icon: ReactNode | string) => {
   if (typeof icon === "string") {
-    const IconComponent = (Icons as any)[icon];
+    const IconComponent = (Icons as Record<string, any>)[icon];
     if (IconComponent) {
       return <IconComponent size={20} weight="bold" />;
     }

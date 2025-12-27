@@ -48,10 +48,10 @@ export default function NavBar() {
                         // 3. Hover styles: bg-btn-hover-base, outline, outline-color
                         className={`
               group relative flex flex-col items-start justify-start overflow-hidden
-              bg-btn-secondary-base w-[10rem] hover:z-10
-              hover:bg-btn-secondary-hover-base
+              bg-btn-secondary-base w-40 hover:z-10
+              hover:bg-btn-secondary-hover-base 
               hover:outline hover:outline-btn-secondary-hover
-              transition-all duration-200
+              transition-colors duration-100
               ${item.wrapperClass}
             `}
                     >
