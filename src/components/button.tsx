@@ -53,9 +53,9 @@ export default function Button({
     primary: "bg-btn-primary-base outline-btn-primary-border text-btn-primary-text hover:brightness-110 outline outline-1",
     secondary: "bg-btn-secondary-base outline-btn-secondary-border text-btn-secondary-text hover:brightness-105 outline outline-1",
     tertiary: "bg-btn-tertiary-base outline-btn-tertiary-border text-btn-tertiary-text hover:brightness-110 outline outline-1",
-    linkedin: "bg-[#024F79] outline-[#00456A] text-white hover:brightness-110 outline outline-1",
-    twitter: "bg-[#272727] outline-[#000000] text-white hover:brightness-110 outline outline-1",
-    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-black hover:brightness-90 outline outline-1",
+    linkedin: "bg-[#024F79] outline-[#00456A] text-surface hover:brightness-110 outline outline-1",
+    twitter: "bg-[#272727] outline-[#000000] text-surface hover:brightness-110 outline outline-1",
+    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-on-surface hover:brightness-90 outline outline-1",
     outline: "font-semibold text-btn-primary-text hover:brightness-110 sm:hidden block"
   };
 

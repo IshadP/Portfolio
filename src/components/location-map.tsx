@@ -25,10 +25,10 @@ export default function LocationMap() {
             {/* Positioned absolutely in the center */}
             <div className="relative z-10 flex h-8 w-8 items-center justify-center">
                 <div className="absolute inline-flex h-full w-full animate-[ping_3s_ease-out_infinite] rounded-full bg-blue-400 opacity-75 duration-[3s] ease-in-out"></div>
-                <div className="relative inline-flex h-6 w-6 rounded-full bg-blue-500 border-2 border-white shadow-md"></div>
+                <div className="relative inline-flex h-6 w-6 rounded-full bg-blue-500 border-2 border-surface shadow-md"></div>
             </div>
 
-            <div className="absolute z-20 flex bottom-3 left-3 text-black font-medium p-2 bg-white/70 rounded-2xl tracking-tight">Nagpur, India</div>
+            <div className="absolute z-20 flex bottom-3 left-3 text-on-surface font-medium p-2 bg-surface/70 rounded-2xl tracking-tight">Nagpur, India</div>
 
         </div>
     );

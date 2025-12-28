@@ -21,7 +21,7 @@ export default function TextHighlight({ text, highlight, className = "" }: TextH
                         key={index}
                         className={
                             isHighlight
-                                ? "text-black font-medium" // Bright and Bold
+                                ? "text-on-surface font-medium" // Bright and Bold
                                 : "text-text-500" // Dimmed
                         }
                     >

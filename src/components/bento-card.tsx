@@ -43,7 +43,7 @@ export default function BentoCard({
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className={`
-        relative overflow-hidden rounded-4xl border border-black/5 bg-white
+        relative overflow-hidden rounded-4xl border border-on-surface/5 bg-surface
         ${colClasses[colSpan]} 
         ${rowClasses[rowSpan]}
         ${isSquare ? "aspect-square" : `aspect-[${rowSpan}/${colSpan}]`}

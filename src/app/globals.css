@@ -5,8 +5,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-inter-mono);
-  --color-white: var(--white);
-  --color-black: var(--black);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
 
   /* --- Button Colors Mapped for Tailwind v4 --- */
   /* This allows you to use classes like 'bg-btn-primary-base' */
@@ -36,9 +36,13 @@
 
 :root {
   --background: #F8F5F1;
+  --background-dark: #1e1e1e;
   --foreground: #171717;
-  --white: #ffffff;
-  --black: #1e1e1e;
+  
+  --surface: #ffffff;
+  --surface-dark: #232323;
+  --on-surface: #1e1e1e;
+  --on-surface-dark: #FDF4E6;
   /* Button Variables */
 
   --btn-primary-base: #98c273;

@@ -10,6 +10,7 @@ import Image from "next/image";
 import NavBar from "@/components/nav-bar";
 import footer from "../../public/footer.png";
 
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background flex justify-center items-center relative flex-col w-full">
@@ -17,8 +18,8 @@ export default function Home() {
       <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
         <NavBar />
       </div>
-      <div className="max-w-5xl w-full justify-center items-center flex flex-col z-2 p-4 md:p-8 ">
-        <div className="flex flex-col justify-center items-center sm:h-[50vh]">
+      <div className="max-w-5xl w-full justify-center items-center flex flex-col z-2 p-4 md:p-8 " >
+        <div className="flex flex-col justify-center items-center z-10 sm:h-[50vh]">
           <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
             <Button variant="primary" href="mailto:ispande16@gmail.com" rightIcon="ArrowUpRightIcon">Let&apos;s Talk</Button>
@@ -28,7 +29,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-12">
           <BentoGrid>
-            <BentoCard colSpan={2} rowSpan={1} className="bg-white">
+            <BentoCard colSpan={2} rowSpan={1} className="bg-surface">
               <div className="h-full flex items-center text-text-500 justify-center font-medium text-3xl p-6">
                 <TextHighlight
                   text="A product designer who codes, designing digital interfaces and bringing them to life through hands-on prototypes."
@@ -38,7 +39,7 @@ export default function Home() {
               </div>
             </BentoCard>
 
-            <BentoCard colSpan={2} rowSpan={1} className="bg-white">
+            <BentoCard colSpan={2} rowSpan={1} className="bg-surface">
               <div className="h-full">
                 <LocationMap />
               </div>
@@ -48,11 +49,11 @@ export default function Home() {
           <div id="curated-projects" className="flex flex-col gap-4 scroll-mt-24">
             <h2 className="text-4xl font-bold tracking-[-0.0675rem] text-text-on-primary">curated projects</h2>
             <BentoGrid>
-              <BentoCard colSpan={2} rowSpan={2} className="bg-white" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
+              <BentoCard colSpan={2} rowSpan={2} className="bg-surface" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
                 <Image src={project1} alt="Screenshot of Ishad Pande's first curated project" fill className="object-cover object-center" />
               </BentoCard>
 
-              <BentoCard colSpan={2} rowSpan={2} className="bg-white" whileHover={{ scale: 1.02, boxShadow: "0px 0px 44px 0px rgba(249,115,22,0.5)" }}>
+              <BentoCard colSpan={2} rowSpan={2} className="bg-surface" whileHover={{ scale: 1.02, boxShadow: "0px 0px 44px 0px rgba(249,115,22,0.5)" }}>
                 <Image src={project2} alt="Screenshot of Ishad Pande's second curated project" fill className="object-cover object-center" />
               </BentoCard>
             </BentoGrid>

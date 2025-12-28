@@ -60,7 +60,7 @@ export default function NavBar() {
                     >
                         <div
                             className={`
-                flex h-full items-center justify-center gap-1 self-stretch bg-white p-4 transition-colors 
+                flex h-full items-center justify-center gap-1 self-stretch bg-surface p-4 transition-colors 
                 ${item.innerClass}
               `}
                         >
@@ -69,7 +69,7 @@ export default function NavBar() {
                                 <item.Icon
                                     size={24}
                                     weight="regular"
-                                    className="absolute text-black transition-opacity duration-200 group-hover:opacity-0 group-active:opacity-0"
+                                    className="absolute text-on-surface transition-opacity duration-200 group-hover:opacity-0 group-active:opacity-0"
                                 />
 
                                 {/* Hover Icon (Orange/Accent) */}
@@ -80,7 +80,7 @@ export default function NavBar() {
                                 />
                             </span>
 
-                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-black transition-colors whitespace-nowrap group-hover:text-btn-secondary-hover group-active:text-btn-secondary-hover">
+                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-on-surface transition-colors whitespace-nowrap group-hover:text-btn-secondary-hover group-active:text-btn-secondary-hover">
                                 {item.name}
                             </span>
                         </div>
