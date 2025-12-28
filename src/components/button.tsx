@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const MotionLink = motion.create(Link);
 
 // 1. Types: Strictly 3 variants
-export type ButtonVariant = "primary" | "secondary" | "tertiary" | "linkedin" | "twitter" | "email";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "linkedin" | "twitter" | "email" | "outline";
 
 // Helper to render icon from name or ReactNode
 const renderIcon = (icon: ReactNode | string) => {
@@ -48,12 +48,13 @@ export default function Button({
 
   // 2. Styles Mapping
   const variants = {
-    primary: "bg-btn-primary-base outline-btn-primary-border text-btn-primary-text hover:brightness-110",
-    secondary: "bg-btn-secondary-base outline-btn-secondary-border text-btn-secondary-text hover:brightness-105",
-    tertiary: "bg-btn-tertiary-base outline-btn-tertiary-border text-btn-tertiary-text hover:brightness-110",
-    linkedin: "bg-[#024F79] outline-[#00456A] text-white hover:brightness-105",
-    twitter: "bg-[#272727] outline-[#000000] text-white hover:brightness-105",
-    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-black hover:brightness-105",
+    primary: "bg-btn-primary-base outline-btn-primary-border text-btn-primary-text hover:brightness-110 outline outline-1",
+    secondary: "bg-btn-secondary-base outline-btn-secondary-border text-btn-secondary-text hover:brightness-105 outline outline-1",
+    tertiary: "bg-btn-tertiary-base outline-btn-tertiary-border text-btn-tertiary-text hover:brightness-110 outline outline-1",
+    linkedin: "bg-[#024F79] outline-[#00456A] text-white hover:brightness-105 outline outline-1",
+    twitter: "bg-[#272727] outline-[#000000] text-white hover:brightness-105 outline outline-1",
+    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-black hover:brightness-105 outline outline-1",
+    outline: "font-semibold text-btn-primary-text hover:brightness-110 sm:hidden block"
   };
 
   const surfaceVariants = {
@@ -63,13 +64,14 @@ export default function Button({
     linkedin: "bg-[#0073B1]",
     twitter: "bg-[#474747]",
     email: "bg-[#ffffff]",
+    outline: ""
   };
 
 
 
   // 3. Base Classes
   const baseClasses = ` group
-    outline outline-1 px-0.5 pt-0.5 pb-1.5 rounded-xl 
+     px-0.5 pt-0.5 pb-1.5 rounded-xl 
     items-center justify-center font-medium font-sans
     transition-all overflow-hidden 
     disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed

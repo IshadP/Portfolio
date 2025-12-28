@@ -18,11 +18,12 @@ export default function Home() {
         <NavBar />
       </div>
       <div className="max-w-5xl w-full justify-center items-center flex flex-col z-2 p-4 md:p-8 ">
-        <div className="flex flex-col justify-center items-center h-[50vh]">
-          <h1 className="text-8xl font-bold leading-[100%] p-6 tracking-[-0.24rem] text-center">Ishad Pande</h1>
+        <div className="flex flex-col justify-center items-center sm:h-[50vh]">
+          <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
             <Button variant="primary" href="mailto:ispande16@gmail.com" rightIcon="ArrowUpRightIcon">Let&apos;s Talk</Button>
             <Button variant="secondary">View Resume</Button>
+            <Button variant="outline" href="#curated-projects" leftIcon="CaretDownIcon">Jump to projects</Button>
           </div>
         </div>
         <div className="flex flex-col gap-12">
@@ -44,7 +45,7 @@ export default function Home() {
             </BentoCard>
           </BentoGrid>
 
-          <div className="flex flex-col gap-4">
+          <div id="curated-projects" className="flex flex-col gap-4 scroll-mt-24">
             <div className="text-4xl font-bold tracking-[-0.0675rem] text-text-on-primary">curated projects</div>
             <BentoGrid>
               <BentoCard colSpan={2} rowSpan={2} className="bg-white" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
@@ -61,19 +62,19 @@ export default function Home() {
 
       </div>
       <footer className="relative w-full flex flex-col items-center pt-20">
-        <div className="flex flex-col justify-center items-center text-center w-full  gap-8">
+        <div className="flex flex-col justify-center items-center text-center w-full gap-8">
           <div className="w-[50%] flex flex-col justify-center items-center">
-            <p className="font-medium md:text-6xl text-4xl tracking-[-0.0675rem]">Let&apos;s Connect</p>
-            <p className="font-medium md:text-4xl text-2xl tracking-[-0.0675rem]">for cool ideas and opportunities</p>
+            <p className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</p>
+            <p className="font-medium md:text-4xl text-2xl whitespace-nowrap tracking-[-0.0675rem]">for cool ideas and opportunities</p>
           </div>
-          <div className="flex gap-2 flex-col sm:flex-row sm:w-[50%] w-full p-4">
+          <div className="flex gap-2 flex-col sm:flex-row lg:w-[50%] w-full md:px-6 px-4">
             <Button variant="linkedin" href="https://www.linkedin.com/in/ishadpande/" fullWidth>Linkedin</Button>
             <Button variant="twitter" href="https://twitter.com/ishadpande" fullWidth>Twitter</Button>
             <Button variant="email" href="mailto:ispande16@gmail.com" fullWidth >Email</Button>
           </div>
         </div>
 
-        <div className="relative w-full h-[50vh] mt-10">
+        <div className="relative w-full h-[30vh] sm:h-[50vh] mt-10">
           <Image
             src={footer}
             alt="Footer"

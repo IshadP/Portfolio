@@ -50,7 +50,10 @@ export default function NavBar() {
               group relative flex flex-col items-start justify-start overflow-hidden
               bg-btn-secondary-base w-full sm:w-40 hover:z-10
               hover:bg-btn-secondary-hover-base 
+              outline-btn-secondary-base
               hover:outline hover:outline-btn-secondary-hover
+              active:bg-btn-secondary-hover-base
+              active:outline active:outline-btn-secondary-hover
               transition-colors duration-100
               ${item.wrapperClass}
             `}
@@ -66,18 +69,18 @@ export default function NavBar() {
                                 <item.Icon
                                     size={24}
                                     weight="regular"
-                                    className="absolute text-black transition-opacity duration-200 group-hover:opacity-0"
+                                    className="absolute text-black transition-opacity duration-200 group-hover:opacity-0 group-active:opacity-0"
                                 />
 
                                 {/* Hover Icon (Orange/Accent) */}
                                 <item.Icon
                                     size={24}
                                     weight="fill"
-                                    className="absolute text-btn-secondary-hover opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                                    className="absolute text-btn-secondary-hover opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-active:opacity-100"
                                 />
                             </span>
 
-                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-black transition-colors group-hover:text-btn-secondary-hover">
+                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-black transition-colors whitespace-nowrap group-hover:text-btn-secondary-hover group-active:text-btn-secondary-hover">
                                 {item.name}
                             </span>
                         </div>
