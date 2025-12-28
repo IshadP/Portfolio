@@ -22,7 +22,7 @@ export default function Home() {
           <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
             <Button variant="primary" href="mailto:ispande16@gmail.com" rightIcon="ArrowUpRightIcon">Let&apos;s Talk</Button>
-            <Button variant="secondary">View Resume</Button>
+            <Button variant="secondary" href="/resume">View Resume</Button>
             <Button variant="outline" href="#curated-projects" leftIcon="CaretDownIcon">Jump to projects</Button>
           </div>
         </div>

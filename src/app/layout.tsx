@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ishad.pande", // Placeholder - user should update if they have a domain
-    title: "Ishad Pande | Product Designer & Developer",
+    url: "https://ishadpande.com", // Placeholder - user should update if they have a domain
+    title: "Ishad Pande | Product Designer",
     description: "Product designer who codes, specializing in digital interfaces and interactive prototypes.",
     siteName: "Ishad Pande Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ishad Pande | Product Designer & Developer",
+    title: "Ishad Pande | Product Designer",
     description: "Product designer who codes, specializing in digital interfaces and interactive prototypes.",
     creator: "@ishadpande",
   },

@@ -29,6 +29,7 @@ interface BaseProps {
   rightIcon?: ReactNode | string;
   className?: string;
   fullWidth?: boolean;
+  isOnlyIcon?: boolean;
 }
 
 // Combine with standard button props (excluding isLoading)
@@ -43,6 +44,7 @@ export default function Button({
   rightIcon,
   disabled,
   fullWidth = false,
+  isOnlyIcon: isOnlyIconProp,
   ...props
 }: ButtonProps) {
 
@@ -51,9 +53,9 @@ export default function Button({
     primary: "bg-btn-primary-base outline-btn-primary-border text-btn-primary-text hover:brightness-110 outline outline-1",
     secondary: "bg-btn-secondary-base outline-btn-secondary-border text-btn-secondary-text hover:brightness-105 outline outline-1",
     tertiary: "bg-btn-tertiary-base outline-btn-tertiary-border text-btn-tertiary-text hover:brightness-110 outline outline-1",
-    linkedin: "bg-[#024F79] outline-[#00456A] text-white hover:brightness-105 outline outline-1",
-    twitter: "bg-[#272727] outline-[#000000] text-white hover:brightness-105 outline outline-1",
-    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-black hover:brightness-105 outline outline-1",
+    linkedin: "bg-[#024F79] outline-[#00456A] text-white hover:brightness-110 outline outline-1",
+    twitter: "bg-[#272727] outline-[#000000] text-white hover:brightness-110 outline outline-1",
+    email: "bg-[#BAC0B5] outline-[#1e1e1e] text-black hover:brightness-90 outline outline-1",
     outline: "font-semibold text-btn-primary-text hover:brightness-110 sm:hidden block"
   };
 
@@ -86,14 +88,19 @@ export default function Button({
     transition: { duration: 0, type: "tween" as const, bounce: 0 },
   };
 
+  const isIconOnly = isOnlyIconProp || (!children && (leftIcon || rightIcon));
+
   // 5. Inner Content
   const content = (
-    <div className={`flex items-center gap-2 justify-center p-3 rounded-[10px] ${surfaceVariants[variant]}`}>
+    <div className={`
+      flex items-center justify-center rounded-[10px] ${surfaceVariants[variant]}
+      ${isIconOnly ? "p-3" : "p-3 gap-2"}
+    `}>
       {leftIcon && (
         <span className="flex items-center justify-center ">{renderIcon(leftIcon)}</span>
       )}
 
-      <span>{children}</span>
+      {children && <span>{children}</span>}
 
       {rightIcon && (
         <span className="flex items-center justify-center group-hover:rotate-45 transition-all">{renderIcon(rightIcon)}</span>
@@ -110,6 +117,7 @@ export default function Button({
       <MotionLink
         href={href}
         {...animationProps}
+        {...props as any}
         className={baseClasses}
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
