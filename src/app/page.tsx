@@ -46,14 +46,14 @@ export default function Home() {
           </BentoGrid>
 
           <div id="curated-projects" className="flex flex-col gap-4 scroll-mt-24">
-            <div className="text-4xl font-bold tracking-[-0.0675rem] text-text-on-primary">curated projects</div>
+            <h2 className="text-4xl font-bold tracking-[-0.0675rem] text-text-on-primary">curated projects</h2>
             <BentoGrid>
               <BentoCard colSpan={2} rowSpan={2} className="bg-white" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
-                <Image src={project1} alt="Project 1" fill className="object-cover object-center" />
+                <Image src={project1} alt="Screenshot of Ishad Pande's first curated project" fill className="object-cover object-center" />
               </BentoCard>
 
               <BentoCard colSpan={2} rowSpan={2} className="bg-white" whileHover={{ scale: 1.02, boxShadow: "0px 0px 44px 0px rgba(249,115,22,0.5)" }}>
-                <Image src={project2} alt="Project 2" fill className="object-cover object-center" />
+                <Image src={project2} alt="Screenshot of Ishad Pande's second curated project" fill className="object-cover object-center" />
               </BentoCard>
             </BentoGrid>
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
       <footer className="relative w-full flex flex-col items-center pt-20">
         <div className="flex flex-col justify-center items-center text-center w-full gap-8">
           <div className="w-[50%] flex flex-col justify-center items-center">
-            <p className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</p>
+            <h2 className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</h2>
             <p className="font-medium md:text-4xl text-2xl whitespace-nowrap tracking-[-0.0675rem]">for cool ideas and opportunities</p>
           </div>
           <div className="flex gap-2 flex-col sm:flex-row lg:w-[50%] w-full md:px-6 px-4">
