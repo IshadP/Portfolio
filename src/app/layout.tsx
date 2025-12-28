@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ishadpande.com", // Placeholder - user should update if they have a domain
+    url: "https://www.ishadpande.me", // Placeholder - user should update if they have a domain
     title: "Ishad Pande | Product Designer",
     description: "Product designer who codes, specializing in digital interfaces and interactive prototypes.",
     siteName: "Ishad Pande Portfolio",

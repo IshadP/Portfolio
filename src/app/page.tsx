@@ -19,7 +19,7 @@ export default function Home() {
         <NavBar />
       </div>
       <div className="max-w-5xl w-full justify-center items-center flex flex-col z-2 p-4 md:p-8 " >
-        <div className="flex flex-col justify-center items-center z-10 sm:h-[50vh]">
+        <div id="hero" className="flex flex-col justify-center items-center z-10 sm:h-[50vh]">
           <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
             <Button variant="primary" href="mailto:ispande16@gmail.com" rightIcon="ArrowUpRightIcon">Let&apos;s Talk</Button>
@@ -27,7 +27,7 @@ export default function Home() {
             <Button variant="outline" href="#curated-projects" leftIcon="CaretDownIcon">Jump to projects</Button>
           </div>
         </div>
-        <div className="flex flex-col gap-12">
+        <div id="about" className="flex flex-col gap-12">
           <BentoGrid>
             <BentoCard colSpan={2} rowSpan={1} className="bg-surface">
               <div className="h-full flex items-center text-text-500 justify-center font-medium text-3xl p-6">
@@ -62,7 +62,7 @@ export default function Home() {
 
 
       </div>
-      <footer className="relative w-full flex flex-col items-center pt-20">
+      <footer id="contact" className="relative w-full flex flex-col items-center pt-20">
         <div className="flex flex-col justify-center items-center text-center w-full gap-8">
           <div className="w-[50%] flex flex-col justify-center items-center">
             <h2 className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</h2>

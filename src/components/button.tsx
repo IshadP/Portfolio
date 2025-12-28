@@ -108,6 +108,21 @@ export default function Button({
     </div>
   );
 
+  const handleClick = (e: React.MouseEvent) => {
+    if (href && href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
+      }
+    }
+    if (props.onClick) {
+      props.onClick(e as any);
+    }
+  };
+
   // 6. Render as Link or Button
   if (href && !disabled) {
     const isExternal = href.startsWith("http") || href.startsWith("https");
@@ -118,6 +133,7 @@ export default function Button({
         href={href}
         {...animationProps}
         {...props as any}
+        onClick={handleClick}
         className={baseClasses}
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
@@ -131,6 +147,7 @@ export default function Button({
       {...props}
       disabled={disabled}
       {...animationProps}
+      onClick={handleClick}
       className={baseClasses}
     >
       {content}
