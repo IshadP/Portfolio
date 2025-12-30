@@ -61,9 +61,9 @@ export default function Home() {
             <BentoGrid >
               <BentoCard colSpan={2} rowSpan={2} className="bg-surface" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
                 <ProjectShowcaseCard
-                  title="FinTech App"
-                  baseColor="#AEE69B"
-                  borderColor="#3E5D33"
+                  title="Improving user efficiency by ~30% on Printhub"
+                  baseColor="#AFE682"
+                  borderColor="#688B4B"
                   screenImages={{
                     center: phone,
                     left: phone,

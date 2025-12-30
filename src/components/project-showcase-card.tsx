@@ -117,12 +117,12 @@ export default function ProjectShowcaseCard({
 
     // UI Element Variants (Title & Button)
     const titleVariants = {
-        rest: { y: 0 },
-        hover: { y: -10, transition: { duration: 0.3 } }
+        rest: { y: 0, scale: 1 },
+        hover: { y: -15, scale: 0.8, transition: { duration: 0.3 } }
     };
     const buttonVariants = {
-        rest: { width: "3rem", backgroundColor: "rgba(255,255,255,0.5)" },
-        hover: { width: "auto", backgroundColor: "#ffffff" },
+        rest: { width: "auto", right: 5, top: 5, borderRadius: "5rem", backgroundColor: "rgba(255,255,255,0.5)" },
+        hover: { width: "auto", right: 20, top: 20, borderRadius: "0.5rem", backgroundColor: "#ffffff" },
     };
     const buttonTextVariants = {
         rest: { opacity: 0, width: 0, display: "none" },
@@ -151,27 +151,21 @@ export default function ProjectShowcaseCard({
                 style={{ borderColor: borderColor, opacity: 0.4 }}
             />
 
-            <div className="relative z-20 flex h-full flex-col p-8 pt-10">
-                <div className="relative z-40 mb-4 flex items-start justify-between md:mb-8">
+            <div className="relative z-20 flex h-full flex-col p-0">
+                <div className="relative z-40 mb-4 flex items-center justify-center md:mb-8 h-[30%]">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[75%] text-2xl font-semibold leading-tight text-white md:text-3xl lg:text-4xl"
+                        className="max-w-[80%] text-2xl font-semibold leading-tighter tracking-tight text-center text-white md:text-3xl lg:text-3xl"
                     >
                         {title}
                     </motion.h2>
 
                     <motion.div
                         variants={buttonVariants}
-                        className="flex h-12 items-center justify-center overflow-hidden rounded-full backdrop-blur-sm shrink-0"
+                        className="absolute flex h-10 w-10 items-center justify-center overflow-hidden backdrop-blur-sm shrink-0"
                     >
                         <div className="flex items-center gap-2 px-1">
-                            <motion.span
-                                variants={buttonTextVariants}
-                                className="whitespace-nowrap pl-3 text-sm font-semibold text-black"
-                            >
-                                view project
-                            </motion.span>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black">
+                            <div className="flex h-8 w-8 items-center rounded-full justify-center bg-white text-black">
                                 <ArrowUpRightIcon size={20} weight="bold" />
                             </div>
                         </div>
