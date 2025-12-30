@@ -28,7 +28,7 @@ export default function Home() {
       <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
         <NavBar />
       </div>
-      <div className="max-w-5xl w-full justify-center items-center flex flex-col z-2 p-4 md:p-8 " >
+      <div className="lg:max-w-5xl  2k:max-w-[70vh] w-full justify-center items-center flex flex-col z-2 p-4  " >
         <div id="hero" className="flex flex-col justify-center items-center z-10 sm:h-[50vh]">
           <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
@@ -79,29 +79,31 @@ export default function Home() {
             </BentoGrid>
           </div>
         </div>
-      </div>
-      <footer id="contact" className="relative w-full flex flex-col items-center pt-20">
-        <div className="flex flex-col justify-center items-center text-center w-full gap-8">
-          <div className="w-[50%] flex flex-col justify-center items-center">
-            <h2 className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</h2>
-            <p className="font-medium md:text-4xl text-2xl whitespace-nowrap tracking-[-0.0675rem]">for cool ideas and opportunities</p>
+        <footer id="contact" className="relative w-full flex flex-col items-center pt-20">
+          <div className="flex flex-col justify-center items-center text-center w-full gap-8">
+            <div className="w-[50%] flex flex-col justify-center items-center">
+              <h2 className="font-medium md:text-6xl text-5xl tracking-[-0.0675rem] whitespace-nowrap">Let&apos;s Connect</h2>
+              <p className="font-medium md:text-4xl text-2xl whitespace-nowrap tracking-[-0.0675rem]">for cool ideas and opportunities</p>
+            </div>
+            <div className="flex gap-2 flex-col sm:flex-row lg:w-[50%] w-full md:px-6 px-4">
+              <Button variant="linkedin" href="https://www.linkedin.com/in/ishadpande/" fullWidth>Linkedin</Button>
+              <Button variant="twitter" href="https://twitter.com/ishadpande" fullWidth>Twitter</Button>
+              <Button variant="email" href="mailto:ispande16@gmail.com" fullWidth >Email</Button>
+            </div>
           </div>
-          <div className="flex gap-2 flex-col sm:flex-row lg:w-[50%] w-full md:px-6 px-4">
-            <Button variant="linkedin" href="https://www.linkedin.com/in/ishadpande/" fullWidth>Linkedin</Button>
-            <Button variant="twitter" href="https://twitter.com/ishadpande" fullWidth>Twitter</Button>
-            <Button variant="email" href="mailto:ispande16@gmail.com" fullWidth >Email</Button>
-          </div>
-        </div>
 
-        <div className="relative w-full h-[30vh] sm:h-[50vh] mt-10">
-          <Image
-            src={footer}
-            alt="Footer"
-            fill
-            className="object-cover object-bottom w-full"
-          />
-        </div>
-      </footer>
+        </footer>
+      </div>
+      <div className="relative flex justify-center items-center flex-col w-full h-[30vh] sm:h-[50vh] mt-10">
+        <h3 className="text-text-on-primary">Designed and Developed by Ishad Pande</h3>
+        <Image
+          src={footer}
+          alt="Footer"
+          fill
+          className="object-cover object-bottom w-full"
+        />
+      </div>
+
     </main >
   );
 }

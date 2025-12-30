@@ -84,7 +84,7 @@ export default function ProjectShowcaseCard({
             opacity: 1  // Always visible
         },
         hover: {
-            x: "-50%", // Slide out left
+            x: "-30%", // Slide out left
             y: "20%",      // Move up
             rotate: -9.24, // Less tilt
             scale: 0.95,
@@ -105,7 +105,7 @@ export default function ProjectShowcaseCard({
             opacity: 1
         },
         hover: {
-            x: "50%", // Slide out right
+            x: "30%", // Slide out right
             y: "20%",
             rotate: 9.24,
             scale: 0.95,
@@ -198,7 +198,7 @@ export default function ProjectShowcaseCard({
                         variants={centerPhoneVariants}
                         className="absolute bottom-0 w-[52%] origin-bottom"
                     >
-                        <div className={`overflow-hidden rounded-4xl border-4 border-black bg-black shadow-xl ${phoneAspectRatio}`}>
+                        <div className={`overflow-hidden rounded-[2.25rem] border-4 border-black bg-black shadow-xl ${phoneAspectRatio}`}>
                             <Image src={screenImages.center} alt="Center" fill className="object-cover" />
                         </div>
                     </motion.div>
