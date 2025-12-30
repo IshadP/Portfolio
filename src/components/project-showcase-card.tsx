@@ -1,0 +1,215 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
+import noise from "../../public/noise.png";
+
+// --- Utility Hook ---
+function useMediaQuery(query: string) {
+    const [matches, setMatches] = useState(false);
+    useEffect(() => {
+        const media = window.matchMedia(query);
+        if (media.matches !== matches) setMatches(media.matches);
+        const listener = () => setMatches(media.matches);
+        window.addEventListener("resize", listener);
+        return () => window.removeEventListener("resize", listener);
+    }, [matches, query]);
+    return matches;
+}
+
+// --- Props Interface ---
+interface ProjectShowcaseCardProps {
+    title: string;
+    baseColor: string;
+    borderColor: string;
+    screenImages: {
+        center: StaticImageData | string;
+        left: StaticImageData | string;
+        right: StaticImageData | string;
+    };
+    // New prop for phone variant type
+    phoneVariant?: 'android' | 'ios';
+    href?: string;
+}
+
+export default function ProjectShowcaseCard({
+    title,
+    baseColor = "#AEE69B",
+    borderColor = "#3E5D33",
+    screenImages,
+    phoneVariant = 'android', // Default to android
+    href = "#",
+}: ProjectShowcaseCardProps) {
+    const isDesktop = useMediaQuery("(min-width: 768px)");
+    const [isHovered, setHovered] = useState(false);
+
+    // --- Aspect Ratio Logic ---
+    // Map variants to arbitrary Tailwind aspect ratio classes
+    const aspectRatioMap = {
+        android: "aspect-[452/964]", // ~0.45
+        ios: "aspect-[176/382]",     // ~0.46
+    };
+    const phoneAspectRatio = aspectRatioMap[phoneVariant];
+
+
+    // --- Animation Variants ---
+
+    const springTransition = { type: "spring", stiffness: 200, damping: 25 } as const;
+
+    // 1. Center Phone: Moves UP and SCALES DOWN
+    const centerPhoneVariants = {
+        rest: {
+            y: "85%",
+            scale: 1.4,
+            zIndex: 30 // Highest priority
+        },
+        hover: {
+            y: "20%", // Move up
+            scale: 0.9, // Shrink slightly
+            zIndex: 30,
+            transition: springTransition
+        },
+    };
+
+    // 2. Left Phone: Tucked behind, tilts out
+    const leftPhoneVariants = {
+        rest: {
+            x: "0", // Tucked near center
+            y: "40%",      // Lower down
+            rotate: 0, // Strong tilt
+            scale: 0.9,  // Slightly smaller
+            zIndex: 20, // Behind center
+            opacity: 1  // Always visible
+        },
+        hover: {
+            x: "-50%", // Slide out left
+            y: "20%",      // Move up
+            rotate: -9.24, // Less tilt
+            scale: 0.95,
+            zIndex: 20,
+            opacity: 1,
+            transition: springTransition
+        },
+    };
+
+    // 3. Right Phone: Mirrored left phone
+    const rightPhoneVariants = {
+        rest: {
+            x: "0%", // Tucked near center
+            y: "40%",
+            rotate: 0,
+            scale: 0.9,
+            zIndex: 20,
+            opacity: 1
+        },
+        hover: {
+            x: "50%", // Slide out right
+            y: "20%",
+            rotate: 9.24,
+            scale: 0.95,
+            zIndex: 20,
+            opacity: 1,
+            transition: springTransition
+        },
+    };
+
+    // UI Element Variants (Title & Button)
+    const titleVariants = {
+        rest: { y: 0 },
+        hover: { y: -10, transition: { duration: 0.3 } }
+    };
+    const buttonVariants = {
+        rest: { width: "3rem", backgroundColor: "rgba(255,255,255,0.5)" },
+        hover: { width: "auto", backgroundColor: "#ffffff" },
+    };
+    const buttonTextVariants = {
+        rest: { opacity: 0, width: 0, display: "none" },
+        hover: { opacity: 1, width: "auto", display: "block", transition: { delay: 0.1 } },
+    };
+
+    const borderVariants = {
+        rest: { top: 0, right: 0, bottom: 0, left: 0, borderRadius: "2rem" },
+        hover: { top: 12, right: 12, bottom: 12, left: 12, borderRadius: "1rem", transition: { duration: 0.3 } }
+    };
+
+    return (
+        <motion.a
+            href={href}
+            className={`group relative block aspect-square h-full p-2 w-full overflow-hidden cursor-pointer`}
+            style={{ backgroundColor: baseColor }}
+            initial="rest"
+            animate={isDesktop && isHovered ? "hover" : "rest"}
+            onHoverStart={() => isDesktop && setHovered(true)}
+            onHoverEnd={() => isDesktop && setHovered(false)}
+            whileTap={isDesktop ? { scale: 0.98 } : {}}
+        >
+            <motion.div
+                variants={borderVariants}
+                className="absolute border-3 pointer-events-none z-10"
+                style={{ borderColor: borderColor, opacity: 0.4 }}
+            />
+
+            <div className="relative z-20 flex h-full flex-col p-8 pt-10">
+                <div className="relative z-40 mb-4 flex items-start justify-between md:mb-8">
+                    <motion.h2
+                        variants={titleVariants}
+                        className="max-w-[75%] text-2xl font-semibold leading-tight text-white md:text-3xl lg:text-4xl"
+                    >
+                        {title}
+                    </motion.h2>
+
+                    <motion.div
+                        variants={buttonVariants}
+                        className="flex h-12 items-center justify-center overflow-hidden rounded-full backdrop-blur-sm shrink-0"
+                    >
+                        <div className="flex items-center gap-2 px-1">
+                            <motion.span
+                                variants={buttonTextVariants}
+                                className="whitespace-nowrap pl-3 text-sm font-semibold text-black"
+                            >
+                                view project
+                            </motion.span>
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black">
+                                <ArrowUpRightIcon size={20} weight="bold" />
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+
+                <div className="relative flex flex-1 items-end justify-center isolate pb-6">
+                    <motion.div
+                        variants={leftPhoneVariants}
+                        // Width is relative to container, aspect-ratio handles height
+                        className="absolute bottom-0 w-[48%] origin-bottom-right"
+                    >
+                        <div className={`overflow-hidden rounded-4xl shadow-2xl ${phoneAspectRatio}`}>
+                            <Image src={screenImages.left} alt="Left" fill className="object-contain" />
+                        </div>
+                    </motion.div>
+
+                    {/* Right Phone */}
+                    <motion.div
+                        variants={rightPhoneVariants}
+                        className="absolute bottom-0 w-[48%] origin-bottom-left"
+                    >
+                        <div className={`overflow-hidden rounded-4xl border-4 border-black bg-black shadow-2xl ${phoneAspectRatio}`}>
+                            <Image src={screenImages.right} alt="Right" fill className="object-cover" />
+                        </div>
+                    </motion.div>
+
+                    {/* Center Phone */}
+                    <motion.div
+                        variants={centerPhoneVariants}
+                        className="absolute bottom-0 w-[52%] origin-bottom"
+                    >
+                        <div className={`overflow-hidden rounded-4xl border-4 border-black bg-black shadow-xl ${phoneAspectRatio}`}>
+                            <Image src={screenImages.center} alt="Center" fill className="object-cover" />
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </motion.a>
+    );
+}

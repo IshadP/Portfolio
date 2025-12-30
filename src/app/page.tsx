@@ -9,9 +9,19 @@ import project2 from "../../public/project2.png";
 import Image from "next/image";
 import NavBar from "@/components/nav-bar";
 import footer from "../../public/footer.png";
-
+import CardFan from "@/components/card-fan";
+import imgProject1 from "../../public/project1.png";
+import imgProject2 from "../../public/project2.png";
+import imgProject3 from "../../public/project2.png";
+import phone from "../../public/phone.png";
+import ProjectShowcaseCard from "@/components/project-showcase-card";
 
 export default function Home() {
+  const fanItems = [
+    { id: 1, title: "FinTech App", image: imgProject1 },
+    { id: 2, title: "AI Dashboard", image: imgProject2 },
+    { id: 3, title: "E-Commerce", image: imgProject3 },
+  ];
   return (
     <main className="min-h-screen bg-background flex justify-center items-center relative flex-col w-full">
       <div className=" top-0 left-0 absolute justify-center items-center h-[50vh] w-full z-0 bg-linear-to-b from-[#ffffff] to-[#F8F5F1] "></div>
@@ -48,9 +58,19 @@ export default function Home() {
 
           <div id="curated-projects" className="flex flex-col gap-4 scroll-mt-24">
             <h2 className="text-4xl font-bold tracking-[-0.0675rem] text-text-on-primary">curated projects</h2>
-            <BentoGrid>
+            <BentoGrid >
               <BentoCard colSpan={2} rowSpan={2} className="bg-surface" whileHover={{ boxShadow: "0px 0px 44px 0px rgba(34,197,94,0.5)", scale: 1.02, }}>
-                <Image src={project1} alt="Screenshot of Ishad Pande's first curated project" fill className="object-cover object-center" />
+                <ProjectShowcaseCard
+                  title="FinTech App"
+                  baseColor="#AEE69B"
+                  borderColor="#3E5D33"
+                  screenImages={{
+                    center: phone,
+                    left: phone,
+                    right: phone,
+                  }}
+                  href="#"
+                />
               </BentoCard>
 
               <BentoCard colSpan={2} rowSpan={2} className="bg-surface" whileHover={{ scale: 1.02, boxShadow: "0px 0px 44px 0px rgba(249,115,22,0.5)" }}>
@@ -59,8 +79,6 @@ export default function Home() {
             </BentoGrid>
           </div>
         </div>
-
-
       </div>
       <footer id="contact" className="relative w-full flex flex-col items-center pt-20">
         <div className="flex flex-col justify-center items-center text-center w-full gap-8">
