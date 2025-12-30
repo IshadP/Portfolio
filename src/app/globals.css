@@ -2,6 +2,7 @@
 
 @theme inline {
   --width-2k: 2000px;
+  --breakpoint-3xl: 2000px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

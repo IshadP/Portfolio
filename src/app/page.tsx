@@ -28,7 +28,7 @@ export default function Home() {
       <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
         <NavBar />
       </div>
-      <div className="lg:max-w-5xl  2k:max-w-[70vh] w-full justify-center items-center flex flex-col z-2 p-4  " >
+      <div className="lg:max-w-5xl 2k:max-w-[70vh] w-full justify-center items-center flex flex-col z-2 p-4  " >
         <div id="hero" className="flex flex-col justify-center items-center z-10 sm:h-[50vh]">
           <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center">Ishad Pande</h1>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
