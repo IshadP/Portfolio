@@ -9,6 +9,7 @@ interface BentoCardProps {
     rowSpan?: 1 | 2 | 3 | 4;
     className?: string;
     whileHover?: TargetAndTransition;
+    hasTap?: boolean;
 }
 
 export default function BentoCard({
@@ -17,6 +18,7 @@ export default function BentoCard({
     rowSpan = 1,
     className = "",
     whileHover,
+    hasTap = false,
 }: BentoCardProps) {
 
     const colClasses = {
@@ -42,8 +44,9 @@ export default function BentoCard({
             whileHover={whileHover}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
+            whileTap={hasTap ? { scale: 0.98 } : {}}
             className={`
-        relative overflow-hidden rounded-4xl border border-on-surface/5 bg-surface
+        relative overflow-hidden rounded-4xl
         ${colClasses[colSpan]} 
         ${rowClasses[rowSpan]}
         ${isSquare ? "aspect-square" : `aspect-[${rowSpan}/${colSpan}]`}

@@ -80,7 +80,7 @@ export default function NavBar() {
                                 />
                             </span>
 
-                            <span className="font-sans text-xs sm:text-base font-medium leading-4 text-on-surface transition-colors whitespace-nowrap group-hover:text-btn-secondary-hover group-active:text-btn-secondary-hover">
+                            <span className=" text-xs sm:text-base font-medium leading-4 text-on-surface transition-colors whitespace-nowrap group-hover:text-btn-secondary-hover group-active:text-btn-secondary-hover">
                                 {item.name}
                             </span>
                         </div>

@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import Image from "next/image";
-// Import types from mobile component or shared file
 import { CardItem } from "./mobile-card-stack";
 
 export default function DesktopCardFan({ items }: { items: CardItem[] }) {
@@ -49,12 +48,12 @@ export default function DesktopCardFan({ items }: { items: CardItem[] }) {
 
                             // Dim others
                             filter: isAnyActive && !isActive
-                                ? "brightness(0.5) grayscale(0.5) blur(2px)"
+                                ? "brightness(1) grayscale(0) blur(0px)"
                                 : "brightness(1) grayscale(0) blur(0px)",
                             marginLeft: index === 0 ? 0 : spacing
                         }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                        className="relative h-64 w-48 shrink-0 cursor-pointer rounded-2xl shadow-2xl overflow-hidden bg-white transform-gpu origin-bottom"
+                        className="relative h-64 w-48 shrink-0 cursor-pointer rounded-2xl shadow-2xl overflow-hidde transform-gpu origin-bottom"
                     >
                         <Image
                             src={item.image}
@@ -69,7 +68,7 @@ export default function DesktopCardFan({ items }: { items: CardItem[] }) {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: isActive ? 1 : 0 }}
-                            className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4"
+                            className="absolute inset-0 flex items-end justify-center bg-linear-to-t from-black/90 via-black/30 to-transparent p-4"
                         >
                             <span className="font-bold text-white text-xl text-center drop-shadow-lg">
                                 {item.title}

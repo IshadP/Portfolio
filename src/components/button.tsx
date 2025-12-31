@@ -74,9 +74,9 @@ export default function Button({
   // 3. Base Classes
   const baseClasses = ` group
      px-0.5 pt-0.5 pb-1.5 rounded-xl 
-    items-center justify-center font-medium font-sans
+    items-center justify-center font-medium
     transition-all overflow-hidden 
-    disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed
+    disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
     ${variants[variant]}  
     ${fullWidth ? "w-full" : "w-full md:w-auto"}
     ${className}
@@ -84,7 +84,7 @@ export default function Button({
 
   // 4. Animation Props
   const animationProps = {
-    whileTap: { paddingBottom: "0.125rem", marginTop: "0.250rem" },
+    whileTap: { paddingBottom: "0.125rem", marginTop: "0.250rem", boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.25)" },
     transition: { duration: 0, type: "tween" as const, bounce: 0 },
   };
 
@@ -93,7 +93,7 @@ export default function Button({
   // 5. Inner Content
   const content = (
     <div className={`
-      flex items-center justify-center rounded-[10px] ${surfaceVariants[variant]}
+      flex items-center justify-center rounded-[0.625rem] ${surfaceVariants[variant]}
       ${isIconOnly ? "p-3" : "p-3 gap-2"}
     `}>
       {leftIcon && (
