@@ -13,7 +13,11 @@ export default function DesktopCardFan({ items }: { items: CardItem[] }) {
 
     return (
         // 'justify-center' ensures the whole fan is centered in the parent
-        <div className="flex flex-nowrap justify-center items-center py-16 w-full h-[400px]">
+        <div className="flex flex-nowrap justify-center items-center py-18 w-full">
+            <div data-layer="Frame 130" className="absolute top-4 px-4 py-2 bg-btn-primary-surface rounded-lg inline-flex justify-center items-center gap-2 overflow-hidden outline-2 outline-btn-primary-border">
+                <div data-layer="Other work" className=" justify-start text-btn-primary-text text-lg font-semibold tracking-tighter leading-5">Other work</div>
+            </div>
+
             {items.map((item, index) => {
                 // Deterministic rotation pattern: -3, -1, 1, 3...
                 const rotation = (index % 2 === 0 ? -1 : 1) * ((index % 3) + 1);
@@ -53,7 +57,7 @@ export default function DesktopCardFan({ items }: { items: CardItem[] }) {
                             marginLeft: index === 0 ? 0 : spacing
                         }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                        className="relative h-64 w-48 shrink-0 cursor-pointer rounded-2xl shadow-2xl overflow-hidde transform-gpu origin-bottom"
+                        className="relative h-64 w-48 shrink-0 cursor-pointer rounded-2xl shadow-2xl overflow-hidden transform-gpu origin-bottom"
                     >
                         <Image
                             src={item.image}

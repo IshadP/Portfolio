@@ -6,9 +6,9 @@ import NavBar from "@/components/nav-bar";
 export default function ResumePage() {
     return (
         <main className="min-h-screen bg-background flex flex-col items-center w-full">
-            <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
+            {/* <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
                 <NavBar />
-            </div>
+            </div> */}
 
             <div className="max-w-5xl w-full flex flex-col items-center p-4 md:p-8 gap-8">
                 <div className="flex justify-between items-center w-full">

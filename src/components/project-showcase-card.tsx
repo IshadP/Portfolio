@@ -108,7 +108,7 @@ export default function ProjectShowcaseCard({
         hover: { y: -15, scale: 0.8, transition: { duration: 0.3 } }
     };
     const buttonVariants = {
-        rest: { width: "auto", right: 5, top: 5, borderRadius: "5rem", backgroundColor: "rgba(255,255,255,0.5)" },
+        rest: { width: "auto", right: 5, top: 5, borderRadius: "2rem", backgroundColor: "rgba(255,255,255,0.5)" },
         hover: { width: "auto", right: 20, top: 20, borderRadius: "0.5rem", backgroundColor: "#ffffff" },
     };
 
@@ -150,7 +150,7 @@ export default function ProjectShowcaseCard({
                         className="absolute flex h-10 w-10 items-center justify-center overflow-hidden backdrop-blur-sm shrink-0"
                     >
                         <div className="flex items-center gap-2 px-1">
-                            <div className="flex h-8 w-8 items-center rounded-full justify-center bg-white ">
+                            <div className="flex h-8 w-8 items-center rounded-2xl justify-center bg-white ">
                                 <ArrowUpRightIcon size={20} weight="bold" />
                             </div>
                         </div>

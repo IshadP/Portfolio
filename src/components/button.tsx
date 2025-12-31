@@ -1,5 +1,6 @@
 import * as Icons from "@phosphor-icons/react";
-import { motion, HTMLMotionProps } from "motion/react";
+import { motion, HTMLMotionProps, AnimatePresence } from "motion/react";
+import { useState } from "react";
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -30,6 +31,7 @@ interface BaseProps {
   className?: string;
   fullWidth?: boolean;
   isOnlyIcon?: boolean;
+  copyText?: string;
 }
 
 // Combine with standard button props (excluding isLoading)
@@ -45,8 +47,10 @@ export default function Button({
   disabled,
   fullWidth = false,
   isOnlyIcon: isOnlyIconProp,
+  copyText,
   ...props
 }: ButtonProps) {
+  const [isCopied, setIsCopied] = useState(false);
 
   // 2. Styles Mapping
   const variants = {
@@ -75,8 +79,8 @@ export default function Button({
   const baseClasses = ` group
      px-0.5 pt-0.5 pb-1.5 rounded-xl 
     items-center justify-center font-medium
-    transition-all overflow-hidden 
-    disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
+    transition-all 
+    disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed ${variant === "outline" ? "shadow-[0px_0px_0px_0px_rgba(0,0,0,0.25)]" : "shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"}
     ${variants[variant]}  
     ${fullWidth ? "w-full" : "w-full md:w-auto"}
     ${className}
@@ -109,6 +113,13 @@ export default function Button({
   );
 
   const handleClick = (e: React.MouseEvent) => {
+    if (copyText) {
+      e.preventDefault();
+      navigator.clipboard.writeText(copyText);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    }
+
     if (href && href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.substring(1);
@@ -126,7 +137,6 @@ export default function Button({
   // 6. Render as Link or Button
   if (href && !disabled) {
     const isExternal = href.startsWith("http") || href.startsWith("https");
-    const isMailto = href.startsWith("mailto:");
 
     return (
       <MotionLink
@@ -138,6 +148,18 @@ export default function Button({
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {content}
+        <AnimatePresence>
+          {isCopied && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="fixed top-4 left-1/2 -translate-x-1/2 px-3 py-2 bg-on-surface text-surface text-xs rounded-md whitespace-nowrap z-100 pointer-events-none sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0"
+            >
+              Email Copied successfully
+            </motion.div>
+          )}
+        </AnimatePresence>
       </MotionLink>
     );
   }
@@ -151,6 +173,18 @@ export default function Button({
       className={baseClasses}
     >
       {content}
+      <AnimatePresence>
+        {isCopied && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="fixed top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-xs rounded-md whitespace-nowrap z-100 pointer-events-none sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0 "
+          >
+            Email Copied successfully
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.button>
   );
 }
