@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
+
+  --linear-bg: linear-gradient(to bottom, var(--background), var(--surface));
   --width-2k: 2000px;
   --breakpoint-6xl: 2000px;
   --spacing-pads: 14rem;
@@ -74,7 +76,7 @@
   --btn-tertiary-text: #881337;
 
   /* Font Color */
-  --text-500: #8F8F8F;
+  --text-500: #AAAAAA;
   --text-on-primary: #948C6B;
 }
 

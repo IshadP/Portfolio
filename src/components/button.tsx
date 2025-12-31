@@ -1,4 +1,4 @@
-import * as Icons from "@phosphor-icons/react";
+import { ArrowUpRightIcon, CaretDownIcon, CaretLeftIcon, DownloadIcon } from "@phosphor-icons/react";
 import { motion, HTMLMotionProps, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import Link from "next/link";
@@ -9,14 +9,22 @@ const MotionLink = motion.create(Link);
 // 1. Types: Strictly 3 variants
 export type ButtonVariant = "primary" | "secondary" | "tertiary" | "linkedin" | "twitter" | "email" | "outline";
 
+// Map available icons for string lookup
+const IconMap: Record<string, any> = {
+  ArrowUpRightIcon,
+  CaretDownIcon,
+  CaretLeftIcon,
+  DownloadIcon,
+};
+
 // Helper to render icon from name or ReactNode
 const renderIcon = (icon: ReactNode | string) => {
   if (typeof icon === "string") {
-    const IconComponent = (Icons as Record<string, any>)[icon];
+    const IconComponent = IconMap[icon];
     if (IconComponent) {
       return <IconComponent size={20} weight="bold" />;
     }
-    console.warn(`Icon "${icon}" not found in @phosphor-icons/react`);
+    console.warn(`Icon "${icon}" not found in IconMap`);
     return null;
   }
   return icon;
@@ -135,39 +143,22 @@ export default function Button({
   };
 
   // 6. Render as Link or Button
-  if (href && !disabled) {
-    const isExternal = href.startsWith("http") || href.startsWith("https");
+  const Component = (href && !disabled) ? MotionLink : motion.button;
+  const isExternal = href && (href.startsWith("http") || href.startsWith("https"));
 
-    return (
-      <MotionLink
-        href={href}
-        {...animationProps}
-        {...props as any}
-        onClick={handleClick}
-        className={baseClasses}
-        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      >
-        {content}
-        <AnimatePresence>
-          {isCopied && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="fixed top-4 left-1/2 -translate-x-1/2 px-3 py-2 bg-on-surface text-surface text-xs rounded-md whitespace-nowrap z-100 pointer-events-none sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0"
-            >
-              Email Copied successfully
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </MotionLink>
-    );
-  }
+  // Extra props for link behavior
+  const linkProps = (href && !disabled) ? {
+    href,
+    ...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})
+  } : {
+    disabled, // motion.button accepts disabled
+    type: props.type || "button", // Default to button type if not specified
+  };
 
   return (
-    <motion.button
-      {...props}
-      disabled={disabled}
+    <Component
+      {...props as any} // Cast to any to suppress TS union complexity
+      {...linkProps}
       {...animationProps}
       onClick={handleClick}
       className={baseClasses}
@@ -179,12 +170,13 @@ export default function Button({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-xs rounded-md whitespace-nowrap z-100 pointer-events-none sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0 "
+            className="fixed top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-xs rounded-md whitespace-nowrap z-100 pointer-events-none sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0"
           >
-            Email Copied successfully
+            {/* Standardized message */}
+            Email Copied
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.button>
+    </Component>
   );
 }

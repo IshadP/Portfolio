@@ -16,7 +16,7 @@ export default function DesktopCardFan({ items }: { items: CardItem[] }) {
         // 'justify-center' ensures the whole fan is centered in the parent
         <div className="flex flex-nowrap justify-center items-center py-18 w-full">
             <div data-layer="Frame 130" className="absolute top-4 px-4 py-2  rounded-lg inline-flex justify-center items-center gap-2 overflow-hidden ">
-                <div data-layer="Other work" className=" justify-start text-btn-primary-text text-lg font-semibold tracking-tighter font-serif leading-5">Other work</div>
+                <div data-layer="Other work" className=" justify-start text-on-surface text-2xl italic font-semibold font-serif leading-5">Other work</div>
             </div>
 
             {items.map((item, index) => {
