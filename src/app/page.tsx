@@ -4,16 +4,9 @@ import BentoCard from "../components/bento-card";
 import Button from "../components/button";
 import TextHighlight from "../components/text-highlight";
 import LocationMap from "../components/location-map";
-import project1 from "../../public/project1.png";
-import project2 from "../../public/project2.png";
 import Image from "next/image";
-import NavBar from "@/components/nav-bar";
 import footer from "../../public/footer.png";
 import CardFan from "@/components/card-fan";
-import imgProject1 from "../../public/project1.png";
-import imgProject2 from "../../public/project2.png";
-import imgProject3 from "../../public/project2.png";
-import phone from "../../public/phone.png";
 import ProjectShowcaseCard from "@/components/project-showcase-card";
 import { HeartIcon } from "@phosphor-icons/react";
 import Printhub1 from "../../public/projects/printhub-1.png";
@@ -22,12 +15,15 @@ import Printhub3 from "../../public/projects/printhub-3.png";
 import Youtube1 from "../../public/projects/youtube-1.png";
 import Youtube2 from "../../public/projects/youtube-2.png";
 import Youtube3 from "../../public/projects/youtube-3.png";
+import magazine2024 from "../../public/projects/magazine-2024.png";
+import gca2025 from "../../public/projects/gca-2025.png";
+import schoolbag from "../../public/projects/schoolbag-2023.png";
 
 export default function Home() {
   const fanItems = [
-    { id: 1, title: "FinTech App", image: imgProject1 },
-    { id: 2, title: "AI Dashboard", image: imgProject2 },
-    { id: 3, title: "E-Commerce", image: imgProject3 },
+    { id: 1, title: "Schoolbag", image: schoolbag, href: "https://medium.com/@ishadpande16/how-schoolbag-helps-to-organize-learning-materials-735467d8f32c" },
+    { id: 2, title: "GCOEN Magazine 2024", image: magazine2024, href: "https://drive.google.com/file/d/1bIAfxQWGKkUwn0CvwdGkTQxOCsILruRH/view?usp=sharing" },
+    { id: 3, title: "Genius Champs Academy", image: gca2025 },
   ];
   return (
     <main className="min-h-screen bg-background flex justify-center items-center relative flex-col w-full">
@@ -35,9 +31,12 @@ export default function Home() {
       {/* <div className="sticky top-0 z-50 w-full flex justify-center sm:py-4">
         <NavBar />
       </div> */}
-      <div className="lg:max-w-5xl 6xl:max-w-[80vw] w-full justify-center items-center flex flex-col pt-16 z-2 px-4 gap-8 " >
-        <div id="hero" className="flex flex-col justify-center items-center z-10 sm:h-[20vh] w-full">
-          <h1 className="text-8xl font-bold leading-[100%] sm:p-6 p-6 pt-20 tracking-[-0.24rem] text-center w-full">Ishad Pande</h1>
+      <div className="lg:max-w-5xl p-pads w-full justify-center items-center flex flex-col pt-16 z-2 px-4 gap-8 " >
+        <div id="hero" className="flex flex-col justify-center items-center z-10 gap-4 sm:h-[40vh] w-full">
+          <div className="flex flex-col justify-center items-center gap-0">
+            <h4 className="text-xl font-bold tracking-tight bg-linear-to-b from-[#CDC4B9] to-[#7E7A75] bg-clip-text text-transparent">Hey there, I'm</h4>
+            <h1 className="text-8xl font-bold sm:p-6 p-6 pt-20 tracking-[-0.24rem] leading-[80%] text-center w-full">Ishad Pande</h1>
+          </div>
           <div className="flex gap-2 flex-col w-full justify-center items-center sm:flex-row pb-16">
             <Button variant="primary" href="mailto:ispande16@gmail.com" rightIcon="ArrowUpRightIcon" copyText="ispande16@gmail.com">Let&apos;s Talk</Button>
             <Button variant="secondary" href="/resume">View Resume</Button>

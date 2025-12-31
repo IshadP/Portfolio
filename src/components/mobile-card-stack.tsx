@@ -8,6 +8,7 @@ export interface CardItem {
     id: string | number;
     title: string;
     image: StaticImageData | string;
+    href?: string;
 }
 
 export default function MobileCardStack({ items }: { items: CardItem[] }) {
