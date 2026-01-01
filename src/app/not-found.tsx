@@ -13,7 +13,7 @@ export default function NotFound() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="relative"
             >
-                <h1 className="text-3xl font-normal text-[#C07818] italic font-serif tracking-tight md:text-9xl">
+                <h1 className="text-3xl font-normal text-[#FD6C3D] italic font-serif tracking-tight md:text-9xl">
                     Whoopsies!
                 </h1>
             </motion.div>
