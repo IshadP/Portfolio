@@ -36,7 +36,7 @@ export default function ResumePage() {
                     <a
                         href={RESUME_URL}
                         download
-                        className="inline-flex items-center gap-3 rounded-full border-2 border-border-primary bg-bg-primary px-8 py-4 font-(family-name:--font-geist) text-lg font-semibold text-text-primary transition-all duration-300 hover:bg-[#333] hover:text-white hover:border-[#333] active:scale-95"
+                        className="inline-flex items-center gap-3 rounded-full bg-bg-primary px-8 py-4 font-(family-name:--font-geist) text-lg font-semibold text-text-primary transition-all duration-300 hover:bg-[#333] hover:text-white hover:border-[#333] active:scale-95"
                     >
                         <ArrowDown size={22} weight="bold" />
                         Download Resume
