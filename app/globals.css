@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+:root {
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #cfcfcf;
+  --bg-inverse: #000000;
+
+  /* Text */
+  --text-primary: #2d2d2d;
+  --text-secondary: #b7b7b7;
+  --text-tertiary: #686868;
+  --text-inverse: #ffffff;
+  --text-accent: #3c7c03;
+  --text-brand-green: #63a92a;
+
+  /* Borders */
+  --border-primary: #eaeaea;
+  --border-secondary: #cdcdcd;
+  --border-tertiary: #cacaca;
+  --border-card: #ddd;
+
+  /* Semantic Colors (Retained for gradients) */
+  --color-green: #688b4b;
+  --color-red: #d34949;
+
+  /* Mobile Default Dimensions & Spacing */
+  --radius-card: 2rem;
+  --radius-pill: 2.7rem;
+  --radius-nav-item: 0.5625rem;
+  --radius-arrow: 9999rem;
+
+  --spacing-section: 2rem;
+  --spacing-card-p: 2rem;
+  --spacing-nav-px: 0.45rem;
+  --spacing-nav-py: 0.9rem;
+
+  /* Icon Layout Spacing */
+  --spacing-icon-border: 0.1125rem;
+  --spacing-icon-gap: 0.225rem;
+  --spacing-icon-padding: 0.45rem;
+
+  /* Layout */
+  --max-content-width: 67.375rem;
+  --card-width: 32.9375rem;
+  --grid-gap: 1.5rem;
+}
+
+/* ── Laptop Responsive Overrides ── */
+@media (min-width: 768px) {
+  :root {
+    --spacing-section: 4rem;
+    --spacing-nav-px: 0rem;
+  }
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-inverse: var(--bg-inverse);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-accent: var(--text-accent);
+  --color-text-brand-green: var(--text-brand-green);
+
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-tertiary: var(--border-tertiary);
+  --color-border-card: var(--border-card);
+
+  --font-sans: var(--font-geist), "Geist";
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist), "Geist", sans-serif;
+}
+
+/* ── Gradients ── */
+.gradient-green {
+  background: radial-gradient(ellipse at center,
+      rgba(243, 250, 238, 1) 0%,
+      rgba(203, 232, 180, 1) 50%,
+      rgba(163, 215, 121, 1) 100%);
+}
+
+.gradient-red {
+  background: radial-gradient(ellipse at center,
+      rgba(250, 238, 238, 1) 0%,
+      rgba(232, 180, 180, 1) 50%,
+      rgba(224, 150, 150, 1) 75%,
+      rgba(215, 121, 121, 1) 100%);
+}
+
+.gradient-rainbow {
+  background: linear-gradient(120deg,
+      rgb(255, 255, 255) 1.4%,
+      rgb(255, 250, 108) 27.2%,
+      rgb(157, 255, 157) 48.1%,
+      rgb(28, 148, 247) 75.2%,
+      rgb(249, 166, 107) 99.4%);
+}
+
+/* ── Reusable UI ── */
+.arrow-button {
+  background: var(--bg-secondary);
+  border: 0.21875rem solid var(--border-secondary);
+  border-radius: var(--radius-arrow);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-shadow {
+  box-shadow: 0rem 0.225rem 0.225rem 0rem rgba(0, 0, 0, 0.25);
+}
