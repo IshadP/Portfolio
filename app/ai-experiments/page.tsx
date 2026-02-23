@@ -1,11 +1,7 @@
-"use client";
-
-import Image from "next/image";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import PrototypeCard from "../components/PrototypeCard";
-import CopyEmailButton from "../components/CopyEmailButton";
 
 
 export default function AIExperiments() {

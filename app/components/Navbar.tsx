@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { WarningDiamond, List, X } from "@phosphor-icons/react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import CopyEmailButton from "./CopyEmailButton";
@@ -88,7 +89,7 @@ export default function Navbar() {
                     {navLinks.map((item) => {
                         const isActive = pathname === item.href;
                         return (
-                            <a
+                            <Link
                                 key={item.label}
                                 href={item.href}
                                 className="group inline-flex items-start overflow-hidden p-(--spacing-icon-border) no-underline"
@@ -101,7 +102,7 @@ export default function Navbar() {
                                         {item.label}
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         );
                     })}
                 </div>
@@ -191,7 +192,7 @@ export default function Navbar() {
                             {navLinks.map((item) => {
                                 const isActive = pathname === item.href;
                                 return (
-                                    <a
+                                    <Link
                                         key={item.label}
                                         href={item.href}
                                         onClick={() => setMenuOpen(false)}
@@ -203,7 +204,7 @@ export default function Navbar() {
                                         <span className="font-(family-name:--font-geist) text-[18px] font-medium">
                                             {item.label}
                                         </span>
-                                    </a>
+                                    </Link>
                                 );
                             })}
 

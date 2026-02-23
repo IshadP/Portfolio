@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CSSProperties, useMemo } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ProjectCardProps } from "../types/project";
 

@@ -12,21 +12,23 @@ export default function CopyEmailButton({
 }) {
     const [copied, setCopied] = useState(false);
 
+    const onCopySuccess = () => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText("ispande16@gmail.com");
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
+            onCopySuccess();
         } catch {
-            // fallback
             const ta = document.createElement("textarea");
             ta.value = "ispande16@gmail.com";
             document.body.appendChild(ta);
             ta.select();
             document.execCommand("copy");
             document.body.removeChild(ta);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
+            onCopySuccess();
         }
     };
 
