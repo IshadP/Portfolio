@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -17,31 +18,50 @@ const textVariants = {
 };
 
 export default function StarCard() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mql = window.matchMedia("(max-width: 767px)");
+        setIsMobile(mql.matches);
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mql.addEventListener("change", handler);
+        return () => mql.removeEventListener("change", handler);
+    }, []);
 
     return (
         <a
-            href="#ai-experiments"
+            href="/ai-experiments"
             className="block h-full w-full cursor-pointer focus:outline-none"
         >
-            {/* Ensure minimal height to show content correctly */}
             <motion.div
                 className="bg-bg-tertiary border border-border-primary rounded-(--radius-card) overflow-hidden w-full h-full"
-                initial="rest"
-                whileHover="hover"
-                whileFocus="hover"
+                initial={isMobile ? "hover" : "rest"}
+                animate={isMobile ? "hover" : undefined}
+                whileHover={isMobile ? undefined : "hover"}
+                whileFocus={isMobile ? undefined : "hover"}
             >
-                <div className="gradient-rainbow rounded-[calc(var(--radius-card)-0.125rem)] overflow-hidden w-full h-full flex flex-row items-center justify-center p-8">
+                <div className="gradient-rainbow overflow-hidden w-full h-full flex flex-row items-center justify-center p-8">
                     <motion.div
                         variants={starVariants}
-                        className="shrink-0 origin-center flex items-center justify-center rotate-45"
+                        className="flex items-center justify-center rotate-45"
                     >
-                        <Image
-                            src="/assets/star.svg"
-                            alt="Star icon"
-                            width={54}
-                            height={54}
-                            className="object-contain"
-                        />
+                        {isMobile ?
+                            <Image
+                                src="/assets/star.svg"
+                                alt="Star icon"
+                                width={64}
+                                height={64}
+                                className="object-contain"
+                            /> :
+                            <Image
+                                src="/assets/star.svg"
+                                alt="Star icon"
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                            />
+                        }
+
                     </motion.div>
 
                     <motion.div

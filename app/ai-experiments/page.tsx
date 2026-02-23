@@ -26,14 +26,16 @@ export default function AIExperiments() {
                     {/* Prototype Cards */}
                     <div className="flex-[1_1_400px]">
                         <PrototypeCard
-                            title="Prototype for testing for Printhub"
+                            title="Prototype for testing (Printhub)"
                             imageSrc="/assets/printhub-screenshot.png"
+                            href="https://printproto.vercel.app/"
                         />
                     </div>
                     <div className="flex-[1_1_400px]">
                         <PrototypeCard
-                            title="Prototype for testing for Printhub"
+                            title="PomDom"
                             imageSrc="/assets/printhub-screenshot.png"
+                            comingSoon
                         />
                     </div>
 

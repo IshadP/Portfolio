@@ -37,11 +37,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex w-full items-center gap-1">
-                  <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary">
+                  <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary pr-2">
                     Find me on
                   </p>
                   <a href="https://x.com/ishadpande" target="_blank" rel="noopener noreferrer">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden rotate-2">
                       <Image src="/assets/X.png" alt="X" width={32} height={32} />
                     </span>
                   </a>
@@ -49,7 +49,7 @@ export default function Home() {
                     ,
                   </p>
                   <a href="https://www.linkedin.com/in/ishadpande" target="_blank" rel="noopener noreferrer">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden -rotate-2">
                       <Image src="/assets/LinkedIn.png" alt="LinkedIn" width={32} height={32} />
                     </span>
                   </a>
@@ -57,7 +57,7 @@ export default function Home() {
                     or
                   </p>
                   <a href="https://www.behance.net/ishadpande" target="_blank" rel="noopener noreferrer">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden not-last rotate-3">
                       <Image src="/assets/Behance.png" alt="Behance" width={32} height={32} />
                     </span>
                   </a>
@@ -174,7 +174,7 @@ export default function Home() {
       </div>
 
       {/* ── Bottom Landscape Image ── */}
-      <div className="relative w-full h-[405px] overflow-hidden">
+      <div className="relative w-full h-80  z-10">
         <Image
           src="/assets/minecraft-landscape.png"
           alt="Minecraft landscape"

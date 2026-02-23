@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { WarningDiamond, List, X } from "@phosphor-icons/react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,6 +15,30 @@ const navLinks = [
 export default function Navbar() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [diamondOpen, setDiamondOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    // Detect mobile vs desktop (matches Tailwind md: breakpoint at 768px)
+    useEffect(() => {
+        const mql = window.matchMedia("(max-width: 767px)");
+        setIsMobile(mql.matches);
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mql.addEventListener("change", handler);
+        return () => mql.removeEventListener("change", handler);
+    }, []);
+
+    // Auto-close the diamond after 2 seconds (mobile only)
+    useEffect(() => {
+        if (diamondOpen && isMobile) {
+            timerRef.current = setTimeout(() => {
+                setDiamondOpen(false);
+            }, 2000);
+        }
+        return () => {
+            if (timerRef.current) clearTimeout(timerRef.current);
+        };
+    }, [diamondOpen, isMobile]);
 
     // Derive the current page label from navLinks
     const currentPageLabel =
@@ -82,36 +106,48 @@ export default function Navbar() {
                     })}
                 </div>
 
-                {/* Center Icon (Warning Diamond) - Expandable on hover */}
+                {/* Center Icon (Warning Diamond) — Mobile: click-to-expand + auto-close; Desktop: hover-to-expand */}
                 <div className="flex flex-none items-center justify-center">
                     <motion.div
                         className="flex items-center justify-center overflow-hidden rounded-[25px] bg-[#dbffbc] cursor-pointer"
-                        initial="rest"
-                        whileHover="hover"
-                        animate="rest"
+                        onClick={isMobile ? () => setDiamondOpen(true) : undefined}
+                        {...(isMobile
+                            ? { animate: diamondOpen ? "open" : "rest" }
+                            : { initial: "rest", whileHover: "hover", animate: "rest" }
+                        )}
                         variants={{
                             rest: { width: "40px", height: "40px", padding: "8px" },
-                            hover: { width: "208px", height: "40px", padding: "8px" }
+                            open: { width: "208px", height: "40px", padding: "8px" },
+                            hover: { width: "208px", height: "40px", padding: "8px" },
                         }}
-                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                     >
                         <div className="flex items-center gap-[4px] min-w-max">
                             <motion.div
-                                variants={{
-                                    rest: { rotate: 0 },
-                                    hover: { rotate: 360 }
-                                }}
-                                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                                {...(isMobile
+                                    ? { animate: diamondOpen ? { rotate: 360 } : { rotate: 0 } }
+                                    : { variants: { rest: { rotate: 0 }, hover: { rotate: 360 } } }
+                                )}
+                                transition={{ duration: 0.4, ease: "easeInOut" }}
                             >
                                 <WarningDiamond size={24} color="#46781a" weight="regular" />
                             </motion.div>
                             <motion.p
-                                className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic text-[#46781a] text-[16px] whitespace-nowrap"
-                                variants={{
-                                    rest: { opacity: 0, x: -10, display: "none" },
-                                    hover: { opacity: 1, x: 0, display: "block" }
-                                }}
-                                transition={{ duration: 0.2, delay: 0.05 }}
+                                className="font-geist font-medium not-italic text-[#46781a] text-[16px] whitespace-nowrap"
+                                {...(isMobile
+                                    ? {
+                                        animate: diamondOpen
+                                            ? { opacity: 1, x: 0, display: "block", letterSpacing: "0px" }
+                                            : { opacity: 0, x: -10, display: "none", letterSpacing: "-10px" },
+                                    }
+                                    : {
+                                        variants: {
+                                            rest: { opacity: 0, x: -10, display: "none", letterSpacing: "-10px" },
+                                            hover: { opacity: 1, x: 0, display: "block", letterSpacing: "0px" },
+                                        },
+                                    }
+                                )}
+                                transition={{ duration: 0.4, delay: 0.05 }}
                             >
                                 Open to Opportunities
                             </motion.p>
@@ -160,8 +196,8 @@ export default function Navbar() {
                                         href={item.href}
                                         onClick={() => setMenuOpen(false)}
                                         className={`flex items-center rounded-xl px-4 py-3 no-underline transition-colors duration-200 ${isActive
-                                                ? "bg-[#f0f0f0] text-text-primary"
-                                                : "text-text-tertiary hover:bg-[#f8f8f8] hover:text-text-primary"
+                                            ? "bg-[#f0f0f0] text-text-primary"
+                                            : "text-text-tertiary hover:bg-[#f8f8f8] hover:text-text-primary"
                                             }`}
                                     >
                                         <span className="font-(family-name:--font-geist) text-[18px] font-medium">

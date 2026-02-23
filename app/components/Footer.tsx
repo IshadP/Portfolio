@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-18 py-6 sm:py-0 w-full gap-4">
+        <footer className="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-18 py-6 sm:py-0 w-full gap-8">
             {/* Social Links */}
             <div className="flex items-center gap-4 px-4 font-(family-name:--font-geist) text-[20px] text-[#222]">
                 <a href="https://x.com/ishadpande" className="hover:opacity-80 transition-opacity">
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
 
             {/* Email CTA */}
-            <div className="flex items-center overflow-hidden px-4 py-4 ">
+            <div className="flex items-center overflow-hidden md:px-4 py-4 ">
                 <div className="flex items-center gap-2 justify-center overflow-hidden p-2 flex-wrap">
                     <span className="font-(family-name:--font-geist) font-medium leading-normal text-[#b7b7b7] text-[16px] md:text-[20px]">
                         Let’s Talk
