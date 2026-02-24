@@ -27,7 +27,7 @@ export default function Badge({
     return (
         <div className={`${colors[variant]} inline-flex items-center gap-2 rounded-lg p-2`}>
             {icon && iconMap[icon]}
-            <p className="font-(family-name:--font-geist) font-semibold leading-[1.16] text-lg md:text-2xl tracking-[-0.24px]">
+            <p className="font-(family-name:--font-geist) font-semibold leading-[1.16] text-lg md:text-xl tracking-[-0.24px]">
                 {children}
             </p>
         </div>
