@@ -100,7 +100,7 @@ export default function Home() {
                 imageSrcRight="/assets/printhub-right.png"
                 imageSrcLeft="/assets/printhub-left.png"
                 imageAlt="PrintHub List Cards"
-                href="https://www.behance.net/gallery/239087477/Printhub"
+                href="/printhub"
               />
             </div>
 
@@ -114,7 +114,7 @@ export default function Home() {
                 imageSrc="/assets/printhub-screenshot.png"
                 imageSrcLeft="/assets/printhub-left.png"
                 imageAlt="PrintHub Navigation"
-                href="https://www.behance.net/gallery/239087477/Printhub"
+                href="/printhub"
               />
             </div>
           </div>

@@ -50,9 +50,10 @@ export default function ProjectCard({
         hover: { color: hoverTitleColor, transition: { duration: 0.3 } },
     }), [titleColor, hoverTitleColor]);
 
+    const isExternal = href?.startsWith("http");
     const Wrapper = href ? motion.a : motion.div;
     const wrapperProps = href
-        ? { href, target: "_blank" as const, rel: "noopener noreferrer" }
+        ? { href, ...(isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {}) }
         : {};
 
     return (
