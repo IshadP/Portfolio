@@ -35,7 +35,19 @@ export default function Hero() {
                         </p>
                     </div>
                 )}
+
+                {pathname === "/printhub" && (
+                    <div className="flex items-center gap-4">
+                        <div className="relative shrink-0 rounded-full overflow-hidden -rotate-45">
+                            <Image src="/assets/printhub/printhub-avatar.svg" alt="Printhub" width={64} height={64} style={{ transform: "rotate(45deg)" }} />
+                        </div>
+                        <p className="font-(family-name:--font-geist) font-semibold text-[40px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
+                            Printhub
+                        </p>
+                    </div>
+                )}
             </div>
         </section>
     );
 }
+

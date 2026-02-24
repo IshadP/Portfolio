@@ -46,6 +46,17 @@
   --max-content-width: 67.375rem;
   --card-width: 32.9375rem;
   --grid-gap: 1.5rem;
+
+  /* Case Study Colors */
+  --cs-green-light: #d9fcca;
+  --cs-green-dark: #00421f;
+  --cs-red-light: #ffc7c7;
+  --cs-red-dark: #571c1c;
+  --cs-red-border: #c05c5c;
+  --cs-blue-badge: #cadafc;
+  --cs-blue-dark: #1b3262;
+  --cs-gray-bg: #f5f5f5;
+  --cs-quote-bg: #b7b7b7;
 }
 
 /* ── Laptop Responsive Overrides ── */
