@@ -3,13 +3,19 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ReadCvLogo } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
     const pathname = usePathname();
 
     return (
-        <section className="sticky top-0 z-10 flex flex-col px-2 py-10 md:py-16 min-h-[34vh] items-center justify-center">
-            <div className="flex flex-col items-center justify-center w-full max-w-(--max-content-width) mx-auto px-2">
+        <section className="sticky top-0 z-0 flex flex-col px-2 py-10 md:py-16 min-h-[34vh] items-center justify-center">
+            <motion.div
+                className="flex flex-col items-center justify-center w-full max-w-(--max-content-width) mx-auto px-2"
+                initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+            >
                 {pathname === "/" && (
                     <p className="font-(family-name:--font-geist) font-semibold text-[40px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
                         Engineer turned Product Designer, designing experiences and building them with code.
@@ -46,7 +52,7 @@ export default function Hero() {
                         </p>
                     </div>
                 )}
-            </div>
+            </motion.div>
         </section>
     );
 }
