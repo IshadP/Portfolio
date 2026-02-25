@@ -29,7 +29,15 @@ function BodyText({ children }: { children: React.ReactNode }) {
 
 function Heading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-bold  text-text-primary text-2xl md:text-3xl w-full">
+        <p className="font-(family-name:--font-geist) font-bold text-text-primary text-2xl md:text-3xl w-full">
+            {children}
+        </p>
+    );
+}
+
+function Title({ children }: { children: React.ReactNode }) {
+    return (
+        <p className="font-(family-name:--font-geist) font-bold text-text-primary text-3xl md:text-4xl w-full">
             {children}
         </p>
     );
@@ -45,7 +53,7 @@ function SubHeading({ children }: { children: React.ReactNode }) {
 
 function GrayShowcase({ children, className = "" }: { children: React.ReactNode; className?: string }) {
     return (
-        <div className={`bg-[var(--cs-gray-bg)] overflow-hidden rounded-[24px] md:rounded-[32px] w-full ${className}`}>
+        <div className={`bg-(--cs-gray-bg)] overflow-hidden rounded-[24px] md:rounded-[32px] w-full ${className}`}>
             {children}
         </div>
     );
@@ -78,9 +86,9 @@ export default function PrintHubCaseStudy() {
                     {/* ── Top Intro ── */}
                     <section className="flex flex-col gap-12 w-full">
                         {/* Headline */}
-                        <p className="font-(family-name:--font-geist) font-semibold leading-[1.35] text-text-primary text-3xl md:text-4xl tracking-[-1.6px]">
+                        <Title>
                             How refined components and better flows saved PrintHub users 30% of their time.
-                        </p>
+                        </Title>
 
                         {/* Phone Screenshots Comparison */}
                         <div className="flex flex-col gap-6 w-full">
@@ -302,13 +310,13 @@ export default function PrintHubCaseStudy() {
                         {/* Preview Dropped Note */}
                         <div className="bg-(--border-card) flex flex-col items-start pb-1.5 md:pb-2 pt-0.5 px-0.5 rounded-2xl md:rounded-4xl w-full">
                             <div className="bg-bg-primary flex flex-col items-start justify-center rounded-2xl md:rounded-[32px] w-full overflow-hidden">
-                                <div className="bg-(--border-card) flex items-center px-4 md:px-6 py-3 md:py-4  w-full">
-                                    <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-2xl md:text-3xl tracking-[-1.6px]">
+                                <div className="bg-(--border-card) flex items-center px-4 py-4  w-full">
+                                    <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-xl md:text-2xl">
                                         Preview Dropped!
                                     </p>
                                 </div>
-                                <div className="flex items-center justify-center p-4 md:p-6 rounded-b-[12px] md:rounded-b-[28px]">
-                                    <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-lg md:text-2xl tracking-[-0.24px]">
+                                <div className="flex items-center justify-center p-4 rounded-b-[12px] md:rounded-b-[28px]">
+                                    <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-xl">
                                         It was technically complex to implement and did not fit within the project timeline.
                                     </p>
                                 </div>
@@ -618,31 +626,32 @@ export default function PrintHubCaseStudy() {
                         {/* What if more time / Main Takeaway */}
                         <div className="flex flex-col gap-4 w-full">
                             <Heading>What if I had more time?</Heading>
-                            <div className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-lg md:text-2xl w-full">
-                                <p>My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.</p>
-                                <br />
-                                <p>
+                            <div className="flex flex-col gap-4">
+                                <BodyText>
+                                    My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.
+                                </BodyText>
+                                <BodyText>
                                     Moreover, some initial assumptions were green-lit quickly by stakeholders, we would like to conduct a thorough testing and make sure these really work.
-                                </p>
-                                <br />
-                                <p>
+                                </BodyText>
+                                <BodyText>
                                     Future versions of Printhub could introduce features like user presets, deeper customization, and quick-print options tailored to individual needs.
-                                </p>
+                                </BodyText>
+
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-4 w-full">
                             <Heading>Main takeaway</Heading>
-                            <div className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-lg md:text-2xl w-full">
-                                <p>
+                            <div className="flex flex-col gap-4">
+                                <BodyText>
                                     The main takeaway from this project was on my process. Just providing design wasn&apos;t enough, designer and developers have to actively communicate in order to provide a experience as it is designed.
-                                </p>
-                                <br />
-                                <p>
+                                </BodyText>
+                                <BodyText>
                                     Biggest change in my process is focusing on the bigger picture rather than just work as a designer.
-                                </p>
-                                <br />
-                                <p>A great design that can scale is always better than a perfect one that can never be fully built.</p>
+                                </BodyText>
+                                <BodyText>
+                                    A great design that can scale is always better than a perfect one that can never be fully built.
+                                </BodyText>
                             </div>
                         </div>
                     </section>

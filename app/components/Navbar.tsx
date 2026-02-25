@@ -110,45 +110,44 @@ export default function Navbar() {
                 {/* Center Icon (Warning Diamond) — Mobile: click-to-expand + auto-close; Desktop: hover-to-expand */}
                 <div className="flex flex-none items-center justify-center">
                     <motion.div
-                        className="flex items-center justify-center overflow-hidden rounded-[25px] bg-[#dbffbc] cursor-pointer"
-                        onClick={isMobile ? () => setDiamondOpen(true) : undefined}
-                        {...(isMobile
-                            ? { animate: diamondOpen ? "open" : "rest" }
-                            : { initial: "rest", whileHover: "hover", animate: "rest" }
-                        )}
+                        className="relative flex items-center justify-center overflow-hidden rounded-[25px] bg-[#dbffbc] cursor-pointer"
+                        onClick={isMobile ? () => setDiamondOpen(!diamondOpen) : undefined}
+                        // Cleaner conditional animation logic
+                        initial="rest"
+                        animate={isMobile ? (diamondOpen ? "open" : "rest") : "rest"}
+                        whileHover={!isMobile ? "open" : undefined}
                         variants={{
-                            rest: { width: "40px", height: "40px", padding: "8px" },
-                            open: { width: "208px", height: "40px", padding: "8px" },
-                            hover: { width: "208px", height: "40px", padding: "8px" },
+                            rest: { width: "40px", height: "40px" },
+                            open: { width: "208px", height: "40px" },
                         }}
-                        transition={{ duration: 0.4, ease: "easeOut" }}
+                        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} // Smooth spring-like easing
                     >
-                        <div className="flex items-center gap-[4px] min-w-max">
+                        {/* Using a relative wrapper allows the icon and text to overlap perfectly.
+                  This prevents the container from twitching during the transition.
+                */}
+                        <div className="relative flex items-center justify-center w-full h-full">
+
+                            {/* Icon - Slides UP and fades out */}
                             <motion.div
-                                {...(isMobile
-                                    ? { animate: diamondOpen ? { rotate: 360 } : { rotate: 0 } }
-                                    : { variants: { rest: { rotate: 0 }, hover: { rotate: 360 } } }
-                                )}
-                                transition={{ duration: 0.4, ease: "easeInOut" }}
+                                className="absolute"
+                                variants={{
+                                    rest: { y: 0, opacity: 1, filter: "blur(0px)" },
+                                    open: { y: -25, opacity: 0, filter: "blur(4px)" },
+                                }}
+                                transition={{ duration: 0.3, ease: "easeIn" }}
                             >
                                 <WarningDiamond size={24} color="#46781a" weight="regular" />
                             </motion.div>
+
+                            {/* Text - Slides UP from the bottom and fades in */}
                             <motion.p
-                                className="font-geist font-medium not-italic text-[#46781a] text-[16px] whitespace-nowrap"
-                                {...(isMobile
-                                    ? {
-                                        animate: diamondOpen
-                                            ? { opacity: 1, x: 0, display: "block", letterSpacing: "0px" }
-                                            : { opacity: 0, x: -10, display: "none", letterSpacing: "-10px" },
-                                    }
-                                    : {
-                                        variants: {
-                                            rest: { opacity: 0, x: -10, display: "none", letterSpacing: "-10px" },
-                                            hover: { opacity: 1, x: 0, display: "block", letterSpacing: "0px" },
-                                        },
-                                    }
-                                )}
-                                transition={{ duration: 0.4, delay: 0.05 }}
+                                className="absolute font-geist font-medium not-italic text-[#46781a] text-md whitespace-nowrap"
+                                variants={{
+                                    rest: { y: 25, opacity: 0, filter: "blur(4px)" },
+                                    open: { y: 0, opacity: 1, filter: "blur(0px)" },
+                                }}
+                                // A slight delay ensures it waits for the container to start expanding
+                                transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
                             >
                                 Open to Opportunities
                             </motion.p>
