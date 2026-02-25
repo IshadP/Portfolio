@@ -147,31 +147,31 @@ export default function PrintHubCaseStudy() {
                             <SectionLabel>Impact</SectionLabel>
                             <div className="flex flex-col md:flex-row gap-4 w-full">
                                 {/* Stat Card 1 */}
-                                <div className="bg-[var(--cs-green-light)] flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-4 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[46px] flex-1">
-                                    <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-xl md:text-2xl tracking-[-0.24px] text-center">
+                                <div className="bg-(--cs-green-light) flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-4 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[46px] flex-1">
+                                    <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px] text-center">
                                         Reduced task completion time by
                                     </p>
-                                    <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-5xl md:text-8xl tracking-[-0.96px] leading-[1]">
+                                    <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
                                         ~30%
                                     </p>
                                 </div>
                                 {/* Stat Card 2 */}
-                                <div className="bg-[var(--cs-green-light)] flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-2 py-6 md:py-8 rounded-2xl md:rounded-[46px] flex-1">
-                                    <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-xl md:text-2xl tracking-[-0.24px] text-center">
+                                <div className="bg-(--cs-green-light) flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-2 py-6 md:py-8 rounded-2xl md:rounded-[46px] flex-1">
+                                    <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px] text-center">
                                         Reduced task completion time from
                                     </p>
                                     <div className="flex items-center justify-center gap-4">
-                                        <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-5xl md:text-8xl tracking-[-0.96px] leading-[1]">
+                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
                                             45s
                                         </p>
-                                        <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-3xl md:text-4xl tracking-[-0.4px]">
+                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-3xl md:text-4xl tracking-[-0.4px]">
                                             →
                                         </p>
-                                        <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-5xl md:text-8xl tracking-[-0.96px] leading-[1]">
+                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
                                             30s
                                         </p>
                                     </div>
-                                    <p className="font-(family-name:--font-geist) font-semibold text-[var(--cs-green-dark)] text-xl md:text-2xl tracking-[-0.24px]">
+                                    <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px]">
                                         for 5 files
                                     </p>
                                 </div>
@@ -564,7 +564,7 @@ export default function PrintHubCaseStudy() {
                     <section className="flex flex-col gap-6 md:gap-12 items-start w-full">
                         <SectionLabel>UI System</SectionLabel>
 
-                        <div className="relative w-full aspect-[1071/636]">
+                        <div className="relative w-full aspect-1071/636">
                             <Image src={`${A}/ui-system-overview.png`} alt="UI System overview" fill className="object-contain" />
                         </div>
 
@@ -601,7 +601,7 @@ export default function PrintHubCaseStudy() {
 
                         {/* Full Token System Screenshot */}
                         <div className="bg-bg-primary overflow-hidden rounded-2xl md:rounded-[32px] shadow-[0px_3.8px_31.54px_0px_rgba(0,0,0,0.25),0px_2.85px_9.88px_0px_rgba(0,0,0,0.25)] w-full">
-                            <div className="relative w-full aspect-[4096/2686]">
+                            <div className="relative w-full aspect-4096/2686">
                                 <Image src={`${A}/token-system-full.png`} alt="Full token system" fill className="object-cover" />
                             </div>
                         </div>
