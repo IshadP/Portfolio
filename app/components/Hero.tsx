@@ -24,7 +24,7 @@ export default function Hero() {
                 className="flex flex-col items-center justify-center w-full max-w-(--max-content-width) mx-auto px-2"
                 initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 {pathname === "/" && (
                     <p className="font-(family-name:--font-geist) font-semibold text-[48px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
