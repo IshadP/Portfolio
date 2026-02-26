@@ -8,18 +8,22 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     const pathname = usePathname();
-    const [ready, setReady] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setReady(true);
+        setMounted(true);
     }, []);
+
+    if (!mounted) {
+        return <section className="sticky top-0 z-0 flex flex-col px-2 md:py-16 min-h-[54vh] items-center justify-center opacity-0"></section>;
+    }
 
     return (
         <section className="sticky top-0 z-0 flex flex-col px-2 md:py-16 min-h-[54vh] items-center justify-center">
             <motion.div
                 className="flex flex-col items-center justify-center w-full max-w-(--max-content-width) mx-auto px-2"
                 initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-                animate={ready ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 40, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
             >
                 {pathname === "/" && (
