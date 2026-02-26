@@ -7,7 +7,8 @@ export default function FadeIn({ children }: { children: React.ReactNode }) {
         <motion.div
             initial={{ opacity: 0, filter: "blur(2px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.75, ease: "easeOut" }}
+
         >
             {children}
         </motion.div>
