@@ -9,7 +9,7 @@ export default function Hero() {
     const pathname = usePathname();
 
     return (
-        <section className="sticky top-0 z-0 flex flex-col px-2 py-10 md:py-16 min-h-[34vh] items-center justify-center">
+        <section className="sticky top-0 z-0 flex flex-col px-2 md:py-16 min-h-[54vh] items-center justify-center">
             <motion.div
                 className="flex flex-col items-center justify-center w-full max-w-(--max-content-width) mx-auto px-2"
                 initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
@@ -17,7 +17,7 @@ export default function Hero() {
                 transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             >
                 {pathname === "/" && (
-                    <p className="font-(family-name:--font-geist) font-semibold text-[40px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
+                    <p className="font-(family-name:--font-geist) font-semibold text-[48px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
                         Engineer turned Product Designer, designing experiences and building them with code.
                     </p>
                 )}
