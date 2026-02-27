@@ -207,7 +207,7 @@ export default function PrintHubCaseStudy() {
                        DECISION 1
                        ══════════════════════════════════════════════════ */}
                         <section className="flex flex-col gap-6 md:gap-12 items-start pb-8 md:pb-16 border-b border-text-primary w-full">
-                            <div className="flex flex-col gap-4 w-full">
+                            <div className="items-start flex flex-col gap-4 w-full">
                                 <Badge variant="blue" icon="target">Decision 1</Badge>
 
                                 <Heading>Why I redesigned the card to help user complete printing 30% faster</Heading>
@@ -379,15 +379,15 @@ export default function PrintHubCaseStudy() {
                                 <BodyText>
                                     By prioritising recognition, user moved through flow much faster as they had higher confidence on their decision.
                                 </BodyText>
+                            </div>
+
+                            <GrayShowcase className="flex flex-col items-center justify-center py-12">
+                                <div className="relative w-[90%] max-w-[602px] h-[140px] md:h-[253px]">
+                                    <Image src={`${A}/card-final-design.png`} alt="Final card design" fill className="object-contain" />
                                 </div>
+                            </GrayShowcase>
 
-                                <GrayShowcase className="flex flex-col items-center justify-center py-12">
-                                    <div className="relative w-[90%] max-w-[602px] h-[140px] md:h-[253px]">
-                                        <Image src={`${A}/card-final-design.png`} alt="Final card design" fill className="object-contain" />
-                                    </div>
-                                </GrayShowcase>
-
-                                <div className="flex flex-col gap-4 w-full">
+                            <div className="flex flex-col gap-4 w-full">
                                 <BodyText>
                                     In testing, we noticed most of the users already knew what to do, without much guidance.
                                 </BodyText>
@@ -402,7 +402,7 @@ export default function PrintHubCaseStudy() {
                        ══════════════════════════════════════════════════ */}
                         <section className="flex flex-col gap-6 md:gap-12 items-start pb-8 md:pb-16 border-b border-text-primary w-full">
 
-                            <div className="flex flex-col gap-4 w-full">
+                            <div className=" item-start flex flex-col gap-4 w-full">
                                 <Badge variant="blue" icon="target">Decision 2</Badge>
                                 <Heading>How I fixed two broken button to behave like user expected them to.</Heading>
                                 <BodyText>
@@ -475,12 +475,12 @@ export default function PrintHubCaseStudy() {
                             </GrayShowcase>
 
                             <div className="flex flex-col gap-4 w-full">
-                            <BodyText>
-                                This revealed a key insight. &ldquo;Print Files&rdquo; depends on &ldquo;Add Files,&rdquo; but printing is the primary action because it drives revenue. It cannot be deprioritized relative to adding files.
-                            </BodyText>
-                            <BodyText>
-                                Following insight, I mapped user journey and understood that one specific moments act as pivot i.e. when user selects file. So I decided to experiment with contextual buttons.
-                            </BodyText>
+                                <BodyText>
+                                    This revealed a key insight. &ldquo;Print Files&rdquo; depends on &ldquo;Add Files,&rdquo; but printing is the primary action because it drives revenue. It cannot be deprioritized relative to adding files.
+                                </BodyText>
+                                <BodyText>
+                                    Following insight, I mapped user journey and understood that one specific moments act as pivot i.e. when user selects file. So I decided to experiment with contextual buttons.
+                                </BodyText>
                             </div>
 
                             {/* Idea 2: Contextual Buttons */}
@@ -532,12 +532,12 @@ export default function PrintHubCaseStudy() {
                             </div>
 
                             <div className="flex flex-col gap-4 w-full">
-                            <BodyText>
-                                The comment &ldquo;I knew what to do earlier&rdquo; was a frequent. Stakeholders were concerned that this change would cause a lot of confusion between users so we reimplemented original logic.
-                            </BodyText>
-                            <BodyText>
-                                But then I realised something: Users where confused earlier and in Idea 2 because the goal wasn&apos;t visible. So I decided to only change the design slightly.
-                            </BodyText>
+                                <BodyText>
+                                    The comment &ldquo;I knew what to do earlier&rdquo; was a frequent. Stakeholders were concerned that this change would cause a lot of confusion between users so we reimplemented original logic.
+                                </BodyText>
+                                <BodyText>
+                                    But then I realised something: Users where confused earlier and in Idea 2 because the goal wasn&apos;t visible. So I decided to only change the design slightly.
+                                </BodyText>
                             </div>
 
                             {/* Final Design */}
@@ -565,12 +565,12 @@ export default function PrintHubCaseStudy() {
                             </GrayShowcase>
 
                             <div className="flex flex-col gap-4 w-full">
-                            <BodyText>
-                                As the deadline approached, we could not test this change and released it to users.
-                            </BodyText>
-                            <BodyText>
-                                Follow up conversations showed positive feedback, especially on removing the need for selection, allowing flexibility when wrong files were uploaded, and improving speed when printing many files.
-                            </BodyText>
+                                <BodyText>
+                                    As the deadline approached, we could not test this change and released it to users.
+                                </BodyText>
+                                <BodyText>
+                                    Follow up conversations showed positive feedback, especially on removing the need for selection, allowing flexibility when wrong files were uploaded, and improving speed when printing many files.
+                                </BodyText>
                             </div>
                         </section>
 
