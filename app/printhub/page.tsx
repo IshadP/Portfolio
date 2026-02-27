@@ -402,7 +402,7 @@ export default function PrintHubCaseStudy() {
                        ══════════════════════════════════════════════════ */}
                         <section className="flex flex-col gap-6 md:gap-12 items-start pb-8 md:pb-16 border-b border-text-primary w-full">
 
-                            <div className=" item-start flex flex-col gap-4 w-full">
+                            <div className="items-start flex flex-col gap-4 w-full">
                                 <Badge variant="blue" icon="target">Decision 2</Badge>
                                 <Heading>How I fixed two broken button to behave like user expected them to.</Heading>
                                 <BodyText>
