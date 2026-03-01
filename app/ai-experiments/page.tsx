@@ -32,8 +32,8 @@ export default function AIExperiments() {
                         <div className="flex-[1_1_400px]">
                             <PrototypeCard
                                 title="PomDom"
-                                imageSrc="/assets/printhub-screenshot.png"
-                                comingSoon
+                                imageSrc="/assets/pomdom-screenshot.png"
+                                href="https://github.com/IshadP/Pomdom"
                             />
                         </div>
 

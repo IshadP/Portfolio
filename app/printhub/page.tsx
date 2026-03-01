@@ -54,7 +54,7 @@ function SubHeading({ children }: { children: React.ReactNode }) {
 
 function GrayShowcase({ children, className = "" }: { children: React.ReactNode; className?: string }) {
     return (
-        <div className={`bg-(--cs-gray-bg)] overflow-hidden rounded-3xl md:rounded-4xl w-full ${className}`}>
+        <div className={`bg-[#f5f5f5] overflow-hidden rounded-3xl md:rounded-4xl w-full ${className}`}>
             {children}
         </div>
     );

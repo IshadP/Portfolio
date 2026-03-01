@@ -62,6 +62,17 @@ export default function Hero() {
                         </p>
                     </div>
                 )}
+
+                {pathname === "/youtube" && (
+                    <div className="flex items-center gap-4">
+                        <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden -rotate-45 ">
+                            <Image src="/assets/youtube/ytlogo.jpg" alt="YouTube" fill className="object-contain" style={{ transform: "rotate(45deg)" }} />
+                        </div>
+                        <p className="font-(family-name:--font-geist) font-semibold text-[40px] md:text-[64px] leading-[1.04] text-[#333] tracking-[-2px]">
+                            YouTube
+                        </p>
+                    </div>
+                )}
             </motion.div>
         </section>
     );
