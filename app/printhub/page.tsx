@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-medium text-text-primary text-xl w-full">
+        <p className="font-(family-name:--font-geist) font-regular text-text-primary text-xl w-full">
             {children}
         </p>
     );
