@@ -66,7 +66,7 @@ export default function PrintHubCaseStudy() {
 
             {/* ── Main Content ── */}
             <FadeIn>
-                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-8 px-4 pt-8 pb-32">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-8 px-4 pb-32">
 
                     {/* ── Navbar ── */}
                     <Navbar />

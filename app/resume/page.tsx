@@ -10,8 +10,8 @@ import Footer from "../components/Footer";
 const PdfViewer = dynamic(() => import("../components/PdfViewer"), {
     ssr: false,
     loading: () => (
-        <div className="w-full rounded-(--radius-card) border-2 border-border-primary overflow-hidden bg-white flex items-center justify-center p-4 md:p-8 py-20">
-            <p className="font-(family-name:--font-geist-mono) text-lg text-text-tertiary animate-pulse">
+        <div className="w-full rounded-4xl border-3 border-outline-primary overflow-hidden bg-white flex items-center justify-center p-4 md:p-8 py-20">
+            <p className="text-lg text-text-tertiary animate-pulse">
                 Loading resume…
             </p>
         </div>
@@ -28,7 +28,7 @@ export default function ResumePage() {
 
             {/* ── Main Content ── */}
             <FadeIn>
-                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-[32px] px-4 pt-8 pb-[128px]">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-8 px-4 pb-32">
 
                     {/* ── Navbar ── */}
                     <Navbar />
@@ -38,7 +38,7 @@ export default function ResumePage() {
                         <a
                             href={RESUME_URL}
                             download
-                            className="inline-flex items-center gap-3 rounded-full bg-bg-primary px-8 py-4 font-(family-name:--font-geist) text-lg font-semibold text-text-primary transition-all duration-300 hover:bg-[#333] hover:text-white hover:border-[#333] active:scale-95"
+                            className="inline-flex items-center gap-3 rounded-full bg-bg-primary px-8 py-4 text-lg font-semibold text-text-primary transition-all duration-300 hover:bg-[#333] hover:text-white hover:border-[#333] active:scale-95"
                         >
                             <ArrowDown size={22} weight="bold" />
                             Download Resume

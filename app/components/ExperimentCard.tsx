@@ -38,9 +38,9 @@ export default function PrototypeCard({
 
     if (comingSoon) {
         return (
-            <div className="@container relative block w-full aspect-2/3 h-full overflow-hidden rounded-(--radius-card) bg-bg-primary border-3 border-border-card">
+            <div className="@container relative block w-full aspect-2/3 h-full overflow-hidden rounded-4xl bg-bg-primary border-3 border-outline-primary">
                 <div className="flex h-full flex-col items-center justify-center gap-3 px-4">
-                    <h2 className="max-w-[354px] text-h3 text-cs-green-dark text-center whitespace-pre-wrap">
+                    <h2 className="max-w-[354px] text-h3 text-text-primary text-center whitespace-pre-wrap">
                         {title}
                     </h2>
                     <span className="font-geist-mono text-sm font-medium text-text-tertiary tracking-wide uppercase">
@@ -59,15 +59,15 @@ export default function PrototypeCard({
     return (
         <Wrapper
             {...wrapperProps}
-            className="group @container relative block w-full aspect-2/3 h-full overflow-hidden cursor-pointer rounded-(--radius-card) bg-bg-primary border-3 border-border-card"
+            className="group @container relative block w-full aspect-2/3 h-full overflow-hidden cursor-pointer rounded-4xl bg-bg-primary border-3 border-outline-primary"
             initial="rest"
             whileHover="hover"
             whileFocus="hover"
         >
             <div className="relative z-20 flex h-full flex-col">
                 {/* ── Title area ── */}
-                <div className="relative z-40 flex items-center justify-center pt-[33px] px-4">
-                    <h2 className="max-w-[354px] text-h3 text-cs-green-dark text-center whitespace-pre-wrap">
+                <div className="relative z-40 flex items-center justify-center pt-8 px-4">
+                    <h2 className="max-w-[354px] text-h3 text-text-primary text-center whitespace-pre-wrap">
                         {title}
                     </h2>
                 </div>
@@ -90,16 +90,16 @@ export default function PrototypeCard({
             {/* ── "Click to open" pill ── */}
             {isMobile ? (
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg border border-outline-primary">
-                    <p className="font-semibold text-text-primary text-center tracking-[-0.03rem] text-sm whitespace-nowrap">
+                    <p className="text-body text-text-primary text-center whitespace-nowrap">
                         Click to open
                     </p>
                 </div>
             ) : (
                 <motion.div
                     variants={pillVariants}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg border border-outline-primary"
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
                 >
-                    <p className="font-semibold font-geist text-text-primary text-center tracking-[-0.03rem] text-sm whitespace-nowrap">
+                    <p className="font-semibold leading-normal text-text-primary text-center tracking-tight text-sm whitespace-nowrap">
                         Click to open
                     </p>
                 </motion.div>

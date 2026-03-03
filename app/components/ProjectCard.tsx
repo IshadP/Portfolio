@@ -72,7 +72,7 @@ export default function ProjectCard({
                 <div className="relative z-40 flex items-center justify-center pt-8 px-4">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[90cqw] font-semibold text-body-mobile sm:text-body text-white text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap"
+                        className="max-w-[90cqw] font-medium text-h4-mobile sm:text-h4 text-white text-center whitespace-pre-wrap"
                     >
                         {title}
                     </motion.h2>
@@ -132,7 +132,7 @@ export default function ProjectCard({
                 variants={pillVariants}
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
             >
-                <p className="font-semibold leading-normal text-black text-center tracking-tight text-sm whitespace-nowrap">
+                <p className="font-semibold leading-normal text-text-primary text-center tracking-tight text-sm whitespace-nowrap">
                     Click to open
                 </p>
             </motion.div>

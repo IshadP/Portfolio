@@ -86,7 +86,7 @@ export default function Footer() {
             </div>
 
             {/* Email CTA */}
-            <div className="flex items-center overflow-hidden md:px-4 py-4 ">
+            <div className="flex items-center overflow-hidden py-4 ">
                 <div className="flex items-center gap-2 justify-center overflow-hidden p-2 flex-wrap">
                     <span className="text-label-md-mobile sm:text-label-lg text-text-tertiary">
                         Let’s Talk

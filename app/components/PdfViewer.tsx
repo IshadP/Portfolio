@@ -34,7 +34,7 @@ export default function PdfViewer({ fileUrl }: PdfViewerProps) {
     return (
         <div
             ref={containerRef}
-            className="w-full rounded-(--radius-card) border-2 border-border-primary overflow-hidden bg-bg-primary flex flex-col items-center gap-4 p-4 md:p-8"
+            className="w-full rounded-4xl border-3 border-outline-primary overflow-hidden bg-bg-primary flex flex-col items-center gap-4 p-4 md:p-8"
         >
             <Document
                 file={fileUrl}

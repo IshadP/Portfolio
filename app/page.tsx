@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* ── Main Content ── */}
       <FadeIn>
-        <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-6 px-4 pt-8">
+        <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-(--max-content-width) flex-col gap-6 px-4">
           {/* ── Navbar ── */}
           <Navbar />
 
