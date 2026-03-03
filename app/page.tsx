@@ -11,42 +11,42 @@ import Navbar from "./components/Navbar"
 import { motion, Variants } from "framer-motion";
 
 
-export default function Home() {
-
-  const variants: Variants = {
-    rest: {
-      y: 0,
-      rotate: '0deg',
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      y: -5,
-      rotate: '8deg',
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
-    },
-    hover1: {
-      y: -5,
-      rotate: '-8deg',
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
-    },
-    hover2: {
-      y: -5,
-      rotate: '12deg',
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
+const iconVariants: Variants = {
+  rest: {
+    y: 0,
+    rotate: '0deg',
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
     }
-  };
+  },
+  hover: {
+    y: -5,
+    rotate: '8deg',
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
+    }
+  },
+  hover1: {
+    y: -5,
+    rotate: '-8deg',
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
+    }
+  },
+  hover2: {
+    y: -5,
+    rotate: '12deg',
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
+    }
+  }
+};
+
+export default function Home() {
 
   return (
     <div className="bg-bg-primary relative">
@@ -86,7 +86,7 @@ export default function Home() {
                   <motion.a
                     initial="rest"
                     whileHover="hover"
-                    variants={variants}
+                    variants={iconVariants}
                     href="https://x.com/ishadpande" target="_blank" rel="noopener noreferrer">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden rotate-2">
                       <Image src="/assets/X.png" alt="X" width={32} height={32} />
@@ -98,7 +98,7 @@ export default function Home() {
                   <motion.a
                     initial="rest"
                     whileHover="hover1"
-                    variants={variants}
+                    variants={iconVariants}
                     href="https://www.linkedin.com/in/ishadpande" target="_blank" rel="noopener noreferrer">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden -rotate-2">
                       <Image src="/assets/LinkedIn.png" alt="LinkedIn" width={32} height={32} />
@@ -110,7 +110,7 @@ export default function Home() {
                   <motion.a
                     initial="rest"
                     whileHover="hover2"
-                    variants={variants}
+                    variants={iconVariants}
                     href="https://www.behance.net/ishadpande" target="_blank" rel="noopener noreferrer">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden not-last rotate-3">
                       <Image src="/assets/Behance.png" alt="Behance" width={32} height={32} />
@@ -134,7 +134,7 @@ export default function Home() {
                   imageSrcLeft="/assets/youtube-left.png"
                   imageSrcRight="/assets/youtube-right.png"
                   imageAlt="Youtube Project"
-                  href="https://www.behance.net/gallery/232680953/Youtube"
+                  href="/youtube"
                 />
               </div>
 

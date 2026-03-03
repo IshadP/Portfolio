@@ -3,13 +3,13 @@ export default function ProConCard({
     variant,
 }: {
     children: React.ReactNode;
-    variant: "pro" | "con" | "insight";
+    variant: "pro" | "con" | "insight" | "fact";
 }) {
-    const bg = variant === "pro" ? "bg-bg-green" : variant === "con" ? "bg-bg-red" : "bg-bg-gray";
-    const text = variant === "pro" ? "text-text-green" : variant === "con" ? "text-text-red" : "text-text-primary";
+    const bg = variant === "pro" ? "bg-bg-green" : variant === "con" ? "bg-bg-red" : variant === "insight" ? "bg-bg-primary border-2  border-outline-primary" : "bg-grey-10";
+    const text = variant === "pro" ? "text-text-green text-label-lg-mobile sm:text-label-lg" : variant === "con" ? "text-text-red text-label-lg-mobile sm:text-label-lg" : "text-text-primary text-label-md-mobile sm:text-label-md";
     return (
-        <div className={`${bg} flex items-start overflow-hidden px-4 py-4 md:py-4 rounded-lg md:rounded-xl w-full`}>
-            <p className={`${text} text-label-lg-mobile sm:text-label-lg`}>
+        <div className={`${bg} flex items-start overflow-hidden p-4 rounded-lg md:rounded-xl w-full`}>
+            <p className={`${text} `}>
                 {children}
             </p>
         </div>
