@@ -26,10 +26,10 @@ export default function NotFound() {
 
             {/* 404 Text */}
             <div className="flex flex-col items-center gap-3">
-                <h1 className="font-(family-name:--font-geist) font-semibold text-[80px] md:text-[120px] leading-none tracking-[-4px] text-[#333]">
+                <h1 className="font-geist font-semibold text-[60px] sm:text-[120px] leading-none tracking-[-4px] text-[#333]">
                     404
                 </h1>
-                <p className="font-(family-name:--font-geist-mono) text-lg md:text-xl font-medium text-[#757575] text-center max-w-md">
+                <p className="font-geist-mono text-label-lg-mobile sm:text-label-lg font-medium text-[#757575] text-center max-w-md">
                     This page doesn't exist — yet.
                 </p>
             </div>
@@ -42,7 +42,7 @@ export default function NotFound() {
             >
                 <Link
                     href="/"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#333333] px-6 py-3 font-(family-name:--font-geist) text-base font-medium text-white no-underline transition-colors hover:bg-[#111]"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#333333] px-6 py-3 font-geist text-base font-medium text-white no-underline transition-colors hover:bg-[#111]"
                 >
                     ← Back to Home
                 </Link>

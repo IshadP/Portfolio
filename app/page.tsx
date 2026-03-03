@@ -7,10 +7,47 @@ import SqrProjectCard from "./components/SqrProjectCard";
 import Hero from "./components/Hero";
 import FadeIn from "./components/FadeIn";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar"
+import { motion, Variants } from "framer-motion";
 
 
 export default function Home() {
+
+  const variants: Variants = {
+    rest: {
+      y: 0,
+      rotate: '0deg',
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -5,
+      rotate: '8deg',
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    hover1: {
+      y: -5,
+      rotate: '-8deg',
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    hover2: {
+      y: -5,
+      rotate: '12deg',
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="bg-bg-primary relative">
       {/* ── Hero Section ── */}
@@ -24,56 +61,74 @@ export default function Home() {
 
           {/* ── Cards Masonry Grid ── */}
           <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2" id="projects">
+
+
             {/* Left Column */}
             <div className="flex h-full flex-col gap-6">
+
+
+
               {/* Bio Card */}
-              <div className="flex flex-col items-center overflow-hidden rounded-(--radius-card) border-2 border-border-primary bg-bg-primary p-8">
-                <div className="flex w-full flex-col items-center justify-center gap-[16px]">
-                  <div className="w-full font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary">
-                    <p>
-                      I have experience of building for efficiency and usability, catering both business and users.
-                    </p>
-                    <br />
-                    <p>
-                      Using AI tools I ship these experiences quickly, instead of static mockups.
-                    </p>
-                  </div>
-                  <div className="flex w-full items-center gap-1">
-                    <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary pr-2">
-                      Find me on
-                    </p>
-                    <a href="https://x.com/ishadpande" target="_blank" rel="noopener noreferrer">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden rotate-2">
-                        <Image src="/assets/X.png" alt="X" width={32} height={32} />
-                      </span>
-                    </a>
-                    <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary">
-                      ,
-                    </p>
-                    <a href="https://www.linkedin.com/in/ishadpande" target="_blank" rel="noopener noreferrer">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden -rotate-2">
-                        <Image src="/assets/LinkedIn.png" alt="LinkedIn" width={32} height={32} />
-                      </span>
-                    </a>
-                    <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[20px] font-medium leading-[1.336] text-text-primary">
-                      or
-                    </p>
-                    <a href="https://www.behance.net/ishadpande" target="_blank" rel="noopener noreferrer">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden not-last rotate-3">
-                        <Image src="/assets/Behance.png" alt="Behance" width={32} height={32} />
-                      </span>
-                    </a>
-                  </div>
+              <div className="flex flex-col items-center overflow-hidden rounded-4xl gap-4 border-2 border-outline-primary bg-bg-primary p-8">
+                <div className="w-full font-geist-mono text-label-md-mobile sm:text-label-lg text-text-primary">
+                  <p>
+                    I have experience of building for efficiency and usability, catering both business and users.
+                  </p>
+                  <br />
+                  <p>
+                    Using AI tools I ship these experiences quickly, instead of static mockups.
+                  </p>
+                </div>
+                <div className="flex w-full items-center gap-1">
+                  <p className="font-geist-mono text-label-md-mobile sm:text-label-lg text-text-primary pr-2">
+                    Find me on
+                  </p>
+                  <motion.a
+                    initial="rest"
+                    whileHover="hover"
+                    variants={variants}
+                    href="https://x.com/ishadpande" target="_blank" rel="noopener noreferrer">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden rotate-2">
+                      <Image src="/assets/X.png" alt="X" width={32} height={32} />
+                    </span>
+                  </motion.a>
+                  <p className="font-geist-mono text-label-md-mobile sm:text-label-lg text-text-primary">
+                    ,
+                  </p>
+                  <motion.a
+                    initial="rest"
+                    whileHover="hover1"
+                    variants={variants}
+                    href="https://www.linkedin.com/in/ishadpande" target="_blank" rel="noopener noreferrer">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden -rotate-2">
+                      <Image src="/assets/LinkedIn.png" alt="LinkedIn" width={32} height={32} />
+                    </span>
+                  </motion.a>
+                  <p className="font-geist-mono text-label-md-mobile sm:text-label-lg text-text-primary">
+                    or
+                  </p>
+                  <motion.a
+                    initial="rest"
+                    whileHover="hover2"
+                    variants={variants}
+                    href="https://www.behance.net/ishadpande" target="_blank" rel="noopener noreferrer">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden not-last rotate-3">
+                      <Image src="/assets/Behance.png" alt="Behance" width={32} height={32} />
+                    </span>
+                  </motion.a>
                 </div>
               </div>
+
+
+
 
               {/* Green Project Card (tall) */}
               <div className="min-h-125">
                 <ProjectCard
                   gradientColor="gradient-red"
-                  borderColor="border-[#d34949]"
-                  titleColor="#ffffff"
-                  hoverTitleColor="#4a1010"
+                  borderColor="border-project-youtube-border"
+                  titleColor="var(--color-bg-primary)"
+                  hoverTitleColor="var(--color-project-youtube-hover)"
                   title="Improved Youtube Search Experience to Cater to User Intent"
                   imageSrc="/assets/youtube-center.png"
                   imageSrcLeft="/assets/youtube-left.png"
@@ -89,14 +144,15 @@ export default function Home() {
               </div>
             </div>
 
+
             {/* Right Column */}
             <div className="flex h-full flex-col gap-(--grid-gap)">
               {/* Red Project Card (tall) */}
               <div className="min-h-125 h-full">
                 <ProjectCard
                   gradientColor="gradient-green"
-                  borderColor="border-[#688b4b]"
-                  titleColor="#ffffff"
+                  borderColor="border-project-printhub-border"
+                  titleColor="var(--color-bg-primary)"
                   title="Improved flow speed by 30% though better List cards in PrintHub"
                   imageSrc="/assets/printhub-screenshot.png"
                   imageSrcRight="/assets/printhub-right.png"
@@ -109,9 +165,9 @@ export default function Home() {
               {/* Green Nav Card */}
               <div className="md:aspect-square">
                 <SqrProjectCard
-                  borderColor="border-[#688b4b]"
+                  borderColor="border-project-printhub-border"
                   gradientColor="gradient-green"
-                  maskColor="from-[#a3d779] via-[#a3d779]"
+                  maskColor="from-project-printhub-mask via-project-printhub-mask"
                   title="Improved navigation by prioritising user habits over standards in PrintHub"
                   imageSrc="/assets/printhub-screenshot.png"
                   imageSrcLeft="/assets/printhub-left.png"
@@ -131,23 +187,23 @@ export default function Home() {
           <section className="flex w-full flex-col items-center justify-center rounded-(--radius-card) px-4 pb-4">
             {/* Title */}
             <div className="flex w-full items-center justify-start py-4 md:py-[8px]">
-              <p className="font-(family-name:--font-geist-mono) text-[16px] md:text-[24px] font-bold leading-normal tracking-[-0.48px] text-text-secondary">
+              <p className="text-h2-mono-mobile sm:text-h2-mono font-geist-mono text-text-tertiary">
                 Experience
               </p>
             </div>
 
             {/* Experience Item 1 */}
-            <div className="flex w-full flex-col items-start justify-between gap-1 md:gap-2 border-b border-border-tertiary py-[8px] md:py-[16px] sm:flex-row sm:items-center">
+            <div className="flex w-full flex-col items-start justify-between gap-1 md:gap-2 border-b border-outline-primary py-[8px] md:py-4 sm:flex-row sm:items-center">
               <div className="flex flex-col items-start leading-normal sm:w-(--card-width)">
-                <p className="w-full font-(family-name:--font-geist) text-[24px] leading-tight font-semibold tracking-[-0.5px] text-text-primary">
+                <p className="w-full text-h4-mobile sm:text-h4 text-text-primary">
                   Freelance Design Consultant
                 </p>
-                <p className="w-full font-(family-name:--font-geist) text-[16px] font-medium text-text-tertiary">
+                <p className="w-full text-label-md-mobile sm:text-label-md text-text-secondary">
                   Genius Champs Academy, Nagpur
                 </p>
               </div>
               <div className="flex flex-col items-start">
-                <p className="font-(family-name:--font-geist) text-[16px] md:text-[20px] font-medium leading-normal tracking-[-0.4px] text-text-tertiary">
+                <p className="text-nav-text-mobile sm:text-nav-text text-text-secondary">
                   May 2025 - Present
                 </p>
               </div>
@@ -156,15 +212,15 @@ export default function Home() {
             {/* Experience Item 2 */}
             <div className="flex w-full flex-col items-start justify-between gap-1 md:gap-2 py-[8px] md:py-[16px] sm:flex-row sm:items-center">
               <div className="flex flex-col items-start leading-normal sm:w-(--card-width)">
-                <p className="w-full font-(family-name:--font-geist) text-[24px] font-semibold tracking-[-0.5px] text-[#4c4a4a]">
+                <p className="w-full text-h4-mobile sm:text-h4 text-text-primary">
                   Design Lead
                 </p>
-                <p className="w-full font-(family-name:--font-geist) text-[16px] font-medium text-[#686868]">
+                <p className="w-full text-label-md-mobile sm:text-label-md text-text-secondary">
                   Google Developer Group on Campus, GCEON
                 </p>
               </div>
               <div className="flex flex-col items-start">
-                <p className="font-(family-name:--font-geist) text-[16px] md:text-[20px] font-medium leading-normal tracking-[-0.4px] text-[#686868]">
+                <p className="text-nav-text-mobile sm:text-nav-text text-text-secondary">
                   Jun 2024 - Jun 2025
                 </p>
               </div>
@@ -173,18 +229,9 @@ export default function Home() {
 
           {/* ── Footer ── */}
           <Footer />
+
         </div>
       </FadeIn>
-
-      {/* ── Bottom Landscape Image ── */}
-      <div className="relative w-full h-80  z-10">
-        <Image
-          src="/assets/minecraft-landscape.png"
-          alt="Minecraft landscape"
-          fill
-          className="object-cover"
-        />
-      </div>
     </div>
   );
 }

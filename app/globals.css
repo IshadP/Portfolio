@@ -1,64 +1,5 @@
 @import "tailwindcss";
 
-/* ── Design Tokens ── */
-:root {
-  /* Backgrounds */
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-tertiary: #cfcfcf;
-  --bg-inverse: #000000;
-
-  /* Text */
-  --text-primary: #2d2d2d;
-  --text-secondary: #b7b7b7;
-  --text-tertiary: #686868;
-  --text-inverse: #ffffff;
-  --text-accent: #3c7c03;
-  --text-brand-green: #63a92a;
-
-  /* Borders */
-  --border-primary: #eaeaea;
-  --border-secondary: #cdcdcd;
-  --border-tertiary: #cacaca;
-  --border-card: #ddd;
-
-  /* Semantic Colors (Retained for gradients) */
-  --color-green: #688b4b;
-  --color-red: #d34949;
-
-  /* Mobile Default Dimensions & Spacing */
-  --radius-card: 2rem;
-  --radius-pill: 2.7rem;
-  --radius-nav-item: 0.5625rem;
-  --radius-arrow: 9999rem;
-
-  --spacing-section: 2rem;
-  --spacing-card-p: 2rem;
-  --spacing-nav-px: 0.45rem;
-  --spacing-nav-py: 0.9rem;
-
-  /* Icon Layout Spacing */
-  --spacing-icon-border: 0.1125rem;
-  --spacing-icon-gap: 0.225rem;
-  --spacing-icon-padding: 0.45rem;
-
-  /* Layout */
-  --max-content-width: 67.375rem;
-  --card-width: 32.9375rem;
-  --grid-gap: 1.5rem;
-
-  /* Case Study Colors */
-  --cs-green-light: #d9fcca;
-  --cs-green-dark: #00421f;
-  --cs-red-light: #ffc7c7;
-  --cs-red-dark: #571c1c;
-  --cs-red-border: #c05c5c;
-  --cs-blue-badge: #cadafc;
-  --cs-blue-dark: #1b3262;
-  --cs-gray-bg: #f5f5f5;
-  --cs-quote-bg: #b7b7b7;
-}
-
 /* ── Laptop Responsive Overrides ── */
 @media (min-width: 768px) {
   :root {
@@ -68,25 +9,225 @@
 }
 
 @theme {
-  --color-bg-primary: var(--bg-primary);
-  --color-bg-secondary: var(--bg-secondary);
-  --color-bg-tertiary: var(--bg-tertiary);
-  --color-bg-inverse: var(--bg-inverse);
+  /* --- The 10-100 Grey Scale --- */
+  --color-grey-10: #f5f5f5;
+  --color-grey-20: #e5e5e5;
+  /* outline primary below */
+  --color-grey-30: #dddddd;
+  --color-grey-40: #cccccc;
+  --color-grey-50: #b6b6b6;
+  --color-grey-60: #8e8e8e;
+  --color-grey-70: #666666;
+  --color-grey-80: #4a4a4a;
+  --color-grey-90: #333333;
+  --color-grey-100: #1a1a1a;
 
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-tertiary: var(--text-tertiary);
-  --color-text-inverse: var(--text-inverse);
-  --color-text-accent: var(--text-accent);
-  --color-text-brand-green: var(--text-brand-green);
+  /* --- Your Semantic Variables --- */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f6f6f6;
+  --color-outline-primary: #dddddd;
 
-  --color-border-primary: var(--border-primary);
-  --color-border-secondary: var(--border-secondary);
-  --color-border-tertiary: var(--border-tertiary);
-  --color-border-card: var(--border-card);
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #b6b6b6;
+  --color-grey-text: #8e8e8e;
 
-  --font-sans: var(--font-geist), "Geist";
-  --font-mono: var(--font-geist-mono);
+  /* --- Pro/Con Variables --- */
+  --color-bg-green: #d9fcca;
+  --color-text-green: #00421f;
+  --color-bg-red: #ffc7c7;
+  --color-text-red: #571C1C;
+  --color-bg-gray: #f7fafc;
+  --color-bg-blue: #ebf8ff;
+  --color-text-blue: #2b6cb0;
+  /* Consider darkening this! */
+
+
+
+  /* --- Project Specific Colors --- */
+  --color-project-youtube-border: #d34949;
+  --color-project-youtube-hover: #4a1010;
+  --color-project-printhub-border: #688b4b;
+  --color-project-printhub-mask: #a3d779;
+
+
+  /* Text Styles */
+  /* --- Custom Font Families --- */
+  --font-geist: "Geist", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+
+  /* --- Hero (64px) --- */
+  --text-hero: 4rem;
+  --text-hero--font-family: var(--font-geist);
+  --text-hero--font-weight: 600;
+  /* SemiBold */
+  --text-hero--letter-spacing: -2px;
+
+  /* --- H1 (48px) --- */
+  --text-h1: 3rem;
+  --text-h1--font-family: var(--font-geist);
+  --text-h1--font-weight: 700;
+  --text-h1--line-height: 3.5rem;
+  /* Bold */
+  --text-h1--letter-spacing: -2px;
+
+  /* --- H2 (40px) --- */
+  --text-h2: 2.5rem;
+  --text-h2--font-family: var(--font-geist);
+  --text-h2--font-weight: 600;
+  --text-h2--line-height: 3rem;
+  /* SemiBold */
+  --text-h2--letter-spacing: -1px;
+
+  /* --- H3 (32px) --- */
+  --text-h3: 2rem;
+  --text-h3--font-family: var(--font-geist);
+  --text-h3--font-weight: 600;
+  --text-h3--line-height: 2.5rem;
+  /* SemiBold */
+  --text-h3--letter-spacing: -1px;
+
+  /* --- H4 (24px) --- */
+  --text-h4: 1.5rem;
+  --text-h4--font-family: var(--font-geist);
+  --text-h4--font-weight: 600;
+  --text-h4--line-height: 2rem;
+  /* SemiBold */
+  --text-h4--letter-spacing: -0.5px;
+
+  /* --- h2-mono (24px) --- */
+  --text-h2-mono: 1.5rem;
+  --text-h2-mono--font-family: var(--font-geist-mono);
+  --text-h2-mono--font-weight: 700;
+  --text-h2-mono--letter-spacing: 0;
+
+  /* --- Body (20px) --- */
+  --text-body: 1.25rem;
+  --text-body--font-family: var(--font-geist);
+  --text-body--font-weight: 500;
+  --text-body--line-height: 2rem;
+
+  /* --- Nav Text (20px) --- */
+  --text-nav-text: 1.25rem;
+  --text-nav-text--font-family: var(--font-geist);
+  --text-nav-text--font-weight: 500;
+  --text-nav-text--line-height: 1.75rem;
+  /* Medium */
+  --text-nav-text--letter-spacing: 0;
+
+  /* --- Label LG (20px) --- */
+  --text-label-lg: 1.25rem;
+  --text-label-lg--font-family: var(--font-geist);
+  --text-label-lg--font-weight: 500;
+  --text-label-lg--line-height: 1.75rem;
+  /* Medium */
+  --text-label-lg--letter-spacing: -0.2px;
+
+  /* --- Label MD (16px) --- */
+  --text-label-md: 1rem;
+  --text-label-md--font-family: var(--font-geist);
+  --text-label-md--font-weight: 500;
+  /* Medium */
+  --text-label-md--letter-spacing: 0;
+
+  /* --- Label SM (15px) --- */
+  --text-label-sm: 0.9375rem;
+  --text-label-sm--font-family: var(--font-geist);
+  --text-label-sm--font-weight: 500;
+  /* Medium */
+  --text-label-sm--letter-spacing: 0;
+
+  /* MOBILE TEXT STYLES */
+
+  /* --- Hero (64px) --- */
+  --text-hero-mobile: 3rem;
+  --text-hero-mobile--font-family: var(--font-geist);
+  --text-hero-mobile--font-weight: 600;
+  --text-hero-mobile--line-height: 3.25rem;
+  /* SemiBold */
+  --text-hero-mobile--letter-spacing: -2px;
+
+  /* --- H1 (48px) --- */
+  --text-h1-mobile: 2.5rem;
+  --text-h1-mobile--font-family: var(--font-geist);
+  --text-h1-mobile--font-weight: 700;
+  --text-h1-mobile--line-height: 3rem;
+  /* Bold */
+  --text-h1-mobile--letter-spacing: -2px;
+
+  /* --- H2 (40px) --- */
+  --text-h2-mobile: 2rem;
+  --text-h2-mobile--font-family: var(--font-geist);
+  --text-h2-mobile--font-weight: 600;
+  --text-h2-mobile--line-height: 2.5rem;
+  /* SemiBold */
+  --text-h2-mobile--letter-spacing: -1px;
+
+  /* --- H3 (32px) --- */
+  --text-h3-mobile: 1.75rem;
+  --text-h3-mobile--font-family: var(--font-geist);
+  --text-h3-mobile--font-weight: 600;
+  --text-h3-mobile--line-height: 2.25rem;
+  /* SemiBold */
+  --text-h3-mobile--letter-spacing: -1px;
+
+  /* --- H4 (24px) --- */
+  --text-h4-mobile: 1.5rem;
+  --text-h4-mobile--font-family: var(--font-geist);
+  --text-h4-mobile--font-weight: 600;
+  --text-h4-mobile--line-height: 2rem;
+  /* SemiBold */
+  --text-h4-mobile--letter-spacing: -0.5px;
+
+  /* --- h2-mono (24px) --- */
+  --text-h2-mono-mobile: 1.5rem;
+  --text-h2-mono-mobile--font-family: var(--font-geist-mono);
+  --text-h2-mono-mobile--font-weight: 700;
+  --text-h2-mono-mobile--letter-spacing: 0;
+
+  /* --- Body (24px) --- */
+  --text-body-mobile: 1rem;
+  --text-body-mobile--font-family: var(--font-geist);
+  --text-body-mobile--font-weight: 500;
+  --text-body-mobile--line-height: 1.5rem;
+  /* Medium */
+  --text-body-mobile--letter-spacing: 0;
+
+  /* --- Label LG (20px) --- */
+  --text-label-lg-mobile: 1rem;
+  --text-label-lg-mobile--font-family: var(--font-geist);
+  --text-label-lg-mobile--font-weight: 500;
+  --text-label-lg-mobile--line-height: 1.5rem;
+  /* Medium */
+  --text-label-lg-mobile--letter-spacing: -0.2px;
+
+  /* --- Label MD (16px) --- */
+  --text-label-md-mobile: 0.9375rem;
+  --text-label-md-mobile--font-family: var(--font-geist);
+  --text-label-md-mobile--font-weight: 500;
+  /* Medium */
+  --text-label-md-mobile--letter-spacing: 0;
+
+  /* --- Label SM (15px) --- */
+  --text-label-sm-mobile: 0.875rem;
+  --text-label-sm-mobile--font-family: var(--font-geist);
+  --text-label-sm-mobile--font-weight: 500;
+  /* Medium */
+  --text-label-sm-mobile--letter-spacing: 0;
+
+  /* --- Nav Text (Mobile) (16px) --- */
+  --text-nav-text-mobile: 1rem;
+  --text-nav-text-mobile--font-family: var(--font-geist);
+  --text-nav-text-mobile--font-weight: 500;
+  --text-nav-text-mobile--line-height: 1.5rem;
+  --text-nav-text-mobile--letter-spacing: 0;
+
+
+  /* Spacing */
+  --max-content-width: 67.375rem;
+  --card-width: 32.9375rem;
+  --grid-gap: 1.5rem;
+
 }
 
 body {

@@ -12,9 +12,9 @@ export default function Badge({
     icon?: "warning" | "target" | "close" | "check";
 }) {
     const colors = {
-        red: "bg-[var(--cs-red-light)] text-[var(--cs-red-dark)]",
-        blue: "bg-[var(--cs-blue-badge)] text-[var(--cs-blue-dark)]",
-        green: "bg-[var(--cs-green-light)] text-[var(--cs-green-dark)]",
+        red: "bg-bg-red text-text-red",
+        blue: "bg-bg-blue text-text-blue",
+        green: "bg-bg-green text-text-green",
     };
 
     const iconMap = {
@@ -25,9 +25,9 @@ export default function Badge({
     };
 
     return (
-        <div className={`${colors[variant]} inline-flex items-center gap-2 rounded-lg p-2`}>
+        <div className={`${colors[variant]} flex items-center gap-2 rounded-lg p-2`}>
             {icon && iconMap[icon]}
-            <p className="font-(family-name:--font-geist) font-semibold leading-[1.16] text-lg md:text-xl tracking-[-0.24px]">
+            <p className="font-geist font-semibold leading-[1.16] text-label-lg-mobile sm:text-label-lg tracking-[-0.24px]">
                 {children}
             </p>
         </div>

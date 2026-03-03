@@ -34,7 +34,7 @@ export default function StarCard() {
             className="block h-full w-full cursor-pointer focus:outline-none"
         >
             <motion.div
-                className="bg-bg-tertiary border border-border-primary rounded-(--radius-card) overflow-hidden w-full h-full"
+                className="border-grey-20 rounded-4xl border-3 overflow-hidden w-full h-full"
                 initial={isMobile ? "hover" : "rest"}
                 animate={isMobile ? "hover" : undefined}
                 whileHover={isMobile ? undefined : "hover"}
@@ -68,7 +68,7 @@ export default function StarCard() {
                         variants={textVariants}
                         className="overflow-hidden whitespace-nowrap flex items-center"
                     >
-                        <span className="font-semibold text-[28px] text-white tracking-[-1.12px] leading-none">
+                        <span className="text-h3 text-bg-primary leading-none">
                             AI Experiments
                         </span>
                     </motion.div>

@@ -54,7 +54,7 @@ export default function GreenNavCard({
     return (
         <Wrapper
             {...wrapperProps}
-            className={`group @container relative block w-full aspect-square h-full overflow-hidden cursor-pointer rounded-(--radius-card) border-[0.125rem] ${borderColor} ${gradientColor}`}
+            className={`group @container relative block w-full aspect-square h-full overflow-hidden cursor-pointer rounded-4xl border-3 ${borderColor} ${gradientColor}`}
             initial="rest"
             whileHover="hover"
             whileFocus="hover"
@@ -64,7 +64,7 @@ export default function GreenNavCard({
                 <div className="relative z-50 flex items-center justify-center pt-8 px-4">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[90cqw] font-semibold text-lg md:text-2xl text-[#ffffff] text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap z-45"
+                        className="max-w-[90cqw] font-semibold text-body-mobile sm:text-body text-white text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap z-45"
                     >
                         {title}
                     </motion.h2>
@@ -112,9 +112,9 @@ export default function GreenNavCard({
             {/* ── "Click to open" pill ── */}
             <motion.div
                 variants={pillVariants}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#ffffff] flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
             >
-                <p className="font-semibold leading-normal text-[#000000] text-center tracking-[-0.03rem] text-sm whitespace-nowrap">
+                <p className="font-semibold leading-normal text-black text-center tracking-[-0.03rem] text-sm whitespace-nowrap">
                     Click to open
                 </p>
             </motion.div>

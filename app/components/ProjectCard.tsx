@@ -59,13 +59,12 @@ export default function ProjectCard({
     return (
         <Wrapper
             {...wrapperProps}
-            className={`group @container relative block w-full h-full aspect-2/3 overflow-hidden cursor-pointer rounded-(--radius-card) ${gradientColor}`}
+            className={`group @container relative block w-full h-full aspect-2/3 overflow-hidden cursor-pointer rounded-4xl border-3 ${borderColor} ${gradientColor}`}
             initial="rest"
             whileHover="hover"
             whileFocus="hover"
         >
             {/* Static inner border */}
-            <div className={`absolute inset-0 border-[0.125rem] border-solid ${borderColor} rounded-(--radius-card) pointer-events-none z-40`} />
 
             {/* Content layer */}
             <div className="relative z-20 flex h-full flex-col">
@@ -73,7 +72,7 @@ export default function ProjectCard({
                 <div className="relative z-40 flex items-center justify-center pt-8 px-4">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[90cqw] font-semibold text-lg md:text-2xl text-[#ffffff] text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap"
+                        className="max-w-[90cqw] font-semibold text-body-mobile sm:text-body text-white text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap"
                     >
                         {title}
                     </motion.h2>
@@ -131,9 +130,9 @@ export default function ProjectCard({
             {/* ── "Click to open" pill ── */}
             <motion.div
                 variants={pillVariants}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-[#ffffff] flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-bg-primary flex items-center px-4 py-2 rounded-full z-50 shadow-lg"
             >
-                <p className="font-semibold leading-normal text-[#000000] text-center tracking-tight text-sm whitespace-nowrap">
+                <p className="font-semibold leading-normal text-black text-center tracking-tight text-sm whitespace-nowrap">
                     Click to open
                 </p>
             </motion.div>

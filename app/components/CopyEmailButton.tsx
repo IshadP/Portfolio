@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check } from "@phosphor-icons/react";
+import { CopyIcon, CheckIcon } from "@phosphor-icons/react";
 
 export default function CopyEmailButton({
     iconSize = 18,
@@ -40,9 +40,9 @@ export default function CopyEmailButton({
             title={copied ? "Copied!" : "Copy email"}
         >
             {copied ? (
-                <Check size={iconSize} color="#3c7c03" weight="bold" />
+                <CheckIcon size={iconSize} className="text-text-primary" weight="bold" />
             ) : (
-                <Copy size={iconSize} color="#1e1e1e" weight="regular" />
+                <CopyIcon size={iconSize} className="text-text-primary" weight="regular" />
             )}
         </button>
     );

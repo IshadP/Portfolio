@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import FadeIn from "../components/FadeIn";
-import PrototypeCard from "../components/PrototypeCard";
+import PrototypeCard from "../components/ExperimentCard";
 
 
 export default function AIExperiments() {

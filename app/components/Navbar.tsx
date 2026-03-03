@@ -46,8 +46,8 @@ export default function Navbar() {
         navLinks.find((link) => link.href === pathname)?.label ?? "Home";
 
     return (
-        <nav className="sticky top-0 z-50 flex flex-col border-t border-border-secondary bg-bg-primary px-(--spacing-nav-px) py-(--spacing-nav-py) md:px-0">
-            <div className="flex items-center justify-between">
+        <nav className="sticky top-0 z-50 flex flex-col border-t border-outline-primary bg-bg-primary py-3 px-2">
+            <div className="flex items-center justify-between w-full max-w-(--max-content-width) mx-auto">
                 {/* Mobile Nav (Hamburger + Current Page Label) */}
                 <div className="flex flex-1 items-center gap-2 md:hidden">
                     <button
@@ -79,100 +79,59 @@ export default function Navbar() {
                             )}
                         </AnimatePresence>
                     </button>
-                    <span className="font-(family-name:--font-geist) text-[16px] font-medium leading-normal text-text-secondary">
+                    <span className="text-label-md-mobile sm:text-label-md text-text-secondary">
                         {currentPageLabel}
                     </span>
                 </div>
 
                 {/* Desktop Nav Links */}
-                <div className="hidden flex-1 items-center gap-4 md:flex">
+                <div className="hidden flex-1 items-center gap-[8px] md:flex h-[44px]">
                     {navLinks.map((item) => {
                         const isActive = pathname === item.href;
                         return (
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                className="group inline-flex items-start overflow-hidden p-(--spacing-icon-border) no-underline"
+                                className={`flex h-full items-center justify-center overflow-hidden px-[12px] py-[8px] rounded-[32px] transition-colors ${isActive ? "bg-grey-10" : "hover:bg-grey-10"
+                                    } no-underline`}
                             >
-                                <div className="flex items-center justify-center gap-(--spacing-icon-gap) overflow-hidden rounded-(--radius-nav-item) p-(--spacing-icon-padding)">
-                                    <span
-                                        className={`relative font-(family-name:--font-geist) font-medium leading-normal text-lg text-text-primary after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:bg-text-primary after:transition-all after:duration-300 after:ease-out ${isActive ? "after:w-full" : "after:w-0 group-hover:after:w-full"
-                                            }`}
-                                    >
-                                        {item.label}
-                                    </span>
-                                </div>
+                                <span className="font-geist font-medium text-nav-text-mobile sm:text-nav-text text-text-primary ">
+                                    {item.label}
+                                </span>
                             </Link>
                         );
                     })}
                 </div>
 
                 {/* Center Icon (Warning Diamond) — Mobile: click-to-expand + auto-close; Desktop: hover-to-expand */}
-                <div className="flex flex-none items-center justify-center">
-                    <motion.div
-                        className="relative flex items-center justify-center overflow-hidden rounded-[25px] bg-[#dbffbc] cursor-pointer"
-                        onClick={isMobile ? () => setDiamondOpen(!diamondOpen) : undefined}
-                        // Cleaner conditional animation logic
-                        initial="rest"
-                        animate={isMobile ? (diamondOpen ? "open" : "rest") : "rest"}
-                        whileHover={!isMobile ? "open" : undefined}
-                        variants={{
-                            rest: { width: "40px", height: "40px" },
-                            open: { width: "208px", height: "40px" },
-                        }}
-                        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} // Smooth spring-like easing
-                    >
-                        {/* Using a relative wrapper allows the icon and text to overlap perfectly.
-                  This prevents the container from twitching during the transition.
-                */}
-                        <div className="relative flex items-center justify-center w-full h-full">
-
-                            {/* Icon - Slides UP and fades out */}
-                            <motion.div
-                                className="absolute"
-                                variants={{
-                                    rest: { y: 0, opacity: 1, filter: "blur(0px)" },
-                                    open: { y: -25, opacity: 0, filter: "blur(4px)" },
-                                }}
-                                transition={{ duration: 0.3, ease: "easeIn" }}
-                            >
-                                <WarningDiamond size={24} color="#46781a" weight="regular" />
-                            </motion.div>
-
-                            {/* Text - Slides UP from the bottom and fades in */}
-                            <motion.p
-                                className="absolute font-geist font-medium not-italic text-[#46781a] text-md whitespace-nowrap"
-                                variants={{
-                                    rest: { y: 25, opacity: 0, filter: "blur(4px)" },
-                                    open: { y: 0, opacity: 1, filter: "blur(0px)" },
-                                }}
-                                // A slight delay ensures it waits for the container to start expanding
-                                transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
-                            >
-                                Open to Opportunities
-                            </motion.p>
-                        </div>
-                    </motion.div>
-                </div>
+                {/* <div className="flex flex-none items-center justify-center">
+                    <div className="relative flex items-center justify-center px-4 py-2 gap-4 rounded-4xl bg-[#dbffbc] w-full h-full">
+                        <motion.p
+                            className="font-geist font-medium not-italic text-[#46781a] text-md whitespace-nowrap"
+                        >
+                            Open to Opportunities
+                        </motion.p>
+                    </div>
+                </div> */}
 
                 {/* Email (hidden on mobile) */}
                 <div className="hidden flex-1 justify-end md:flex">
-                    <div className="inline-flex items-start overflow-hidden p-(--spacing-icon-border)">
-                        <div className="flex items-center justify-center gap-(--spacing-icon-gap) overflow-hidden rounded-(--radius-nav-item) p-(--spacing-icon-padding)">
-                            <span className="font-(family-name:--font-geist) text-lg font-medium leading-normal text-text-secondary">
-                                Let's Talk
-                            </span>
-                            <span className="font-(family-name:--font-geist) text-lg font-medium leading-normal text-text-secondary">
-                                →
-                            </span>
+                    <div className="flex gap-1 items-center justify-center overflow-hidden p-2 rounded-sm">
+                        <span className="font-geist font-medium text-nav-text-mobile sm:text-nav-text text-text-tertiary ">
+                            Let’s Talk
+                        </span>
+                        <span className="font-geist font-medium text-nav-text-mobile sm:text-nav-text text-text-tertiary ">
+                            →
+                        </span>
+                        <div className="border-text-primary border-b-2 border-dashed flex items-center justify-center">
                             <a
                                 href="mailto:ispande16@gmail.com"
-                                className="font-(family-name:--font-geist) text-lg font-medium leading-normal text-text-primary underline decoration-dotted underline-offset-[20%]"
+                                className="font-geist text-nav-text-mobile sm:text-nav-text text-text-primary no-underline"
                             >
                                 ispande16@gmail.com
                             </a>
-                            <CopyEmailButton iconSize={20} color="#b7b7b7" />
                         </div>
+                        <CopyEmailButton iconSize={20} color="var(--color-text-primary)" />
                     </div>
                 </div>
             </div>
@@ -185,9 +144,9 @@ export default function Navbar() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
-                        className="overflow-hidden md:hidden"
+                        className="overflow-hidden md:hidden z-60"
                     >
-                        <div className="flex flex-col gap-1 pt-4 pb-2">
+                        <div className="flex flex-col gap-1 pt-4 pb-2 border-b border-grey-30">
                             {navLinks.map((item) => {
                                 const isActive = pathname === item.href;
                                 return (
@@ -196,11 +155,11 @@ export default function Navbar() {
                                         href={item.href}
                                         onClick={() => setMenuOpen(false)}
                                         className={`flex items-center rounded-xl px-4 py-3 no-underline transition-colors duration-200 ${isActive
-                                            ? "bg-[#f0f0f0] text-text-primary"
-                                            : "text-text-tertiary hover:bg-[#f8f8f8] hover:text-text-primary"
+                                            ? "bg-grey-20 text-text-primary"
+                                            : "text-text-tertiary hover:bg-grey-10 hover:text-text-primary"
                                             }`}
                                     >
-                                        <span className="font-(family-name:--font-geist) text-[18px] font-medium">
+                                        <span className=" text-nav-text-mobile sm:text-nav-text text-text-primary">
                                             {item.label}
                                         </span>
                                     </Link>
@@ -208,14 +167,25 @@ export default function Navbar() {
                             })}
 
                             {/* Mobile email link */}
-                            <div className="mt-2 border-t border-border-primary pt-3 px-4">
+
+                        </div>
+                        <div className="flex gap-1 items-start justify-start overflow-hidden p-2 rounded-sm pt-4">
+                            <span className=" text-text-tertiary text-nav-text-mobile ">
+                                Let’s Talk
+                            </span>
+                            <span className="text-text-tertiary text-nav-text-mobile ">
+                                →
+                            </span>
+                            <div className=" flex gap-2">
                                 <a
                                     href="mailto:ispande16@gmail.com"
-                                    className="font-(family-name:--font-geist) text-[16px] font-medium text-text-tertiary underline decoration-dotted underline-offset-4"
+                                    className="text-nav-text-mobile text-text-primary border-text-primary border-b-2 border-dashed"
                                 >
                                     ispande16@gmail.com
                                 </a>
+                                <CopyEmailButton iconSize={20} color="var(--color-text-primary)" />
                             </div>
+
                         </div>
                     </motion.div>
                 )}

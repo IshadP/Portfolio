@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import FadeIn from "../components/FadeIn";
 import Badge from "../components/case-study/Badge";
 import ProConCard from "../components/case-study/ProConCard";
-import AnnotationCard from "../components/case-study/AnnotationCard";
+import GrayBox from "../components/case-study/GrayBox";
 
 /* ── Asset paths ── */
 const A = "/assets/printhub";
@@ -14,7 +14,7 @@ const A = "/assets/printhub";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist-mono) font-semibold leading-[1.16] text-text-tertiary text-xl tracking-[-0.24px]">
+        <p className="font-geist-mono text-label-lg-mobile sm:text-label-lg text-text-tertiary">
             {children}
         </p>
     );
@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-regular text-text-primary text-xl w-full">
+        <p className="text-body-mobile sm:text-body text-text-primary w-full">
             {children}
         </p>
     );
@@ -30,7 +30,7 @@ function BodyText({ children }: { children: React.ReactNode }) {
 
 function Heading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-bold text-text-primary text-2xl md:text-3xl w-full">
+        <p className="text-h3-mobile sm:text-h3 text-text-primary w-full">
             {children}
         </p>
     );
@@ -38,7 +38,7 @@ function Heading({ children }: { children: React.ReactNode }) {
 
 function Title({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-bold text-text-primary text-3xl md:text-4xl w-full">
+        <p className="text-h2-mobile sm:text-h2 text-text-primary w-full">
             {children}
         </p>
     );
@@ -46,19 +46,13 @@ function Title({ children }: { children: React.ReactNode }) {
 
 function SubHeading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-(family-name:--font-geist) font-bold text-text-primary text-xl md:text-2xl w-full">
+        <p className="text-h4-mobile sm:text-h4 text-text-primary w-full">
             {children}
         </p>
     );
 }
 
-function GrayShowcase({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-    return (
-        <div className={`bg-[#f5f5f5] overflow-hidden rounded-3xl md:rounded-4xl w-full ${className}`}>
-            {children}
-        </div>
-    );
-}
+
 
 /* ══════════════════════════════════════════════════════════════════════════════
    PAGE
@@ -94,7 +88,7 @@ export default function PrintHubCaseStudy() {
 
                             {/* Phone Screenshots Comparison */}
                             <div className="flex flex-col gap-6 w-full">
-                                <div className="bg-bg-primary border-2 md:border-4 border-(--border-card) flex flex-col md:flex-row items-center gap-4 overflow-hidden px-4 md:px-[76px] py-6 md:py-10 rounded-2xl md:rounded-4xl w-full">
+                                <div className="bg-bg-primary border-2 md:border-3 border-outline-primary flex flex-col md:flex-row items-center gap-4 overflow-hidden px-4 md:px-[76px] py-6 md:py-10 rounded-2xl md:rounded-4xl w-full">
                                     <div className="relative w-full max-w-[358px] aspect-358/692">
                                         <Image src={`${A}/phone-before.png`} alt="Before redesign" fill className="object-contain" />
                                     </div>
@@ -110,18 +104,18 @@ export default function PrintHubCaseStudy() {
                                 </div>
 
                                 {/* Project Metadata */}
-                                <div className="flex flex-col sm:flex-row gap-4 md:gap-12 w-full text-base md:text-2xl leading-normal">
+                                <div className="flex flex-col sm:flex-row gap-4 md:gap-12 w-full text-label-lg-mobile sm:text-label-lg leading-normal">
                                     <div className="flex flex-col gap-1 flex-1">
-                                        <p className="font-(family-name:--font-geist) font-bold text-text-secondary">Role</p>
-                                        <p className="font-(family-name:--font-geist) font-medium text-text-primary">Product Designer</p>
+                                        <SectionLabel>Role</SectionLabel>
+                                        <BodyText>Product Designer</BodyText>
                                     </div>
                                     <div className="flex flex-col gap-1 flex-1">
-                                        <p className="font-(family-name:--font-geist) font-bold text-text-secondary">Team</p>
-                                        <p className="font-(family-name:--font-geist) font-medium text-text-primary">3 Developers</p>
+                                        <SectionLabel>Team</SectionLabel>
+                                        <BodyText>3 Developers</BodyText>
                                     </div>
                                     <div className="flex flex-col gap-1 flex-1">
-                                        <p className="font-(family-name:--font-geist) font-bold text-text-secondary">Duration</p>
-                                        <p className="font-(family-name:--font-geist) font-medium text-text-primary">5-6 weeks</p>
+                                        <SectionLabel>Duration</SectionLabel>
+                                        <BodyText>5-6 weeks</BodyText>
                                     </div>
                                 </div>
                             </div>
@@ -131,14 +125,14 @@ export default function PrintHubCaseStudy() {
                         <section className="flex flex-col gap-6 md:gap-12 w-full">
                             <div className="flex flex-col gap-4 w-full">
                                 <SectionLabel>Context</SectionLabel>
-                                <SubHeading>Printhub wants to improve speed</SubHeading>
+                                <Heading>Printhub wants to improve speed</Heading>
                                 <BodyText>
                                     <span className="font-bold">Traditional printing is slow and disruptive</span>. The Printhub redesign aimed to make printing fast and routine. Printing should not involve uploading, switching, and double checking files. Users should be able to print two or three files in minutes and return to work.
                                 </BodyText>
                             </div>
 
                             <div className="flex flex-col gap-4 w-full">
-                                <SubHeading>What is Printhub?</SubHeading>
+                                <Heading>What is Printhub?</Heading>
                                 <BodyText>
                                     Printhub is a kiosk based printing solution that works through a mobile app and proprietary devices. Users upload files to the cloud and print them from any location. The system shows live print status and notifies users when prints are ready for pickup.
                                 </BodyText>
@@ -147,33 +141,33 @@ export default function PrintHubCaseStudy() {
                             {/* Impact */}
                             <div className="flex flex-col gap-4 w-full">
                                 <SectionLabel>Impact</SectionLabel>
-                                <div className="flex flex-col md:flex-row gap-4 w-full">
+                                <div className="flex flex-col md:flex-row gap-4 w-full ">
                                     {/* Stat Card 1 */}
-                                    <div className="bg-(--cs-green-light) flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-4 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[46px] flex-1">
-                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px] text-center">
+                                    <div className="bg-bg-green flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-4 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[46px] flex-1">
+                                        <p className="font-geist font-semibold text-text-green text-label-lg-mobile sm:text-label-lg tracking-[-0.24px] text-center">
                                             Reduced task completion time by
                                         </p>
-                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
+                                        <p className="font-geist font-semibold text-text-green text-7xl xl:text-8xl tracking-[-0.96px] leading-none">
                                             ~30%
                                         </p>
                                     </div>
                                     {/* Stat Card 2 */}
-                                    <div className="bg-(--cs-green-light) flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-2 py-6 md:py-8 rounded-2xl md:rounded-[46px] flex-1">
-                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px] text-center">
+                                    <div className="bg-bg-green flex flex-col gap-2 md:gap-4 items-center justify-center overflow-hidden px-2 py-6 md:py-8 rounded-2xl md:rounded-[46px] flex-1">
+                                        <p className="font-geist font-semibold text-text-green text-label-lg-mobile sm:text-label-lg tracking-[-0.24px] text-center">
                                             Reduced task completion time from
                                         </p>
                                         <div className="flex items-center justify-center gap-4">
-                                            <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
+                                            <p className="font-geist font-semibold text-text-green text-7xl xl:text-8xl tracking-[-0.96px] leading-none">
                                                 45s
                                             </p>
-                                            <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-3xl md:text-4xl tracking-[-0.4px]">
+                                            <p className="font-geist font-semibold text-text-green text-3xl xl:text-4xl tracking-[-0.4px]">
                                                 →
                                             </p>
-                                            <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-5xl md:text-8xl tracking-[-0.96px] leading-none">
+                                            <p className="font-geist font-semibold text-text-green text-7xl xl:text-8xl tracking-[-0.96px] leading-none">
                                                 30s
                                             </p>
                                         </div>
-                                        <p className="font-(family-name:--font-geist) font-semibold text-(--cs-green-dark) text-xl md:text-2xl tracking-[-0.24px]">
+                                        <p className="font-geist font-semibold text-text-green text-label-lg-mobile sm:text-label-lg tracking-[-0.24px]">
                                             for 5 files
                                         </p>
                                     </div>
@@ -217,21 +211,18 @@ export default function PrintHubCaseStudy() {
                             </div>
 
                             {/* Annotated Current Card */}
-                            <GrayShowcase className="relative p-2 md:p-0 min-h-[250px] md:min-h-[288px]">
-                                <p className="font-(family-name:--font-geist) font-semibold leading-normal text-text-tertiary text-base md:text-xl tracking-[-0.2px] p-4">
-                                    Current Card Design
-                                </p>
+                            <GrayBox title="Current Card Design" className="relative p-2 md:p-0 min-h-[250px] md:min-h-[288px]">
                                 <div className="flex flex-col md:flex-row items-center gap-6 p-4 md:p-8">
                                     <div className="relative w-full max-w-[405px] h-[100px] md:h-[137px] rounded">
                                         <Image src={`${A}/old-card.png`} alt="Current card design" fill className="object-cover rounded" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full md:max-w-[484px]">
-                                        <AnnotationCard>&ldquo;Customize&rdquo; does not tell users what they can change</AnnotationCard>
-                                        <AnnotationCard>Users only use preview when they are unsure about document</AnnotationCard>
-                                        <AnnotationCard>Card doesn&apos;t follow material standards</AnnotationCard>
+                                        <ProConCard variant="con">&ldquo;Customize&rdquo; does not tell users what they can change</ProConCard>
+                                        <ProConCard variant="con">Users only use preview when they are unsure about document</ProConCard>
+                                        <ProConCard variant="con">Card doesn&apos;t follow material standards</ProConCard>
                                     </div>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             {/* Recognition vs Recall */}
                             <div className="flex flex-col gap-4 items-start w-full">
@@ -246,28 +237,22 @@ export default function PrintHubCaseStudy() {
                             <div className="flex flex-col md:flex-row gap-4 w-full">
                                 {/* Option 1: Visual Indicators */}
                                 <div className="flex flex-col gap-2 flex-1">
-                                    <GrayShowcase className="relative h-[220px] md:h-[417px]">
-                                        <p className="absolute font-(family-name:--font-geist) font-semibold leading-normal text-text-tertiary text-base md:text-xl left-5 top-5 tracking-[-0.2px]">
-                                            Visual indicators Only
-                                        </p>
+                                    <GrayBox title="Visual indicators Only" className="relative h-[220px] md:h-[417px]">
                                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-[453px] h-[80px] md:h-[116px]">
                                             <Image src={`${A}/card-visual-indicators.png`} alt="Visual indicators" fill className="object-contain" />
                                         </div>
-                                    </GrayShowcase>
+                                    </GrayBox>
                                     <ProConCard variant="pro">Changes in a features are clearly visible.</ProConCard>
                                     <ProConCard variant="pro">Visuals are processed faster and reduces cognitive load.</ProConCard>
                                     <ProConCard variant="con">Can cause confusion due to different interpretation of icons.</ProConCard>
                                 </div>
                                 {/* Option 2: Textual Indicators */}
                                 <div className="flex flex-col gap-2 flex-1">
-                                    <GrayShowcase className="relative h-[220px] md:h-[417px]">
-                                        <p className="absolute font-(family-name:--font-geist) font-semibold leading-normal text-text-tertiary text-base md:text-xl left-5 top-5 tracking-[-0.2px]">
-                                            Textual Indicators
-                                        </p>
+                                    <GrayBox title="Textual Indicators" className="relative h-[220px] md:h-[417px]">
                                         <div className="absolute top-[80px] md:top-[117px] left-[16px] md:left-[35px] w-[90%] max-w-[457px] h-[120px] md:h-[184px]">
                                             <Image src={`${A}/card-textual-indicators.png`} alt="Textual indicators" fill className="object-contain" />
                                         </div>
-                                    </GrayShowcase>
+                                    </GrayBox>
                                     <ProConCard variant="pro">Clearly tell which options are used to print the item.</ProConCard>
                                     <ProConCard variant="pro">Removing guesswork on what is active and what&apos;s not active.</ProConCard>
                                     <ProConCard variant="con">This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>
@@ -303,7 +288,7 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12">
                                 <div className="relative w-[90%] max-w-[614px] h-[80px] md:h-[121px]">
                                     <Image src={`${A}/card-idea1-checkbox.png`} alt="Idea 1 card" fill className="object-contain" />
                                 </div>
@@ -311,18 +296,18 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="con">I was wrong. Users used customisation lot more.</ProConCard>
                                     <ProConCard variant="con">Interaction on hold remains unclear, and users do not understand how it works.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             {/* Preview Dropped Note */}
-                            <div className="bg-(--border-card) flex flex-col items-start pb-1.5 md:pb-2 pt-0.5 px-0.5 rounded-2xl md:rounded-4xl w-full">
+                            <div className="bg-grey-30 flex flex-col items-start pb-1.5 md:pb-2 pt-0.5 px-0.5 rounded-2xl md:rounded-4xl w-full">
                                 <div className="bg-bg-primary flex flex-col items-start justify-center rounded-2xl md:rounded-4xl w-full overflow-hidden">
-                                    <div className="bg-(--border-card) flex items-center px-4 py-4  w-full">
-                                        <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-xl md:text-2xl">
+                                    <div className="bg-grey-30 flex items-center px-4 py-4  w-full">
+                                        <p className=" leading-normal text-text-primary text-h4-mobile sm:text-h4">
                                             Preview Dropped!
                                         </p>
                                     </div>
                                     <div className="flex items-center justify-center p-4 rounded-b-[12px] md:rounded-b-[28px]">
-                                        <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-xl">
+                                        <p className=" leading-normal text-text-primary text-label-lg-mobile sm:text-label-lg">
                                             It was technically complex to implement and did not fit within the project timeline.
                                         </p>
                                     </div>
@@ -338,7 +323,7 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12">
                                 <div className="relative w-[90%] max-w-[602px] h-[70px] md:h-[107px]">
                                     <Image src={`${A}/card-idea2-edit-icon.png`} alt="Idea 2 card" fill className="object-contain" />
                                 </div>
@@ -346,14 +331,14 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="pro">Placing the Customize icon on the left helped users immediately understand how to change settings instead of experimenting to find the action.</ProConCard>
                                     <ProConCard variant="con">Users had to stretch their thumbs to reach the customize icon, making it hard to tap.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <BodyText>
                                 I was unsure how can we conserve user behaviour and follow design standards as well. I went to other apps to see how they tackled the the problem of keep selection and edit (secondary action) viable. When I saw Gmail it become very clear what I was missing out.
                             </BodyText>
 
                             {/* Gmail Reference */}
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12 px-8">
                                 <div className="flex flex-col md:flex-row items-start justify-center w-full  md:gap-6">
                                     <div className="relative w-full aspect-4/1 ">
                                         <Image src={`${A}/gmail-select.png`} alt="Gmail selection" fill className="object-contain" />
@@ -366,7 +351,7 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="pro">One click on the item avatar selects it and UI enters selection mode.</ProConCard>
                                     <ProConCard variant="pro">Secondary action like starring was on right and still viable.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <BodyText>
                                 When I talked to users about Gmail, a comment similar to &ldquo;it is how it is&rdquo; came up in every conversation. This meant that they felt safe while interacting with card, so much so that it became second nature. This made me realise that following same pattern won&apos;t cause much friction in users.
@@ -381,11 +366,11 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col items-center justify-center py-12">
+                            <GrayBox className="flex flex-col items-center justify-center py-12">
                                 <div className="relative w-[90%] max-w-[602px] h-[140px] md:h-[253px]">
                                     <Image src={`${A}/card-final-design.png`} alt="Final card design" fill className="object-contain" />
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <div className="flex flex-col gap-4 w-full">
                                 <BodyText>
@@ -414,12 +399,9 @@ export default function PrintHubCaseStudy() {
                             </div>
 
                             {/* Current Design Annotated */}
-                            <GrayShowcase className="relative min-h-[300px] md:min-h-[515px] p-2 md:p-4">
-                                <p className="font-(family-name:--font-geist) font-semibold leading-normal text-text-tertiary text-base md:text-xl tracking-[-0.2px] p-4">
-                                    Current Design
-                                </p>
+                            <GrayBox title="Current Design" className="relative min-h-[300px] md:min-h-[515px] p-2 md:p-4">
                                 <div className="flex flex-col md:flex-row items-center gap-6 p-4 md:p-8">
-                                    <div className="flex items-center gap-2 md:gap-4">
+                                    <div className="flex items-center ">
                                         <div className="relative w-[120px] md:w-[170px] h-[267px] md:h-[378px]">
                                             <Image src={`${A}/phone-wireframe.png`} alt="Before button" fill className="object-contain" />
                                         </div>
@@ -431,12 +413,12 @@ export default function PrintHubCaseStudy() {
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-4 w-full md:max-w-[484px]">
-                                        <AnnotationCard>The path to final goal is unclear to users.</AnnotationCard>
-                                        <AnnotationCard>Visual Feedback is very subtle after item selection causing change blindness</AnnotationCard>
-                                        <AnnotationCard>Buttons doesn&apos;t follow material standards</AnnotationCard>
+                                        <ProConCard variant="con">The path to final goal is unclear to users.</ProConCard>
+                                        <ProConCard variant="con">Visual Feedback is very subtle after item selection causing change blindness</ProConCard>
+                                        <ProConCard variant="con">Buttons doesn&apos;t follow material standards</ProConCard>
                                     </div>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <div className="flex flex-col gap-4 w-full">
                                 <BodyText>
@@ -459,7 +441,7 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12">
                                 <div className="flex flex-col md:flex-row items nd:items-start items-center w-full justify-center gap-8">
                                     <div className="relative w-full max-w-[391px] h-[151px]">
                                         <Image src={`${A}/fab1.png`} alt="FAB option 1" fill className="object-contain" />
@@ -472,7 +454,7 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="con">This reduced importance of &ldquo;Print files&rdquo; which is essential to completion of flow.</ProConCard>
                                     <ProConCard variant="con">Users where confused what button does because the print icon was associated with changing printer rather than printing itself.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <div className="flex flex-col gap-4 w-full">
                                 <BodyText>
@@ -492,7 +474,7 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12">
                                 <div className="relative w-[90%] max-w-[610px] h-[120px] md:h-[238px]">
                                     <Image src={`/assets/printhub/context-buttons.png`} alt="Contextual buttons" fill className="object-contain" />
                                 </div>
@@ -501,7 +483,7 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="con">User still suffered with goal gradient problem as they didn&apos;t know what to do once file was added (but not selected)</ProConCard>
                                     <ProConCard variant="con">In case of more than a 4-5 files, it would become tedious to select each and every file one by one because the user might have to scroll.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <BodyText>
                                 We tested this idea with users and got the following feedback.
@@ -513,15 +495,15 @@ export default function PrintHubCaseStudy() {
                                     <div className="relative w-[80px] md:w-[156px] h-[110px] md:h-[213px] shrink-0">
                                         <Image src={`${A}/user-quote-1.png`} alt="User 1" fill className="object-contain" />
                                     </div>
-                                    <div className="bg-white flex items-start overflow-hidden px-4 py-2 rounded-3xl border-2 border-border-primary">
-                                        <p className="font-(family-name:--font-geist) font-medium  text-text-primary text-base md:text-xl max-w-[349px]">
+                                    <div className="bg-white flex items-start overflow-hidden px-4 py-2 rounded-3xl border-2 border-outline-primary">
+                                        <p className="  text-text-primary text-label-lg-mobile sm:text-label-lg max-w-[349px]">
                                             &ldquo;How do I print file, I have added them already. At least in I knew what to do earlier&rdquo;
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex items-start justify-center gap-4">
-                                    <div className="bg-white flex items-start overflow-hidden px-4 py-2 rounded-3xl border-2 border-border-primary">
-                                        <p className="font-(family-name:--font-geist) font-medium text-text-primary text-base md:text-xl">
+                                    <div className="bg-white flex items-start overflow-hidden px-4 py-2 rounded-3xl border-2 border-outline-primary">
+                                        <p className=" text-text-primary text-label-lg-mobile sm:text-label-lg">
                                             &ldquo;I have to select so many files 🥲&rdquo;
                                         </p>
                                     </div>
@@ -549,7 +531,7 @@ export default function PrintHubCaseStudy() {
                                 </BodyText>
                             </div>
 
-                            <GrayShowcase className="flex flex-col gap-8 items-center py-12">
+                            <GrayBox className="flex flex-col gap-8 items-center py-12">
                                 <div className="flex flex-col md:flex-row items-center w-full justify-center gap-4">
                                     <div className="relative w-full max-w-[286px] h-[118px]">
                                         <Image src={`${A}/final-dis.png`} alt="Final button before" fill className="object-contain" />
@@ -562,7 +544,7 @@ export default function PrintHubCaseStudy() {
                                     <ProConCard variant="pro">This allows users to see what the next steps are.</ProConCard>
                                     <ProConCard variant="pro">New functionality allows user to print all files without selecting them, removing selection hassle entirely.</ProConCard>
                                 </div>
-                            </GrayShowcase>
+                            </GrayBox>
 
                             <div className="flex flex-col gap-4 w-full">
                                 <BodyText>
@@ -627,7 +609,7 @@ export default function PrintHubCaseStudy() {
                                 <div className="relative w-[160px] md:w-[226px] h-[280px] md:h-[497px] shrink-0">
                                     <Image src={`${A}/component-nomenclature.png`} alt="Component nomenclature" fill className="object-contain" />
                                 </div>
-                                <p className="font-(family-name:--font-geist) font-medium leading-normal text-text-primary text-base md:text-2xl text-center flex-1">
+                                <p className=" leading-normal text-text-primary text-label-lg-mobile sm:text-label-lg text-center flex-1">
                                     Clear nomenclature and mixture of various components allowed me to customise components to fit various situations and use cases.
                                 </p>
                                 <div className="relative w-[160px] md:w-[224px] h-[140px] md:h-[248px] shrink-0">
