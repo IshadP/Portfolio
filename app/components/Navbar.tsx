@@ -46,7 +46,7 @@ export default function Navbar() {
         navLinks.find((link) => link.href === pathname)?.label ?? "Home";
 
     return (
-        <nav className="sticky top-0 z-50 flex flex-col border-t border-outline-primary bg-bg-primary py-3">
+        <nav className="sticky top-0 z-90 flex flex-col border-t border-outline-primary bg-bg-primary py-3">
             <div className="flex items-center justify-between w-full max-w-(--max-content-width) mx-auto">
                 {/* Mobile Nav (Hamburger + Current Page Label) */}
                 <div className="flex flex-1 items-center gap-2 md:hidden">

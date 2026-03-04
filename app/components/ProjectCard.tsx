@@ -59,7 +59,7 @@ export default function ProjectCard({
     return (
         <Wrapper
             {...wrapperProps}
-            className={`group @container relative block w-full h-full aspect-2/3 overflow-hidden cursor-pointer rounded-4xl border-3 ${borderColor} ${gradientColor}`}
+            className={`group @container relative block w-full h-full md:aspect-2/3 aspect-200/330 overflow-hidden cursor-pointer rounded-4xl border-3 ${borderColor} ${gradientColor}`}
             initial="rest"
             whileHover="hover"
             whileFocus="hover"
@@ -72,7 +72,7 @@ export default function ProjectCard({
                 <div className="relative z-40 flex items-center justify-center pt-8 px-4">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[90cqw] font-medium text-h4-mobile sm:text-h4 text-white text-center whitespace-pre-wrap"
+                        className="max-w-[90cqw] font-medium text-h4-mobile md:text-h4 text-white text-center whitespace-pre-wrap"
                     >
                         {title}
                     </motion.h2>

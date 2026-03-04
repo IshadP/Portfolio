@@ -64,7 +64,7 @@ export default function GreenNavCard({
                 <div className="relative z-50 flex items-center justify-center pt-8 px-4">
                     <motion.h2
                         variants={titleVariants}
-                        className="max-w-[90cqw] font-semibold text-body-mobile sm:text-body text-white text-center tracking-[-0.02rem] leading-normal whitespace-pre-wrap z-45"
+                        className="max-w-[90cqw] font-semibold text-h4-mobile md:text-h4 text-white text-center whitespace-pre-wrap z-45"
                     >
                         {title}
                     </motion.h2>
