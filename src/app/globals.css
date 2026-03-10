@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-inter-display: "Inter Display", sans-serif;
+  --font-geist-mono: "Geist Mono", sans-serif;
+  --font-geist: "Geist", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* H1: mobile 30px → desktop 48px */
+  /* H1: mobile 30px → desktop 48px */
+  .font-h1 {
+    @apply font-inter-display text-3xl font-bold leading-tight tracking-normal md:text-5xl;
+  }
+
+  /* H2: mobile 24px → desktop 36px */
+  .font-h2 {
+    @apply font-inter-display text-2xl font-semibold leading-tight tracking-normal md:text-4xl;
+  }
+
+  /* H3: mobile 20px → desktop 30px */
+  .font-h3 {
+    @apply font-inter-display text-xl font-semibold leading-8 tracking-normal md:text-3xl md:leading-10;
+  }
+
+  /* H4: mobile 18px → desktop 24px */
+  .font-h4 {
+    @apply font-inter-display text-lg font-semibold leading-7 tracking-normal md:text-2xl md:leading-8;
+  }
+
+  /* Body: mobile 16px → desktop 20px */
+  .font-body {
+    @apply font-geist text-base font-medium leading-7 md:text-xl md:leading-8;
+  }
+
+  .font-body-mono {
+    @apply font-geist-mono text-base font-medium leading-7 md:text-lg md:leading-8;
+  }
+
+  /* Label LG: mobile 14px → desktop 18px */
+  .font-label-lg {
+    @apply font-geist text-sm font-medium leading-6 md:text-lg md:leading-7;
+  }
+
+  /* Label MD: mobile 13px → desktop 18px */
+  .font-label-md {
+    @apply font-geist text-sm font-semibold leading-5 tracking-normal md:text-lg md:leading-6;
+  }
+
+  /* Mono: mobile 16px → desktop 24px */
+  .font-mono {
+    @apply font-geist-mono text-sm font-semibold leading-6 tracking-normal md:text-sm md:leading-7;
+  }
+
+  /* Card Mono: mobile 14px → desktop 16px */
+  .font-card-mono {
+    @apply font-geist-mono text-sm font-medium leading-5 md:text-sm md:leading-6;
+  }
+
+  /* Label Mono: mobile 12px → desktop 14px */
+  .font-label-mono {
+    @apply font-geist-mono text-xs font-semibold leading-4 md:text-xs md:leading-5;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+
+  --color-grey: #F5F5F5;
+  --color-grey-text: #8E8E8E;
+  --color-bg-primary: #FFFFFF;
+  --color-outline-primary: #DDDDDD;
+  --color-text-tertiary: #B7B7B7;
+  --color-text-primary: #333333;
+  --color-text-secondary: #4F4F4F;
+  --color-bg-secondary: #F6F6F6;
+  --color-bg-green: #D9FCCA;
+  --color-bg-red: #FFC7C7;
+  --color-bg-blue: #CADAFC;
+  --color-text-green: #00421F;
+  --color-text-blue: #1B3262;
+
+
+
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+
 }
