@@ -45,7 +45,7 @@
 
   /* Label MD: mobile 13px → desktop 18px */
   .font-label-md {
-    @apply font-geist text-sm font-semibold leading-5 tracking-normal md:text-lg md:leading-6;
+    @apply font-geist text-sm font-medium leading-5 tracking-normal md:text-lg md:leading-6;
   }
 
   /* Mono: mobile 16px → desktop 24px */
@@ -55,7 +55,7 @@
 
   /* Card Mono: mobile 14px → desktop 16px */
   .font-card-mono {
-    @apply font-geist-mono text-sm font-medium leading-5 md:text-sm md:leading-6;
+    @apply font-geist-mono text-xs font-medium leading-5 md:text-sm md:leading-6;
   }
 
   /* Label Mono: mobile 12px → desktop 14px */
@@ -97,5 +97,7 @@
   --spacing-20: 80px;
   --spacing-24: 96px;
   --spacing-32: 128px;
+
+  --breakpoint-is: 780px;
 
 }

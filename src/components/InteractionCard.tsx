@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ProjectCardProps } from "../types/project";
 
@@ -30,7 +29,7 @@ const variants = {
 
 export default function ProjectCard({
     title,
-    subtitle = "Project", // Added default or you can map from props
+    subtitle = "Project",
     imageCenter,
     imageAlt = "",
     imageLeft,
@@ -55,30 +54,30 @@ export default function ProjectCard({
             initial="rest"
             whileHover="hover"
             animate="rest"
-            className={` bg-bg-primary border-outline-primary group @container relative flex flex-col items-center justify-between overflow-hidden p-4 rounded-3xl w-full md:aspect-2/3 aspect-200/330 cursor-pointer border-2 ${className}`}
+            className={`bg-bg-primary border-outline-primary group @container relative flex flex-col items-center justify-between overflow-hidden p-4 md:rounded-3xl rounded-2xl w-full md:aspect-2/3 aspect-200/330 cursor-pointer border-2 ${className || ""}`}
         >
             {/* ── Top Header ── */}
-            <div className="flex items-center justify-between w-full z-10 shrink-0 gap-2">
-                <div className="bg-bg-secondary flex items-center justify-center px-3 py-2 rounded-xl overflow-hidden">
-                    <p className="font-card-mono text-text-primary whitespace-nowrap text-xs md:text-sm">
+            <div className="flex items-start justify-between w-full z-10 shrink-0 gap-2 pointer-events-none">
+                <div className="bg-bg-secondary flex items-start justify-center px-3 py-2 md:rounded-xl rounded-lg overflow-hidden">
+                    <p className="font-card-mono text-text-primary text-xs md:text-sm">
                         {title}
                     </p>
                 </div>
-                <div className="bg-bg-secondary flex items-center justify-center px-3 py-2 rounded-xl">
-                    <p className="font-card-mono text-text-primary whitespace-nowrap text-xs md:text-sm">
+                <div className="bg-bg-secondary flex items-center justify-end px-3 py-2 md:rounded-xl rounded-lg">
+                    <p className="font-card-mono text-text-primary text-xs md:text-sm">
                         {subtitle}
                     </p>
                 </div>
             </div>
 
             {/* ── Image Container (The Phone Stack) ── */}
-            <div className="w-[85cqw] aspect-495/712 flex items-center justify-center relative overflow-visible">
+            <div className="w-[85cqw] aspect-495/712 flex items-center justify-center relative overflow-visible pointer-events-none">
 
                 {/* Left Image */}
                 <motion.div
                     variants={variants.left}
                     transition={springTransition}
-                    className="absolute inset-x-8 inset-y-4 z-0 pointer-events-none"
+                    className="absolute inset-x-8 inset-y-4 z-0"
                 >
                     <div className="relative w-full h-full">
                         <Image
@@ -95,7 +94,7 @@ export default function ProjectCard({
                 <motion.div
                     variants={variants.right}
                     transition={springTransition}
-                    className="absolute inset-x-8 inset-y-4 z-0 pointer-events-none"
+                    className="absolute inset-x-8 inset-y-4 z-0"
                 >
                     <div className="relative w-full h-full">
                         <Image
@@ -112,7 +111,7 @@ export default function ProjectCard({
                 <motion.div
                     variants={variants.center}
                     transition={springTransition}
-                    className="relative z-10 size-full pointer-events-none"
+                    className="relative z-10 size-full"
                 >
                     <Image
                         src={imageCenter}
@@ -129,15 +128,15 @@ export default function ProjectCard({
             <motion.div
                 variants={variants.tooltip}
                 transition={tooltipTransition}
-                className="absolute left-1/2 -translate-x-1/2 bottom-12 bg-white flex items-center overflow-hidden px-4 py-2 rounded-full shadow-lg z-20 pointer-events-none"
+                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-primary flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
             >
-                <p className="font-card-mono text-text-primary">
+                <p className="font-card-mono text-text-primary whitespace-nowrap">
                     CLICK TO OPEN
                 </p>
             </motion.div>
 
             {/* ── Bottom Route Text ── */}
-            <div className="w-full flex justify-end shrink-0 z-10">
+            <div className="w-full flex justify-end shrink-0 z-10 pointer-events-none">
                 <p className="font-label-mono text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
                     {routeText}
                 </p>
