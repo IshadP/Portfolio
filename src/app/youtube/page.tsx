@@ -497,7 +497,7 @@ export default function YouTubeCaseStudy() {
                                 </GrayBox>
 
                                 <div className="flex flex-col gap-5 w-full">
-                                    <p className="font-h3 text-text-primary">
+                                    <p className="font-h4 text-text-primary">
                                         One day, I was talking to a user, and she asked two questions that changed my course:
                                     </p>
                                     <ul className="list-disc pl-3 flex flex-col gap-3">
@@ -506,48 +506,48 @@ export default function YouTubeCaseStudy() {
                                     </ul>
                                     <BodyText>So I visited Spotify and I found something very useful!</BodyText>
                                 </div>
-                                
+
                                 <div className="flex flex-col gap-6">
-                                <div className="flex self-start">
-                                    <Badge variant="green" icon="check">Final Design</Badge>
+                                    <div className="flex self-start">
+                                        <Badge variant="green" icon="check">Final Design</Badge>
+                                    </div>
+
+                                    <GrayBox title="Music Platforms" className="flex flex-col gap-8 p-8 md:p-4">
+                                        <div className="flex flex-col lg:flex-row gap-12 items-cente justify-center">
+                                            <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
+                                                <Image src={`${A}/Decision1-06.png`} alt="Spotify Analysis" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            </div>
+                                            <div className="flex flex-col gap-6 max-w-[400px]">
+                                                <ProConCard variant="insight">Not only was the section below the text suggestions, but it shows video suggestions based on query, not just history!</ProConCard>
+                                                <div className="flex flex-col gap-4">
+                                                    <p className="text-label-lg font-bold text-text-secondary">Why text suggestions on top?</p>
+                                                    <BodyText><span className="font-bold">User expectation</span>: Users expect text suggestions near the search bar as they type. It also <span className="font-bold">helps with query refinement</span>, finishing typing faster.</BodyText>
+                                                </div>
+                                                <div className="flex flex-col gap-4">
+                                                    <p className="text-label-lg font-bold text-text-secondary">Why not history?</p>
+                                                    <BodyText>Current user intent is stronger than past searches. Users are on the search page to find something "now" that might be different from history.</BodyText>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </GrayBox>
+
+                                    <GrayBox title="Translation to Youtube" className="flex flex-col gap-8 p-8 md:p-4">
+                                        <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
+                                            <div className="flex flex-col gap-6 max-w-[400px]">
+                                                <ProConCard variant="insight">The suggestion just below the search bar helps users understand relationship to the query, following the Law of Common Regions.</ProConCard>
+                                                <ProConCard variant="insight">Video suggestions based on user query and preferences help users adjust their query accordingly.</ProConCard>
+                                            </div>
+                                            <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
+                                                <Image src={`${A}/Decision1-07.png`} alt="Final Translated Design" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            </div>
+                                        </div>
+                                    </GrayBox>
+
+
+                                    <BodyText>Choosing this new layout seemed to help users subconsciously. While my user testing couldn't reveal a significant effect immediately, I believe on a larger scale this pattern reflects a major shift in user thinking.</BodyText>
                                 </div>
-
-                                <GrayBox title="Music Platforms" className="flex flex-col gap-8 p-8 md:p-4">
-                                    <div className="flex flex-col lg:flex-row gap-12 items-cente justify-center">
-                                        <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-06.png`} alt="Spotify Analysis" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
-                                        </div>
-                                        <div className="flex flex-col gap-6 max-w-[400px]">
-                                            <ProConCard variant="insight">Not only was the section below the text suggestions, but it shows video suggestions based on query, not just history!</ProConCard>
-                                            <div className="flex flex-col gap-4">
-                                                <p className="text-label-lg font-bold text-text-secondary">Why text suggestions on top?</p>
-                                                <BodyText><span className="font-bold">User expectation</span>: Users expect text suggestions near the search bar as they type. It also <span className="font-bold">helps with query refinement</span>, finishing typing faster.</BodyText>
-                                            </div>
-                                            <div className="flex flex-col gap-4">
-                                                <p className="text-label-lg font-bold text-text-secondary">Why not history?</p>
-                                                <BodyText>Current user intent is stronger than past searches. Users are on the search page to find something "now" that might be different from history.</BodyText>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </GrayBox>
-
-                                <GrayBox title="Translation to Youtube" className="flex flex-col gap-8 p-8 md:p-4">
-                                    <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-                                        <div className="flex flex-col gap-6 max-w-[400px]">
-                                            <ProConCard variant="insight">The suggestion just below the search bar helps users understand relationship to the query, following the Law of Common Regions.</ProConCard>
-                                            <ProConCard variant="insight">Video suggestions based on user query and preferences help users adjust their query accordingly.</ProConCard>
-                                        </div>
-                                        <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-07.png`} alt="Final Translated Design" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
-                                        </div>
-                                    </div>
-                                </GrayBox>
-                                
-
-                                <BodyText>Choosing this new layout seemed to help users subconsciously. While my user testing couldn't reveal a significant effect immediately, I believe on a larger scale this pattern reflects a major shift in user thinking.</BodyText>
-                               </div> 
                             </div>
-                            
+
 
                             {/* --- Decision 2 --- */}
                             <div className="flex flex-col gap-6 w-full">
@@ -753,8 +753,8 @@ export default function YouTubeCaseStudy() {
 
                                 <div className="flex flex-col gap-8">
                                     <div className="flex flex-col gap-8 items-center bg-bg-secondary p-8 rounded-3xl overflow-hidden">
-                                        <div className="relative w-full lg:w-[400px] aspect-372/52 rounded-xl overflow-hidden shadow-md">
-                                            <Image src={`${A}/UI-02.png`} alt="Auto Layout Card Example" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
+                                        <div className="relative w-full lg:w-[40vw] aspect-2156/228 rounded-xl ">
+                                            <Image src={`${A}/UI-05.png`} alt="Auto Layout Card Example" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" />
                                         </div>
                                         <div className="flex-1">
                                             <BodyText>I used auto layout extensively to ensure consistency throughout various screen sizes. Autolayout made sure that the overall structure of the card was maintained while giving it flexibility to change the size. Moreover, using limits for width in combination with trim text helped me to make all the cards look consistent even with varying degrees of text quantity.</BodyText>
@@ -764,16 +764,16 @@ export default function YouTubeCaseStudy() {
 
                                 <div className="flex flex-col gap-8">
                                     <div className="relative w-full aspect-1037/105 rounded-xl overflow-hidden shadow-sm border border-outline-primary bg-white">
-                                        <Image src={`${A}/UI-03.png`} alt="Pill States" fill sizes="100vw" className="object-contain px-4" />
+                                        <Image src={`${A}/UI-02.png`} alt="Pill States" fill sizes="100vw" className="object-contain px-4" />
                                     </div>
                                     <BodyText>As each pill button has various states, I used components to implement them, with clearly defined properties. Using components, I created various states in which the search bar and filter bar could exist.</BodyText>
 
                                     <div className="flex flex-col lg:flex-row gap-8 items-center justify-center pt-4">
                                         <div className="relative w-full lg:w-[450px] aspect-426/453 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
-                                            <Image src={`${A}/UI-04.png`} alt="Component Properties A" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
+                                            <Image src={`${A}/UI-03.png`} alt="Component Properties A" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
                                         </div>
                                         <div className="relative w-full lg:w-[450px] aspect-429/456 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
-                                            <Image src={`${A}/UI-05.png`} alt="Component Properties B" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
+                                            <Image src={`${A}/UI-04.png`} alt="Component Properties B" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
                                         </div>
                                     </div>
                                     <BodyText>Clear nomenclature in components allowed me to implement the same component in various scenarios, saving hours of duplicate work.</BodyText>
@@ -781,7 +781,7 @@ export default function YouTubeCaseStudy() {
                             </div>
 
                             <div className="flex flex-col gap-5 w-full">
-                                <Title>Future Scope of improving search</Title>
+                                <Heading>Future Scope of improving search</Heading>
                                 <div className="flex flex-col gap-3">
                                     <BodyText>AI-assisted search can make discovery faster and more intent-driven. Predictive suggestions could anticipate queries, while adaptive filters refine results using viewing behavior, preferences, and context.</BodyText>
                                     <BodyText>The current filter system can be strengthened with advanced options such as duration, creator type, language, and recency. This allows users to narrow results quickly when the goal is specific.</BodyText>
@@ -790,20 +790,14 @@ export default function YouTubeCaseStudy() {
                             </div>
 
                             <div className="flex flex-col gap-5 w-full">
-                                <Title>Main takeaways</Title>
-                                <div className="flex flex-col gap-8">
-                                    <div className="flex flex-col gap-4">
-                                        <p className="text-h4 font-bold text-text-primary">Intent-Driven Problem Solving</p>
-                                        <BodyText>Usually I found myself struggling to find the why’s behind the actions of the user, during this project I understood that the “Why” is always fuelled by user’s intent and need. Understanding intent was the key to effective problem solving for users.</BodyText>
-                                    </div>
-                                    <div className="flex flex-col gap-4">
-                                        <p className="text-h4 font-bold text-text-primary">Theme-Based Context</p>
-                                        <BodyText>A big mindset shift for me was moving away from sticking rigidly to a set of questions. In the past, that approach rarely gave me deep insights. Here, by focusing on themes instead of fixed questions, I was able to uncover deeper pain points more naturally.</BodyText>
-                                    </div>
-                                    <div className="flex flex-col gap-4">
-                                        <p className="text-h4 font-bold text-text-primary">Validating Early</p>
-                                        <BodyText>I always thought jumping to UI directly will give me more ideas and various cases, but in this project when I clearly wrote my hypothesis and sketched my ideas, I understood their importance and how validating ideas as wireframe is more economical and efficient as a designer.</BodyText>
-                                    </div>
+                                <Heading>Main takeaways</Heading>
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>Usually I found myself struggling to find the why’s behind the actions of the user, during this project I understood that the “Why” is always fuelled by user’s intent and need. Understanding intent was the key to effective problem solving for users.</BodyText>
+
+                                    <BodyText>A big mindset shift for me was moving away from sticking rigidly to a set of questions. In the past, that approach rarely gave me deep insights. Here, by focusing on themes instead of fixed questions, I was able to uncover deeper pain points more naturally.</BodyText>
+
+                                    <BodyText>I always thought jumping to UI directly will give me more ideas and various cases, but in this project when I clearly wrote my hypothesis and sketched my ideas, I understood their importance and how validating ideas as wireframe is more economical and efficient as a designer.</BodyText>
+
                                 </div>
                                 <div className="pt-8">
                                     <Title>Thank you!</Title>
