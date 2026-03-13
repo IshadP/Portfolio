@@ -61,9 +61,9 @@ export default function Hero() {
                 )}
 
                 {pathname === "/printhub" && (
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center w-full justify-center gap-4">
                         <div className="relative shrink-0 rounded-full overflow-hidden -rotate-45">
-                            <Image src="/assets/printhub/printhub-avatar.svg" alt="Printhub" width={64} height={64} style={{ transform: "rotate(45deg)" }} />
+                            <Image src="/printhub-icon.svg" alt="Printhub" width={64} height={64} style={{ transform: "rotate(45deg)" }} />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Printhub

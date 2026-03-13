@@ -33,7 +33,7 @@ export default function Home() {
                   imageLeft="/cards/Printhub1-02.png"
                   imageRight="/cards/Printhub1-03.png"
                   routeText="/YOUTUBE"
-
+                  href="/youtube"
                 />
 
                 {/* AiExperiment Card - Desktop */}
@@ -51,6 +51,7 @@ export default function Home() {
                   imageLeft="/cards/Printhub1-02.png"
                   imageRight="/cards/Printhub1-03.png"
                   routeText="/PRINTHUB"
+                  href="/printhub"
                 />
 
                 <FeatureCard
@@ -59,6 +60,7 @@ export default function Home() {
                   imageLeft="/cards/Printhub2-01.png"
                   imageRight="/cards/Printhub2-02.png"
                   routeText="/PRINTHUB"
+                  href="/printhub"
                 />
               </div>
 

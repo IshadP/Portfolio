@@ -31,6 +31,7 @@ type Props = {
     imageLeft?: string;
     imageRight?: string;
     routeText?: string;
+    href?: string;
 };
 
 export default function FeatureCard({
@@ -39,9 +40,17 @@ export default function FeatureCard({
     imageLeft = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
     imageRight = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
     routeText = "/YOUTUBE",
+    href,
 }: Props) {
+    const isExternal = href?.startsWith("http");
+    const Wrapper = href ? motion.a : motion.div;
+    const wrapperProps = href
+        ? { href, ...(isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {}) }
+        : {};
+
     return (
-        <motion.div
+        <Wrapper
+            {...wrapperProps}
             initial="rest"
             whileHover="hover"
             animate="rest"
@@ -124,6 +133,6 @@ export default function FeatureCard({
                     {routeText}
                 </p>
             </div>
-        </motion.div>
+        </Wrapper>
     );
 }
