@@ -21,7 +21,7 @@ export default function ProConCard({
         "text-text-primary font-label-md sm:font-label-lg"; // normal and insight sum up here
 
     return (
-        <div className={`${bg} flex items-start overflow-hidden p-4 rounded-lg md:rounded-xl w-full md:max-w-[456px]`}>
+        <div className={`${bg} flex items-start overflow-hidden px-4 py-2 rounded-lg md:rounded-xl w-full md:max-w-[456px]`}>
             <p className={`${text}`}>
                 {children}
             </p>

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import CopyEmailButton from "./CopyEmailButton";
-import Footer from "./Footer";
 
 const navLinks = [
     { label: "Home", href: "/" },
@@ -188,7 +187,6 @@ export default function Navbar() {
                             </div>
 
                         </div>
-                        <Footer />
                     </motion.div>
                 )}
             </AnimatePresence>

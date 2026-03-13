@@ -65,7 +65,7 @@ export default function YouTubeCaseStudy() {
             <Hero />
 
             {/* ── Main Content ── */}
-            <FadeIn className="w-full flex justify-center z-10">
+            <FadeIn className="w-full flex justify-center mt-[40vh] z-10">
                 <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-[1024px] flex-col gap-8 px-4 pb-32">
                     {/* ── Navbar ── */}
                     <Navbar />
@@ -438,21 +438,25 @@ export default function YouTubeCaseStudy() {
                                 </div>
 
                                 <GrayBox title="Initial Idea" className="flex flex-col gap-8 p-8 md:p-4">
-                                    <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
-                                        <div className="flex flex-col gap-6 w-full lg:w-[220px]">
-                                            <ProConCard variant="insight">Many users expressed that they remember/judge a video by visual detail. So I decided to keep thumbnails to help them.</ProConCard>
-                                            <ProConCard variant="insight">While showcasing the wireframes, many people asked, "How will I know what this is?" This feedback made me change my decision and include the section on the page.</ProConCard>
+                                    <div className="flex flex-col gap-8 items-center justify-between">
+                                        <div className="flex flex-row w-full justify-center items-center p-12 gap-4">
+                                            <div className="flex flex-col gap-6 w-fit">
+                                                <ProConCard variant="insight">Many users expressed that they remember/judge a video by visual detail. So I decided to keep thumbnails to help them.</ProConCard>
+                                                <ProConCard variant="insight">While showcasing the wireframes, many people asked, "How will I know what this is?" This feedback made me change my decision and include the section on the page.</ProConCard>
+                                            </div>
+                                            <div className="relative w-[280px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
+                                                <Image src={`${A}/Decision1-01.png`} alt="Initial Wireframe" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            </div>
                                         </div>
-                                        <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-01.png`} alt="Initial Wireframe" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
-                                        </div>
-                                        <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-02.png`} alt="Initial UI Mockup" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
-                                        </div>
-                                        <div className="flex flex-col gap-6 w-full lg:w-[220px]">
-                                            <ProConCard variant="insight">Placing the option at the top made it easier for people to spot while scanning. F-shaped reading patterns increase the chances of noticing sections at the top.</ProConCard>
-                                            <ProConCard variant="insight">Providing only 2-3 choices helps users to make decisions faster.</ProConCard>
-                                            <ProConCard variant="insight">While talking to users, some mentioned they rely on past searches to find videos. I kept the section to ensure they wouldn't feel confused.</ProConCard>
+                                        <div className="flex flex-row w-full justify-center items-center p-12 gap-4">
+                                            <div className="relative w-[280px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
+                                                <Image src={`${A}/Decision1-02.png`} alt="Initial UI Mockup" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            </div>
+                                            <div className="flex flex-col gap-6 w-fit">
+                                                <ProConCard variant="insight">Placing the option at the top made it easier for people to spot while scanning. F-shaped reading patterns increase the chances of noticing sections at the top.</ProConCard>
+                                                <ProConCard variant="insight">Providing only 2-3 choices helps users to make decisions faster.</ProConCard>
+                                                <ProConCard variant="insight">While talking to users, some mentioned they rely on past searches to find videos. I kept the section to ensure they wouldn't feel confused.</ProConCard>
+                                            </div>
                                         </div>
                                     </div>
                                     <p className="text-label-md text-text-secondary text-center">Initially I started with an assumption that users want to find new content</p>

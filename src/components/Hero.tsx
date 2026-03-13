@@ -43,7 +43,7 @@ export default function Hero() {
                 {pathname === "/ai-experiments" && (
                     <div className="flex items-center gap-4">
                         <div className="relative w-[53px] h-[53px] shrink-0 -rotate-45">
-                            <Image src="/assets/dark-star.svg" alt="Dark Star" width={54} height={54} style={{ transform: "rotate(45deg)" }} />
+                            <Image src="/star.svg" alt="Dark Star" width={54} height={54} style={{ transform: "rotate(45deg)" }} />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             AI Experiments
@@ -51,7 +51,7 @@ export default function Hero() {
                     </div>
                 )}
 
-                {pathname === "/resume" && (
+                {/* {pathname === "/resume" && (
                     <div className="flex items-center gap-4">
                         <ReadCvLogo size={64} className="text-text-primary" />
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
@@ -69,12 +69,12 @@ export default function Hero() {
                             Printhub
                         </p>
                     </div>
-                )}
+                )} */}
 
                 {pathname === "/youtube" && (
-                    <div className="flex items-center gap-4">
-                        <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden -rotate-45 ">
-                            <Image src="/assets/youtube/ytlogo.jpg" alt="YouTube" fill className="object-contain" style={{ transform: "rotate(45deg)" }} />
+                    <div className="flex items-center w-full justify-center gap-4">
+                        <div className="relative w-16 h-16 overflow-hidden ">
+                            <Image src="/youtube-icon.svg" alt="YouTube" fill className="object-contain" />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             YouTube
