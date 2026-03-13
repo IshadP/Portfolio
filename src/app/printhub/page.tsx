@@ -128,14 +128,14 @@ function JourneyStep({
                 </div>
 
                 {/* Right Side: Composable Details / Insights */}
-                    <div className="flex flex-col gap-6 md:gap-4 lg:max-w-[320px] w-full justify-center lg:justify-start items-center lg:pt-12">
-                        {children}
-                    </div>
+                <div className="flex flex-col gap-6 md:gap-4 lg:max-w-[320px] w-full justify-center lg:justify-start items-center lg:pt-12">
+                    {children}
+                </div>
             </div>
 
             {/* Vertical Connector */}
             {arrow && (
-                <div className="flex flex-col items-center justify-center relative w-full h-[152px]">
+                <div className="flex flex-col items-center justify-center relative w-full h-20 md:h-[152px]">
                     <Image src={`${A}/${arrow}`} alt="Connector" fill className="object-contain" />
                 </div>
             )}
@@ -159,7 +159,7 @@ export default function PrinthubPage() {
                     <section className="flex flex-col gap-8 w-full">
                         <Title>How refined components and better flows saved PrintHub users 30% of their time.</Title>
 
-                        <GrayBox className="bg-white border-3 border-outline-primary overflow-hidden p-0 rounded-[30px] w-full">
+                        <div className="bg-white border-3 border-outline-primary overflow-hidden p-0 rounded-[30px] w-full">
                             <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-8 md:p-12 overflow-hidden bg-bg-primary">
                                 <div className="relative w-[280px] md:w-[320px] aspect-324/691 overflow-hidden ">
                                     <Image src={`${A}/Intro-01.png`} alt="PrintHub Screen 1" fill className="object-cover" />
@@ -171,7 +171,7 @@ export default function PrinthubPage() {
                                     <Image src={`${A}/Intro-02.png`} alt="PrintHub Screen 2" fill className="object-cover" />
                                 </div>
                             </div>
-                        </GrayBox>
+                        </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-24 px-8 md:px-12">
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
@@ -248,7 +248,7 @@ export default function PrinthubPage() {
                             </div>
                         </div>
 
-                        <div className="flex flex-row gap-2">
+                        <div className="flex flex-col md:flex-row gap-2">
                             {/* --- Problem 1 --- */}
                             <div className="flex flex-col gap-6">
                                 <GrayBox title="Unnecessary actions" className="flex w-full justify-center items-center">
@@ -453,7 +453,7 @@ export default function PrinthubPage() {
                                 screen="Flow-06.png"
                                 arrow="arrow-Journey-06.svg"
                             >
-                               <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-2">
                                     <ProConCard variant="insight">User can click on Print Files button to print all files in inventory directly.</ProConCard>
                                     <ProConCard variant="fact">Selecting more than 4-5 files manually adds lot of unnecessary load on user.</ProConCard>
                                 </div>
@@ -523,211 +523,706 @@ export default function PrinthubPage() {
                                 </div>
                             </JourneyStep>
                         </div>
+                        <BodyText>
+                            Yash felt relieved that he could print without standing in long queues outside the print shop, it was a quick scan → pay → grab for him.
+                        </BodyText>
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 07. DECISION STORIES ──                                     */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full pt-24">
+                    <section className="flex flex-col gap-12 w-full">
                         <div className="flex flex-col gap-5 w-full">
                             <Heading>Decisions that shaped the experience</Heading>
                         </div>
 
                         {/* --- Decision 1 --- */}
-                        <div className="flex flex-col gap-12 w-full">
-                            <div className="flex flex-col gap-3 w-full">
-                                <div className="flex self-start">
-                                    <Badge variant="info">Decision 1</Badge>
-                                </div>
-                                <div className="flex flex-col gap-5">
+                        <div className="flex flex-col gap-6 w-full"> {/* Parent container for 24px transitions */}
+                            <div className="flex flex-col gap-5"> {/* Container for 20px transition (Title to Body) */}
+                                <div className="flex flex-col gap-3"> {/* Container for 12px transition (Badge to Title) */}
+                                    <div className="flex self-start">
+                                        <Badge variant="info">Decision 1</Badge>
+                                    </div>
                                     <Heading>Why I redesigned the card to help user complete printing 30% faster</Heading>
-                                    <BodyText>
-                                        I realised that the problem wasn’t in UI but how people used it. Printing is irreversible. Wrong prints waste time and money. To avoid this, users repeatedly reopened customization settings to verify their own actions.
-                                    </BodyText>
                                 </div>
+                                <BodyText>
+                                    I realised that the problem wasn’t in UI but how people used it. Printing is irreversible. Wrong prints waste time and money. To avoid this, users repeatedly reopened customization settings to verify their own actions.
+                                </BodyText>
                             </div>
 
-                            <GrayBox title="Current Card Design" className="bg-[#f5f5f5] p-8 md:p-12">
+                            <GrayBox title="Current Card Design" className="bg-bg-secondary p-8 md:p-12">
                                 <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                     <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
                                         <Image src={`${A}/Decision1-01.png`} alt="Current Design" fill className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 max-w-[480px]">
-                                        <ProConCard variant="con">“Customize” does not tell users what they can change</ProConCard>
-                                        <ProConCard variant="con">Users only use preview when they are unsure about document</ProConCard>
-                                        <ProConCard variant="con">Card doesn’t follow material standards</ProConCard>
+                                        <ProConCard variant="con" full>“Customize” does not tell users what they can change</ProConCard>
+                                        <ProConCard variant="con" full>Users only use preview when they are unsure about document</ProConCard>
+                                        <ProConCard variant="con" full>Card doesn’t follow material standards</ProConCard>
                                     </div>
                                 </div>
                             </GrayBox>
 
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-col gap-3"> {/* Container for 12px gap between paragraphs */}
                                 <BodyText>
                                     My initial assumption was that people were forced to recall previous action. To avoid monetary loss they reverified the settings. Following recognition rather than recall principle, the goal was to surface past actions in order to reduce uncertainty without increasing cognitive load.
                                 </BodyText>
-                                <p className="font-body text-text-primary max-w-[1024px] mx-auto">To support this, I explored two options:</p>
+                                <BodyText>
+                                    To support this, I explored two options:
+                                </BodyText>
                             </div>
 
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 w-full max-w-[1078px] mx-auto">
-                                <div className="flex flex-col gap-4">
-                                    <GrayBox title="Visual indicators Only" className="aspect-video bg-[#f6f6f6] p-8 flex items-center justify-center">
+                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 w-full max-w-[1078px]">
+                                <div className="flex flex-col gap-2">
+                                    <GrayBox title="Visual indicators Only" className="aspect-video bg-bg-secondary p-8 flex items-center justify-center">
                                         <div className="relative w-full h-full">
                                             <Image src={`${A}/Decision1-02.png`} alt="Option 1" fill className="object-contain" />
                                         </div>
                                     </GrayBox>
-                                    <ProConCard variant="pro">Changes in a features are clearly visible.</ProConCard>
-                                    <ProConCard variant="pro">Visuals are processed faster and reduces cognitive load.</ProConCard>
-                                    <ProConCard variant="con">Can cause confusion due to different interpretation of icons.</ProConCard>
+                                    <div className="flex flex-col gap-2">
+                                        <ProConCard variant="pro" full>Changes in a features are clearly visible.</ProConCard>
+                                        <ProConCard variant="pro" full>Visuals are processed faster and reduces cognitive load.</ProConCard>
+                                        <ProConCard variant="con" full>Can cause confusion due to different interpretation of icons.</ProConCard>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col gap-4">
-                                    <GrayBox title="Textual Indicators" className="aspect-video bg-[#f6f6f6] p-8 flex items-center justify-center">
+                                <div className="flex flex-col gap-2">
+                                    <GrayBox title="Textual Indicators" className="aspect-video bg-bg-secondary p-8 flex items-center justify-center">
                                         <div className="relative w-full h-full">
                                             <Image src={`${A}/Decision1-03.png`} alt="Option 2" fill className="object-contain" />
                                         </div>
                                     </GrayBox>
-                                    <ProConCard variant="pro">Clearly tell which options are used to print the item.</ProConCard>
-                                    <ProConCard variant="pro">Removing guesswork on what is active and what’s not active.</ProConCard>
-                                    <ProConCard variant="con">This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>
+                                    <div className="flex flex-col gap-2">
+                                        <ProConCard variant="pro" full>Clearly tell which options are used to print the item.</ProConCard>
+                                        <ProConCard variant="pro" full>Removing guesswork on what is active and what’s not active.</ProConCard>
+                                        <ProConCard variant="con" full>This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>
+                                        <ProConCard variant="con" full>Excessive card height wastes screen space and forces unnecessary scrolling when multiple items are added.</ProConCard>
+                                    </div>
                                 </div>
+                            </div>
+
+                            {/* --- Main Card Interaction Ideas Section --- */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>
+                                        When presented with two options, most users chose option one. Further talking showed that option two caused higher cognitive load as each option had to be read. Stakeholders reached the same conclusion, so we proceeded with option one.
+                                    </BodyText>
+                                    <BodyText>
+                                        As I removed customise button, we needed a new interaction to enter customisaton mode. We also needed a clear way to show and select files.
+                                    </BodyText>
+                                    <BodyText>
+                                        I explored two options:
+                                    </BodyText>
+                                </div>
+
+                                <SectionLabel>Main Card Interaction Ideas</SectionLabel>
+                            </div>
+
+                            {/* --- Idea 1: Click and Hold --- */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="error">Idea 1</Badge>
+                                        </div>
+                                        <Heading>Click and hold to customise while retaining the checkbox to preserve existing user habits.</Heading>
+                                    </div>
+                                    <BodyText>
+                                        I kept the checkbox for selection and added a preview so users could see whether a file needed editing. Customisation was available through click and hold. This assumed that most users rarely need to customise files.
+                                    </BodyText>
+                                </div>
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex flex-col gap-8 items-center justify-center">
+                                        <div className="relative w-full max-w-[614px] aspect-614/120 rounded-xl overflow-hidden shadow-lg">
+                                            <Image src={`${A}/Decision1-04.png`} alt="Idea 1 Design" fill className="object-cover" />
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                                            <ProConCard variant="con" full>I was wrong. Users used customisation lot more.</ProConCard>
+                                            <ProConCard variant="con" full>Interaction on hold remains unclear, and users do not understand how it works.</ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+                            {/* --- Preview Dropped Notice --- */}
+                            <div className="flex w-full flex-col rounded-[32px] bg-outline-primary px-0.5 pt-0.5 pb-2">
+                                <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-primary">
+                                    <div className="flex w-full items-center gap-2 bg-outline-primary px-6 py-4">
+                                        <p className="font-h3 text-text-primary">Preview Dropped!</p>
+                                    </div>
+                                    <div className="flex w-full flex-col gap-3 p-6 text-text-primary">
+                                        <BodyText>It was technically complex to implement and did not fit within the project timeline.</BodyText>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* --- Idea 2: Edit Icon --- */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="error">Idea 2</Badge>
+                                        </div>
+                                        <Heading>Introduce edit icon instead of the preview.</Heading>
+                                    </div>
+                                    <BodyText>
+                                        Following removal of preview, I added a Customize icon instead of using a hidden gesture. I kept the checkbox, even though it did not fully match Material 3. This decision was to preserve existing user behaviour.
+                                    </BodyText>
+                                </div>
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex flex-col gap-8 items-center justify-center">
+                                        <div className="relative w-full max-w-[602px] aspect-602/107 rounded-xl overflow-hidden shadow-lg">
+                                            <Image src={`${A}/Decision1-05.png`} alt="Idea 2 Design" fill className="object-cover" />
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[602px]">
+                                            <ProConCard variant="con" full>Users had to stretch their thumbs to reach the customize icon, making it hard to tap.</ProConCard>
+                                            <ProConCard variant="pro" full>Placing the Customize icon on the left helped users immediately understand how to change settings instead of experimenting to find the action.</ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+                            {/* --- Research Insight Section --- */}
+                            <div className="flex flex-col gap-6">
+                                <BodyText>
+                                    I was unsure how can we conserve user behaviour and follow design standards as well. I went to other apps to see how they tackled the the problem of keep selection and edit (secondary action) viable. When I saw Gmail it become very clear what I was missing out.
+                                </BodyText>
+
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex flex-col gap-8 items-center justify-center">
+                                        <div className="flex flex-col md:flex-row gap-6 w-full items-center justify-center">
+                                            <div className="relative w-full max-w-[492px] aspect-492/106 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision1-06.png`} alt="Gmail Example 1" fill className="object-cover" />
+                                            </div>
+                                            <div className="relative w-full max-w-[487px] aspect-487/110 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision1-07.png`} alt="Gmail Example 2" fill className="object-cover" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[552px]">
+                                            <ProConCard variant="pro" full>One click on the item avatar selects it and UI enters selection mode.</ProConCard>
+                                            <ProConCard variant="pro" full>Secondary action like starring was on right and still viable.</ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+
+                                <BodyText>
+                                    When I talked to users about Gmail, a comment similar to “it is how it is” came up in every conversation. This meant that they felt safe while interacting with card, so much so that it became second nature. This made me realise that following same pattern won’t cause much friction in users.
+                                </BodyText>
+                            </div>
+
+                            {/* --- Final Design Section --- */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="success">Final Design</Badge>
+                                        </div>
+                                        <Heading>By making applied settings visible, the final design removed reverification and reduced decision time during printing</Heading>
+                                    </div>
+                                    <BodyText>
+                                        By prioritising recognition, user moved through flow much faster as they had higher confidence on their decision.
+                                    </BodyText>
+                                </div>
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex items-center justify-center">
+                                        <div className="relative w-full max-w-[602px] aspect-602/253">
+                                            <Image src={`${A}/Decision1-08.png`} alt="Final Card Design" fill className="object-contain" />
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+
+                            <div className="flex flex-col gap-3">
+                                <BodyText>
+                                    In testing, we noticed most of the users already knew what to do, without much guidance.
+                                </BodyText>
+                                <BodyText>
+                                    We conducted testing with 7 students. On average they were able to complete the flow faster by ~30% for more than 4 files.
+                                </BodyText>
                             </div>
                         </div>
 
                         {/* --- Decision 2 --- */}
-                        <div className="flex flex-col gap-12 w-full ">
-                            <div className="flex flex-col gap-3 w-full">
-                                <div className="flex self-start">
-                                    <Badge variant="info">Decision 2</Badge>
+                        <div className="flex flex-col gap-6 w-full">
+                            <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex self-start">
+                                        <Badge variant="info">Decision 2</Badge>
+                                    </div>
+                                    <Heading>How I fixed two broken button to behave like user expected them to.</Heading>
                                 </div>
-                                <div className="flex flex-col gap-5">
-                                    <Heading>How I fixed two broken buttons to behave like users expected them to</Heading>
+                                <div className="flex flex-col gap-3">
                                     <BodyText>
-                                        The two buttons on home screen were very integral to the whole flow, yet I myself found them to be a bit confusing on how they functioned as a new user. The print summary button only appeared if an item was selected, leaving users confused if they had items but none selected.
+                                        The two button on home screen had were very integral to the whole flow, yet I myself found them to be a bit confusing on how they functioned as a new user.
+                                    </BodyText>
+                                    <BodyText>
+                                        The interaction was more confusing, the print summary button only appeared if item was selected. Meaning if user had items and none of them were selected, there isn’t any clear way forward.
                                     </BodyText>
                                 </div>
                             </div>
 
-                            <GrayBox title="Current Design Analysis" className="bg-[#f6f6f6] p-8 md:p-12">
-                                <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-                                    <div className="flex flex-col gap-4 items-center">
-                                        <div className="flex gap-4">
-                                            <div className="relative w-[140px] aspect-324/691 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                                <Image src={`${A}/Decision2-01.png`} alt="Before" fill className="object-cover" />
-                                            </div>
-                                            <div className="relative w-[140px] aspect-324/691 rounded-xl overflow-hidden shadow-lg border-2 border-primary-default">
-                                                <Image src={`${A}/Decision2-02.png`} alt="After Selection" fill className="object-cover" />
-                                            </div>
+                            <GrayBox title="Current Design Analysis" >
+                                <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6 items-center justify-center">
+                                    <div className="flex items-center">
+                                        <div className="relative w-[140px] md:w-[170px] aspect-170/378 rounded-xl overflow-hidden shadow-lg ">
+                                            <Image src={`${A}/Decision2-01.png`} alt="Before" fill className="object-cover" />
                                         </div>
-                                        <p className="text-label-sm text-text-tertiary">Button state change on selection</p>
+                                        <div className="relative w-10 h-10">
+                                            <Image src={`${A}/arrow-Intro.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[140px] md:w-[170px] aspect-170/378 rounded-xl overflow-hidden shadow-lg ">
+                                            <Image src={`${A}/Decision2-02.png`} alt="After" fill className="object-cover" />
+                                        </div>
                                     </div>
-                                    <div className="flex flex-col gap-4 max-w-[400px]">
-                                        <ProConCard variant="con">The path to final goal is unclear to users.</ProConCard>
-                                        <ProConCard variant="con">Visual Feedback is very subtle after item selection causing change blindness.</ProConCard>
-                                        <ProConCard variant="con">Buttons don't follow material standards.</ProConCard>
+                                    <div className="flex flex-col gap-2 w-full">
+                                        <ProConCard variant="con" full>The path to final goal is unclear to users.</ProConCard>
+                                        <ProConCard variant="con" full>Visual Feedback is very subtle after item selection causing change blindness</ProConCard>
+                                        <ProConCard variant="con" full>Buttons doesn’t follow material standards</ProConCard>
                                     </div>
                                 </div>
                             </GrayBox>
+
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <BodyText>
+                                            Observation showed that many users missed the button change, and no one understood what “Print Summary” meant. New users were forced to click it just to learn its function.
+                                        </BodyText>
+                                        <BodyText>
+                                            I realised the problem wasn’t the button itself but how the button behaved and meant to users.
+                                        </BodyText>
+                                        <BodyText>
+                                            My initial assumption was to stick to material guidelines, this led me to two ideas:
+                                        </BodyText>
+                                    </div>
+
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="error">Idea 1</Badge>
+                                        </div>
+                                        <Heading>Floating Action Buttons</Heading>
+                                    </div>
+
+                                    <BodyText>
+                                        I decided to keep the “Add files” button as primary button and “Print Files” as secondary FAB as Printing was depended on adding file. This made adding files primary action.
+                                    </BodyText>
+                                </div>
+
+                                <GrayBox>
+                                    <div className="flex flex-col gap-6 items-center justify-center">
+                                        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                                            <div className="relative w-[40cqw] max-w-[391px] aspect-391/151 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision2-03.png`} alt="Idea 1 Design 1" fill className="object-cover" />
+                                            </div>
+                                            <div className="relative w-[40cqw] max-w-[174px] aspect-174/152 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision2-04.png`} alt="Idea 1 Design 2" fill className="object-cover" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                                            <ProConCard variant="con" full>This reduced importance of ”Print files” which is essential to completion of flow.</ProConCard>
+                                            <ProConCard variant="con" full>Users where confused what button does because the print icon was associated with changing printer rather than printing itself.</ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <BodyText>
+                                            This revealed a key insight. “Print Files” depends on “Add Files,” but printing is the primary action because it drives revenue. It cannot be deprioritized relative to adding files.
+                                        </BodyText>
+                                        <BodyText>
+                                            Following insight, I mapped user journey and understood that one specific moments act as pivot i.e. when user selects file. So I decided to experiment with contextual buttons.
+                                        </BodyText>
+                                    </div>
+
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="error">Idea 2</Badge>
+                                        </div>
+                                        <Heading>Contextual Buttons</Heading>
+                                    </div>
+
+                                    <BodyText>
+                                        I noticed that user intent selected from adding files to printing files as soon they select a file. Following this, I decided to replace “Add file” button with “Print Files” on selection, similar to original pattern.
+                                    </BodyText>
+                                </div>
+
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex flex-col gap-6 items-center justify-center">
+                                        <div className="relative w-full max-w-[610px] aspect-610/238 rounded-xl overflow-hidden shadow-lg">
+                                            <Image src={`${A}/Decision2-05.png`} alt="Idea 2 Design" fill className="object-cover" />
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                                            <ProConCard variant="pro" full>Screen now had one primary action effectively reducing the time to decide</ProConCard>
+                                            <ProConCard variant="con" full>User still suffered with goal gradient problem as they didn’t know what to do once file was added (but not selected)</ProConCard>
+                                            <ProConCard variant="con" full>In case of more than a 4-5 files, it would become tedious to select each and every file one by one because the user might have to scroll.</ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+                            <div className="flex flex-col gap-6">
+                                <BodyText>
+                                    We tested this idea with users got the following feedback.
+                                </BodyText>
+
+                                <div className="flex flex-col gap-2">
+                                    {/* Feedback 1 */}
+                                    <div className="flex flex-row gap-4 items-start justify-center px-4">
+                                        <div className="relative w-[100px] md:w-[156px] aspect-156/215">
+                                            <Image src={`${A}/Person-01.png`} alt="User 1" fill className="object-contain" />
+                                        </div>
+                                        <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px]">
+                                            <p className="font-label-md text-text-primary">
+                                                “How do I print file, I have added them already. At least in I knew what to do earlier”
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Feedback 2 */}
+                                    <div className="flex flex-row-reverse gap-4 items-start justify-center px-4">
+                                        <div className="relative w-[100px] md:w-[156px] aspect-156/215">
+                                            <Image src={`${A}/Person-02.png`} alt="User 2" fill className="object-contain" />
+                                        </div>
+                                        <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px] ">
+                                            <p className="font-label-md text-text-primary text-right">
+                                                “I have to select so many files 🥲”
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-6">
+
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>
+                                        The comment “I knew what to do earlier” was a frequent. Stakeholders were concerned that this change would cause a lot of confusion between users so we reimplemented original logic.
+                                    </BodyText>
+                                    <BodyText>
+                                        But then I realised something: Users where confused earlier as they weren't able to see the goal and in Idea 2 because the goal wasn’t visible. So I decided to tweak the current design slightly.
+                                    </BodyText>
+                                </div>
+
+                                <div className="flex flex-col gap-5">
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex self-start">
+                                            <Badge variant="success">Final Design</Badge>
+                                        </div>
+                                        <Heading>Redesigning the process: Automatic Selection and Goal Visibility</Heading>
+                                    </div>
+
+                                    <BodyText>
+                                        I decided to keep “Print Files” as disabled in case no files, provide user a glimpse of final goal. Another functionality was click on Print without selection will print all files to reduce hassle of selection.
+                                    </BodyText>
+                                </div>
+
+                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                    <div className="flex flex-col gap-6 items-center justify-center">
+                                        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                                            <div className="relative w-[40cqw] max-w-[286px] aspect-286/118 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision2-06.png`} alt="Final Design 1" fill className="object-cover" />
+                                            </div>
+                                            <div className="relative w-[40cqw] max-w-[286px] aspect-286/118 rounded-xl overflow-hidden shadow-lg bg-white">
+                                                <Image src={`${A}/Decision2-07.png`} alt="Final Design 2" fill className="object-cover" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-2 w-full max-w-[552px]">
+                                            <ProConCard variant="pro" full>This allows users to see what the next steps are.</ProConCard>
+                                            <ProConCard variant="pro" full>New functionality allows user to print all files without selecting them, removing selection hassle entirely. </ProConCard>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                            </div>
+
+                            <div className="flex flex-col gap-3">
+                                <BodyText>
+                                    As the deadline approached, we could not test this change and released it to users.
+                                </BodyText>
+                                <BodyText>
+                                    Follow up conversations showed positive feedback, especially on removing the need for selection, allowing flexibility when wrong files were uploaded, and improving speed when printing many files.
+                                </BodyText>
+                            </div>
                         </div>
+
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 08. HOW PEOPLE USE PRINTHUB ──                              */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full pt-24">
+                    <section className="flex flex-col gap-12 w-full">
                         <Heading>How people use Printhub</Heading>
 
                         {/* --- Nina's Story --- */}
-                        <div className="flex flex-col gap-5 w-full">
-                            <p className="font-h3 text-text-primary">Nina can’t remember her submission.</p>
-                            <BodyText>
-                                Nina, a daily Printhub user, can't remember if she submitted her coding assignment. She opens the app to check if she actually printed it or not. She bypasses the main print functions and heads directly to her past order history.
-                            </BodyText>
-                            <GrayBox className="bg-[#f6f6f6] p-8 md:p-12">
-                                <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-                                    <div className="relative w-[280px] aspect-324/691 rounded-xl overflow-hidden shadow-2xl">
-                                        <Image src={`${A}/UserStory1-01.png`} alt="Nina opens history" fill className="object-cover" />
-                                    </div>
-                                    <div className="relative w-[100px] h-10">
-                                        <Image src={`${A}/arrow-UserStory1.svg`} alt="Then" fill className="object-contain" />
-                                    </div>
-                                    <div className="relative w-[280px] aspect-324/691 rounded-xl overflow-hidden shadow-2xl">
-                                        <Image src={`${A}/UserStory1-02.png`} alt="Nina finds order" fill className="object-cover" />
+                        <div className="flex flex-col gap-6 w-full">
+                            <div className="flex flex-col gap-5">
+                                <p className="font-h3 text-text-primary">Nina can’t remember her submission.</p>
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>
+                                        Nina, a daily Printhub user, can't remember if she submitted her coding assignment. Her friends mention the coding assignment that was due yesterday. She tries to recall whether she actually submitted it. To find out, she opens the app, to check if she printed it or not.
+                                    </BodyText>
+                                    <BodyText>
+                                        She bypasses the main print functions, and heads directly to her past order history to see if a print job for it exists.
+                                    </BodyText>
+                                </div>
+                            </div>
+
+                            {/* Sequence 1: Nina opening history */}
+                            <GrayBox>
+                                <div className="flex w-full py-4 overflow-x-auto scrollbar-hide">
+                                    <div className="flex items-center justify-center min-w-max mx-auto p-4">
+                                        <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story1-01.png`} alt="Nina opens app" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-5 md:w-16 aspect-100/10">
+                                            <Image src={`/printhub/Story1Arrow-01.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story1-02.png`} alt="Nina checks history" fill className="object-cover" />
+                                        </div>
                                     </div>
                                 </div>
                             </GrayBox>
-                            <p className="font-h4 text-text-secondary text-center max-w-[800px] mx-auto">
-                                She found it: 'final_final_assignment.pdf' in yesterday's print history. A huge sigh of relief.
-                            </p>
+
+                            <BodyText>
+                                She doesn’t remember the orderID, so she starts looking for all the prints from yesterday.
+                            </BodyText>
+
+                            {/* Sequence 2: Nina looking for prints */}
+                            <GrayBox className="py-8">
+                                <div className="flex items-center justify-center overflow-x-auto pb-4 scrollbar-hide">
+                                    <div className="flex items-center px-4 min-w-max">
+                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px] shadow-xl">
+                                            <Image src={`/printhub/Story1-03.png`} alt="Step 1" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
+                                            <Image src={`/printhub/Story1-04.png`} alt="Step 2" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
+                                            <Image src={`/printhub/Story1-05.png`} alt="Step 3" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-6 md:w-8 aspect-10/20">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
+                                            <Image src={`/printhub/Story1-06.png`} alt="Step 4" fill className="object-cover" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </GrayBox>
+
+                            <BodyText>
+                                She found it: 'final_final_assignment.pdf' in yesterday's print history. A huge sigh of relief. Since it was printed, it should’ve been submitted.
+                            </BodyText>
                         </div>
 
                         {/* --- Raju's Story --- */}
-                        <div className="flex flex-col gap-5 w-full ">
-                            <p className="font-h3 text-text-primary">Raju is too busy to wait for his prints.</p>
-                            <BodyText>
-                                Raju works at a government office where workload is heavy. He uploads his audit files and goes back to work. He checks in periodically to see the status. Quick visual nudges show him the moment the prints are ready.
-                            </BodyText>
-                            <GrayBox className="bg-[#f6f6f6] p-8 md:p-12">
-                                <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-                                    <div className="relative w-[240px] aspect-324/691 rounded-xl overflow-hidden shadow-xl opacity-70">
-                                        <Image src={`${A}/UserStory2-01.png`} alt="Order Pending" fill className="object-cover" />
-                                    </div>
-                                    <div className="relative w-[240px] aspect-324/691 rounded-xl overflow-hidden shadow-2xl ring-4 ring-green-100">
-                                        <Image src={`${A}/UserStory2-02.png`} alt="Order Ready" fill className="object-cover" />
+                        <div className="flex flex-col gap-6 w-full">
+                            <div className="flex flex-col gap-5">
+                                <p className="font-h3 text-text-primary">Raju Is Too Busy to Wait for His Prints.</p>
+                                <BodyText>
+                                    Raju works at a government office. With an audit approaching, his workload is heavy. He needs some files printed. He opens PrintHub to get it done. He uploads the files to be printed and completes the process.
+                                </BodyText>
+                            </div>
+
+                            {/* Sequence 1: Raju placing order */}
+                            <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
+                                    <div className="flex items-center px-2 min-w-max">
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-01.png`} alt="Start" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-02.png`} alt="Placed" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-03.png`} alt="Processing" fill className="object-cover" />
+                                        </div>
                                     </div>
                                 </div>
                             </GrayBox>
+
+                            <BodyText>
+                                Once order is placed, he observes that the status is pending, so he goes back to work. After about 15 minutes, he checks in again.
+                            </BodyText>
+
+                            {/* Sequence 2: Raju collecting prints */}
+                            <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
+                                    <div className="flex items-center px-2 min-w-max">
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-04.png`} alt="Ready" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-05.png`} alt="Collected" fill className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-6 md:w-12 aspect-square">
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                            <Image src={`/printhub/Story2-06.png`} alt="Back to history" fill className="object-cover" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </GrayBox>
+
+                            <BodyText>
+                                He notices his last order is still processing, so he walks to the printer to collect it. He was happy, that quick visual nudges show him the moment the prints are ready, letting him pick them up without losing time.
+                            </BodyText>
                         </div>
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. UI SYSTEM ──                                            */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full pt-24">
-                        <div className="flex flex-col gap-5 w-full">
+                    <section className="flex flex-col gap-12 w-full">
+                        {/* Intro Block */}
+                        <div className="flex flex-col gap-6">
                             <Heading>UI System I created for better handoff</Heading>
+                            <div className="relative w-full aspect-1550/920 rounded-lg overflow-hidden shadow-sm border border-black/5">
+                                <Image src={`/printhub/Comp-01.png`} alt="Full UI System" fill className="object-contain" />
+                            </div>
+                        </div>
+
+                        {/* Material Design Block */}
+                        <div className="flex flex-col gap-6">
                             <BodyText>
                                 The original app was based on Flutter, so I decided to use Material Design. Components from the new Material 3 Expressive system were used and selectively modified to fit the product.
                             </BodyText>
-                        </div>
 
-                        <div className="relative w-full aspect-1550/920 rounded-[32px] overflow-hidden shadow-sm">
-                            <Image src={`${A}/UISystem-01.png`} alt="Full UI System" fill className="object-cover" />
-                        </div>
-
-                        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 w-full">
-                            <div className="flex flex-col gap-8">
-                                <div className="relative w-full aspect-543/168 rounded-2xl overflow-hidden border border-black/5">
-                                    <Image src={`${A}/UISystem-02.png`} alt="Colors" fill className="object-cover" />
+                            <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6">
+                                {/* Left Column: Component Sheets */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                        <Image
+                                            src={`/printhub/Comp-02.png`}
+                                            alt="Component Sheet 1"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                        <Image
+                                            src={`/printhub/Comp-06.png`}
+                                            alt="Component Sheet 2"
+                                            fill
+                                            className="object-contain"
+                                            style={{ objectPosition: '5% 48%' }}
+                                        />
+                                    </div>
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                        <Image
+                                            src={`/printhub/Comp-04.png`}
+                                            alt="Component Sheet 3"
+                                            fill
+                                            className="object-contain"
+                                            style={{ objectPosition: '0% 5%' }}
+                                        />
+                                    </div>
                                 </div>
-                                <div className="relative w-full aspect-545/166 rounded-2xl overflow-hidden border border-black/5">
-                                    <Image src={`${A}/UISystem-03.png`} alt="Typography" fill className="object-cover" />
+                                {/* Right Column: Buttons & Icons */}
+                                <div className="flex flex-col gap-6">
+                                    <div className="relative w-full aspect-378/380 rounded-xl">
+                                        <Image src={`/printhub/Comp-05.png`} alt="Primary Buttons" fill className="object-contain" />
+                                    </div>
+                                    <div className="relative w-full aspect-387/384 rounded-xl">
+                                        <Image src={`/printhub/Comp-03.png`} alt="App Icons" fill className="object-contain" />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-8">
-                                <div className="relative w-full aspect-378/382 rounded-2xl overflow-hidden border border-black/5">
-                                    <Image src={`${A}/UISystem-04.png`} alt="Components" fill className="object-cover" />
-                                </div>
-                                <p className="font-body text-text-secondary">
-                                    I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable.
-                                </p>
+                        </div>
+
+                        {/* Variable Tokens Section */}
+                        <div className="flex flex-col gap-6">
+                            <BodyText>
+                                I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable; with empty tokens ready for new colours. This ensured the new design met Material Design colour standards.
+                            </BodyText>
+                            <div className="relative w-full aspect-4096/2686 rounded-[32px] overflow-hidden bg-white shadow-sm border border-outline-primary">
+                                <Image src={`/printhub/Comp-07.png`} alt="Token System Variables" fill className="object-cover" />
                             </div>
+                        </div>
+
+                        {/* Atomic Components Section */}
+                        <div className="flex flex-col gap-6">
+                            <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
+                                <div className="relative w-[180px] md:w-[226px] aspect-455/1000 rounded-xl overflow-hidden shadow-lg border border-black/5">
+                                    <Image src={`/printhub/UI-09.png`} alt="Custom Component Structure" fill className="object-cover" />
+                                </div>
+                                <div className="flex flex-col gap-4 max-w-[420px] text-center">
+                                    <BodyText>
+                                        Clear nomenclature and mixture of various components allowed me to customise components to fit various situations and use cases.
+                                    </BodyText>
+                                </div>
+                                <div className="relative w-[180px] md:w-[226px] aspect-224/248 rounded-xl overflow-hidden shadow-lg border border-black/5">
+                                    <Image src={`/printhub/UI-08.png`} alt="Atomic Component Mix" fill className="object-cover" />
+                                </div>
+                            </div>
+                            <BodyText>
+                                I built bigger components as a mixture of smaller atomic components. Auto Layout was used in order to maintain a consistent spacing and arranged even when the size of component changes.
+                            </BodyText>
                         </div>
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 10. CONCLUSION ──                                           */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full pt-24 pb-32">
-                        <div className="flex flex-col gap-5 max-w-[800px] mx-auto text-center">
-                            <Heading>Beyond Pixels: A System of Confidence</Heading>
-                            <BodyText>
-                                Redesigning Printhub wasn't just about updating icons or moving buttons. It was about understanding the human anxiety behind a "Print" button. By surfacing the system state and providing clarity at every step, we didn't just make a faster app—we made a more trustworthy one.
-                            </BodyText>
+                    <section className="flex flex-col gap-12 w-full">
+                        {/* Part 1: What if I had more time? */}
+                        <div className="flex flex-col gap-5 max-w-[1024px]">
+                            <SubHeading>What if I had more time?</SubHeading>
+                            <div className="flex flex-col gap-3">
+                                <BodyText>
+                                    My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.
+                                </BodyText>
+                                <BodyText>
+                                    Moreover, some initial assumptions were green-lit quickly by stakeholders, we would like to conduct a thorough testing and make sure these really work.
+                                </BodyText>
+                                <BodyText>
+                                    Future versions of Printhub could introduce features like user presets, deeper customization, and quick-print options tailored to individual needs.
+                                </BodyText>
+                            </div>
                         </div>
+
+                        {/* Part 2: Main takeaway */}
+                        <div className="flex flex-col gap-5 max-w-[1024px]">
+                            <SubHeading>Main takeaway</SubHeading>
+                            <div className="flex flex-col gap-3">
+                                <BodyText>
+                                    The main takeaway from this project was on my process. Just providing design wasn’t enough, designer and developers have to actively communicate in order to provide a experience as it is designed.
+                                </BodyText>
+                                <BodyText>
+                                    Biggest change in my process is focusing on the bigger picture rather than just work as a designer.
+                                </BodyText>
+                                <BodyText>
+                                    A great design that can scale is always better than a perfect one that can never be fully built.
+                                </BodyText>
+                            </div>
+                        </div>
+                        <SubHeading>Thank you!</SubHeading>
                     </section>
 
 
+                    <Footer />
                 </div>
+
             </FadeIn>
-            <Footer />
+
         </main>
     );
 }
