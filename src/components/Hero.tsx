@@ -51,7 +51,7 @@ export default function Hero() {
                     </div>
                 )}
 
-                {/* {pathname === "/resume" && (
+                {pathname === "/resume" && (
                     <div className="flex items-center gap-4">
                         <ReadCvLogo size={64} className="text-text-primary" />
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
@@ -69,7 +69,7 @@ export default function Hero() {
                             Printhub
                         </p>
                     </div>
-                )} */}
+                )}
 
                 {pathname === "/youtube" && (
                     <div className="flex items-center w-full justify-center gap-4">

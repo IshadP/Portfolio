@@ -130,7 +130,7 @@ export default function YouTubeCaseStudy() {
 
                             <section className="flex flex-col gap-8 items-start w-full">
                                 <div className="flex flex-col gap-3 items-start w-full">
-                                    <Badge variant="red" icon="warning">Problem</Badge>
+                                    <Badge variant="error">Problem</Badge>
                                     <div className="flex flex-col gap-5">
                                         <Heading>I noticed user had hard time trying to find a video</Heading>
                                         <BodyText>
@@ -429,7 +429,7 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-6 w-full">
                                 <div className="flex flex-col gap-3 w-full">
                                     <div className="flex self-start">
-                                        <Badge variant="blue" icon="target">Decision 1</Badge>
+                                        <Badge variant="info">Decision 1</Badge>
                                     </div>
                                     <Heading>How I accounted for user intent in order to customise search for them</Heading>
                                     <BodyText>
@@ -459,7 +459,7 @@ export default function YouTubeCaseStudy() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-label-md text-text-secondary text-center">Initially I started with an assumption that users want to find new content</p>
+                                    <p className="font-body text-text-primary text-center w-full max-w-[1024px] mx-auto">Initially I started with an assumption that users want to find new content</p>
                                 </GrayBox>
 
                                 <div className="flex flex-col gap-3 w-full">
@@ -513,7 +513,7 @@ export default function YouTubeCaseStudy() {
 
                                 <div className="flex flex-col gap-6">
                                     <div className="flex self-start">
-                                        <Badge variant="green" icon="check">Final Design</Badge>
+                                        <Badge variant="success">Final Design</Badge>
                                     </div>
 
                                     <GrayBox title="Music Platforms" className="flex flex-col gap-8 p-8 md:p-4">
@@ -557,7 +557,7 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-6 w-full">
                                 <div className="flex flex-col gap-3 w-full">
                                     <div className="flex self-start">
-                                        <Badge variant="blue" icon="target">Decision 2</Badge>
+                                        <Badge variant="info">Decision 2</Badge>
                                     </div>
                                     <Heading>Why I had to iterate on video card more than 3 times.</Heading>
                                     <BodyText>Before moving forward, let’s see what current YouTube offers.</BodyText>
@@ -637,7 +637,7 @@ export default function YouTubeCaseStudy() {
                                 <BodyText>Space between the cards gave each of them their own identity and distinction. I presented these cards to users again, but they were still confused. Why? It took too much time to understand the card. The reason? All the information felt "scattered" according to users.</BodyText>
 
                                 <div className="flex self-start">
-                                    <Badge variant="green" icon="check">Final Design</Badge>
+                                    <Badge variant="success" >Final Design</Badge>
                                 </div>
 
                                 <GrayBox title="Final Design" className="flex flex-col gap-8 p-8 md:p-4">
@@ -664,13 +664,13 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-6 w-full">
                                 <div className="flex flex-col gap-3 w-full">
                                     <div className="flex self-start">
-                                        <Badge variant="blue" icon="target">User Story 1</Badge>
+                                        <Badge variant="info">User Story 1</Badge>
                                     </div>
                                     <Heading>Yash can’t find the relevant results!</Heading>
                                     <BodyText>Yash has been preparing for upcoming exams and wants to learn about python lists. He tries to search, but the results are either not video or too old. So he uses filters.</BodyText>
                                 </div>
 
-                                <GrayBox title="Applying Filters" className="flex flex-col gap-8 p-8 md:p-6">
+                                <GrayBox title="Applying Filters" className="flex flex-col p-8 md:p-6">
                                     <div className="flex flex-wrap gap-0 items-center justify-center">
                                         {[1, 2, 3, 4].map((i) => (
                                             <React.Fragment key={i}>
@@ -678,8 +678,8 @@ export default function YouTubeCaseStudy() {
                                                     <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" className="object-cover" />
                                                 </div>
                                                 {i < 4 && (
-                                                    <div className="hidden lg:block relative w-[44px] h-[19px] shrink-0">
-                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="44px" className="object-contain" />
+                                                    <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
+                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" className="object-contain" />
                                                     </div>
                                                 )}
                                             </React.Fragment>
@@ -691,7 +691,7 @@ export default function YouTubeCaseStudy() {
                                     <BodyText>As he observes old videos, he is frustrated but he discovers “date” filter in filter bar.</BodyText>
                                 </div>
 
-                                <GrayBox title="Finding the video" className="flex flex-col gap-8 p-8 md:p-6">
+                                <GrayBox title="Finding the video" className="flex flex-col p-8 md:p-6">
                                     <div className="flex flex-wrap gap-0 items-center justify-center">
                                         {[5, 6, 7, 8].map((i) => (
                                             <React.Fragment key={i}>
@@ -699,8 +699,8 @@ export default function YouTubeCaseStudy() {
                                                     <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" className="object-cover" />
                                                 </div>
                                                 {i < 8 && (
-                                                    <div className="hidden lg:block relative w-[44px] h-[19px] shrink-0">
-                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="44px" className="object-contain" />
+                                                    <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
+                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" className="object-contain" />
                                                     </div>
                                                 )}
                                             </React.Fragment>
@@ -712,7 +712,7 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-8 md:gap-12 w-full">
                                 <div className="flex flex-col gap-3 w-full">
                                     <div className="flex self-start">
-                                        <Badge variant="blue" icon="target">User Story 2</Badge>
+                                        <Badge variant="info">User Story 2</Badge>
                                     </div>
                                     <Heading>Saving Laxmi from missing Livestreams</Heading>
                                     <BodyText>Laxmi wanted to see Figma Config but forgot it was today. She opens YouTube to casually watch something. Let’s see what happens</BodyText>
@@ -804,7 +804,7 @@ export default function YouTubeCaseStudy() {
 
                                 </div>
                                 <div className="pt-8">
-                                    <Title>Thank you!</Title>
+                                    <Heading>Thank you!</Heading>
                                 </div>
                             </div>
                         </section>

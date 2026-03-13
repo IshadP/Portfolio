@@ -217,16 +217,16 @@ export default function PrinthubPage() {
                         <GrayBox title="Current Design" className="p-4">
                             <div className="flex flex-wrap gap-6 items-center justify-center">
                                 <div className="relative w-[200px] aspect-216/480 rounded-2xl overflow-hidden shadow-lg border border-black/10 bg-white">
-                                    <Image src={`${A}/Legacy-01.png`} alt="Old Design 1" fill className="object-cover" />
+                                    <Image src={`${A}/Legacy-01.png`} alt="Old Design 1" fill sizes="200px" className="object-cover" />
                                 </div>
                                 <div className="relative w-[200px] aspect-216/480 rounded-2xl overflow-hidden shadow-lg border border-black/10 bg-white">
-                                    <Image src={`${A}/Legacy-02.png`} alt="Old Design 2" fill className="object-cover" />
+                                    <Image src={`${A}/Legacy-02.png`} alt="Old Design 2" fill sizes="200px" className="object-cover" />
                                 </div>
                                 <div className="relative w-[200px] aspect-216/480 rounded-2xl overflow-hidden shadow-lg border border-black/10 bg-white">
-                                    <Image src={`${A}/Legacy-03.png`} alt="Old Design 3" fill className="object-cover" />
+                                    <Image src={`${A}/Legacy-03.png`} alt="Old Design 3" fill sizes="200px" className="object-cover" />
                                 </div>
                                 <div className="relative w-[200px] aspect-216/480 rounded-2xl overflow-hidden shadow-lg border border-black/10 bg-white">
-                                    <Image src={`${A}/Legacy-04.png`} alt="Old Design 4" fill className="object-cover" />
+                                    <Image src={`${A}/Legacy-04.png`} alt="Old Design 4" fill sizes="200px" className="object-cover" />
                                 </div>
                             </div>
                         </GrayBox>
@@ -765,13 +765,13 @@ export default function PrinthubPage() {
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6 items-center justify-center">
                                     <div className="flex items-center">
                                         <div className="relative w-[140px] md:w-[170px] aspect-170/378 rounded-xl overflow-hidden shadow-lg ">
-                                            <Image src={`${A}/Decision2-01.png`} alt="Before" fill className="object-cover" />
+                                            <Image src={`${A}/Decision2-01.png`} alt="Before" fill sizes="(max-width: 768px) 140px, 170px" className="object-cover" />
                                         </div>
                                         <div className="relative w-10 h-10">
-                                            <Image src={`${A}/arrow-Intro.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`${A}/arrow-Intro.svg`} alt="Then" fill sizes="40px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[140px] md:w-[170px] aspect-170/378 rounded-xl overflow-hidden shadow-lg ">
-                                            <Image src={`${A}/Decision2-02.png`} alt="After" fill className="object-cover" />
+                                            <Image src={`${A}/Decision2-02.png`} alt="After" fill sizes="(max-width: 768px) 140px, 170px" className="object-cover" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2 w-full">
@@ -812,10 +812,10 @@ export default function PrinthubPage() {
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                                             <div className="relative w-[40cqw] max-w-[391px] aspect-391/151 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-03.png`} alt="Idea 1 Design 1" fill className="object-cover" />
+                                                <Image src={`${A}/Decision2-03.png`} alt="Idea 1 Design 1" fill sizes="(max-width: 768px) 40vw, 391px" className="object-cover" />
                                             </div>
                                             <div className="relative w-[40cqw] max-w-[174px] aspect-174/152 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-04.png`} alt="Idea 1 Design 2" fill className="object-cover" />
+                                                <Image src={`${A}/Decision2-04.png`} alt="Idea 1 Design 2" fill sizes="(max-width: 768px) 40vw, 174px" className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-2 w-full max-w-[614px]">
@@ -852,7 +852,7 @@ export default function PrinthubPage() {
                                 <GrayBox className="bg-bg-secondary p-8 md:p-12">
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="relative w-full max-w-[610px] aspect-610/238 rounded-xl overflow-hidden shadow-lg">
-                                            <Image src={`${A}/Decision2-05.png`} alt="Idea 2 Design" fill className="object-cover" />
+                                            <Image src={`${A}/Decision2-05.png`} alt="Idea 2 Design" fill sizes="(max-width: 768px) 100vw, 610px" className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2 w-full max-w-[614px]">
                                             <ProConCard variant="pro" full>Screen now had one primary action effectively reducing the time to decide</ProConCard>
@@ -872,7 +872,7 @@ export default function PrinthubPage() {
                                     {/* Feedback 1 */}
                                     <div className="flex flex-row gap-4 items-start justify-center px-4">
                                         <div className="relative w-[100px] md:w-[156px] aspect-156/215">
-                                            <Image src={`${A}/Person-01.png`} alt="User 1" fill className="object-contain" />
+                                            <Image src={`${A}/Person-01.png`} alt="User 1" fill sizes="(max-width: 768px) 100px, 156px" className="object-contain" />
                                         </div>
                                         <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px]">
                                             <p className="font-label-md text-text-primary">
@@ -883,7 +883,7 @@ export default function PrinthubPage() {
                                     {/* Feedback 2 */}
                                     <div className="flex flex-row-reverse gap-4 items-start justify-center px-4">
                                         <div className="relative w-[100px] md:w-[156px] aspect-156/215">
-                                            <Image src={`${A}/Person-02.png`} alt="User 2" fill className="object-contain" />
+                                            <Image src={`${A}/Person-02.png`} alt="User 2" fill sizes="(max-width: 768px) 100px, 156px" className="object-contain" />
                                         </div>
                                         <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px] ">
                                             <p className="font-label-md text-text-primary text-right">
@@ -922,10 +922,10 @@ export default function PrinthubPage() {
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                                             <div className="relative w-[40cqw] max-w-[286px] aspect-286/118 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-06.png`} alt="Final Design 1" fill className="object-cover" />
+                                                <Image src={`${A}/Decision2-06.png`} alt="Final Design 1" fill sizes="(max-width: 768px) 40vw, 286px" className="object-cover" />
                                             </div>
                                             <div className="relative w-[40cqw] max-w-[286px] aspect-286/118 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-07.png`} alt="Final Design 2" fill className="object-cover" />
+                                                <Image src={`${A}/Decision2-07.png`} alt="Final Design 2" fill sizes="(max-width: 768px) 40vw, 286px" className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-2 w-full max-w-[552px]">
@@ -973,13 +973,13 @@ export default function PrinthubPage() {
                                 <div className="flex w-full py-4 overflow-x-auto scrollbar-hide">
                                     <div className="flex items-center justify-center min-w-max mx-auto p-4">
                                         <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story1-01.png`} alt="Nina opens app" fill className="object-cover" />
+                                            <Image src={`/printhub/Story1-01.png`} alt="Nina opens app" fill sizes="(max-width: 768px) 140px, 320px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-5 md:w-16 aspect-100/10">
-                                            <Image src={`/printhub/Story1Arrow-01.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`/printhub/Story1Arrow-01.svg`} alt="Then" fill sizes="(max-width: 768px) 20px, 64px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story1-02.png`} alt="Nina checks history" fill className="object-cover" />
+                                            <Image src={`/printhub/Story1-02.png`} alt="Nina checks history" fill sizes="(max-width: 768px) 140px, 320px" className="object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -994,25 +994,25 @@ export default function PrinthubPage() {
                                 <div className="flex items-center justify-center overflow-x-auto pb-4 scrollbar-hide">
                                     <div className="flex items-center px-4 min-w-max">
                                         <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px] shadow-xl">
-                                            <Image src={`/printhub/Story1-03.png`} alt="Step 1" fill className="object-cover" />
+                                            <Image src={`/printhub/Story1-03.png`} alt="Step 1" fill sizes="(max-width: 768px) 110px, 200px" className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 16px, 32px" className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
+                                            <Image src={`/printhub/Story1-04.png`} alt="Step 2" fill sizes="(max-width: 768px) 110px, 200px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
                                             <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
                                         </div>
                                         <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-04.png`} alt="Step 2" fill className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
-                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-05.png`} alt="Step 3" fill className="object-cover" />
+                                            <Image src={`/printhub/Story1-05.png`} alt="Step 3" fill sizes="(max-width: 768px) 110px, 200px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-6 md:w-8 aspect-10/20">
-                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill className="object-contain" />
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 16px, 32px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-06.png`} alt="Step 4" fill className="object-cover" />
+                                            <Image src={`/printhub/Story1-06.png`} alt="Step 4" fill sizes="(max-width: 768px) 110px, 200px" className="object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1037,19 +1037,19 @@ export default function PrinthubPage() {
                                 <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
                                     <div className="flex items-center px-2 min-w-max">
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-01.png`} alt="Start" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-01.png`} alt="Start" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-02.png`} alt="Placed" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-02.png`} alt="Placed" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-03.png`} alt="Processing" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-03.png`} alt="Processing" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1064,19 +1064,19 @@ export default function PrinthubPage() {
                                 <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
                                     <div className="flex items-center px-2 min-w-max">
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-04.png`} alt="Ready" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-04.png`} alt="Ready" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-05.png`} alt="Collected" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-05.png`} alt="Collected" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                         <div className="relative shrink-0 w-6 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill className="object-contain" />
+                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 24px, 48px" className="object-contain" />
                                         </div>
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-06.png`} alt="Back to history" fill className="object-cover" />
+                                            <Image src={`/printhub/Story2-06.png`} alt="Back to history" fill sizes="(max-width: 768px) 130px, 240px" className="object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1162,7 +1162,7 @@ export default function PrinthubPage() {
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
                                 <div className="relative w-[180px] md:w-[226px] aspect-455/1000 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-09.png`} alt="Custom Component Structure" fill className="object-cover" />
+                                    <Image src={`/printhub/UI-09.png`} alt="Custom Component Structure" fill sizes="(max-width: 768px) 180px, 226px" className="object-cover" />
                                 </div>
                                 <div className="flex flex-col gap-4 max-w-[420px] text-center">
                                     <BodyText>
@@ -1170,7 +1170,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
                                 <div className="relative w-[180px] md:w-[226px] aspect-224/248 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-08.png`} alt="Atomic Component Mix" fill className="object-cover" />
+                                    <Image src={`/printhub/UI-08.png`} alt="Atomic Component Mix" fill sizes="(max-width: 768px) 180px, 226px" className="object-cover" />
                                 </div>
                             </div>
                             <BodyText>

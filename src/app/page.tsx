@@ -14,7 +14,7 @@ import FadeIn from "@/components/FadeIn";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center relative px-6">
-      <div className="w-full flex justify-center max-w-[1024px] @container overflow-hidden">
+      <div className="w-full flex justify-center max-w-[1024px] @container">
         {/* {Hero - Fixed in Background} */}
         <Hero />
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { WarningDiamond, List, X } from "@phosphor-icons/react";
+import { WarningDiamond, List, X, CaretLeft } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -41,66 +41,134 @@ export default function Navbar() {
         };
     }, [diamondOpen, isMobile]);
 
+    // Map path slugs to display names
+    const projectNames: Record<string, string> = {
+        "/printhub": "PrintHub",
+        "/youtube": "YouTube",
+    };
+
+    const isProjectPage = projectNames[pathname] !== undefined;
+    const projectName = projectNames[pathname] || "";
+
     // Derive the current page label from navLinks
     const currentPageLabel =
-        navLinks.find((link) => link.href === pathname)?.label ?? "Home";
+        navLinks.find((link) => link.href === pathname)?.label ?? (isProjectPage ? projectName : "Home");
 
     return (
         <nav className="sticky top-0 z-90 flex flex-col border-t border-outline-primary bg-bg-primary py-3">
             <div className="flex items-center justify-between w-full max-w-[1024px]">
-                {/* Mobile Nav (Hamburger + Current Page Label) */}
-                <div className="flex flex-1 items-center gap-2 md:hidden">
-                    <button
-                        onClick={() => setMenuOpen((prev) => !prev)}
-                        aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center"
-                    >
-                        <AnimatePresence mode="wait" initial={false}>
-                            {menuOpen ? (
-                                <motion.div
-                                    key="close"
-                                    initial={{ rotate: -90, opacity: 0 }}
-                                    animate={{ rotate: 0, opacity: 1 }}
-                                    exit={{ rotate: 90, opacity: 0 }}
-                                    transition={{ duration: 0.15 }}
-                                >
-                                    <X size={32} color="#000" weight="regular" />
-                                </motion.div>
-                            ) : (
-                                <motion.div
-                                    key="open"
-                                    initial={{ rotate: 90, opacity: 0 }}
-                                    animate={{ rotate: 0, opacity: 1 }}
-                                    exit={{ rotate: -90, opacity: 0 }}
-                                    transition={{ duration: 0.15 }}
-                                >
-                                    <List size={32} color="#000" weight="regular" />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </button>
-                    <span className="font-label-lg text-text-primary">
-                        {currentPageLabel}
-                    </span>
+                {/* Mobile Nav */}
+                <div className="flex flex-1 items-center md:hidden w-full relative h-10">
+                    {isProjectPage ? (
+                        <>
+                            {/* Left: Back Arrow */}
+                            <Link href="/" className="absolute left-0 z-20 p-2 -ml-2">
+                                <CaretLeft size={24} color="#000" weight="bold" />
+                            </Link>
+                            {/* Center: Project Name */}
+                            <div className="absolute inset-x-0 flex justify-center pointer-events-none">
+                                <span className="font-label-lg text-text-primary self-center">
+                                    {projectName}
+                                </span>
+                            </div>
+                            {/* Right: Menu Toggle */}
+                            <button
+                                onClick={() => setMenuOpen((prev) => !prev)}
+                                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                                className="absolute right-0 z-20 cursor-pointer bg-transparent border-none p-2 -mr-2 flex items-center justify-center"
+                            >
+                                <AnimatePresence mode="wait" initial={false}>
+                                    {menuOpen ? (
+                                        <motion.div
+                                            key="close"
+                                            initial={{ rotate: -90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: 90, opacity: 0 }}
+                                            transition={{ duration: 0.15 }}
+                                        >
+                                            <X size={28} color="#000" weight="regular" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="open"
+                                            initial={{ rotate: 90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: -90, opacity: 0 }}
+                                            transition={{ duration: 0.15 }}
+                                        >
+                                            <List size={28} color="#000" weight="regular" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </button>
+                        </>
+                    ) : (
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={() => setMenuOpen((prev) => !prev)}
+                                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                                className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center"
+                            >
+                                <AnimatePresence mode="wait" initial={false}>
+                                    {menuOpen ? (
+                                        <motion.div
+                                            key="close"
+                                            initial={{ rotate: -90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: 90, opacity: 0 }}
+                                            transition={{ duration: 0.15 }}
+                                        >
+                                            <X size={32} color="#000" weight="regular" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="open"
+                                            initial={{ rotate: 90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: -90, opacity: 0 }}
+                                            transition={{ duration: 0.15 }}
+                                        >
+                                            <List size={32} color="#000" weight="regular" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </button>
+                            <span className="font-label-lg text-text-primary">
+                                {currentPageLabel}
+                            </span>
+                        </div>
+                    )}
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden flex-1 items-center gap-2 md:flex h-11">
-                    {navLinks.map((item) => {
-                        const isActive = pathname === item.href;
-                        return (
-                            <Link
-                                key={item.label}
-                                href={item.href}
-                                className={`flex h-full items-center justify-center overflow-hidden px-3 py-2 rounded-full transition-colors ${isActive ? "bg-grey-10" : "hover:bg-grey-10"
-                                    } no-underline`}
-                            >
-                                <span className="font-label-md text-text-primary ">
-                                    {item.label}
-                                </span>
-                            </Link>
-                        );
-                    })}
+                    {isProjectPage ? (
+                        <Link
+                            href="/"
+                            className="flex h-full items-center gap-2 px-4 py-2 rounded-full hover:bg-grey-10 transition-colors no-underline group"
+                        >
+                            <CaretLeft size={20} color="#000" weight="bold" className="transition-transform group-hover:-translate-x-1" />
+                            <span className="font-label-md text-text-primary">
+                                Back to Home
+                            </span>
+                        </Link>
+                    ) : (
+                        navLinks.map((item) => {
+                            const isActive = pathname === item.href;
+                            return (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    className={`flex h-full items-center justify-center overflow-hidden px-3 py-2 rounded-full transition-colors ${isActive ? "bg-grey-10" : "hover:bg-grey-10"
+                                        } no-underline`}
+                                >
+                                    <span className="font-label-md text-text-primary ">
+                                        {item.label}
+                                    </span>
+                                </Link>
+                            );
+                        })
+                    )}
                 </div>
 
                 {/* Center Icon (Warning Diamond) — Mobile: click-to-expand + auto-close; Desktop: hover-to-expand */}
