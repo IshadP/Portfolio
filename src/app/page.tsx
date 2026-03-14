@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
 
         {/* Content wrapper that scrolls over the hero */}
-        <FadeIn className="w-full flex justify-center z-10">
+        <FadeIn className="w-full flex justify-center z-10 0">
           <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-primary gap-6">
             <Navbar />
             <div className="grid w-full grid-cols-1 gap-2 is:grid-cols-2 pb-6" id="projects">
@@ -29,11 +29,13 @@ export default function Home() {
                 <InteractionCard
                   title="redesigned search for user intent"
                   subtitle="Youtube"
-                  imageCenter="/cards/Printhub1-01.png"
-                  imageLeft="/cards/Printhub1-02.png"
-                  imageRight="/cards/Printhub1-03.png"
+                  imageCenter="/cards/Youtube1-01.png"
+                  imageLeft="/cards/Youtube1-02.png"
+                  imageRight="/cards/Youtube1-03.png"
                   routeText="/YOUTUBE"
                   href="/youtube"
+                  hoverLabelBg="#ff0000"
+                  hoverLabelText="#ffffff"
                 />
 
                 {/* AiExperiment Card - Desktop */}
@@ -47,11 +49,13 @@ export default function Home() {
                 <InteractionCard
                   title="reduced task completion time by 30%"
                   subtitle="Printhub"
-                  imageCenter="/cards/Printhub1-01.png"
-                  imageLeft="/cards/Printhub1-02.png"
-                  imageRight="/cards/Printhub1-03.png"
+                 imageCenter="/cards/Print1-01.png"
+                  imageLeft="/cards/Print1-02.png"
+                  imageRight="/cards/Print1-03.png"
                   routeText="/PRINTHUB"
                   href="/printhub"
+                  hoverLabelBg="#5CC05E"
+                  hoverLabelText="#ffffff"
                 />
 
                 <FeatureCard
@@ -61,6 +65,8 @@ export default function Home() {
                   imageRight="/cards/Printhub2-02.png"
                   routeText="/PRINTHUB"
                   href="/printhub"
+                  hoverLabelBg="#5CC05E"
+                  hoverLabelText="#ffffff"
                 />
               </div>
 

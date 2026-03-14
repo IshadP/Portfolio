@@ -9,4 +9,7 @@ export interface ProjectCardProps {
     borderColor?: string;
     maskColor?: string;
     href?: string;
+    variant?: 'three-pages' | 'two-pages';
+    hoverLabelBg?: string;
+    hoverLabelText?: string;
 }

@@ -61,6 +61,7 @@ export default function StarCard({
                                 alt="Star icon"
                                 width={64}
                                 height={64}
+                                quality={90}
                                 className="object-contain"
                             />
                         </motion.div>

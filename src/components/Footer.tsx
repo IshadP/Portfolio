@@ -54,7 +54,7 @@ export default function Footer() {
                     className="hover:opacity-80 transition-opacity"
                 >
                     <span className="flex h-10 w-10 md:h-auto md:w-auto items-center justify-center rounded-lg overflow-hidden">
-                        <Image src="/x.png" alt="X" width={40} height={40} className="block" />
+                        <Image src="/x.png" alt="X" width={40} height={40} quality={90} className="block" />
                     </span>
                 </motion.a>
                 <motion.a
@@ -67,7 +67,7 @@ export default function Footer() {
                     className="hover:opacity-80 transition-opacity"
                 >
                     <span className="flex h-10 w-10 md:h-auto md:w-auto items-center justify-center rounded-lg overflow-hidden">
-                        <Image src="/linkedin.png" alt="LinkedIn" width={40} height={40} className="block" />
+                        <Image src="/linkedin.png" alt="LinkedIn" width={40} height={40} quality={90} className="block" />
                     </span>
                 </motion.a>
                 <motion.a
@@ -80,7 +80,7 @@ export default function Footer() {
                     className="hover:opacity-80 transition-opacity"
                 >
                     <span className="flex h-10 w-10 md:h-auto md:w-auto items-center justify-center rounded-lg overflow-hidden">
-                        <Image src="/behance.png" alt="Behance" width={40} height={40} className="block" />
+                        <Image src="/behance.png" alt="Behance" width={40} height={40} quality={90} className="block" />
                     </span>
                 </motion.a>
             </div>

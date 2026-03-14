@@ -37,10 +37,24 @@ export default function ProjectCard({
     className,
     href,
     routeText = "/VIEW-PROJECT",
+    variant = "three-pages",
+    hoverLabelBg,
+    hoverLabelText,
 }: ProjectCardProps & { subtitle?: string; routeText?: string }) {
 
     const leftSrc = imageLeft || imageCenter;
     const rightSrc = imageRight || imageCenter;
+
+    const labelVariants = {
+        rest: {
+            backgroundColor: "var(--color-bg-secondary)",
+            color: "var(--color-text-primary)",
+        },
+        hover: {
+            backgroundColor: hoverLabelBg || "var(-color--bg-secondary)",
+            color: hoverLabelText || "var(--color-text-primary)",
+        },
+    };
 
     const isExternal = href?.startsWith("http");
     const Wrapper = href ? motion.a : motion.div;
@@ -58,16 +72,24 @@ export default function ProjectCard({
         >
             {/* ── Top Header ── */}
             <div className="flex items-start justify-between w-full z-10 shrink-0 gap-2 pointer-events-none">
-                <div className="bg-bg-secondary flex items-start justify-center px-3 py-2 md:rounded-xl rounded-lg overflow-hidden">
-                    <p className="font-card-mono text-text-primary text-xs md:text-sm">
+                <motion.div
+                    variants={labelVariants}
+                    transition={springTransition}
+                    className="flex items-start justify-center px-3 py-2 md:rounded-xl rounded-lg overflow-hidden"
+                >
+                    <p className="font-card-mono text-xs md:text-sm" style={{ color: "inherit" }}>
                         {title}
                     </p>
-                </div>
-                <div className="bg-bg-secondary flex items-center justify-end px-3 py-2 md:rounded-xl rounded-lg">
-                    <p className="font-card-mono text-text-primary text-xs md:text-sm">
+                </motion.div>
+                <motion.div
+                    variants={labelVariants}
+                    transition={springTransition}
+                    className="flex items-center justify-end px-3 py-2 md:rounded-xl rounded-lg"
+                >
+                    <p className="font-card-mono text-xs md:text-sm" style={{ color: "inherit" }}>
                         {subtitle}
                     </p>
-                </div>
+                </motion.div>
             </div>
 
             {/* ── Image Container (The Phone Stack) ── */}
@@ -85,6 +107,7 @@ export default function ProjectCard({
                             alt=""
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={90}
                             className="object-contain"
                         />
                     </div>
@@ -102,26 +125,30 @@ export default function ProjectCard({
                             alt=""
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={90}
                             className="object-contain"
                         />
                     </div>
                 </motion.div>
 
                 {/* Center Image */}
-                <motion.div
-                    variants={variants.center}
-                    transition={springTransition}
-                    className="relative z-10 size-full"
-                >
-                    <Image
-                        src={imageCenter}
-                        alt={imageAlt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-contain"
-                        priority
-                    />
-                </motion.div>
+                {variant === "three-pages" && (
+                    <motion.div
+                        variants={variants.center}
+                        transition={springTransition}
+                        className="relative z-10 size-full"
+                    >
+                        <Image
+                            src={imageCenter}
+                            alt={imageAlt}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={90}
+                            className="object-contain"
+                            priority
+                        />
+                    </motion.div>
+                )}
             </div>
 
             {/* ── Hover Tooltip ── */}

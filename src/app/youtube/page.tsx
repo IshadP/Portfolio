@@ -82,16 +82,16 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-6 w-full max-w-[1024px] mx-auto">
                                 <div className="relative w-full aspect-850/500 flex gap-4 p-12 rounded-4xl items-center justify-center border-3 border-outline-primary overflow-hidden bg-bg-primary ">
                                     <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-01.png`} alt="UI Screenshot 1" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" className="object-cover" />
+                                        <Image src={`${A}/TitleImg-01.png`} alt="UI Screenshot 1" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="relative w-[25%]  aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-03.png`} alt="UI Screenshot 3" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" className="object-cover" />
+                                        <Image src={`${A}/TitleImg-03.png`} alt="UI Screenshot 3" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-04.png`} alt="UI Screenshot 4" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" className="object-cover" />
+                                        <Image src={`${A}/TitleImg-04.png`} alt="UI Screenshot 4" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-02.png`} alt="UI Screenshot 2" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" className="object-cover" />
+                                        <Image src={`${A}/TitleImg-02.png`} alt="UI Screenshot 2" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                     </div>
                                 </div>
 
@@ -142,7 +142,7 @@ export default function YouTubeCaseStudy() {
                                 <GrayBox className="flex flex-col md:flex-row p-4 md:p-12 gap-8 md:gap-16">
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
                                         <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-outline-primary shadow-md">
-                                            <Image src={`${A}/problem-1.png`} alt="Initial Search UI" fill sizes="(max-width: 768px) 180px, 245px" className="object-cover" />
+                                            <Image src={`${A}/problem-1.png`} alt="Initial Search UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <ProConCard variant="con">System forces user to search a query in order to see results</ProConCard>
@@ -152,7 +152,7 @@ export default function YouTubeCaseStudy() {
                                     </div>
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
                                         <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-outline-primary shadow-md">
-                                            <Image src={`${A}/problem-2.png`} alt="Search Results UI" fill sizes="(max-width: 768px) 180px, 245px" className="object-cover" />
+                                            <Image src={`${A}/problem-2.png`} alt="Search Results UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <ProConCard variant="con">Filters are hidden deep inside the UI, resulting in many people not knowing about them.</ProConCard>
@@ -183,7 +183,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-01.png`} alt="Discovery Banner" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-01.png`} alt="Discovery Banner" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -212,7 +212,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-02.png`} alt="Search Options" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-02.png`} alt="Search Options" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -241,7 +241,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-03.png`} alt="Predictive Suggestions" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-03.png`} alt="Predictive Suggestions" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-8 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -274,7 +274,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-04.png`} alt="Refining Query" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-04.png`} alt="Refining Query" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -301,7 +301,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-05.png`} alt="Filter bar" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-05.png`} alt="Filter bar" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -330,7 +330,7 @@ export default function YouTubeCaseStudy() {
                                     </div>
                                     <div className="flex flex-col items-center justify-center gap-4">
                                         <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                            <Image src={`${A}/FlowImg-06.png`} alt="Filter Selection" fill sizes="245px" className="object-cover" />
+                                            <Image src={`${A}/FlowImg-06.png`} alt="Filter Selection" fill sizes="245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="bg-white rounded-full p-2 shadow-md border border-outline-primary z-10 -my-6">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -338,7 +338,7 @@ export default function YouTubeCaseStudy() {
                                             </svg>
                                         </div>
                                         <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                            <Image src={`${A}/FlowImg-07.png`} alt="Filter Bottom Sheet" fill sizes="210px" className="object-cover" />
+                                            <Image src={`${A}/FlowImg-07.png`} alt="Filter Bottom Sheet" fill sizes="210px" quality={100} className="object-cover" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -367,7 +367,7 @@ export default function YouTubeCaseStudy() {
                                     </div>
                                     <div className="flex flex-col items-center justify-center gap-4">
                                         <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                            <Image src={`${A}/FlowImg-08.png`} alt="Previous View" fill sizes="245px" className="object-cover" />
+                                            <Image src={`${A}/FlowImg-08.png`} alt="Previous View" fill sizes="245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="bg-white rounded-full p-2 shadow-md border border-outline-primary z-10 -my-6">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -375,7 +375,7 @@ export default function YouTubeCaseStudy() {
                                             </svg>
                                         </div>
                                         <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                            <Image src={`${A}/FlowImg-09.png`} alt="Filtered Results" fill sizes="210px" className="object-cover" />
+                                            <Image src={`${A}/FlowImg-09.png`} alt="Filtered Results" fill sizes="210px" quality={100} className="object-cover" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -404,7 +404,7 @@ export default function YouTubeCaseStudy() {
                                         </p>
                                     </div>
                                     <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
-                                        <Image src={`${A}/FlowImg-10.png`} alt="Final Satisfaction" fill sizes="245px" className="object-cover" />
+                                        <Image src={`${A}/FlowImg-10.png`} alt="Final Satisfaction" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
                                         <div className="flex flex-col gap-4 lg:max-w-[320px]">
@@ -445,12 +445,12 @@ export default function YouTubeCaseStudy() {
                                                 <ProConCard variant="insight">While showcasing the wireframes, many people asked, "How will I know what this is?" This feedback made me change my decision and include the section on the page.</ProConCard>
                                             </div>
                                             <div className="relative w-[280px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                                <Image src={`${A}/Decision1-01.png`} alt="Initial Wireframe" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                                <Image src={`${A}/Decision1-01.png`} alt="Initial Wireframe" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-row w-full justify-center items-center p-12 gap-4">
                                             <div className="relative w-[280px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                                <Image src={`${A}/Decision1-02.png`} alt="Initial UI Mockup" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                                <Image src={`${A}/Decision1-02.png`} alt="Initial UI Mockup" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                             </div>
                                             <div className="flex flex-col gap-6 w-fit">
                                                 <ProConCard variant="insight">Placing the option at the top made it easier for people to spot while scanning. F-shaped reading patterns increase the chances of noticing sections at the top.</ProConCard>
@@ -474,7 +474,7 @@ export default function YouTubeCaseStudy() {
                                 <GrayBox title="First Iteration" className="flex flex-col gap-8 p-8 md:p-4">
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-03.png`} alt="First Iteration" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            <Image src={`${A}/Decision1-03.png`} alt="First Iteration" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-6 max-w-[400px]">
                                             <ProConCard variant="insight">The system helps users find remaining tasks, supporting the "Recognition rather than recall" principle. People don't have to remember what they left incomplete.</ProConCard>
@@ -491,7 +491,7 @@ export default function YouTubeCaseStudy() {
                                 <GrayBox title="Second Iteration" className="flex flex-col gap-6 p-8 md:p-4">
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision1-05.png`} alt="Second Iteration" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                            <Image src={`${A}/Decision1-05.png`} alt="Second Iteration" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-6 max-w-[400px]">
                                             <ProConCard variant="insight">Showing History above was an assumption I made thinking users would be focused on the search bar, so keeping it close would help them notice it.</ProConCard>
@@ -519,7 +519,7 @@ export default function YouTubeCaseStudy() {
                                     <GrayBox title="Music Platforms" className="flex flex-col gap-8 p-8 md:p-4">
                                         <div className="flex flex-col lg:flex-row gap-12 items-cente justify-center">
                                             <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                                <Image src={`${A}/Decision1-06.png`} alt="Spotify Analysis" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                                <Image src={`${A}/Decision1-06.png`} alt="Spotify Analysis" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                             </div>
                                             <div className="flex flex-col gap-6 max-w-[400px]">
                                                 <ProConCard variant="insight">Not only was the section below the text suggestions, but it shows video suggestions based on query, not just history!</ProConCard>
@@ -542,7 +542,7 @@ export default function YouTubeCaseStudy() {
                                                 <ProConCard variant="insight">Video suggestions based on user query and preferences help users adjust their query accordingly.</ProConCard>
                                             </div>
                                             <div className="relative w-[280px] md:w-[320px] aspect-100/222 rounded-xl overflow-hidden shadow-xl">
-                                                <Image src={`${A}/Decision1-07.png`} alt="Final Translated Design" fill sizes="(max-width: 768px) 280px, 320px" className="object-cover" />
+                                                <Image src={`${A}/Decision1-07.png`} alt="Final Translated Design" fill sizes="(max-width: 768px) 280px, 320px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                     </GrayBox>
@@ -567,13 +567,13 @@ export default function YouTubeCaseStudy() {
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="flex flex-col gap-4 w-full lg:w-[400px]">
                                             <div className="relative aspect-400/42 rounded-lg overflow-hidden">
-                                                <Image src={`${A}/Decision2-01.png`} alt="Current Search Card 1" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" />
+                                                <Image src={`${A}/Decision2-01.png`} alt="Current Search Card 1" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-contain" />
                                             </div>
                                             <div className="relative aspect-400/42 rounded-lg overflow-hidden">
-                                                <Image src={`${A}/Decision2-02.png`} alt="Current Search Card 2" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" />
+                                                <Image src={`${A}/Decision2-02.png`} alt="Current Search Card 2" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-contain" />
                                             </div>
                                             <div className="relative aspect-400/42 rounded-lg overflow-hidden">
-                                                <Image src={`${A}/Decision2-03.png`} alt="Current Search Card 3" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" />
+                                                <Image src={`${A}/Decision2-03.png`} alt="Current Search Card 3" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-contain" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-6 flex-1">
@@ -599,10 +599,10 @@ export default function YouTubeCaseStudy() {
                                         </div>
                                         <div className="flex flex-col gap-6 w-full lg:w-[400px]">
                                             <div className="relative w-full aspect-400/100 rounded-lg overflow-hidden shadow-lg">
-                                                <Image src={`${A}/Decision2-04.png`} alt="Wireframe 1" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
+                                                <Image src={`${A}/Decision2-04.png`} alt="Wireframe 1" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-cover" />
                                             </div>
                                             <div className="relative w-full aspect-400/150 rounded-lg overflow-hidden shadow-lg">
-                                                <Image src={`${A}/Decision2-05.png`} alt="Wireframe 2" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
+                                                <Image src={`${A}/Decision2-05.png`} alt="Wireframe 2" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                     </div>
@@ -620,7 +620,7 @@ export default function YouTubeCaseStudy() {
                                                 <ProConCard variant="insight">Giving the video card a lighter background helped users understand it was clickable, like a button.</ProConCard>
                                             </div>
                                             <div className="relative w-full lg:w-[500px] aspect-500/170 rounded-xl overflow-hidden shadow-md">
-                                                <Image src={`${A}/Decision2-06.png`} alt="First Iteration UI A" fill sizes="(max-width: 768px) 100vw, 500px" className="object-cover" />
+                                                <Image src={`${A}/Decision2-06.png`} alt="First Iteration UI A" fill sizes="(max-width: 768px) 100vw, 500px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
@@ -628,7 +628,7 @@ export default function YouTubeCaseStudy() {
                                                 <ProConCard variant="insight">Information on the card, such as "Live" and "New Video," changes based on the specific context of the video.</ProConCard>
                                             </div>
                                             <div className="relative w-full lg:w-[500px] aspect-500/170 rounded-xl overflow-hidden shadow-md">
-                                                <Image src={`${A}/Decision2-07.png`} alt="First Iteration UI B" fill sizes="(max-width: 768px) 100vw, 500px" className="object-cover" />
+                                                <Image src={`${A}/Decision2-07.png`} alt="First Iteration UI B" fill sizes="(max-width: 768px) 100vw, 500px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                     </div>
@@ -643,7 +643,7 @@ export default function YouTubeCaseStudy() {
                                 <GrayBox title="Final Design" className="flex flex-col gap-8 p-8 md:p-4">
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="relative w-full lg:w-[500px] aspect-500/100 rounded-xl overflow-hidden shadow-xl">
-                                            <Image src={`${A}/Decision2-08.png`} alt="Final Video Card Design" fill sizes="(max-width: 768px) 100vw, 500px" className="object-cover" />
+                                            <Image src={`${A}/Decision2-08.png`} alt="Final Video Card Design" fill sizes="(max-width: 768px) 100vw, 500px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-6 max-w-[400px]">
                                             <ProConCard variant="insight">I dug deeper and found that users had to move their attention from left to right constantly. I changed the location of the thumbnail to align everything, and that fixed it!</ProConCard>
@@ -675,11 +675,11 @@ export default function YouTubeCaseStudy() {
                                         {[1, 2, 3, 4].map((i) => (
                                             <React.Fragment key={i}>
                                                 <div className="relative w-[120px] md:w-[200px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0">
-                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" className="object-cover" />
+                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
                                                 </div>
                                                 {i < 4 && (
                                                     <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
-                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" className="object-contain" />
+                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" quality={100} className="object-contain" />
                                                     </div>
                                                 )}
                                             </React.Fragment>
@@ -696,11 +696,11 @@ export default function YouTubeCaseStudy() {
                                         {[5, 6, 7, 8].map((i) => (
                                             <React.Fragment key={i}>
                                                 <div className="relative w-[120px] md:w-[200px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0">
-                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" className="object-cover" />
+                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
                                                 </div>
                                                 {i < 8 && (
                                                     <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
-                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" className="object-contain" />
+                                                        <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" quality={100} className="object-contain" />
                                                     </div>
                                                 )}
                                             </React.Fragment>
@@ -722,10 +722,10 @@ export default function YouTubeCaseStudy() {
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="flex flex-col md:flex-row lg:flex-col gap-6 shrink-0 items-center">
                                             <div className="relative w-[180px] md:w-[218px] aspect-218/485 rounded-xl overflow-hidden shadow-lg">
-                                                <Image src={`${A}/UseCase2-01.png`} alt="Live Stream Pill 1" fill sizes="(max-width: 768px) 180px, 218px" className="object-cover" />
+                                                <Image src={`${A}/UseCase2-01.png`} alt="Live Stream Pill 1" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
                                             </div>
                                             <div className="relative w-[180px] md:w-[218px] aspect-218/485 rounded-xl overflow-hidden shadow-lg">
-                                                <Image src={`${A}/UseCase2-02.png`} alt="Live Stream Pill 2" fill sizes="(max-width: 768px) 180px, 218px" className="object-cover" />
+                                                <Image src={`${A}/UseCase2-02.png`} alt="Live Stream Pill 2" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col items-center gap-4 flex-1 max-w-[500px]">
@@ -750,7 +750,7 @@ export default function YouTubeCaseStudy() {
                                 <div className="flex flex-col gap-3 w-full">
                                     <SectionLabel>Building Scalable UI using style guide</SectionLabel>
                                     <div className="relative w-full aspect-1078/640 rounded-2xl overflow-hidden shadow-xl border border-outline-primary bg-white mt-1">
-                                        <Image src={`${A}/UI-01.png`} alt="UI Style Guide" fill sizes="100vw" className="object-cover" />
+                                        <Image src={`${A}/UI-01.png`} alt="UI Style Guide" fill sizes="100vw" quality={100} className="object-cover" />
                                     </div>
                                     <BodyText>I created a small style guide that was accompanied by Google’s Material Design Library in order to build the UI that suites YouTube.</BodyText>
                                 </div>
@@ -758,7 +758,7 @@ export default function YouTubeCaseStudy() {
                                 <div className="flex flex-col gap-8">
                                     <div className="flex flex-col gap-8 items-center bg-bg-secondary p-8 rounded-3xl overflow-hidden">
                                         <div className="relative w-full lg:w-[40vw] aspect-2156/228 rounded-xl ">
-                                            <Image src={`${A}/UI-05.png`} alt="Auto Layout Card Example" fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain" />
+                                            <Image src={`${A}/UI-05.png`} alt="Auto Layout Card Example" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-contain" />
                                         </div>
                                         <div className="flex-1">
                                             <BodyText>I used auto layout extensively to ensure consistency throughout various screen sizes. Autolayout made sure that the overall structure of the card was maintained while giving it flexibility to change the size. Moreover, using limits for width in combination with trim text helped me to make all the cards look consistent even with varying degrees of text quantity.</BodyText>
@@ -768,16 +768,16 @@ export default function YouTubeCaseStudy() {
 
                                 <div className="flex flex-col gap-8">
                                     <div className="relative w-full aspect-1037/105 rounded-xl overflow-hidden shadow-sm border border-outline-primary bg-white">
-                                        <Image src={`${A}/UI-02.png`} alt="Pill States" fill sizes="100vw" className="object-contain px-4" />
+                                        <Image src={`${A}/UI-02.png`} alt="Pill States" fill sizes="100vw" quality={100} className="object-contain px-4" />
                                     </div>
                                     <BodyText>As each pill button has various states, I used components to implement them, with clearly defined properties. Using components, I created various states in which the search bar and filter bar could exist.</BodyText>
 
                                     <div className="flex flex-col lg:flex-row gap-8 items-center justify-center pt-4">
                                         <div className="relative w-full lg:w-[450px] aspect-426/453 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
-                                            <Image src={`${A}/UI-03.png`} alt="Component Properties A" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
+                                            <Image src={`${A}/UI-03.png`} alt="Component Properties A" fill sizes="(max-width: 768px) 100vw, 450px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="relative w-full lg:w-[450px] aspect-429/456 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
-                                            <Image src={`${A}/UI-04.png`} alt="Component Properties B" fill sizes="(max-width: 768px) 100vw, 450px" className="object-cover" />
+                                            <Image src={`${A}/UI-04.png`} alt="Component Properties B" fill sizes="(max-width: 768px) 100vw, 450px" quality={100} className="object-cover" />
                                         </div>
                                     </div>
                                     <BodyText>Clear nomenclature in components allowed me to implement the same component in various scenarios, saving hours of duplicate work.</BodyText>

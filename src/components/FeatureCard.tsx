@@ -32,6 +32,8 @@ type Props = {
     imageRight?: string;
     routeText?: string;
     href?: string;
+    hoverLabelBg?: string;
+    hoverLabelText?: string;
 };
 
 export default function FeatureCard({
@@ -41,12 +43,25 @@ export default function FeatureCard({
     imageRight = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
     routeText = "/YOUTUBE",
     href,
+    hoverLabelBg,
+    hoverLabelText,
 }: Props) {
     const isExternal = href?.startsWith("http");
     const Wrapper = href ? motion.a : motion.div;
     const wrapperProps = href
         ? { href, ...(isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {}) }
         : {};
+
+    const labelVariants = {
+        rest: {
+            backgroundColor: "var(--color-bg-secondary)",
+            color: "var(--color-text-primary)",
+        },
+        hover: {
+            backgroundColor: hoverLabelBg || "var(--color-bg-secondary)",
+            color: hoverLabelText || "var(--color-text-primary)",
+        },
+    };
 
     return (
         <Wrapper
@@ -58,16 +73,24 @@ export default function FeatureCard({
         >
             {/* Top Header */}
             <div className="flex gap-4 sm:gap-8 items-start justify-between w-full">
-                <div className="bg-bg-secondary px-3 py-2 rounded-xl">
-                    <p className="font-card-mono text-text-primary">
+                <motion.div
+                    variants={labelVariants}
+                    transition={springTransition}
+                    className="px-3 py-2 rounded-xl"
+                >
+                    <p className="font-card-mono" style={{ color: "inherit" }}>
                         {title}
                     </p>
-                </div>
-                <div className="bg-bg-secondary flex items-center justify-center px-3 py-2 rounded-xl">
-                    <p className="font-card-mono text-text-primary whitespace-nowrap">
+                </motion.div>
+                <motion.div
+                    variants={labelVariants}
+                    transition={springTransition}
+                    className="flex items-center justify-center px-3 py-2 rounded-xl"
+                >
+                    <p className="font-card-mono whitespace-nowrap" style={{ color: "inherit" }}>
                         {subtitle}
                     </p>
-                </div>
+                </motion.div>
             </div>
 
             {/* Image Container */}
@@ -89,6 +112,7 @@ export default function FeatureCard({
                             alt={`${subtitle} left`}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={90}
                             className="object-contain"
                             priority
                         />
@@ -106,6 +130,7 @@ export default function FeatureCard({
                             alt={`${subtitle} right`}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={90}
                             className="object-contain"
                             priority
                         />

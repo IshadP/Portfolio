@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { ReadCvLogo } from "@phosphor-icons/react";
+import { ReadCvLogoIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 const heroVariants = {
@@ -41,9 +41,9 @@ export default function Hero() {
                 )}
 
                 {pathname === "/ai-experiments" && (
-                    <div className="flex items-center gap-4">
-                        <div className="relative w-[53px] h-[53px] shrink-0 -rotate-45">
-                            <Image src="/star.svg" alt="Dark Star" width={54} height={54} style={{ transform: "rotate(45deg)" }} />
+                    <div className="flex items-center w-full justify-center gap-4">
+                        <div className="relative w-16 h-16 overflow-hidden">
+                            <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             AI Experiments
@@ -52,8 +52,8 @@ export default function Hero() {
                 )}
 
                 {pathname === "/resume" && (
-                    <div className="flex items-center gap-4">
-                        <ReadCvLogo size={64} className="text-text-primary" />
+                    <div className="flex items-center w-full justify-center gap-4">
+                        <ReadCvLogoIcon size={64} className="text-text-primary" />
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Resume
                         </p>
@@ -62,8 +62,8 @@ export default function Hero() {
 
                 {pathname === "/printhub" && (
                     <div className="flex items-center w-full justify-center gap-4">
-                        <div className="relative shrink-0 rounded-full overflow-hidden -rotate-45">
-                            <Image src="/printhub-icon.svg" alt="Printhub" width={64} height={64} style={{ transform: "rotate(45deg)" }} />
+                        <div className="relative shrink-0 rounded-full overflow-hidden">
+                            <Image src="/printhub-icon.svg" alt="Printhub" width={64} height={64} quality={90} />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Printhub
@@ -74,7 +74,7 @@ export default function Hero() {
                 {pathname === "/youtube" && (
                     <div className="flex items-center w-full justify-center gap-4">
                         <div className="relative w-16 h-16 overflow-hidden ">
-                            <Image src="/youtube-icon.svg" alt="YouTube" fill className="object-contain" />
+                            <Image src="/youtube-icon.svg" alt="YouTube" fill quality={90} className="object-contain" />
                         </div>
                         <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             YouTube

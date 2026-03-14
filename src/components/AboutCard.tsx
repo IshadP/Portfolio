@@ -52,8 +52,9 @@ export default function AboutCard({ className = "" }: Props) {
                         alt="X (Twitter) Profile"
                         width={32}
                         height={32}
+                        quality={90}
                         className="object-cover"
-                        src="/4d6de0825a1efd7faa2cfae4ab00b2d51aa658bc.png"
+                        src="/x.png"
                     />
                 </motion.a>
                 <p className="font-body-mono text-text-primary px-1">
@@ -71,8 +72,9 @@ export default function AboutCard({ className = "" }: Props) {
                         alt="LinkedIn Profile"
                         width={32}
                         height={32}
+                        quality={90}
                         className="object-cover"
-                        src="/e0cc2e914fa7b5966325148cd0167788b43f943e.png"
+                        src="/linkedin.png"
                     />
                 </motion.a>
                 <p className="font-body-mono text-text-primary px-1">
@@ -90,8 +92,9 @@ export default function AboutCard({ className = "" }: Props) {
                         alt="Behance Profile"
                         width={32}
                         height={32}
+                        quality={90}
                         className="object-cover"
-                        src="/559ca3cb0193459fc6ee1ea77998a33c2d802145.png"
+                        src="/behance.png"
                     />
                 </motion.a>
             </div>
