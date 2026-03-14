@@ -30,7 +30,7 @@ export default function AiExperimentsPage() {
                   imageLeft="/cards/Print1-02.png"
                   imageRight="/cards/Print1-03.png"
                   routeText="/PRINTHUB"
-                  href="#"
+                  href="https://printproto.vercel.app/"
                   variant="two-pages"
                 />
                 
@@ -41,7 +41,7 @@ export default function AiExperimentsPage() {
                   imageLeft="/cards/pomdom-screenshot.png"
                   imageRight="/cards/pomdom-screenshot.png"
                   routeText="/POMDOM"
-                  href="#"
+                  href="https://github.com/IshadP/Pomdom"
                   variant="two-pages"
                 />
 
