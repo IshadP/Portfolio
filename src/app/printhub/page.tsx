@@ -1165,7 +1165,7 @@ export default function PrinthubPage() {
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
                                 <div className="relative w-[180px] md:w-[226px] aspect-455/1000 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-09.png`} alt="Custom Component Structure" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
+                                    <Image src={`/printhub/UI-08.png`} alt="Custom Component Structure" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
                                 </div>
                                 <div className="flex flex-col gap-4 max-w-[420px] text-center">
                                     <BodyText>
@@ -1173,7 +1173,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
                                 <div className="relative w-[180px] md:w-[226px] aspect-224/248 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-08.png`} alt="Atomic Component Mix" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
+                                    <Image src={`/printhub/UI-09.png`} alt="Atomic Component Mix" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
                                 </div>
                             </div>
                             <BodyText>
