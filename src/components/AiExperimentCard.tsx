@@ -21,7 +21,7 @@ type Props = {
     className?: string;
 };
 
-export default function StarCard({
+export default function AiExperimentCard({
     routeText = "/AI-EXPERIMENTS",
     className = ""
 }: Props) {
@@ -41,7 +41,7 @@ export default function StarCard({
             className={`block h-full w-full cursor-pointer focus:outline-none group ${className}`}
         >
             <motion.div
-                className="bg-bg-primary border-2 border-outline-primary flex flex-col items-center justify-between overflow-hidden p-4 relative rounded-3xl w-full h-full @container"
+                className="bg-bg-default flex flex-col items-center justify-between overflow-hidden p-4 relative rounded-3xl w-full h-full @container"
                 initial={isMobile ? "hover" : "rest"}
                 animate={isMobile ? "hover" : "rest"}
                 whileHover={isMobile ? undefined : "hover"}
@@ -72,7 +72,7 @@ export default function StarCard({
 
                 {/* ── Bottom Route Text ── */}
                 <div className="w-full flex justify-end shrink-0 z-10">
-                    <p className="font-label-mono text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
+                    <p className="text-code-sm text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
                         {routeText}
                     </p>
                 </div>

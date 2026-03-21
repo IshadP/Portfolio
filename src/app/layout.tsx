@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-sans", // Fixed: matched to standard Tailwind sans
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono", // Fixed: matched to standard Tailwind mono
+  subsets: ["latin"],
+});
+
+const interTight = Inter_Tight({
+  variable: "--font-display", // This was already correct!
   subsets: ["latin"],
 });
 
@@ -77,19 +82,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} antialiased min-h-screen flex flex-col`}
       >
-        <main className="grow">
-          {children}
-        </main>
+        <main className="grow">{children}</main>
         <div className="w-full mt-auto">
-          <Image 
-            src="/minecraft-landscape.png" 
-            alt="Minecraft Landscape" 
-            width={1920} 
-            height={200} 
+          <Image
+            src="/minecraft-landscape.png"
+            alt="Minecraft Landscape"
+            width={1920}
+            height={200}
             quality={90}
-            className="w-full h-auto block"
+            className="w-full bg-bg-subtle h-auto block"
           />
         </div>
       </body>

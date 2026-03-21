@@ -17,7 +17,7 @@ import ProConCard from "../../components/caseStudy/ProConCard";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-body-mono text-text-tertiary w-full max-w-[1024px]">
+        <p className="text-body-mono text-text-disabled w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -25,7 +25,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-body text-text-primary w-full max-w-[1024px]">
+        <p className="text-body text-text-secondary w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -33,14 +33,14 @@ function BodyText({ children }: { children: React.ReactNode }) {
 
 function Heading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-h2 text-text-primary w-full max-w-[1024px]">
+        <p className="text-h2 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
     );
 }
 function SubHeading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-h3 text-text-primary w-full max-w-[1024px]">
+        <p className="text-h3 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -48,51 +48,15 @@ function SubHeading({ children }: { children: React.ReactNode }) {
 
 function Title({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-h1 text-text-primary w-full max-w-[1024px]">
+        <p className="text-h1 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
     );
 }
 
-function ActionIndicator({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="bg-white border-2 border-[#F94412] px-4 py-2 rounded-full inline-flex self-center z-20">
-            <p className="font-geist font-medium text-black text-[12px] md:text-[14px]">
-                {children}
-            </p>
-        </div>
-    );
-}
 
 const A = "/printhub";
 
-/* ── Custom Cursor Component ── */
-function CustomCursor({ text, active }: { text: string; active: boolean }) {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePos({ x: e.clientX, y: e.clientY });
-        };
-        window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
-
-    if (!active) return null;
-
-    return (
-        <motion.div
-            className="fixed top-0 left-0 pointer-events-none z-9999 px-4 py-2 bg-white rounded-full shadow-2xl border border-black/10 flex items-center gap-2"
-            animate={{ x: mousePos.x + 20, y: mousePos.y + 20, scale: 1 }}
-            initial={{ scale: 0 }}
-            exit={{ scale: 0 }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        >
-            <div className="w-2 h-2 rounded-full bg-[#306192]" />
-            <p className="font-card-mono text-sm uppercase tracking-wider text-text-primary whitespace-nowrap">{text}</p>
-        </motion.div>
-    );
-}
 
 /* ── Journey Step Component ── */
 function JourneyStep({
@@ -114,7 +78,7 @@ function JourneyStep({
                 {/* Left Side: Narrative */}
                 <div className="flex w-full justify-center lg:justify-end lg:pt-12 max-w-[600px]">
                     <div className="flex flex-col gap-4 w-full lg:max-w-[320px]">
-                        <p className="font-h4 text-[#306192] leading-tight text-center lg:text-right">
+                        <p className="text-h4 text-[#306192] leading-tight text-center lg:text-right">
                             {narrative}
                         </p>
                     </div>
@@ -145,22 +109,22 @@ function JourneyStep({
 
 export default function PrinthubPage() {
     return (
-        <main className="min-h-screen bg-bg-primary text-text-primary selection:bg-text-primary selection:text-bg-primary">
+        <main className="min-h-screen bg-bg-subtle text-text-primary selection:bg-text-primary selection:text-bg-primary">
             {/* ── Hero section ── */}
             <Hero />
 
             {/* ── Main Content ── */}
             <FadeIn className="w-full flex flex-col gap-12 justify-center mt-[40vh] z-10">
 
-                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-[1024px] flex-col gap-12 px-4">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col gap-12 px-4">
                     <Navbar />
                     {/* ── 01. INTRO / HERO CONTENT ──                                 */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     <section className="flex flex-col gap-8 w-full">
                         <Title>How refined components and better flows saved PrintHub users 30% of their time.</Title>
 
-                        <div className="bg-white border-3 border-outline-primary overflow-hidden p-0 rounded-[30px] w-full">
-                            <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-8 md:p-12 overflow-hidden bg-bg-primary">
+                        <div className="bg-white border-3 border-border-default overflow-hidden p-0 rounded-[30px] w-full">
+                            <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-8 md:p-12 overflow-hidden bg-bg-default">
                                 <div className="relative w-[280px] md:w-[320px] aspect-324/691 overflow-hidden ">
                                     <Image src={`${A}/Intro-01.png`} alt="PrintHub Screen 1" fill quality={90} className="object-cover" />
                                 </div>
@@ -175,16 +139,16 @@ export default function PrinthubPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-24 px-8 md:px-12">
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="font-geist font-medium text-[#b7b7b7] text-lg uppercase tracking-tight">Role</p>
-                                <p className="font-geist font-medium text-text-primary text-xl">Product Designer</p>
+                                <p className="text-label-lg text-text-muted">Role</p>
+                                <p className="text-body-lg-bold text-text-primary">Product Designer</p>
                             </div>
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="font-geist font-medium text-[#b7b7b7] text-lg uppercase tracking-tight">Team</p>
-                                <p className="font-geist font-medium text-text-primary text-xl">3 Developers</p>
+                                <p className="text-label-lg text-text-muted">Team</p>
+                                <p className="text-body-lg-bold text-text-primary">3 Developers</p>
                             </div>
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="font-geist font-medium text-[#b7b7b7] text-lg uppercase tracking-tight">Duration</p>
-                                <p className="font-geist font-medium text-text-primary text-xl">5-6 weeks</p>
+                                <p className="text-label-lg text-text-muted">Duration</p>
+                                <p className="text-body-lg-bold text-text-primary">5-6 weeks</p>
                             </div>
                         </div>
                     </section>
@@ -207,9 +171,9 @@ export default function PrinthubPage() {
                             <SubHeading>Designing for Users</SubHeading>
                             <div className="flex flex-col gap-3">
                                 <BodyText>Traditional printing is slow and disruptive. The Printhub redesign aimed to make printing fast and routine. Going into this project we had 2 high level goals:</BodyText>
-                                <ul className="list-decimal pl-6 flex flex-col gap-3 font-body w-full text-text-primary max-w-[1024px] mx-auto">
-                                    <li>Implement Material 3 to standardise app design.</li>
-                                    <li>Improve usability wherever possible.</li>
+                                <ul className="list-decimal pl-6 flex flex-col gap-3 text-body w-full text-text-primary max-w-[1024px] mx-auto">
+                                    <li><BodyText>Implement Material 3 to standardise app design.</BodyText></li>
+                                    <li><BodyText>Improve usability wherever possible.</BodyText></li>
                                 </ul>
                             </div>
                         </div>
@@ -258,8 +222,8 @@ export default function PrinthubPage() {
                                 </GrayBox>
                                 <div className="flex flex-col gap-3 px-4">
                                     <div className="flex flex-col gap-3">
-                                        <p className="font-h4">Frequent reverification resulted in slow checkout.</p>
-                                        <p className="font-label-lg text-grey-60">
+                                        <p className="text-body-lg-bold">Frequent reverification resulted in slow checkout.</p>
+                                        <p className="text-label-lg text-neutral-70">
                                             Users opened customisation settings multiple times during checkout to verify if the configurations were correct. This significantly increased the time to print and confused them.
                                         </p>
                                     </div>
@@ -275,8 +239,8 @@ export default function PrinthubPage() {
                                 </GrayBox>
                                 <div className="flex flex-col gap-3 px-4">
                                     <div className="flex flex-col gap-3">
-                                        <p className="font-h4">Failure to reach the goal in new users</p>
-                                        <p className="font-label-lg text-grey-60">
+                                        <p className="text-body-lg-bold">Failure to reach the goal in new users</p>
+                                        <p className="text-label-lg text-neutral-70">
                                             New users weren’t able to complete process and needed human guidance to get their print. New users took 2-3 tries before getting the acquainted with flow.
                                         </p>
                                     </div>
@@ -302,8 +266,8 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
                                 {/* Custom callout. not ot be touched */}
-                                <div className="flex flex-col py-4 sm:px-20 lg:px-40 px-4 text-text-primary border-b border-t">
-                                    <div className="font-h2 text-center">Printing was a irreversible process that costs money and time.</div>
+                                <div className="flex flex-col py-4 sm:px-20 lg:px-40 px-4 text-text-primary border-b border-t border-border-default">
+                                    <div className="text-h3 text-center">Printing was a irreversible process that costs money and time.</div>
                                 </div>
 
                                 <BodyText>
@@ -318,13 +282,13 @@ export default function PrinthubPage() {
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     <section>
                         <div className="flex w-full flex-col rounded-[32px] bg-[#97C882] px-0.5 pt-0.5 pb-2">
-                            <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-primary">
-                                <div className="flex w-full items-center gap-2 bg-bg-green px-6 py-6 ">
-                                    <h3 className="font-h3 text-text-green">
+                            <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-default">
+                                <div className="flex w-full items-center gap-2 bg-status-success-bg px-6 py-3 ">
+                                    <h3 className="text-h3 text-status-success-fg">
                                         User’s mental model🧠
                                     </h3>
                                 </div>
-                                <div className="flex w-full flex-col gap-3 p-6">
+                                <div className="flex w-full flex-col gap-3 px-6 py-3">
                                     <BodyText>
                                         An interesting insight while observing and talking to user that I came across was:
                                     </BodyText>
@@ -370,7 +334,7 @@ export default function PrinthubPage() {
                             <div className="relative w-full aspect-1024/600">
                                 <Image src={`/printhub/AnxietyMap-01.svg`} alt="AnxietyMap" fill quality={90} className="object-contain" />
                             </div>
-                            <p className="font-body-mono text-grey-30">
+                            <p className="text-body-mono text-neutral-30">
                                 Based on talking to few users and our assumptions.
                             </p>
                         </div>
@@ -379,7 +343,7 @@ export default function PrinthubPage() {
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. USER FLOW JOURNEY ──                                    */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-grey-30">
+                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-neutral-30">
                         <div className="flex flex-col gap-8 w-full">
                             <Heading>How redesigned Printhub reduces user anxiety</Heading>
                             <BodyText>
@@ -496,7 +460,7 @@ export default function PrinthubPage() {
                             >
                                 <ProConCard variant="insight">The printer status (online/offline) confirms immediate print availability, reinforcing the user's intent to print quickly.</ProConCard>
                                 <ProConCard variant="insight">Users can visually confirm and modify their current selections, recognizing their applied preferences instantly.</ProConCard>
-                                <ProConCard variant="insight">Displaying the final price clearly builds trust and removes doubt. Putting that amount directly on the button tells users exactly what they’re spending before they click.</ProConCard>
+                                {/* <ProConCard variant="insight">Displaying the final price clearly builds trust and removes doubt. Putting that amount directly on the button tells users exactly what they’re spending before they click.</ProConCard> */}
                             </JourneyStep>
 
                             {/* --- Step 10 --- */}
@@ -550,7 +514,7 @@ export default function PrinthubPage() {
                                 </BodyText>
                             </div>
 
-                            <GrayBox title="Current Card Design" className="bg-bg-secondary p-8 md:p-12">
+                            <GrayBox title="Current Card Design" className="">
                                 <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                     <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
                                         <Image src={`${A}/Decision1-01.png`} alt="Current Design" fill quality={90} className="object-cover" />
@@ -574,7 +538,7 @@ export default function PrinthubPage() {
 
                             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 w-full max-w-[1078px]">
                                 <div className="flex flex-col gap-2">
-                                    <GrayBox title="Visual indicators Only" className="aspect-video bg-bg-secondary p-8 flex items-center justify-center">
+                                    <GrayBox title="Visual indicators Only" className="aspect-video bg-bg-subtle rounded-lg p-8 flex items-center justify-center">
                                         <div className="relative w-full h-full">
                                             <Image src={`${A}/Decision1-02.png`} alt="Option 1" fill quality={90} className="object-contain" />
                                         </div>
@@ -586,7 +550,7 @@ export default function PrinthubPage() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <GrayBox title="Textual Indicators" className="aspect-video bg-bg-secondary p-8 flex items-center justify-center">
+                                    <GrayBox title="Textual Indicators" className="aspect-video bg-bg-subtle p-8 rounded-lg flex items-center justify-center">
                                         <div className="relative w-full h-full">
                                             <Image src={`${A}/Decision1-03.png`} alt="Option 2" fill quality={90} className="object-contain" />
                                         </div>
@@ -630,7 +594,7 @@ export default function PrinthubPage() {
                                         I kept the checkbox for selection and added a preview so users could see whether a file needed editing. Customisation was available through click and hold. This assumed that most users rarely need to customise files.
                                     </BodyText>
                                 </div>
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className=" p-8 md:p-12">
                                     <div className="flex flex-col gap-8 items-center justify-center">
                                         <div className="relative w-full max-w-[614px] aspect-614/120 rounded-xl overflow-hidden shadow-lg">
                                             <Image src={`${A}/Decision1-04.png`} alt="Idea 1 Design" fill quality={90} className="object-cover" />
@@ -644,10 +608,10 @@ export default function PrinthubPage() {
                             </div>
 
                             {/* --- Preview Dropped Notice --- */}
-                            <div className="flex w-full flex-col rounded-[32px] bg-outline-primary px-0.5 pt-0.5 pb-2">
-                                <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-primary">
-                                    <div className="flex w-full items-center gap-2 bg-outline-primary px-6 py-4">
-                                        <p className="font-h3 text-text-primary">Preview Dropped!</p>
+                            <div className="flex w-full flex-col rounded-[32px] bg-border-default px-0.5 pt-0.5 pb-2">
+                                <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-default">
+                                    <div className="flex w-full items-center gap-2 bg-bg-subtle px-6 py-4">
+                                        <p className="text-h3 text-text-primary">Preview Dropped!</p>
                                     </div>
                                     <div className="flex w-full flex-col gap-3 p-6 text-text-primary">
                                         <BodyText>It was technically complex to implement and did not fit within the project timeline.</BodyText>
@@ -668,7 +632,7 @@ export default function PrinthubPage() {
                                         Following removal of preview, I added a Customize icon instead of using a hidden gesture. I kept the checkbox, even though it did not fully match Material 3. This decision was to preserve existing user behaviour.
                                     </BodyText>
                                 </div>
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className=" p-8 md:p-12">
                                     <div className="flex flex-col gap-8 items-center justify-center">
                                         <div className="relative w-full max-w-[602px] aspect-602/107 rounded-xl overflow-hidden shadow-lg">
                                             <Image src={`${A}/Decision1-05.png`} alt="Idea 2 Design" fill quality={90} className="object-cover" />
@@ -687,7 +651,7 @@ export default function PrinthubPage() {
                                     I was unsure how can we conserve user behaviour and follow design standards as well. I went to other apps to see how they tackled the the problem of keep selection and edit (secondary action) viable. When I saw Gmail it become very clear what I was missing out.
                                 </BodyText>
 
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className=" p-8 md:p-12">
                                     <div className="flex flex-col gap-8 items-center justify-center">
                                         <div className="flex flex-col md:flex-row gap-6 w-full items-center justify-center">
                                             <div className="relative w-full max-w-[492px] aspect-492/106 rounded-xl overflow-hidden shadow-lg bg-white">
@@ -722,7 +686,7 @@ export default function PrinthubPage() {
                                         By prioritising recognition, user moved through flow much faster as they had higher confidence on their decision.
                                     </BodyText>
                                 </div>
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className=" p-8 md:p-12">
                                     <div className="flex items-center justify-center">
                                         <div className="relative w-full max-w-[602px] aspect-602/253">
                                             <Image src={`${A}/Decision1-08.png`} alt="Final Card Design" fill quality={90} className="object-contain" />
@@ -808,7 +772,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
 
-                                <GrayBox>
+                                <GrayBox className=" p-8">
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                                             <div className="relative w-[40cqw] max-w-[391px] aspect-391/151 rounded-xl overflow-hidden shadow-lg bg-white">
@@ -849,7 +813,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
 
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className="p-8 ">
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="relative w-full max-w-[610px] aspect-610/238 rounded-xl overflow-hidden shadow-lg">
                                             <Image src={`${A}/Decision2-05.png`} alt="Idea 2 Design" fill sizes="(max-width: 768px) 100vw, 610px" quality={90} className="object-cover" />
@@ -874,8 +838,8 @@ export default function PrinthubPage() {
                                         <div className="relative w-[100px] md:w-[156px] aspect-156/215">
                                             <Image src={`${A}/Person-01.png`} alt="User 1" fill sizes="(max-width: 768px) 100px, 156px" quality={90} className="object-contain" />
                                         </div>
-                                        <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px]">
-                                            <p className="font-label-md text-text-primary">
+                                        <div className="bg-bg-default border-2 border-border-default rounded-3xl px-6 py-4 max-w-[400px]">
+                                            <p className="text-body-sm text-text-primary">
                                                 “How do I print file, I have added them already. At least in I knew what to do earlier”
                                             </p>
                                         </div>
@@ -885,8 +849,8 @@ export default function PrinthubPage() {
                                         <div className="relative w-[100px] md:w-[156px] aspect-156/215">
                                             <Image src={`${A}/Person-02.png`} alt="User 2" fill sizes="(max-width: 768px) 100px, 156px" quality={90} className="object-contain" />
                                         </div>
-                                        <div className="bg-white border border-outline-primary rounded-lg px-6 py-4 max-w-[400px] ">
-                                            <p className="font-label-md text-text-primary text-right">
+                                        <div className="bg-bg-default border-2 border-border-default rounded-3xl px-6 py-4 max-w-[400px]">
+                                            <p className="text-label text-text-primary text-right">
                                                 “I have to select so many files 🥲”
                                             </p>
                                         </div>
@@ -918,7 +882,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
 
-                                <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                                <GrayBox className="p-8 md:p-12">
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                                             <div className="relative w-[40cqw] max-w-[286px] aspect-286/118 rounded-xl overflow-hidden shadow-lg bg-white">
@@ -957,7 +921,7 @@ export default function PrinthubPage() {
                         {/* --- Nina's Story --- */}
                         <div className="flex flex-col gap-6 w-full">
                             <div className="flex flex-col gap-5">
-                                <p className="font-h3 text-text-primary">Nina can’t remember her submission.</p>
+                                <p className="text-h3 text-text-primary">Nina can’t remember her submission.</p>
                                 <div className="flex flex-col gap-3">
                                     <BodyText>
                                         Nina, a daily Printhub user, can't remember if she submitted her coding assignment. Her friends mention the coding assignment that was due yesterday. She tries to recall whether she actually submitted it. To find out, she opens the app, to check if she printed it or not.
@@ -1026,14 +990,14 @@ export default function PrinthubPage() {
                         {/* --- Raju's Story --- */}
                         <div className="flex flex-col gap-6 w-full">
                             <div className="flex flex-col gap-5">
-                                <p className="font-h3 text-text-primary">Raju Is Too Busy to Wait for His Prints.</p>
+                                <p className="text-h3 text-text-primary">Raju Is Too Busy to Wait for His Prints.</p>
                                 <BodyText>
                                     Raju works at a government office. With an audit approaching, his workload is heavy. He needs some files printed. He opens PrintHub to get it done. He uploads the files to be printed and completes the process.
                                 </BodyText>
                             </div>
 
                             {/* Sequence 1: Raju placing order */}
-                            <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                            <GrayBox className=" p-8 md:p-12">
                                 <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
                                     <div className="flex items-center px-2 min-w-max">
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
@@ -1060,7 +1024,7 @@ export default function PrinthubPage() {
                             </BodyText>
 
                             {/* Sequence 2: Raju collecting prints */}
-                            <GrayBox className="bg-bg-secondary p-8 md:p-12">
+                            <GrayBox className="p-8 md:p-12">
                                 <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
                                     <div className="flex items-center px-2 min-w-max">
                                         <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
@@ -1109,7 +1073,7 @@ export default function PrinthubPage() {
                             <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6">
                                 {/* Left Column: Component Sheets */}
                                 <div className="flex flex-col gap-4">
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
                                         <Image
                                             src={`/printhub/Comp-02.png`}
                                             alt="Component Sheet 1"
@@ -1118,7 +1082,7 @@ export default function PrinthubPage() {
                                             className="object-contain"
                                         />
                                     </div>
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
                                         <Image
                                             src={`/printhub/Comp-06.png`}
                                             alt="Component Sheet 2"
@@ -1128,7 +1092,7 @@ export default function PrinthubPage() {
                                             style={{ objectPosition: '5% 48%' }}
                                         />
                                     </div>
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-secondary ">
+                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
                                         <Image
                                             src={`/printhub/Comp-04.png`}
                                             alt="Component Sheet 3"
@@ -1156,7 +1120,7 @@ export default function PrinthubPage() {
                             <BodyText>
                                 I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable; with empty tokens ready for new colours. This ensured the new design met Material Design colour standards.
                             </BodyText>
-                            <div className="relative w-full aspect-4096/2686 rounded-[32px] overflow-hidden bg-white shadow-sm border border-outline-primary">
+                            <div className="relative w-full aspect-4096/2686 rounded-[32px] overflow-hidden bg-white shadow-sm border border-border-default">
                                 <Image src={`/printhub/Comp-07.png`} alt="Token System Variables" fill quality={90} className="object-cover" />
                             </div>
                         </div>

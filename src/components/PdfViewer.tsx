@@ -34,21 +34,21 @@ export default function PdfViewer({ fileUrl }: PdfViewerProps) {
     return (
         <div
             ref={containerRef}
-            className="w-full rounded-4xl border-3 border-outline-primary overflow-hidden bg-bg-primary flex flex-col items-center gap-4 p-4 md:p-8"
+            className="w-full rounded-4xl border-3 border-border-default overflow-hidden bg-bg-default flex flex-col items-center gap-4 p-4 md:p-8"
         >
             <Document
                 file={fileUrl}
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={
                     <div className="flex items-center justify-center py-20">
-                        <p className="font-geist-mono text-lg text-text-tertiary animate-pulse">
+                        <p className="text-code text-lg text-text-disabled animate-pulse">
                             Loading resume…
                         </p>
                     </div>
                 }
                 error={
                     <div className="flex items-center justify-center py-20">
-                        <p className="font-geist-mono text-lg text-text-tertiary">
+                        <p className="text-code text-lg text-text-disabled">
                             Failed to load PDF. Please try downloading instead.
                         </p>
                     </div>

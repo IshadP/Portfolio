@@ -1,106 +1,60 @@
+/* ============================================================
+   GLOBAL STYLESHEET — Personal Portfolio
+   Style guide inspired by shadcn/ui conventions
+   Built for Tailwind v4
+   ============================================================ */
+
+/* ============================================================
+   1. IMPORTS & FONT DECLARATIONS
+   ============================================================ */
+
 @import "tailwindcss";
 
+/* ============================================================
+   2. THEME — Design Tokens
+   ============================================================ */
+
 @theme {
-  --font-inter-display: "Inter Display", sans-serif;
-  --font-geist-mono: "Geist Mono", sans-serif;
-  --font-geist: "Geist", sans-serif;
-}
+  /* ----------------------------------------------------------
+     2.1 Font Families (Mapped to next/font variables)
+     ---------------------------------------------------------- */
+  --font-display:    var(--font-display), "Inter Tight", sans-serif;
+  --font-sans:       var(--font-sans), "Geist", sans-serif;
+  --font-mono:       var(--font-mono), "Geist Mono", monospace;
 
-@layer utilities {
+  /* ----------------------------------------------------------
+     2.2 Color Palette — Primitives
+     Neutral grey scale, 10 (lightest) → 100 (darkest).
+     ---------------------------------------------------------- */
+  --color-neutral-10:  #f6f6f6;
+  --color-neutral-20:  #e5e5e5;
+  --color-neutral-30:  #d4d4d4;
+  --color-neutral-40:  #a3a3a3;
+  --color-neutral-50:  #737373;
+  --color-neutral-60:  #a1a1aa;
+  --color-neutral-70:  #71717a;
+  --color-neutral-80:  #52525b;
+  --color-neutral-90:  #27272a;
+  --color-neutral-100: #18181b;
 
-  /* H1: mobile 30px → desktop 48px */
-  /* H1: mobile 30px → desktop 48px */
-  .font-h1 {
-    @apply font-inter-display text-3xl font-bold leading-tight tracking-normal md:text-5xl;
-  }
+  /* Semantic accent swatches */
+  --color-green-subtle: #d9fcca;
+  --color-green-ink:    #00421f;
+  --color-red-subtle:   #ffc7c7;
+  --color-blue-subtle:  #cadafc;
+  --color-blue-ink:     #1b3262;
 
-  /* H2: mobile 24px → desktop 36px */
-  .font-h2 {
-    @apply font-inter-display text-2xl font-semibold leading-tight tracking-normal md:text-4xl;
-  }
-
-  /* H3: mobile 20px → desktop 30px */
-  .font-h3 {
-    @apply font-inter-display text-xl font-semibold leading-8 tracking-normal md:text-3xl md:leading-10;
-  }
-
-  /* H4: mobile 18px → desktop 24px */
-  .font-h4 {
-    @apply font-inter-display text-lg font-semibold leading-7 tracking-normal md:text-2xl md:leading-8;
-  }
-
-  /* Body: mobile 16px → desktop 20px */
-  .font-body {
-    @apply font-geist text-base font-medium leading-7 md:text-xl md:leading-8;
-  }
-
-  .font-body-mono {
-    @apply font-geist-mono text-base font-medium leading-7 md:text-lg md:leading-8;
-  }
-
-  /* Label LG: mobile 14px → desktop 18px */
-  .font-label-lg {
-    @apply font-geist text-sm font-medium leading-6 md:text-lg md:leading-7;
-  }
-
-  /* Label MD: mobile 13px → desktop 18px */
-  .font-label-md {
-    @apply font-geist text-sm font-medium leading-5 tracking-normal md:text-lg md:leading-6;
-  }
-
-  /* Mono: mobile 16px → desktop 24px */
-  .font-mono {
-    @apply font-geist-mono text-sm font-semibold leading-6 tracking-normal md:text-sm md:leading-7;
-  }
-
-  /* Card Mono: mobile 14px → desktop 16px */
-  .font-card-mono {
-    @apply font-geist-mono text-xs font-medium leading-5 md:text-sm md:leading-6;
-  }
-
-  /* Label Mono: mobile 12px → desktop 14px */
-  .font-label-mono {
-    @apply font-geist-mono text-xs font-semibold leading-4 md:text-xs md:leading-5;
-  }
-}
-
-@theme inline {
-
-  --color-grey-10: #f5f5f5;
-  --color-grey-20: #e5e5e5;
-  --color-grey-30: #dddddd;
-  --color-grey-40: #cccccc;
-  --color-grey-50: #b6b6b6;
-  --color-grey-60: #8e8e8e;
-  --color-grey-70: #666666;
-  --color-grey-80: #4a4a4a;
-  --color-grey-90: #333333;
-  --color-grey-100: #1a1a1a;
-
-  --color-grey-text: #8E8E8E;
-  --color-bg-primary: #FFFFFF;
-  --color-outline-primary: var(--color-grey-30);
-  --color-text-tertiary: #B7B7B7;
-  --color-text-primary: var(--color-grey-90);
-  --color-text-secondary: #4F4F4F;
-  --color-bg-secondary: var(--color-grey-10);
-  --color-bg-green: #D9FCCA;
-  --color-bg-red: #FFC7C7;
-  --color-bg-blue: #CADAFC;
-  --color-text-green: #00421F;
-  --color-text-blue: #1B3262;
-
-
-
-  /* Spacing */
-  --spacing-0: 0px;
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
+  /* ----------------------------------------------------------
+     2.3 Spacing Scale
+     ---------------------------------------------------------- */
+  --spacing-0:  0px;
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  20px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
   --spacing-10: 40px;
   --spacing-12: 48px;
   --spacing-16: 64px;
@@ -108,6 +62,128 @@
   --spacing-24: 96px;
   --spacing-32: 128px;
 
+  /* ----------------------------------------------------------
+     2.4 Breakpoints
+     ---------------------------------------------------------- */
   --breakpoint-is: 780px;
+}
 
+/* ============================================================
+   3. THEME INLINE — Semantic / Alias Tokens
+   Swap only this block for dark-mode or theming.
+   ============================================================ */
+
+@theme inline {
+  /* Background */
+  --color-bg-default:    #ffffff;
+  --color-bg-subtle:     var(--color-neutral-10);
+  --color-bg-muted:      var(--color-neutral-20);
+
+  /* Foreground / Text */
+  --color-text-primary:   var(--color-neutral-90);
+  --color-text-secondary: var(--color-neutral-80);
+  --color-text-muted:     var(--color-neutral-60);
+  --color-text-disabled:  var(--color-neutral-40);
+
+  /* Border / Outline */
+  --color-border-default: var(--color-neutral-60);
+  --color-border-strong:  var(--color-neutral-80);
+
+  /* Surface fills */
+  --color-surface-dark:   var(--color-neutral-90);
+  --color-surface-mid:    var(--color-neutral-30);
+  --color-surface-warm:   var(--color-neutral-50);
+
+  /* Status — backgrounds */
+  --color-status-success-bg:  var(--color-green-subtle);
+  --color-status-error-bg:    var(--color-red-subtle);
+  --color-status-info-bg:     var(--color-blue-subtle);
+
+  /* Status — foregrounds */
+  --color-status-success-fg:  var(--color-green-ink);
+  --color-status-info-fg:     var(--color-blue-ink);
+}
+
+/* ============================================================
+   4. TYPOGRAPHY UTILITIES
+   Responsive fluid type scale.
+   ============================================================ */
+
+@layer utilities {
+
+  /* ----------------------------------------------------------
+     4.1 Display / Headings  (Inter Display)
+     ---------------------------------------------------------- */
+  .text-h1 {
+    @apply font-display text-3xl font-bold leading-tight tracking-normal md:text-5xl;
+  }
+
+  .text-h2 {
+    @apply font-display text-2xl font-semibold leading-8  md:text-[2.125rem] md:leading-tight;
+  }
+
+  .text-h3 {
+    @apply font-display text-lg font-semibold leading-7  md:text-[1.625rem] md:leading-9;
+  }
+
+  .text-h4 {
+    @apply font-display text-base font-semibold leading-6 md:text-xl md:leading-7;
+  }
+
+  /* ----------------------------------------------------------
+     4.2 Body Copy  (Geist)
+     ---------------------------------------------------------- */
+ .text-body-lg {
+    @apply font-sans text-lg font-normal leading-7 tracking-normal md:text-xl md:leading-9;
+  }
+
+      .text-body-lg-bold {
+    @apply font-sans text-lg font-medium leading-7 tracking-normal md:text-xl md:leading-7;
+  }
+ 
+     .text-body {
+    @apply font-sans text-base font-medium leading-7 tracking-normal md:text-lg md:leading-8;
+  }
+
+  .text-body-sm {
+    @apply font-sans text-sm font-medium leading-6 tracking-normal md:text-base md:leading-7;
+  }
+
+  /* ----------------------------------------------------------
+     4.3 Labels & UI Text  (Geist)
+     ---------------------------------------------------------- */
+  .text-label-lg {
+    @apply font-sans text-lg font-medium leading-6 tracking-normal md:text-lg;
+  }
+
+  .text-label {
+    @apply font-mono text-sm font-medium leading-5 tracking-normal md:text-base md:leading-6;
+  }
+
+  .text-slug {
+    @apply font-mono text-sm font-medium tracking-wide uppercase;
+  }
+
+  /* ----------------------------------------------------------
+     4.4 Monospace  (Geist Mono)
+     ---------------------------------------------------------- */
+  .text-code {
+    @apply font-mono text-sm font-normal leading-6 tracking-normal md:text-base md:leading-7;
+  }
+
+  .text-code-block {
+    @apply font-mono text-sm font-normal leading-7 tracking-normal;
+  }
+
+  .text-code-sm {
+    @apply font-mono text-[0.6875rem] font-medium leading-4 md:text-xs md:leading-5;
+  }
+
+  .text-body-mono {
+    @apply font-mono text-lg font-medium leading-7 tracking-normal;
+  }
+
+  .text-label-card {
+    @apply font-mono text-sm font-medium leading-5 tracking-normal md:text-[15px] md:leading-6;
+  }
 }

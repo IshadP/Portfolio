@@ -27,7 +27,7 @@ const variants = {
     }
 };
 
-export default function ProjectCard({
+export default function PrimaryProjectCard({
     title,
     subtitle = "Project",
     imageCenter,
@@ -47,11 +47,11 @@ export default function ProjectCard({
 
     const labelVariants = {
         rest: {
-            backgroundColor: "var(--color-bg-secondary)",
+            backgroundColor: "var(--color-bg-subtle)",
             color: "var(--color-text-primary)",
         },
         hover: {
-            backgroundColor: hoverLabelBg || "var(-color--bg-secondary)",
+            backgroundColor: hoverLabelBg || "var(--color-bg-secondary)",
             color: hoverLabelText || "var(--color-text-primary)",
         },
     };
@@ -68,7 +68,7 @@ export default function ProjectCard({
             initial="rest"
             whileHover="hover"
             animate="rest"
-            className={`bg-bg-primary border-outline-primary group @container relative flex flex-col items-center justify-between overflow-hidden p-4 md:rounded-3xl rounded-2xl w-full md:aspect-2/3 aspect-200/330 cursor-pointer border-2 ${className || ""}`}
+            className={`bg-bg-default group @container relative flex flex-col items-center justify-between overflow-hidden p-4 md:rounded-3xl rounded-2xl w-full md:aspect-2/3 aspect-200/330 cursor-pointer ${className || ""}`}
         >
             {/* ── Top Header ── */}
             <div className="flex items-start justify-between w-full z-10 shrink-0 gap-2 pointer-events-none">
@@ -77,7 +77,7 @@ export default function ProjectCard({
                     transition={springTransition}
                     className="flex items-start justify-center px-3 py-2 md:rounded-xl rounded-lg overflow-hidden"
                 >
-                    <p className="font-card-mono text-xs md:text-sm" style={{ color: "inherit" }}>
+                    <p className="text-label-card text-xs md:text-sm" style={{ color: "inherit" }}>
                         {title}
                     </p>
                 </motion.div>
@@ -86,7 +86,7 @@ export default function ProjectCard({
                     transition={springTransition}
                     className="flex items-center justify-end px-3 py-2 md:rounded-xl rounded-lg"
                 >
-                    <p className="font-card-mono text-xs md:text-sm" style={{ color: "inherit" }}>
+                    <p className="text-label-card text-xs md:text-sm" style={{ color: "inherit" }}>
                         {subtitle}
                     </p>
                 </motion.div>
@@ -152,19 +152,19 @@ export default function ProjectCard({
             </div>
 
             {/* ── Hover Tooltip ── */}
-            <motion.div
+            {/* <motion.div
                 variants={variants.tooltip}
                 transition={tooltipTransition}
-                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-primary flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
+                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-default flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
             >
-                <p className="font-card-mono text-text-primary whitespace-nowrap">
+                <p className="text-code-block tracking-tight text-text-primary whitespace-nowrap">
                     CLICK TO OPEN
                 </p>
-            </motion.div>
+            </motion.div> */}
 
             {/* ── Bottom Route Text ── */}
             <div className="w-full flex justify-end shrink-0 z-10 pointer-events-none">
-                <p className="font-label-mono text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
+                <p className="text-code-sm text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
                     {routeText}
                 </p>
             </div>

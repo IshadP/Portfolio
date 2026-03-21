@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import InteractionCard from "../components/InteractionCard";
-import FeatureCard from "../components/FeatureCard";
+import PrimaryProjectCard from "../components/PrimaryProjectCard";
+import SecondaryProjectCard from "../components/SecondaryProjectCard";
 import AboutCard from "../components/AboutCard";
 import AiExperimentCard from "../components/AiExperimentCard";
 import { motion } from "framer-motion";
@@ -13,20 +13,20 @@ import FadeIn from "@/components/FadeIn";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen items-center relative px-6">
-      <div className="w-full flex justify-center max-w-[1024px] @container">
+    <div className="flex flex-col min-h-screen items-center relative bg-bg-subtle px-6">
+      <div className="w-full flex justify-center max-w-[1024px] z-1 @container">
         {/* {Hero - Fixed in Background} */}
         <Hero />
 
         {/* Content wrapper that scrolls over the hero */}
-        <FadeIn className="w-full flex justify-center z-10 0">
-          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-primary gap-6">
+        <FadeIn className="w-full flex justify-center z-10 ">
+          <motion.div className="flex md:mt-[40vh] mt-[50vh] max-w-[1024px] w-full flex-col bg-bg-subtle gap-4">
             <Navbar />
-            <div className="grid w-full grid-cols-1 gap-2 is:grid-cols-2 pb-6" id="projects">
+            <div className="grid w-full grid-cols-1 gap-4 is:grid-cols-2" id="projects">
               {/* Left Column */}
-              <div className="flex h-full flex-col gap-2">
+              <div className="flex h-full flex-col gap-4">
                 <AboutCard />
-                <InteractionCard
+                <PrimaryProjectCard
                   title="redesigned search for user intent"
                   subtitle="Youtube"
                   imageCenter="/cards/Youtube1-01.png"
@@ -45,8 +45,8 @@ export default function Home() {
               </div>
 
               {/* Right Column */}
-              <div className="flex h-full flex-col gap-2">
-                <InteractionCard
+              <div className="flex h-full flex-col gap-4">
+                <PrimaryProjectCard
                   title="reduced task completion time by 30%"
                   subtitle="Printhub"
                  imageCenter="/cards/Print1-01.png"
@@ -58,7 +58,7 @@ export default function Home() {
                   hoverLabelText="#ffffff"
                 />
 
-                <FeatureCard
+                <SecondaryProjectCard
                   title="improved FTE while retaining habits"
                   subtitle="Printhub"
                   imageLeft="/cards/Printhub2-01.png"
@@ -76,9 +76,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="">
-              <Footer />
-            </div>
+             <Footer />
           </motion.div>
         </FadeIn>
       </div>

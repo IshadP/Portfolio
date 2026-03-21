@@ -16,7 +16,7 @@ import ProConCard from "../../components/caseStudy/ProConCard";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-body-mono sm:font-label-lg text-text-tertiary w-full max-w-[1024px] mx-auto">
+        <p className="text-body-mono sm:text-label-lg text-text-disabled w-full max-w-[1024px] mx-auto">
             {children}
         </p>
     );
@@ -24,7 +24,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-body text-text-primary w-full max-w-[1024px] mx-auto">
+        <p className="text-body text-text-primary w-full max-w-[1024px] mx-auto">
             {children}
         </p>
     );
@@ -32,7 +32,7 @@ function BodyText({ children }: { children: React.ReactNode }) {
 
 function Heading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-h2 text-text-primary w-full max-w-[1024px] mx-auto">
+        <p className="text-h2 text-text-primary w-full max-w-[1024px] mx-auto">
             {children}
         </p>
     );
@@ -40,7 +40,7 @@ function Heading({ children }: { children: React.ReactNode }) {
 
 function Title({ children }: { children: React.ReactNode }) {
     return (
-        <p className="font-h1 text-text-primary w-full max-w-[1024px] mx-auto">
+        <p className="text-h1 text-text-primary w-full max-w-[1024px] mx-auto">
             {children}
         </p>
     );
@@ -49,7 +49,7 @@ function Title({ children }: { children: React.ReactNode }) {
 function ActionIndicator({ children }: { children: React.ReactNode }) {
     return (
         <div className="bg-white border-2 border-[#F94412] px-4 py-2 rounded-full inline-flex self-center z-20">
-            <p className="font-geist font-medium text-black text-[12px] md:text-[14px]">
+            <p className="font-sans font-medium text-black text-[12px] md:text-[14px]">
                 {children}
             </p>
         </div>
@@ -60,13 +60,13 @@ const A = "/youtube";
 
 export default function YouTubeCaseStudy() {
     return (
-        <div className="bg-bg-primary relative">
+        <div className="bg-bg-default relative">
             {/* ── Hero Background ── */}
             <Hero />
 
             {/* ── Main Content ── */}
             <FadeIn className="w-full flex justify-center mt-[40vh] z-10">
-                <div className="relative z-10 mx-auto flex w-full bg-bg-primary max-w-[1024px] flex-col gap-8 px-4 pb-32">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-default max-w-[1024px] flex-col gap-8 px-4 pb-32">
                     {/* ── Navbar ── */}
                     <Navbar />
 
@@ -80,7 +80,7 @@ export default function YouTubeCaseStudy() {
                             </Title>
 
                             <div className="flex flex-col gap-6 w-full max-w-[1024px] mx-auto">
-                                <div className="relative w-full aspect-850/500 flex gap-4 p-12 rounded-4xl items-center justify-center border-3 border-outline-primary overflow-hidden bg-bg-primary ">
+                                <div className="relative w-full aspect-850/500 flex gap-4 p-12 rounded-4xl items-center justify-center border-3 border-border-default overflow-hidden bg-bg-default ">
                                     <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
                                         <Image src={`${A}/TitleImg-01.png`} alt="UI Screenshot 1" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                     </div>
@@ -141,7 +141,7 @@ export default function YouTubeCaseStudy() {
 
                                 <GrayBox className="flex flex-col md:flex-row p-4 md:p-12 gap-8 md:gap-16">
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
-                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-outline-primary shadow-md">
+                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-border-default shadow-md">
                                             <Image src={`${A}/problem-1.png`} alt="Initial Search UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
@@ -151,7 +151,7 @@ export default function YouTubeCaseStudy() {
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
-                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-outline-primary shadow-md">
+                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-border-default shadow-md">
                                             <Image src={`${A}/problem-2.png`} alt="Search Results UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
@@ -178,11 +178,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 1 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             Aman opens YouTube. He notices a banner on top, which indicates that Figma is streaming. This reminds him of the buzz his friends where talking about. Curious he clicks on search to find what the new feature is.
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-01.png`} alt="Discovery Banner" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -207,11 +207,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 2 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             Aman opens the search page, pauses for a moment and glances down to see if anything is useful
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-02.png`} alt="Search Options" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -236,11 +236,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 3 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             Focused on typing the phrase, he is unsure whether it will provide correct result or not. So he glances down....
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-03.png`} alt="Predictive Suggestions" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-8 w-full justify-center lg:justify-start">
@@ -269,11 +269,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 4 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             He notices the results aren’t what he required, so he start to type a more specific query until he gets the right results.
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-04.png`} alt="Refining Query" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -296,11 +296,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 5 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             As soon as he clicks the search button, a list of shorts appear. He is quickly frustrated as he wants to watch a deep dive. So he attempt to change the query, just then he notices “Type” filter below search bar...
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-05.png`} alt="Filter bar" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -324,20 +324,20 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 6 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             He clicks on “Type,” and a bottom sheet appears; it has many options. He scans from top to bottom & finds “Videos.” Happy, he chooses to apply the filter.
                                         </p>
                                     </div>
                                     <div className="flex flex-col items-center justify-center gap-4">
-                                        <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                        <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                             <Image src={`${A}/FlowImg-06.png`} alt="Filter Selection" fill sizes="245px" quality={100} className="object-cover" />
                                         </div>
-                                        <div className="bg-white rounded-full p-2 shadow-md border border-outline-primary z-10 -my-6">
+                                        <div className="bg-white rounded-full p-2 shadow-md border border-border-default z-10 -my-6">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </div>
-                                        <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                        <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                             <Image src={`${A}/FlowImg-07.png`} alt="Filter Bottom Sheet" fill sizes="210px" quality={100} className="object-cover" />
                                         </div>
                                     </div>
@@ -361,20 +361,20 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 7 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             He has searched for glass effects before, so he only wants to see videos that he hasn’t seen yet. He notices that filters are scrollable, so he scrolls and finds “Unwatched.”
                                         </p>
                                     </div>
                                     <div className="flex flex-col items-center justify-center gap-4">
-                                        <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                        <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                             <Image src={`${A}/FlowImg-08.png`} alt="Previous View" fill sizes="245px" quality={100} className="object-cover" />
                                         </div>
-                                        <div className="bg-white rounded-full p-2 shadow-md border border-outline-primary z-10 -my-6">
+                                        <div className="bg-white rounded-full p-2 shadow-md border border-border-default z-10 -my-6">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </div>
-                                        <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                        <div className="relative w-[210px] aspect-210/460 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                             <Image src={`${A}/FlowImg-09.png`} alt="Filtered Results" fill sizes="210px" quality={100} className="object-cover" />
                                         </div>
                                     </div>
@@ -399,11 +399,11 @@ export default function YouTubeCaseStudy() {
                                 {/* --- Step 8 --- */}
                                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative pb-24">
                                     <div className="flex w-full justify-center lg:justify-end">
-                                        <p className="font-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
+                                        <p className="text-h4 text-[#306192] leading-tight w-full lg:max-w-[320px] text-center lg:text-right">
                                             Finally, Aman has the result he wants, satisfied he open the second video to watch it!
                                         </p>
                                     </div>
-                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-outline-primary">
+                                    <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default">
                                         <Image src={`${A}/FlowImg-10.png`} alt="Final Satisfaction" fill sizes="245px" quality={100} className="object-cover" />
                                     </div>
                                     <div className="flex flex-col gap-4 w-full justify-center lg:justify-start">
@@ -459,7 +459,7 @@ export default function YouTubeCaseStudy() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="font-body text-text-primary text-center w-full max-w-[1024px] mx-auto">Initially I started with an assumption that users want to find new content</p>
+                                    <p className="text-body text-text-primary text-center w-full max-w-[1024px] mx-auto">Initially I started with an assumption that users want to find new content</p>
                                 </GrayBox>
 
                                 <div className="flex flex-col gap-3 w-full">
@@ -501,12 +501,12 @@ export default function YouTubeCaseStudy() {
                                 </GrayBox>
 
                                 <div className="flex flex-col gap-5 w-full">
-                                    <p className="font-h4 text-text-primary">
+                                    <p className="text-h4 text-text-primary">
                                         One day, I was talking to a user, and she asked two questions that changed my course:
                                     </p>
                                     <ul className="list-disc pl-3 flex flex-col gap-3">
-                                        <li className="font-body text-text-primary">"What if I am a new user or I don't have history related to the topic?"</li>
-                                        <li className="font-body text-text-primary">"Why place the history section on top when all other apps like Spotify have suggestions at the bottom?"</li>
+                                        <li className="text-body text-text-primary">"What if I am a new user or I don't have history related to the topic?"</li>
+                                        <li className="text-body text-text-primary">"Why place the history section on top when all other apps like Spotify have suggestions at the bottom?"</li>
                                     </ul>
                                     <BodyText>So I visited Spotify and I found something very useful!</BodyText>
                                 </div>
@@ -749,14 +749,14 @@ export default function YouTubeCaseStudy() {
                             <div className="flex flex-col gap-8 md:gap-12 w-full">
                                 <div className="flex flex-col gap-3 w-full">
                                     <SectionLabel>Building Scalable UI using style guide</SectionLabel>
-                                    <div className="relative w-full aspect-1078/640 rounded-2xl overflow-hidden shadow-xl border border-outline-primary bg-white mt-1">
+                                    <div className="relative w-full aspect-1078/640 rounded-2xl overflow-hidden shadow-xl border border-border-default bg-white mt-1">
                                         <Image src={`${A}/UI-01.png`} alt="UI Style Guide" fill sizes="100vw" quality={100} className="object-cover" />
                                     </div>
                                     <BodyText>I created a small style guide that was accompanied by Google’s Material Design Library in order to build the UI that suites YouTube.</BodyText>
                                 </div>
 
                                 <div className="flex flex-col gap-8">
-                                    <div className="flex flex-col gap-8 items-center bg-bg-secondary p-8 rounded-3xl overflow-hidden">
+                                    <div className="flex flex-col gap-8 items-center bg-bg-subtle p-8 rounded-3xl overflow-hidden">
                                         <div className="relative w-full lg:w-[40vw] aspect-2156/228 rounded-xl ">
                                             <Image src={`${A}/UI-05.png`} alt="Auto Layout Card Example" fill sizes="(max-width: 768px) 100vw, 400px" quality={100} className="object-contain" />
                                         </div>
@@ -767,16 +767,16 @@ export default function YouTubeCaseStudy() {
                                 </div>
 
                                 <div className="flex flex-col gap-8">
-                                    <div className="relative w-full aspect-1037/105 rounded-xl overflow-hidden shadow-sm border border-outline-primary bg-white">
+                                    <div className="relative w-full aspect-1037/105 rounded-xl overflow-hidden shadow-sm border border-border-default bg-white">
                                         <Image src={`${A}/UI-02.png`} alt="Pill States" fill sizes="100vw" quality={100} className="object-contain px-4" />
                                     </div>
                                     <BodyText>As each pill button has various states, I used components to implement them, with clearly defined properties. Using components, I created various states in which the search bar and filter bar could exist.</BodyText>
 
                                     <div className="flex flex-col lg:flex-row gap-8 items-center justify-center pt-4">
-                                        <div className="relative w-full lg:w-[450px] aspect-426/453 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
+                                        <div className="relative w-full lg:w-[450px] aspect-426/453 rounded-2xl overflow-hidden shadow-lg border border-border-default bg-white">
                                             <Image src={`${A}/UI-03.png`} alt="Component Properties A" fill sizes="(max-width: 768px) 100vw, 450px" quality={100} className="object-cover" />
                                         </div>
-                                        <div className="relative w-full lg:w-[450px] aspect-429/456 rounded-2xl overflow-hidden shadow-lg border border-outline-primary bg-white">
+                                        <div className="relative w-full lg:w-[450px] aspect-429/456 rounded-2xl overflow-hidden shadow-lg border border-border-default bg-white">
                                             <Image src={`${A}/UI-04.png`} alt="Component Properties B" fill sizes="(max-width: 768px) 100vw, 450px" quality={100} className="object-cover" />
                                         </div>
                                     </div>

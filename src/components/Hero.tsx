@@ -26,16 +26,16 @@ export default function Hero() {
     }
 
     return (
-        <section className="fixed top-0 left-0 w-full flex justify-center z-[-1] min-h-[32vh] items-center">
+        <section className="fixed top-0 left-0 w-full flex justify-center z-[-1] py-32 items-center">
             <motion.div
-                className="flex flex-col items-start justify-center w-full max-w-[1024px] mx-auto px-6 pt-32 md:pt-16"
+                className="flex flex-col items-start justify-center w-full max-w-[1024px] mx-auto px-6"
                 initial="initial"
                 animate="animate"
                 variants={heroVariants}
                 transition={heroTransition}
             >
                 {pathname === "/" && (
-                    <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                    <p className="font-display tracking-tight font-semibold md:leading-16 leading-12 text-text-primary text-4xl md:text-6xl">
                         Engineer turned Product Designer, designing experiences and building them with code.
                     </p>
                 )}
@@ -45,7 +45,7 @@ export default function Hero() {
                         <div className="relative w-16 h-16 overflow-hidden">
                             <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />
                         </div>
-                        <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                        <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             AI Experiments
                         </p>
                     </div>
@@ -54,7 +54,7 @@ export default function Hero() {
                 {pathname === "/resume" && (
                     <div className="flex items-center w-full justify-center gap-4">
                         <ReadCvLogoIcon size={64} className="text-text-primary" />
-                        <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                        <p className="font-sans font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Resume
                         </p>
                     </div>
@@ -65,7 +65,7 @@ export default function Hero() {
                         <div className="relative shrink-0 rounded-full overflow-hidden">
                             <Image src="/printhub-icon.svg" alt="Printhub" width={64} height={64} quality={90} />
                         </div>
-                        <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                        <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Printhub
                         </p>
                     </div>
@@ -76,7 +76,7 @@ export default function Hero() {
                         <div className="relative w-16 h-16 overflow-hidden ">
                             <Image src="/youtube-icon.svg" alt="YouTube" fill quality={90} className="object-contain" />
                         </div>
-                        <p className="font-geist font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                        <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             YouTube
                         </p>
                     </div>

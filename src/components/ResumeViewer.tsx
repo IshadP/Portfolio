@@ -78,28 +78,28 @@ export default function ResumeViewer() {
         <a
           href="/resume.pdf"
           download="Ishad_Pande_Resume.pdf"
-          className="flex items-center gap-2 hover:bg-text-primary hover:text-bg-primary bg-bg-primary text-text-primary duration-300 px-6 py-3 rounded-full font-label-md transition-all"
+          className="flex items-center gap-2 hover:bg-text-primary hover:text-bg-primary bg-bg-default text-text-primary duration-300 px-6 py-3 rounded-full text-label transition-all"
         >
           <DownloadSimpleIcon size={20} weight="bold" />
           <span>Download PDF</span>
         </a>
       </div>
 
-      <div className="w-full bg-bg-secondary rounded-2xl p-4 md:p-8 flex justify-center overflow-auto border-2 border-outline-primary shadow-sm min-h-[600px] relative">
+      <div className="w-full bg-bg-subtle rounded-2xl p-4 md:p-8 flex justify-center overflow-auto border-2 border-border-default shadow-sm min-h-[600px] relative">
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-bg-secondary z-10">
+          <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
             <div className="w-8 h-8 border-4 border-text-primary border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
 
         {error ? (
           <div className="flex flex-col items-center justify-center gap-4 text-center py-20">
-            <p className="font-body text-text-secondary">{error}</p>
+            <p className="text-body text-text-secondary">{error}</p>
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-primary underline font-body"
+              className="text-text-primary underline text-body"
             >
               Open PDF in new tab
             </a>

@@ -36,7 +36,7 @@ type Props = {
     hoverLabelText?: string;
 };
 
-export default function FeatureCard({
+export default function SecondaryProjectCard({
     title = "redesigned search for user intent",
     subtitle = "Youtube",
     imageLeft = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
@@ -54,11 +54,11 @@ export default function FeatureCard({
 
     const labelVariants = {
         rest: {
-            backgroundColor: "var(--color-bg-secondary)",
+            backgroundColor: "var(--color-bg-subtle)",
             color: "var(--color-text-primary)",
         },
         hover: {
-            backgroundColor: hoverLabelBg || "var(--color-bg-secondary)",
+            backgroundColor: hoverLabelBg || "var(--color-bg-subtle)",
             color: hoverLabelText || "var(--color-text-primary)",
         },
     };
@@ -69,7 +69,7 @@ export default function FeatureCard({
             initial="rest"
             whileHover="hover"
             animate="rest"
-            className="bg-bg-primary border-2 border-outline-primary flex flex-col items-center justify-between overflow-hidden p-4 relative rounded-3xl w-full aspect-square group cursor-pointer @container"
+            className="bg-bg-default flex flex-col items-center justify-between overflow-hidden p-4 relative rounded-3xl w-full aspect-square group cursor-pointer @container"
         >
             {/* Top Header */}
             <div className="flex gap-4 sm:gap-8 items-start justify-between w-full">
@@ -78,7 +78,7 @@ export default function FeatureCard({
                     transition={springTransition}
                     className="px-3 py-2 rounded-xl"
                 >
-                    <p className="font-card-mono" style={{ color: "inherit" }}>
+                    <p className="text-label-card" style={{ color: "inherit" }}>
                         {title}
                     </p>
                 </motion.div>
@@ -87,7 +87,7 @@ export default function FeatureCard({
                     transition={springTransition}
                     className="flex items-center justify-center px-3 py-2 rounded-xl"
                 >
-                    <p className="font-card-mono whitespace-nowrap" style={{ color: "inherit" }}>
+                    <p className="text-label-card whitespace-nowrap" style={{ color: "inherit" }}>
                         {subtitle}
                     </p>
                 </motion.div>
@@ -142,19 +142,19 @@ export default function FeatureCard({
             </div>
 
             {/* Hover Tooltip - Click to open */}
-            <motion.div
+            {/* <motion.div
                 variants={variants.tooltip}
                 transition={tooltipTransition}
-                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-primary flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
+                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-default flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
             >
-                <p className="font-card-mono text-text-primary whitespace-nowrap">
+                <p className="text-code-sm text-text-primary whitespace-nowrap">
                     CLICK TO OPEN
                 </p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Route Text */}
             <div className="w-full flex justify-end shrink-0 z-10">
-                <p className="font-label-mono text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
+                <p className="text-code-sm text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
                     {routeText}
                 </p>
             </div>

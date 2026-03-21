@@ -26,18 +26,18 @@ type Props = {
 
 export default function AboutCard({ className = "" }: Props) {
     return (
-        <div className={`flex flex-col items-center overflow-hidden md:rounded-3xl rounded-2xl gap-4 border-2 border-outline-primary bg-bg-primary p-4 md:p-8 h-fit w-full @container ${className}`}>
+        <div className={`flex flex-col items-center overflow-hidden md:rounded-3xl rounded-2xl gap-4 bg-bg-default p-4 md:p-8 h-fit w-full @container ${className}`}>
             <div className="w-full text-text-primary">
-                <p className="font-body-mono text-text-primary">
+                <p className="text-body-mono text-text-primary">
                     I have experience of building for efficiency and usability, catering both business and users.
                 </p>
                 <br />
-                <p className="font-body-mono font-medium tracking-tight">
+                <p className="text-body-mono font-medium tracking-tight">
                     Using AI tools I ship these experiences quickly, instead of static mockups.
                 </p>
             </div>
             <div className="flex w-full items-center gap-1">
-                <p className="font-body-mono text-text-primary pr-2">
+                <p className="text-body-mono text-text-primary pr-2">
                     Find me on
                 </p>
                 <motion.a
@@ -57,7 +57,7 @@ export default function AboutCard({ className = "" }: Props) {
                         src="/x.png"
                     />
                 </motion.a>
-                <p className="font-body-mono text-text-primary px-1">
+                <p className="text-body-mono text-text-primary px-1">
                     ,
                 </p>
                 <motion.a
@@ -77,7 +77,7 @@ export default function AboutCard({ className = "" }: Props) {
                         src="/linkedin.png"
                     />
                 </motion.a>
-                <p className="font-body-mono text-text-primary px-1">
+                <p className="text-body-mono text-text-primary px-1">
                     or
                 </p>
                 <motion.a

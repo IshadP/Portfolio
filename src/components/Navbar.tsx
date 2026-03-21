@@ -55,7 +55,7 @@ export default function Navbar() {
         navLinks.find((link) => link.href === pathname)?.label ?? (isProjectPage ? projectName : "Home");
 
     return (
-        <nav className="sticky top-0 z-90 flex flex-col border-t border-outline-primary bg-bg-primary py-3">
+        <nav className="sticky top-0 z-90 flex flex-col bg-bg-default p-4 rounded-3xl">
             <div className="flex items-center justify-between w-full max-w-[1024px]">
                 {/* Mobile Nav */}
                 <div className="flex flex-1 items-center md:hidden w-full relative h-10">
@@ -67,7 +67,7 @@ export default function Navbar() {
                             </Link>
                             {/* Center: Project Name */}
                             <div className="absolute inset-x-0 flex justify-center pointer-events-none">
-                                <span className="font-label-lg text-text-primary self-center">
+                                <span className="text-label-lg text-text-primary self-center">
                                     {projectName}
                                 </span>
                             </div>
@@ -133,7 +133,7 @@ export default function Navbar() {
                                     )}
                                 </AnimatePresence>
                             </button>
-                            <span className="font-label-lg text-text-primary">
+                            <span className="text-label-lg text-text-primary">
                                 {currentPageLabel}
                             </span>
                         </div>
@@ -145,10 +145,10 @@ export default function Navbar() {
                     {isProjectPage ? (
                         <Link
                             href="/"
-                            className="flex h-full items-center gap-2 px-4 py-2 rounded-full hover:bg-grey-10 transition-colors no-underline group"
+                            className="flex h-full items-center gap-2 px-4 py-2 rounded-full hover:bg-neutral-10 transition-colors no-underline group"
                         >
                             <CaretLeft size={20} color="#000" weight="bold" className="transition-transform group-hover:-translate-x-1" />
-                            <span className="font-label-md text-text-primary">
+                            <span className="text-label-lg text-text-primary">
                                 Back to Home
                             </span>
                         </Link>
@@ -159,10 +159,10 @@ export default function Navbar() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className={`flex h-full items-center justify-center overflow-hidden px-3 py-2 rounded-full transition-colors ${isActive ? "bg-grey-10" : "hover:bg-grey-10"
+                                    className={`flex h-full items-center justify-center overflow-hidden px-3 py-2 rounded-full transition-colors ${isActive ? "bg-neutral-10" : "hover:bg-neutral-10"
                                         } no-underline`}
                                 >
-                                    <span className="font-label-md text-text-primary ">
+                                    <span className="text-label-lg text-text-primary ">
                                         {item.label}
                                     </span>
                                 </Link>
@@ -175,7 +175,7 @@ export default function Navbar() {
                 {/* <div className="flex flex-none items-center justify-center">
                     <div className="relative flex items-center justify-center px-4 py-2 gap-4 rounded-4xl bg-[#dbffbc] w-full h-full">
                         <motion.p
-                            className="font-geist font-medium not-italic text-[#46781a] text-md whitespace-nowrap"
+                            className="font-sans font-medium not-italic text-[#46781a] text-md whitespace-nowrap"
                         >
                             Open to Opportunities
                         </motion.p>
@@ -185,16 +185,16 @@ export default function Navbar() {
                 {/* Email (hidden on mobile) */}
                 <div className="hidden flex-1 justify-end md:flex">
                     <div className="flex gap-1 items-center justify-center overflow-hidden p-2 rounded-sm">
-                        <span className="font-label-md text-text-tertiary ">
+                        <span className="text-label-lg text-text-disabled ">
                             Let’s Talk
                         </span>
-                        <span className="font-label-md text-text-tertiary ">
+                        <span className="text-label-lg text-text-disabled ">
                             →
                         </span>
                         <div className="border-text-primary border-b-2 border-dashed flex items-center justify-center">
                             <a
                                 href="mailto:ispande16@gmail.com"
-                                className="font-label-md text-text-primary no-underline"
+                                className="text-label-lg text-text-primary no-underline"
                             >
                                 ispande16@gmail.com
                             </a>
@@ -214,7 +214,7 @@ export default function Navbar() {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden md:hidden z-60"
                     >
-                        <div className="flex flex-col gap-1 pt-4 pb-2 border-b border-grey-30">
+                        <div className="flex flex-col gap-1 pt-4 pb-2 border-b border-neutral-30">
                             {navLinks.map((item) => {
                                 const isActive = pathname === item.href;
                                 return (
@@ -223,11 +223,11 @@ export default function Navbar() {
                                         href={item.href}
                                         onClick={() => setMenuOpen(false)}
                                         className={`flex items-center rounded-xl px-4 py-3 no-underline transition-colors duration-200 ${isActive
-                                            ? "bg-grey-20 text-text-primary"
-                                            : "text-text-tertiary hover:bg-grey-10 hover:text-text-primary"
+                                            ? "bg-neutral-20 text-text-primary"
+                                            : "text-text-disabled hover:bg-neutral-10 hover:text-text-primary"
                                             }`}
                                     >
-                                        <span className="font-label-lg text-text-primary">
+                                        <span className="text-label-lg text-text-primary">
                                             {item.label}
                                         </span>
                                     </Link>
@@ -238,16 +238,16 @@ export default function Navbar() {
 
                         </div>
                         <div className="flex gap-1 items-start justify-start overflow-hidden p-2 rounded-sm pt-4">
-                            <span className="font-label-md text-text-tertiary ">
+                            <span className="text-label-lg text-text-disabled ">
                                 Let’s Talk
                             </span>
-                            <span className="font-label-md text-text-tertiary ">
+                            <span className="text-label-lg text-text-disabled ">
                                 →
                             </span>
                             <div className=" flex gap-2">
                                 <a
                                     href="mailto:ispande16@gmail.com"
-                                    className="font-label-md text-text-primary border-text-primary border-b border-dashed"
+                                    className="text-label-lg text-text-primary border-text-primary border-b border-dashed"
                                 >
                                     ispande16@gmail.com
                                 </a>

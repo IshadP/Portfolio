@@ -14,9 +14,9 @@ export default function Badge({
 }) {
     // 1. Map colors to variants
     const colors: Record<BadgeVariant, string> = {
-        error: "bg-bg-red text-text-red",
-        info: "bg-bg-blue text-text-blue",
-        success: "bg-bg-green text-text-green",
+        error: "bg-status-error-bg text-text-red",
+        info: "bg-status-info-bg text-status-info-fg",
+        success: "bg-status-success-bg text-status-success-fg",
     };
 
     // 2. Map icons to variants
@@ -29,7 +29,7 @@ export default function Badge({
     return (
         <div className={`${colors[variant]} flex w-fit items-center gap-2 rounded-lg p-2`}>
             {icons[variant]}
-            <p className="font-label-md">
+            <p className="text-label-lg">
                 {children}
             </p>
         </div>

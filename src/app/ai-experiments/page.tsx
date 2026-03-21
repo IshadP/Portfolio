@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import FadeIn from "@/components/FadeIn";
-import InteractionCard from "@/components/InteractionCard";
+import PrimaryProjectCard from "@/components/PrimaryProjectCard";
 import BuildingWithAiCard from "@/components/BuildingWithAiCard";
 
 export default function AiExperimentsPage() {
@@ -17,13 +17,13 @@ export default function AiExperimentsPage() {
 
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
-          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-primary gap-6">
+          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-default gap-6">
             <Navbar />
             
             <div className="flex flex-col gap-8 pb-12">
 
               <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2" id="experiments">
-                <InteractionCard
+                <PrimaryProjectCard
                   title="Prototype for User Testing"
                   subtitle="Printhub"
                   imageCenter="/cards/Print1-01.png"
@@ -34,7 +34,7 @@ export default function AiExperimentsPage() {
                   variant="two-pages"
                 />
                 
-                <InteractionCard
+                <PrimaryProjectCard
                   title="Retro Pomodoro App"
                   subtitle="POMDOM"
                   imageCenter="/cards/Printhub2-01.png"
@@ -45,7 +45,7 @@ export default function AiExperimentsPage() {
                   variant="two-pages"
                 />
 
-                {/* <InteractionCard
+                {/* <PrimaryProjectCard
                   title="Intelligent Layout Systems"
                   subtitle="Research"
                   imageCenter="/cards/Printhub1-03.png"

@@ -41,9 +41,9 @@ export default function Footer() {
     };
 
     return (
-        <footer className="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-18 py-6 sm:py-0 w-full gap-8">
+        <footer className="flex flex-col sm:flex-row items-center justify-between p-4 rounded-3xl bg-bg-default">
             {/* Social Links */}
-            <div className="flex items-center gap-4 text-text-primary">
+            <div className="flex items-center gap-4 px-6 text-text-primary">
                 <motion.a
                     initial="rest"
                     whileHover="hover"
@@ -86,17 +86,17 @@ export default function Footer() {
             </div>
 
             {/* Email CTA */}
-            <div className="flex items-center overflow-hidden py-4 ">
+            <div className="flex items-center overflow-hidden px-6 ">
                 <div className="flex items-center gap-2 justify-center overflow-hidden p-2 flex-wrap">
-                    <span className="font-label-md text-text-tertiary">
+                    <span className="text-label-lg text-text-disabled">
                         Let’s Talk
                     </span>
-                    <span className="font-label-md  text-text-tertiary">
+                    <span className="text-label-lg  text-text-disabled">
                         →
                     </span>
                     <a
                         href="mailto:ispande16@gmail.com"
-                        className="font-label-md text-text-primary border-b-2 border-dashed border-text-primary no-underline"
+                        className="text-label-lg text-text-primary border-b-2 border-dashed border-text-primary no-underline"
                     >
                         ispande16@gmail.com
                     </a>

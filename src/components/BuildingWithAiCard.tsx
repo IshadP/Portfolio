@@ -19,18 +19,18 @@ export default function BuildingWithAiCard() {
   ];
 
   return (
-    <div className="bg-bg-primary border-2 border-outline-primary md:p-8 p-6 rounded-[32px] flex flex-col gap-6 w-full">
-      <h3 className="font-h3 text-text-primary">
+    <div className="bg-bg-default border-2 border-border-default md:p-8 p-6 rounded-[32px] flex flex-col gap-6 w-full">
+      <h3 className="text-h3 text-text-primary">
         How I build with AI?
       </h3>
       
       <div className="flex flex-col gap-6">
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col gap-2">
-            <h4 className="font-h4 text-text-primary">
+            <h4 className="text-h4 text-text-primary">
               {step.title}
             </h4>
-            <p className="font-body text-text-secondary">
+            <p className="text-body text-text-secondary">
               {step.description}
             </p>
           </div>
