@@ -17,11 +17,10 @@ export default function AiExperimentsPage() {
 
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
-          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-default gap-6">
+          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-subtle gap-4">
             <Navbar />
             
-            <div className="flex flex-col gap-8 pb-12">
-
+            <div className="flex flex-col gap-4">
               <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2" id="experiments">
                 <PrimaryProjectCard
                   title="Prototype for User Testing"

@@ -24,7 +24,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-body text-text-primary w-full max-w-[1024px] mx-auto">
+        <p className="text-body text-text-secondary w-full max-w-[1024px] mx-auto">
             {children}
         </p>
     );
@@ -60,13 +60,13 @@ const A = "/youtube";
 
 export default function YouTubeCaseStudy() {
     return (
-        <div className="bg-bg-default relative">
+        <div className="bg-bg-subtle relative">
             {/* ── Hero Background ── */}
             <Hero />
 
             {/* ── Main Content ── */}
             <FadeIn className="w-full flex justify-center mt-[40vh] z-10">
-                <div className="relative z-10 mx-auto flex w-full bg-bg-default max-w-[1024px] flex-col gap-8 px-4 pb-32">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col gap-8 px-4 pb-32">
                     {/* ── Navbar ── */}
                     <Navbar />
 
@@ -141,8 +141,8 @@ export default function YouTubeCaseStudy() {
 
                                 <GrayBox className="flex flex-col md:flex-row p-4 md:p-12 gap-8 md:gap-16">
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
-                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-border-default shadow-md">
-                                            <Image src={`${A}/problem-1.png`} alt="Initial Search UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
+                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden shadow-md">
+                                            <Image src={`${A}/Problem-01.png`} alt="Initial Search UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <ProConCard variant="con">System forces user to search a query in order to see results</ProConCard>
@@ -151,8 +151,8 @@ export default function YouTubeCaseStudy() {
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-6  items-center w-full h-full">
-                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden border-2 border-border-default shadow-md">
-                                            <Image src={`${A}/problem-2.png`} alt="Search Results UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
+                                        <div className="relative w-[180px] md:w-[245px] left-[0%] aspect-245/544 rounded-lg overflow-hidden shadow-md">
+                                            <Image src={`${A}/Problem-02.png`} alt="Search Results UI" fill sizes="(max-width: 768px) 180px, 245px" quality={100} className="object-cover" />
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <ProConCard variant="con">Filters are hidden deep inside the UI, resulting in many people not knowing about them.</ProConCard>
@@ -675,7 +675,7 @@ export default function YouTubeCaseStudy() {
                                         {[1, 2, 3, 4].map((i) => (
                                             <React.Fragment key={i}>
                                                 <div className="relative w-[120px] md:w-[200px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0">
-                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
+                                                    <Image src={`${A}/Story1-0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
                                                 </div>
                                                 {i < 4 && (
                                                     <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
@@ -696,7 +696,7 @@ export default function YouTubeCaseStudy() {
                                         {[5, 6, 7, 8].map((i) => (
                                             <React.Fragment key={i}>
                                                 <div className="relative w-[120px] md:w-[200px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0">
-                                                    <Image src={`${A}/UseCase1-$0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
+                                                    <Image src={`${A}/Story1-0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 120px, 200px" quality={100} className="object-cover" />
                                                 </div>
                                                 {i < 8 && (
                                                     <div className="hidden lg:block relative w-[28px] h-[19px] shrink-0">
@@ -722,10 +722,10 @@ export default function YouTubeCaseStudy() {
                                     <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
                                         <div className="flex flex-col md:flex-row lg:flex-col gap-6 shrink-0 items-center">
                                             <div className="relative w-[180px] md:w-[218px] aspect-218/485 rounded-xl overflow-hidden shadow-lg">
-                                                <Image src={`${A}/UseCase2-01.png`} alt="Live Stream Pill 1" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
+                                                <Image src={`${A}/Story2-01.png`} alt="Live Stream Pill 1" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
                                             </div>
                                             <div className="relative w-[180px] md:w-[218px] aspect-218/485 rounded-xl overflow-hidden shadow-lg">
-                                                <Image src={`${A}/UseCase2-02.png`} alt="Live Stream Pill 2" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
+                                                <Image src={`${A}/Story2-02.png`} alt="Live Stream Pill 2" fill sizes="(max-width: 768px) 180px, 218px" quality={100} className="object-cover" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col items-center gap-4 flex-1 max-w-[500px]">

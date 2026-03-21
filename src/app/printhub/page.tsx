@@ -109,12 +109,12 @@ function JourneyStep({
 
 export default function PrinthubPage() {
     return (
-        <main className="min-h-screen bg-bg-subtle text-text-primary selection:bg-text-primary selection:text-bg-primary">
+        <div className="bg-bg-subtle">
             {/* ── Hero section ── */}
             <Hero />
 
             {/* ── Main Content ── */}
-            <FadeIn className="w-full flex flex-col gap-12 justify-center mt-[40vh] z-10">
+            <FadeIn className="w-full flex flex-col gap-12 justify-center bg-bg-subtle mt-[40vh] z-10">
 
                 <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col gap-12 px-4">
                     <Navbar />
@@ -1190,6 +1190,6 @@ export default function PrinthubPage() {
 
             </FadeIn>
 
-        </main>
+        </div>
     );
 }

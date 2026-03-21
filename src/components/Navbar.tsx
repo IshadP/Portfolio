@@ -55,7 +55,7 @@ export default function Navbar() {
         navLinks.find((link) => link.href === pathname)?.label ?? (isProjectPage ? projectName : "Home");
 
     return (
-        <nav className="sticky top-0 z-90 flex flex-col bg-bg-default p-4 rounded-3xl">
+        <nav className="sticky top-4 z-90 flex flex-col bg-bg-default p-2 rounded-4xl">
             <div className="flex items-center justify-between w-full max-w-[1024px]">
                 {/* Mobile Nav */}
                 <div className="flex flex-1 items-center md:hidden w-full relative h-10">

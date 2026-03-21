@@ -78,7 +78,7 @@ export default function ResumeViewer() {
         <a
           href="/resume.pdf"
           download="Ishad_Pande_Resume.pdf"
-          className="flex items-center gap-2 hover:bg-text-primary hover:text-bg-primary bg-bg-default text-text-primary duration-300 px-6 py-3 rounded-full text-label transition-all"
+          className="flex items-center gap-2 hover:bg-text-primary hover:text-bg-primary bg-bg-subtle text-text-primary hover:text-bg-default duration-300 px-6 py-3 rounded-full text-label transition-all"
         >
           <DownloadSimpleIcon size={20} weight="bold" />
           <span>Download PDF</span>

@@ -19,7 +19,7 @@ export default function BuildingWithAiCard() {
   ];
 
   return (
-    <div className="bg-bg-default border-2 border-border-default md:p-8 p-6 rounded-[32px] flex flex-col gap-6 w-full">
+    <div className="bg-bg-default md:p-8 p-6 rounded-[32px] flex flex-col gap-6 w-full">
       <h3 className="text-h3 text-text-primary">
         How I build with AI?
       </h3>

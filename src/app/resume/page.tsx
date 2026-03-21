@@ -26,10 +26,10 @@ export default function ResumePage() {
 
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
-          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-default gap-6 pb-12">
+          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-subtle gap-4">
             <Navbar />
             
-            <div className="w-full py-8">
+            <div className="w-full">
               <ResumeViewer />
             </div>
 

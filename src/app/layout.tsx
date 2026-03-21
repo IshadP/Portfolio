@@ -84,7 +84,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} antialiased min-h-screen flex flex-col`}
       >
-        <main className="grow">{children}</main>
+        <main className="grow bg-bg-subtle">{children}</main>
         <div className="w-full mt-auto">
           <Image
             src="/minecraft-landscape.png"

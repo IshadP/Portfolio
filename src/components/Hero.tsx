@@ -22,11 +22,11 @@ export default function Hero() {
     }, []);
 
     if (!mounted) {
-        return <section className="fixed top-0 left-0 w-full flex justify-center z-[-1] min-h-[20vh] items-center opacity-0"></section>;
+        return <section className="fixed top-0 left-0 w-full flex justify-center z-1 min-h-[20vh] items-center opacity-0"></section>;
     }
 
     return (
-        <section className="fixed top-0 left-0 w-full flex justify-center z-[-1] py-32 items-center">
+        <section className="fixed top-0 left-0 w-full flex justify-center z-0  py-32 items-center">
             <motion.div
                 className="flex flex-col items-start justify-center w-full max-w-[1024px] mx-auto px-6"
                 initial="initial"
