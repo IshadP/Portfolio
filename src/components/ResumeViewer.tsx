@@ -18,7 +18,7 @@ export default function ResumeViewer() {
 
     const renderPDF = async () => {
       try {
-        const loadingTask = pdfjsLib.getDocument("/resume.pdf");
+        const loadingTask = pdfjsLib.getDocument("/Ishad_Pande.pdf");
         const pdf = await loadingTask.promise;
         const page = await pdf.getPage(1);
 

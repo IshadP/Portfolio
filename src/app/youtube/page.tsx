@@ -80,19 +80,8 @@ export default function YouTubeCaseStudy() {
                             </Title>
 
                             <div className="flex flex-col gap-6 w-full max-w-[1024px] mx-auto">
-                                <div className="relative w-full aspect-850/500 flex gap-4 p-12 rounded-4xl items-center justify-center border-3 border-border-default overflow-hidden bg-bg-default ">
-                                    <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-01.png`} alt="UI Screenshot 1" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
-                                    </div>
-                                    <div className="relative w-[25%]  aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-03.png`} alt="UI Screenshot 3" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
-                                    </div>
-                                    <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-04.png`} alt="UI Screenshot 4" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
-                                    </div>
-                                    <div className="relative w-[25%] aspect-[1/2.27] rounded-lg md:rounded-xl overflow-hidden">
-                                        <Image src={`${A}/TitleImg-02.png`} alt="UI Screenshot 2" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
-                                    </div>
+                                <div className="relative w-full aspect-850/500 flex gap-4 p-12 rounded-4xl items-center justify-center">
+                                    <Image src={`${A}/hero.png`} alt="UI Screenshot 1" fill sizes="(max-width: 768px) 25vw, (max-width: 1200px) 25vw, 300px" quality={100} className="object-cover" />
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4 md:gap-12 w-full pt-4">
