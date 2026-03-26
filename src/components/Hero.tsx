@@ -26,16 +26,16 @@ export default function Hero() {
     }
 
     return (
-        <section className="fixed top-0 left-0 w-full flex justify-center z-0  py-32 items-center">
+        <section className="sticky top-0 left-0 w-full flex justify-center z-0 py-32 items-center">
             <motion.div
-                className="flex flex-col items-start justify-center w-full max-w-[1024px] mx-auto px-6"
+                className="flex flex-col items-start justify-center w-full max-w-[1024px] px-3"
                 initial="initial"
                 animate="animate"
                 variants={heroVariants}
                 transition={heroTransition}
             >
                 {pathname === "/" && (
-                    <p className="font-display tracking-tight font-semibold md:leading-16 leading-12 text-text-primary text-4xl md:text-6xl">
+                    <p className="font-hero">
                         Engineer turned Product Designer, designing experiences and building them with code.
                     </p>
                 )}

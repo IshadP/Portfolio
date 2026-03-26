@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
+    "@yet3/tailwindcss-bg-patterns": "^2.2.0",
     "framer-motion": "^12.35.2",
     "next": "16.1.6",
     "pdfjs-dist": "^5.5.207",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-pdf": "^10.4.1"
+    "react-pdf": "^10.4.1",
+    "tailwindcss-bg-patterns": "^0.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,189 +1,225 @@
 /* ============================================================
    GLOBAL STYLESHEET — Personal Portfolio
-   Style guide inspired by shadcn/ui conventions
    Built for Tailwind v4
    ============================================================ */
 
 /* ============================================================
-   1. IMPORTS & FONT DECLARATIONS
+   1. IMPORTS
    ============================================================ */
 
 @import "tailwindcss";
+@plugin "tailwindcss-bg-patterns";
 
 /* ============================================================
-   2. THEME — Design Tokens
+   2. THEME — Primitive Design Tokens
+   These map 1:1 with the Tailwind export.
    ============================================================ */
 
 @theme {
-  /* ----------------------------------------------------------
-     2.1 Font Families (Mapped to next/font variables)
+   /* ----------------------------------------------------------
+     2.1 Font Families
      ---------------------------------------------------------- */
-  --font-display:    var(--font-display), "Inter Tight", sans-serif;
-  --font-sans:       var(--font-sans), "Geist", sans-serif;
-  --font-mono:       var(--font-mono), "Geist Mono", monospace;
+   --font-sans: "Geist", sans-serif;
+   --font-mono: "Geist Mono", monospace;
+   --font-display: "Inter Display", sans-serif;
+   --font-caveat: var(--font-caveat), cursive;
 
-  /* ----------------------------------------------------------
-     2.2 Color Palette — Primitives
-     Neutral grey scale, 10 (lightest) → 100 (darkest).
+   /* ----------------------------------------------------------
+     2.2 Color Palette — Neutrals (50 → 950)
      ---------------------------------------------------------- */
-  --color-neutral-10:  #f6f6f6;
-  --color-neutral-20:  #e5e5e5;
-  --color-neutral-30:  #d4d4d4;
-  --color-neutral-40:  #a3a3a3;
-  --color-neutral-50:  #737373;
-  --color-neutral-60:  #a1a1aa;
-  --color-neutral-70:  #71717a;
-  --color-neutral-80:  #52525b;
-  --color-neutral-90:  #27272a;
-  --color-neutral-100: #18181b;
+   --color-neutral-50: #fafafa;
+   --color-neutral-100: #f5f5f5;
+   --color-neutral-200: #e5e5e5;
+   --color-neutral-300: #d4d4d4;
+   --color-neutral-400: #a3a3a3;
+   --color-neutral-500: #737373;
+   --color-neutral-600: #525252;
+   --color-neutral-700: #404040;
+   --color-neutral-750: #3d3d3d;
+   --color-neutral-800: #262626;
+   --color-neutral-900: #171717;
+   --color-neutral-950: #0a0a0a;
 
-  /* Semantic accent swatches */
-  --color-green-subtle: #d9fcca;
-  --color-green-ink:    #00421f;
-  --color-red-subtle:   #ffc7c7;
-  --color-blue-subtle:  #cadafc;
-  --color-blue-ink:     #1b3262;
-
-  /* ----------------------------------------------------------
-     2.3 Spacing Scale
+   /* ----------------------------------------------------------
+     2.3 Color Palette — Green
      ---------------------------------------------------------- */
-  --spacing-0:  0px;
-  --spacing-1:  4px;
-  --spacing-2:  8px;
-  --spacing-3:  12px;
-  --spacing-4:  16px;
-  --spacing-5:  20px;
-  --spacing-6:  24px;
-  --spacing-8:  32px;
-  --spacing-10: 40px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --spacing-20: 80px;
-  --spacing-24: 96px;
-  --spacing-32: 128px;
+   --color-green-50: #f0fdf4;
+   --color-green-100: #dcfce7;
+   --color-green-200: #bbf7d0;
+   --color-green-300: #86efac;
+   --color-green-400: #4ade80;
+   --color-green-500: #22c55e;
+   --color-green-600: #16a34a;
+   --color-green-700: #15803d;
+   --color-green-800: #166534;
+   --color-green-900: #14532d;
+   --color-green-950: #052e16;
 
-  /* ----------------------------------------------------------
-     2.4 Breakpoints
+   /* ----------------------------------------------------------
+     2.4 Color Palette — Blue
      ---------------------------------------------------------- */
-  --breakpoint-is: 780px;
+   --color-blue-50: #eff6ff;
+   --color-blue-100: #dbeafe;
+   --color-blue-200: #bfdbfe;
+   --color-blue-300: #93c5fd;
+   --color-blue-400: #60a5fa;
+   --color-blue-500: #3b82f6;
+   --color-blue-600: #2563eb;
+   --color-blue-700: #1d4ed8;
+   --color-blue-800: #1e40af;
+   --color-blue-900: #1e3a8a;
+   --color-blue-950: #172554;
+
+   /* ----------------------------------------------------------
+     2.5 Color Palette — Red
+     ---------------------------------------------------------- */
+   --color-red-100: #ffc7c7;
+
+   /* ----------------------------------------------------------
+     2.6 Black & White
+     ---------------------------------------------------------- */
+   --color-black: #000000;
+   --color-white: #ffffff;
+
+   /* ----------------------------------------------------------
+     2.7 Breakpoints
+     ---------------------------------------------------------- */
+   --breakpoint-is: 780px;
 }
 
 /* ============================================================
    3. THEME INLINE — Semantic / Alias Tokens
-   Swap only this block for dark-mode or theming.
+   All semantic variables reference primitives via var().
+   Swap this block for dark-mode or theming.
    ============================================================ */
 
 @theme inline {
-  /* Background */
-  --color-bg-default:    #ffffff;
-  --color-bg-subtle:     var(--color-neutral-10);
-  --color-bg-muted:      var(--color-neutral-20);
+   /* Background */
+   --color-bg-default: var(--color-white);
+   --color-bg-subtle: var(--color-neutral-100);
+   --color-bg-muted: var(--color-neutral-200);
 
-  /* Foreground / Text */
-  --color-text-primary:   var(--color-neutral-90);
-  --color-text-secondary: var(--color-neutral-80);
-  --color-text-muted:     var(--color-neutral-60);
-  --color-text-disabled:  var(--color-neutral-40);
+   /* Foreground / Text */
+   --color-text-primary: var(--color-neutral-800);
+   --color-text-secondary: var(--color-neutral-700);
+   --color-text-muted: var(--color-neutral-500);
+   --color-text-disabled: var(--color-neutral-400);
 
-  /* Border / Outline */
-  --color-border-default: var(--color-neutral-60);
-  --color-border-strong:  var(--color-neutral-80);
+   /* Border / Outline */
+   --color-border-default: var(--color-neutral-300);
+   --color-border-strong: var(--color-neutral-600);
 
-  /* Surface fills */
-  --color-surface-dark:   var(--color-neutral-90);
-  --color-surface-mid:    var(--color-neutral-30);
-  --color-surface-warm:   var(--color-neutral-50);
+   /* Surface fills */
+   --color-surface-dark: var(--color-neutral-900);
+   --color-surface-mid: var(--color-neutral-300);
+   --color-surface-warm: var(--color-neutral-500);
+   --color-surface-light: var(--color-neutral-100);
 
-  /* Status — backgrounds */
-  --color-status-success-bg:  var(--color-green-subtle);
-  --color-status-error-bg:    var(--color-red-subtle);
-  --color-status-info-bg:     var(--color-blue-subtle);
+   /* Active / Accent */
+   --color-active-bg: var(--color-blue-800);
+   --color-active-fg: var(--color-neutral-100);
 
-  /* Status — foregrounds */
-  --color-status-success-fg:  var(--color-green-ink);
-  --color-status-info-fg:     var(--color-blue-ink);
+   /* Key / Badge */
+   --color-key-bg: var(--color-neutral-400);
+   --color-key-fg: var(--color-neutral-300);
+   --color-key-border: var(--color-neutral-300);
+
+   /* Status — backgrounds */
+   --color-status-success-bg: var(--color-green-100);
+   --color-status-error-bg: var(--color-red-100);
+   --color-status-info-bg: var(--color-blue-100);
+
+   /* Status — foregrounds */
+   --color-status-success-fg: var(--color-green-900);
+   --color-status-info-fg: var(--color-blue-900);
+
+   /* Accent (card hover theme) */
+   --color-accent-bg: var(--color-blue-50);
+   --color-accent-border: var(--color-blue-800);
+   --color-accent-fg: var(--color-blue-900);
+   --color-accent-muted: var(--color-blue-600);
+
+   /* Pattern */
+   --pattern-fg: color-mix(in oklab, var(--color-white) 10%, transparent);
 }
 
 /* ============================================================
-   4. TYPOGRAPHY UTILITIES
-   Responsive fluid type scale.
+   4. FONT STYLE UTILITIES
+   Use these classes instead of hardcoding font properties.
    ============================================================ */
 
 @layer utilities {
 
-  /* ----------------------------------------------------------
-     4.1 Display / Headings  (Inter Display)
-     ---------------------------------------------------------- */
-  .text-h1 {
-    @apply font-display text-3xl font-bold leading-tight tracking-normal md:text-5xl;
-  }
+   /* Display / Hero */
+   .font-hero {
+      @apply font-display md:text-6xl text-4xl font-semibold md:leading-16 leading-10;
+   }
 
-  .text-h2 {
-    @apply font-display text-2xl font-semibold leading-8  md:text-[2.125rem] md:leading-tight;
-  }
+   /* Label — sans (Geist) */
+   .font-label-lg {
+      @apply font-sans text-lg font-medium leading-6;
+   }
 
-  .text-h3 {
-    @apply font-display text-lg font-semibold leading-7  md:text-[1.625rem] md:leading-9;
-  }
+   .font-label-md {
+      @apply font-sans text-base font-medium leading-5;
+   }
 
-  .text-h4 {
-    @apply font-display text-base font-semibold leading-6 md:text-xl md:leading-7;
-  }
+   .font-label-sm {
+      @apply font-sans text-sm font-medium leading-4;
+   }
 
-  /* ----------------------------------------------------------
-     4.2 Body Copy  (Geist)
-     ---------------------------------------------------------- */
- .text-body-lg {
-    @apply font-sans text-lg font-normal leading-7 tracking-normal md:text-xl md:leading-9;
-  }
+   /* Body — sans (Geist) */
+   .font-body-lg-bold {
+      @apply font-sans md:text-2xl text-xl font-semibold;
+   }
 
-      .text-body-lg-bold {
-    @apply font-sans text-lg font-medium leading-7 tracking-normal md:text-xl md:leading-7;
-  }
- 
-     .text-body {
-    @apply font-sans text-base font-medium leading-7 tracking-normal md:text-lg md:leading-8;
-  }
+   .font-body-md-bold {
+      @apply font-sans md:text-xl text-lg font-semibold;
+   }
 
-  .text-body-sm {
-    @apply font-sans text-sm font-medium leading-6 tracking-normal md:text-base md:leading-7;
-  }
+   /* Label — mono (Geist Mono) */
+   .font-label-lg-mono {
+      @apply font-mono md:text-lg text-base font-medium leading-6;
+   }
 
-  /* ----------------------------------------------------------
-     4.3 Labels & UI Text  (Geist)
-     ---------------------------------------------------------- */
-  .text-label-lg {
-    @apply font-sans text-lg font-medium leading-6 tracking-normal md:text-lg;
-  }
+   .font-label-md-mono {
+      @apply font-mono md:text-base text-sm font-medium leading-5;
+   }
 
-  .text-label {
-    @apply font-mono text-sm font-medium leading-5 tracking-normal md:text-base md:leading-6;
-  }
+   .font-label-sm-mono {
+      @apply font-mono md:text-sm text-xs font-medium;
+   }
+}
 
-  .text-slug {
-    @apply font-mono text-sm font-medium tracking-wide uppercase;
-  }
 
-  /* ----------------------------------------------------------
-     4.4 Monospace  (Geist Mono)
-     ---------------------------------------------------------- */
-  .text-code {
-    @apply font-mono text-sm font-normal leading-6 tracking-normal md:text-base md:leading-7;
-  }
+.hatch-pattern {
+   position: relative;
+   overflow: hidden;
+   background-color: #f8f8f8;
+}
 
-  .text-code-block {
-    @apply font-mono text-sm font-normal leading-7 tracking-normal;
-  }
+.hatch-pattern::before {
+   content: "";
+   position: absolute;
+   z-index: 0;
+   width: 4000px;
+   height: 4000px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) rotate(-45deg);
 
-  .text-code-sm {
-    @apply font-mono text-[0.6875rem] font-medium leading-4 md:text-xs md:leading-5;
-  }
-
-  .text-body-mono {
-    @apply font-mono text-lg font-medium leading-7 tracking-normal;
-  }
-
-  .text-label-card {
-    @apply font-mono text-sm font-medium leading-5 tracking-normal md:text-[15px] md:leading-6;
-  }
+   /* The centered-line gradient */
+   background-image: repeating-linear-gradient(0deg,
+         transparent 0,
+         transparent 4.75px,
+         /* 1. First half-gap */
+         var(--color-border-default, #d4d4d4) 4.75px,
+         /* 2. Start of line */
+         var(--color-border-default, #d4d4d4) 6.25px,
+         /* 3. End of line (4.75 + 1.5) */
+         transparent 6.25px,
+         /* 4. Start of second half-gap */
+         transparent 11px
+         /* 5. End of total cycle */
+      );
 }

@@ -6,15 +6,15 @@ import { motion, scale } from "framer-motion";
 const variants = {
     content: {
         rest: { scale: 1 },
-        hover: { scale: 0.95 }
+        hover: { scale: 0.55 }
     },
     imageLeft: {
         rest: { rotate: 0, x: 0, scale: 1 },
-        hover: { rotate: 4, x: -20, scale: 0.95 }
+        hover: { rotate: 4, x: -20, scale: 0.5 }
     },
     imageRight: {
         rest: { rotate: 0, x: 0, scale: 1 },
-        hover: { rotate: -4, x: 20, scale: 0.95 }
+        hover: { rotate: -4, x: 20, scale: 0.55 }
     },
     tooltip: {
         rest: { opacity: 0, scale: 0.95, y: 10 },
@@ -27,6 +27,7 @@ const tooltipTransition = { type: "spring", stiffness: 400, damping: 25 } as con
 
 type Props = {
     title?: string;
+    description?: string;
     subtitle?: string;
     imageLeft?: string;
     imageRight?: string;
@@ -34,10 +35,13 @@ type Props = {
     href?: string;
     hoverLabelBg?: string;
     hoverLabelText?: string;
+    side?: "left" | "right";
+    className?: string;
 };
 
 export default function SecondaryProjectCard({
     title = "redesigned search for user intent",
+    description,
     subtitle = "Youtube",
     imageLeft = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
     imageRight = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
@@ -45,6 +49,8 @@ export default function SecondaryProjectCard({
     href,
     hoverLabelBg,
     hoverLabelText,
+    side = "left",
+    className = "",
 }: Props) {
     const isExternal = href?.startsWith("http");
     const Wrapper = href ? motion.a : motion.div;
@@ -52,16 +58,84 @@ export default function SecondaryProjectCard({
         ? { href, ...(isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {}) }
         : {};
 
-    const labelVariants = {
-        rest: {
-            backgroundColor: "var(--color-bg-subtle)",
-            color: "var(--color-text-primary)",
+    const containerVariants = {
+        rest:  { 
+            backgroundColor: "var(--color-neutral-100)", 
+            borderColor: "var(--color-neutral-300)",
+            boxShadow: "inset 0 0 0 0px var(--color-accent-border)"
         },
-        hover: {
-            backgroundColor: hoverLabelBg || "var(--color-bg-subtle)",
-            color: hoverLabelText || "var(--color-text-primary)",
+        hover: { 
+            backgroundColor: "var(--color-accent-bg)",   
+            borderColor: "var(--color-accent-border)",
+            boxShadow: "inset 0 0 0 1.5px var(--color-accent-border)"
         },
     };
+
+    const textPanel = (
+        <div className={`col-span-1 self-stretch p-5 flex flex-col justify-between items-start overflow-hidden border-border-default ${
+            side === "left" ? "border-r" : "border-l"
+        }`}>
+            <div className="flex flex-col gap-1 w-full">
+                <span className="font-label-lg-mono text-text-muted uppercase">
+                    {subtitle}
+                </span>
+                <p className="font-body-lg-bold text-text-primary">
+                    {title}
+                </p>
+                {description && (
+                    <p className="font-label-md-mono text-text-muted">
+                        {description}
+                    </p>
+                )}
+            </div>
+            
+            <div className="w-full">
+                <p className="text-code-sm text-text-muted text-xs uppercase opacity-70">
+                    {routeText}
+                </p>
+            </div>
+        </div>
+    );
+
+    const imagePanel = (
+        <div className="col-span-2 self-stretch relative flex items-center justify-center overflow-hidden bg-bg-subtle/50">
+            <motion.div
+                variants={variants.content}
+                transition={springTransition}
+                className="relative w-full h-full flex justify-center items-center p-12"
+            >
+                {/* Left (back) Image */}
+                <motion.div
+                    variants={variants.imageRight}
+                    transition={springTransition}
+                    className="absolute w-[80%] aspect-square z-0 overflow-hidden rounded-xl border border-border-default shadow-sm"
+                >
+                    <Image
+                        src={imageRight}
+                        alt={`${subtitle} right`}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </motion.div>
+
+                {/* Right (front) Image */}
+                <motion.div
+                    variants={variants.imageLeft}
+                    transition={springTransition}
+                    className="absolute w-[80%] aspect-square z-10 overflow-hidden rounded-xl border border-border-default shadow-md"
+                >
+                    <Image
+                        src={imageLeft}
+                        alt={`${subtitle} left`}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </motion.div>
+            </motion.div>
+        </div>
+    );
 
     return (
         <Wrapper
@@ -69,95 +143,21 @@ export default function SecondaryProjectCard({
             initial="rest"
             whileHover="hover"
             animate="rest"
-            className="bg-bg-default flex flex-col items-center justify-between overflow-hidden p-4 relative rounded-3xl w-full aspect-square group cursor-pointer @container"
+            variants={containerVariants}
+            transition={springTransition}
+            className={`w-full max-w-[1024px] h-[400px] rounded-lg border border-border-default grid grid-cols-3 overflow-hidden cursor-pointer ${className}`}
         >
-            {/* Top Header */}
-            <div className="flex gap-4 sm:gap-8 items-start justify-between w-full">
-                <motion.div
-                    variants={labelVariants}
-                    transition={springTransition}
-                    className="px-3 py-2 rounded-xl"
-                >
-                    <p className="text-label-card" style={{ color: "inherit" }}>
-                        {title}
-                    </p>
-                </motion.div>
-                <motion.div
-                    variants={labelVariants}
-                    transition={springTransition}
-                    className="flex items-center justify-center px-3 py-2 rounded-xl"
-                >
-                    <p className="text-label-card whitespace-nowrap" style={{ color: "inherit" }}>
-                        {subtitle}
-                    </p>
-                </motion.div>
-            </div>
-
-            {/* Image Container */}
-            <div className="flex items-start justify-center overflow-hidden relative w-full h-full">
-                <motion.div
-                    variants={variants.content}
-                    transition={springTransition}
-                    className="relative w-full h-full flex justify-center items-start"
-                >
-                    {/* Left Image */}
-                    <motion.div
-                        variants={variants.imageRight}
-                        transition={springTransition}
-                        className="absolute w-[60cqw] aspect-280/344 z-0"
-                    >
-                        <div className="absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-bg-primary to-transparent z-10 pointer-events-none" />
-                        <Image
-                            src={imageRight}
-                            alt={`${subtitle} left`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            quality={90}
-                            className="object-contain"
-                            priority
-                        />
-                    </motion.div>
-
-                    {/* Right Image */}
-                    <motion.div
-                        variants={variants.imageLeft}
-                        transition={springTransition}
-                        className="absolute w-[60cqw] aspect-280/344 z-10"
-                    >
-                        <div className="absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-bg-primary to-transparent z-10 pointer-events-none" />
-                        <Image
-                            src={imageLeft}
-                            alt={`${subtitle} right`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            quality={90}
-                            className="object-contain"
-                            priority
-                        />
-                    </motion.div>
-                </motion.div>
-
-                {/* Top Gradient - Outside the motion div so it stays fixed while image scales */}
-
-            </div>
-
-            {/* Hover Tooltip - Click to open */}
-            {/* <motion.div
-                variants={variants.tooltip}
-                transition={tooltipTransition}
-                className="absolute left-1/2 -translate-x-1/2 bottom-[5%] bg-bg-default flex items-center overflow-hidden px-3 py-2 rounded-full shadow-lg z-20 pointer-events-none"
-            >
-                <p className="text-code-sm text-text-primary whitespace-nowrap">
-                    CLICK TO OPEN
-                </p>
-            </motion.div> */}
-
-            {/* Route Text */}
-            <div className="w-full flex justify-end shrink-0 z-10">
-                <p className="text-code-sm text-text-primary text-xs whitespace-nowrap uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-                    {routeText}
-                </p>
-            </div>
+            {side === "left" ? (
+                <>
+                    {textPanel}
+                    {imagePanel}
+                </>
+            ) : (
+                <>
+                    {imagePanel}
+                    {textPanel}
+                </>
+            )}
         </Wrapper>
     );
 }

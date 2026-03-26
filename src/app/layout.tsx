@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter_Tight } from "next/font/google";
+import { Geist, Geist_Mono, Inter_Tight, Caveat } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 
@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 
 const interTight = Inter_Tight({
   variable: "--font-display", // This was already correct!
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -82,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} ${caveat.variable} antialiased min-h-screen flex flex-col`}
       >
         <main className="grow bg-bg-subtle">{children}</main>
         <div className="w-full mt-auto">

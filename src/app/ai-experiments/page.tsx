@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import FadeIn from "@/components/FadeIn";
-import PrimaryProjectCard from "@/components/PrimaryProjectCard";
+import PrimaryProjectCard from "@/components/Landing/PrimaryProjectCard";
 import BuildingWithAiCard from "@/components/BuildingWithAiCard";
 
 export default function AiExperimentsPage() {
@@ -19,7 +19,7 @@ export default function AiExperimentsPage() {
         <FadeIn className="w-full flex justify-center z-10">
           <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-subtle gap-4">
             <Navbar />
-            
+
             <div className="flex flex-col gap-4">
               <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2" id="experiments">
                 <PrimaryProjectCard
@@ -32,7 +32,7 @@ export default function AiExperimentsPage() {
                   href="https://printproto.vercel.app/"
                   variant="two-pages"
                 />
-                
+
                 <PrimaryProjectCard
                   title="Retro Pomodoro App"
                   subtitle="POMDOM"

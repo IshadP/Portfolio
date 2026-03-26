@@ -12,7 +12,7 @@ export default function ProConCard({
         variant === "pro" ? "bg-status-success-bg" : 
         variant === "con" ? "bg-status-error-bg" : 
         variant === "insight" ? "bg-bg-default border-2 border-border-default" : 
-        variant === "fact" ? "bg-neutral-20" :
+        variant === "fact" ? "bg-neutral-200" :
         ""; // normal variant
 
     // Determine text style based on variant

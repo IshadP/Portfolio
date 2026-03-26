@@ -223,7 +223,7 @@ export default function PrinthubPage() {
                                 <div className="flex flex-col gap-3 px-4">
                                     <div className="flex flex-col gap-3">
                                         <p className="text-body-lg-bold">Frequent reverification resulted in slow checkout.</p>
-                                        <p className="text-label-lg text-neutral-70">
+                                        <p className="text-label-lg text-neutral-600">
                                             Users opened customisation settings multiple times during checkout to verify if the configurations were correct. This significantly increased the time to print and confused them.
                                         </p>
                                     </div>
@@ -240,7 +240,7 @@ export default function PrinthubPage() {
                                 <div className="flex flex-col gap-3 px-4">
                                     <div className="flex flex-col gap-3">
                                         <p className="text-body-lg-bold">Failure to reach the goal in new users</p>
-                                        <p className="text-label-lg text-neutral-70">
+                                        <p className="text-label-lg text-neutral-600">
                                             New users weren’t able to complete process and needed human guidance to get their print. New users took 2-3 tries before getting the acquainted with flow.
                                         </p>
                                     </div>
@@ -334,7 +334,7 @@ export default function PrinthubPage() {
                             <div className="relative w-full aspect-1024/600">
                                 <Image src={`/printhub/AnxietyMap-01.svg`} alt="AnxietyMap" fill quality={90} className="object-contain" />
                             </div>
-                            <p className="text-body-mono text-neutral-30">
+                            <p className="text-body-mono text-neutral-300">
                                 Based on talking to few users and our assumptions.
                             </p>
                         </div>
@@ -343,7 +343,7 @@ export default function PrinthubPage() {
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. USER FLOW JOURNEY ──                                    */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-neutral-30">
+                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-neutral-300">
                         <div className="flex flex-col gap-8 w-full">
                             <Heading>How redesigned Printhub reduces user anxiety</Heading>
                             <BodyText>
