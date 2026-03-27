@@ -1,4 +1,4 @@
-import { useCopyEmail } from "../hooks/useCopyEmail";
+import { useCopyEmail } from "../../hooks/useCopyEmail";
 import { CopyIcon, CheckIcon } from "@phosphor-icons/react";
 
 export default function CopyEmailButton({

@@ -101,7 +101,7 @@
 
    /* Foreground / Text */
    --color-text-primary: var(--color-neutral-800);
-   --color-text-secondary: var(--color-neutral-700);
+   --color-text-secondary: var(--color-neutral-600);
    --color-text-muted: var(--color-neutral-500);
    --color-text-disabled: var(--color-neutral-400);
 
@@ -200,6 +200,14 @@
 
    .font-body-sm-bold {
       @apply font-sans md:text-lg text-sm font-semibold;
+   }
+   
+   .font-body-xs {
+      @apply font-sans md:text-base text-sm font-medium;
+   }
+
+   .font-body-sm-bold {
+      @apply font-sans md:text-base text-sm font-semibold;
    }
 
    /* Label — mono (Geist Mono) */

@@ -68,12 +68,32 @@ export default function Home() {
                         </div>
 
                         {/* Hatching */}
-                        <div className="relative h-6 w-full border-x border-border-default bg-[image:repeating-linear-gradient(315deg,_var(--color-border-default)_0,_var(--color-border-default)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px]"></div>
+                        <Hatching />
 
                         {/* Experience Section */}
                         <Experience />
 
                         {/* Hatching */}
+                        <Hatching />
+
+                        <div className="w-full flex flex-col  border border-border-default max-w-[1024px] overflow-hidden">
+                                <div className="p-6">
+                                <p className="font-label-lg-mono text-text-muted">Person behind the designs</p>
+                                </div>
+                                <div className="flex md:flex-row flex-col border-t border-border-default">
+                                    <div className="w-full h-full flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
+                                        <p>Hello, I'm Ishad,</p>
+                                        <p>Currently in Senior Year of B.Tech in Computer Science and Engineering at Government College of Engineering, Nagpur.</p>
+                                        <p>My first introduction to design was in 6th grade when I wondered "Why do these cars look so good?".</p>
+                                        <p>Fast forward to my second year, I picked up designing again to answer a single question "How should this app look and feel?".</p>
+                                        <p> I have been designig ever since. But I go back to development once in a while just for fun.</p>
+                                        <p>PS: About us page coming soon!</p>
+                                    </div>
+                                    <Image src="/Photo.jpg" alt="Photo" width={100} height={100} quality={100} className="w-full h-full object-cover" />
+                                </div>
+                            </div>
+                        
+
                         <Hatching />
 
                         {/* Footer */}

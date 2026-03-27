@@ -19,6 +19,9 @@ export default function AiExperimentsPage() {
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
           <motion.div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle">
+            {/* Top Gradient Fade Overlay */}
+            <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
+
             <Navbar />
 
             <Hatching />

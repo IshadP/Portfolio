@@ -10,6 +10,7 @@ import FadeIn from "../../components/FadeIn";
 import Badge from "../../components/caseStudy/Badge";
 import GrayBox from "../../components/caseStudy/GrayBox";
 import ProConCard from "../../components/caseStudy/ProConCard";
+import Hatching from "@/components/Hatching";
 
 // ──────────────────────────────────────────────────────────────────────────────
 // ── Shared UI Components (extracted from YoutubeCaseStudyUI.tsx) ──
@@ -17,7 +18,7 @@ import ProConCard from "../../components/caseStudy/ProConCard";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-body-mono text-text-disabled w-full max-w-[1024px]">
+        <p className="font-label-lg-mono text-text-disabled w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -25,7 +26,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-body text-text-secondary w-full max-w-[1024px]">
+        <p className="font-body-sm text-text-secondary w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -33,14 +34,14 @@ function BodyText({ children }: { children: React.ReactNode }) {
 
 function Heading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-h2 text-text-primary w-full max-w-[1024px]">
+        <p className="font-h2 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
     );
 }
 function SubHeading({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-h3 text-text-primary w-full max-w-[1024px]">
+        <p className="font-h3 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
     );
@@ -48,9 +49,15 @@ function SubHeading({ children }: { children: React.ReactNode }) {
 
 function Title({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-h1 text-text-primary w-full max-w-[1024px]">
+        <p className="font-h2 px-6 text-text-primary w-full max-w-[1024px]">
             {children}
         </p>
+    );
+}
+
+function Divider() {
+    return (
+        <div className="border-x border-border-default h-8 w-full"></div>
     );
 }
 
@@ -74,11 +81,11 @@ function JourneyStep({
 }) {
     return (
         <div className="flex flex-col items-center w-full group">
-            <div className="flex flex-col lg:grid lg:grid-cols-[1fr_320px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative max-w-[1078px]">
+            <div className="flex flex-col lg:grid lg:grid-cols-[1fr_320px_1fr] w-full items-center lg:items-start gap-8 lg:gap-8 relative max-w-[1078px]">
                 {/* Left Side: Narrative */}
                 <div className="flex w-full justify-center lg:justify-end lg:pt-12 max-w-[600px]">
                     <div className="flex flex-col gap-4 w-full lg:max-w-[320px]">
-                        <p className="text-h4 text-[#306192] leading-tight text-center lg:text-right">
+                        <p className="font-h4 text-[#306192] leading-tight text-center lg:text-right">
                             {narrative}
                         </p>
                     </div>
@@ -114,17 +121,22 @@ export default function PrinthubPage() {
             <Hero />
 
             {/* ── Main Content ── */}
-            <FadeIn className="w-full flex flex-col gap-12 justify-center bg-bg-subtle mt-[40vh] z-10">
+            <FadeIn className="w-full flex flex-col justify-center bg-bg-subtle z-10">
 
-                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col gap-12 px-4">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col  px-4">
+                    {/* Top Gradient Fade Overlay */}
+                    <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
+
                     <Navbar />
                     {/* ── 01. INTRO / HERO CONTENT ──                                 */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-8 w-full">
+                    <section className="flex flex-col w-full">
+                        <div className="border-x border-border-default px-2 py-8 ">
                         <Title>How refined components and better flows saved PrintHub users 30% of their time.</Title>
+                        </div>
 
-                        <div className="bg-white border-3 border-border-default overflow-hidden p-0 rounded-[30px] w-full">
-                            <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-8 md:p-12 overflow-hidden bg-bg-default">
+                        <div className="border border-border-default overflow-hidden p-0 w-full">
+                            <div className=" bg-white flex flex-col border-b border-border-default md:flex-row items-center justify-center p-8 md:p-12 overflow-hidden ">
                                 <div className="relative w-[280px] md:w-[320px] aspect-324/691 overflow-hidden ">
                                     <Image src={`${A}/Intro-01.png`} alt="PrintHub Screen 1" fill quality={90} className="object-cover" />
                                 </div>
@@ -135,39 +147,41 @@ export default function PrinthubPage() {
                                     <Image src={`${A}/Intro-02.png`} alt="PrintHub Screen 2" fill quality={90} className="object-cover" />
                                 </div>
                             </div>
-                        </div>
+                        
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-24 px-8 md:px-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 p-6 border-border-default gap-8 md:gap-24 px-8 md:px-12">
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="text-label-lg text-text-muted">Role</p>
-                                <p className="text-body-lg-bold text-text-primary">Product Designer</p>
+                                <p className="font-label-lg-mono text-text-muted">Role</p>
+                                <p className="font-label-lg text-text-primary">Product Designer</p>
                             </div>
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="text-label-lg text-text-muted">Team</p>
-                                <p className="text-body-lg-bold text-text-primary">3 Developers</p>
+                                <p className="font-label-lg-mono text-text-muted">Team</p>
+                                <p className="font-label-lg text-text-primary">3 Developers</p>
                             </div>
                             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
-                                <p className="text-label-lg text-text-muted">Duration</p>
-                                <p className="text-body-lg-bold text-text-primary">5-6 weeks</p>
+                                <p className="font-label-lg-mono text-text-muted">Duration</p>
+                                <p className="font-label-lg text-text-primary">5-6 weeks</p>
                             </div>
+                        </div>
                         </div>
                     </section>
-
+                    <Hatching height="h-12" />
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 02. WHAT IS PRINTHUB ──                                     */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-5 w-full ">
+                    <section className="flex flex-col px-6 py-4 gap-5 border-x border-y border-border-default w-full ">
                         <SubHeading>What is Printhub?</SubHeading>
                         <BodyText>
                             Printhub is a kiosk based printing solution that works through a mobile app and proprietary devices. Users upload files to the cloud and print them from any location. The system shows live print status and notifies users when prints are ready for pickup.
                         </BodyText>
                     </section>
 
+                    <Divider />
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 03. DESIGNING FOR USERS ──                                  */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-6 w-full ">
-                        <div className="flex flex-col gap-5 w-full">
+                    <section className="flex flex-col gap-5 border-x border-y border-border-default w-full ">
+                        <div className="flex flex-col px-6 py-4 gap-5 w-full">
                             <SubHeading>Designing for Users</SubHeading>
                             <div className="flex flex-col gap-3">
                                 <BodyText>Traditional printing is slow and disruptive. The Printhub redesign aimed to make printing fast and routine. Going into this project we had 2 high level goals:</BodyText>
@@ -178,8 +192,8 @@ export default function PrinthubPage() {
                             </div>
                         </div>
 
-                        <GrayBox title="Current Design" className="p-4">
-                            <div className="flex flex-wrap gap-6 items-center justify-center">
+                        <GrayBox title="Current Design" className="p-4" t >
+                            <div className="flex w-full gap-6 items-center justify-center">
                                 <div className="relative w-[200px] aspect-216/480 rounded-2xl overflow-hidden shadow-lg border border-black/10 bg-white">
                                     <Image src={`${A}/Legacy-01.png`} alt="Old Design 1" fill sizes="200px" quality={90} className="object-cover" />
                                 </div>
@@ -196,12 +210,14 @@ export default function PrinthubPage() {
                         </GrayBox>
                     </section>
 
+                    <Divider />
+
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 04. STARTING WITHOUT DIRECTION ──                            */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-6 w-full ">
-                        <div className="flex flex-col gap-5 w-full">
-                            <Heading>Starting Without Direction</Heading>
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col gap-5 px-6 py-4 w-full">
+                            <SubHeading>Starting Without Direction</SubHeading>
                             <div className="flex flex-col gap-3">
                                 <BodyText>
                                     At the start of project, we didn’t have specific problem to solve. This was due to fact that we  had no insights on how users used the app. I started observing users and how they use Printhub.
@@ -212,35 +228,36 @@ export default function PrinthubPage() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col md:flex-row gap-2">
+                        <div className="flex flex-col md:flex-row">
                             {/* --- Problem 1 --- */}
-                            <div className="flex flex-col gap-6">
-                                <GrayBox title="Unnecessary actions" className="flex w-full justify-center items-center">
+                            <div className="flex flex-col border-b border-r border-border-default">
+                                <GrayBox title="Unnecessary actions" className="flex w-full justify-center items-center" t b >
                                     <div className="relative h-[200px] md:h-[320px] w-full">
                                         <Image src={`/printhub/Problem-01.png`} alt="Customisation Screen" fill quality={90} className="object-contain" />
                                     </div>
                                 </GrayBox>
-                                <div className="flex flex-col gap-3 px-4">
+                                <div className="flex flex-col gap-3 px-6 py-4">
                                     <div className="flex flex-col gap-3">
-                                        <p className="text-body-lg-bold">Frequent reverification resulted in slow checkout.</p>
-                                        <p className="text-label-lg text-neutral-600">
+                                        <p className="font-h4 text-text-primary">Frequent reverification resulted in slow checkout.</p>
+                                        <p className="font-body-sm text-text-muted">
                                             Users opened customisation settings multiple times during checkout to verify if the configurations were correct. This significantly increased the time to print and confused them.
                                         </p>
                                     </div>
                                 </div>
                             </div>
+                            <div className="w-8 border-y border-border-default"></div>
 
                             {/* --- Problem 2 --- */}
-                            <div className="flex flex-col gap-6">
-                                <GrayBox title="Goal Failure" className="flex w-full justify-center items-center">
+                            <div className="flex flex-col border-b border-l border-border-default">
+                                <GrayBox title="Goal Failure" className="flex w-full justify-center items-center" t b>
                                     <div className="relative h-[200px] md:h-[320px] w-full">
                                         <Image src={`/printhub/Problem-02.png`} alt="Payment Screen" fill quality={90} className="object-contain" />
                                     </div>
                                 </GrayBox>
-                                <div className="flex flex-col gap-3 px-4">
+                                <div className="flex flex-col gap-3 px-6 py-4">
                                     <div className="flex flex-col gap-3">
-                                        <p className="text-body-lg-bold">Failure to reach the goal in new users</p>
-                                        <p className="text-label-lg text-neutral-600">
+                                        <p className="font-h4 text-text-primary">Failure to reach the goal in new users</p>
+                                        <p className="font-body-sm text-text-muted">
                                             New users weren’t able to complete process and needed human guidance to get their print. New users took 2-3 tries before getting the acquainted with flow.
                                         </p>
                                     </div>
@@ -250,78 +267,85 @@ export default function PrinthubPage() {
                         </div>
                     </section>
 
+                    <Divider/>
+
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 05. USERS EXPECTED CLARITY ──                                */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full ">
-                        <div className=" flex flex-row gap-6">
-                            <div className="flex flex-col gap-5 w-full">
-                                <SubHeading>Users Expected Clarity</SubHeading>
-                                <div className="flex flex-col gap-3 w-full">
-                                    <BodyText>
-                                        When I went through the flow, it felt pretty clear to me. This surprised me a bit, and made me ask - “why are users performing repetitive actions?”
-                                    </BodyText>
-                                    <BodyText>
-                                        After bit of thinking, it become a clearer why users reverified their setting before printing.
-                                    </BodyText>
-                                </div>
-                                {/* Custom callout. not ot be touched */}
-                                <div className="flex flex-col py-4 sm:px-20 lg:px-40 px-4 text-text-primary border-b border-t border-border-default">
-                                    <div className="text-h3 text-center">Printing was a irreversible process that costs money and time.</div>
-                                </div>
-
+                    <section className="flex flex-col border-x border-t border-border-default w-full ">
+                        <div className="flex flex-col px-6 py-4 gap-5 w-full">
+                            <SubHeading>Users Expected Clarity</SubHeading>
+                            <div className="flex flex-col gap-3 w-full">
                                 <BodyText>
-                                    Printing was a irreversible process that costs money and time. Getting wrong print means wastage of money. Users have to know clearly what they will get and how will it look.
+                                    When I went through the flow, it felt pretty clear to me. This surprised me a bit, and made me ask - “why are users performing repetitive actions?”
+                                </BodyText>
+                                <BodyText>
+                                    After bit of thinking, it become a clearer why users reverified their setting before printing.
                                 </BodyText>
                             </div>
+                            {/* Custom callout. not ot be touched */}
+                            <div className="flex flex-col py-4 sm:px-20 lg:px-40 px-4 text-text-primary border-b border-t border-border-default">
+                                <div className="font-h3 text-center">Printing was a irreversible process that costs money and time.</div>
+                            </div>
+
+                            <BodyText>
+                                Printing was a irreversible process that costs money and time. Getting wrong print means wastage of money. Users have to know clearly what they will get and how will it look.
+                            </BodyText>
                         </div>
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 06. CALLOUT ──                                                              */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section>
-                        <div className="flex w-full flex-col rounded-[32px] bg-[#97C882] px-0.5 pt-0.5 pb-2">
-                            <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-default">
-                                <div className="flex w-full items-center gap-2 bg-status-success-bg px-6 py-3 ">
-                                    <h3 className="text-h3 text-status-success-fg">
-                                        User’s mental model🧠
-                                    </h3>
-                                </div>
-                                <div className="flex w-full flex-col gap-3 px-6 py-3">
-                                    <BodyText>
-                                        An interesting insight while observing and talking to user that I came across was:
-                                    </BodyText>
-                                    <BodyText>
-                                        People usually are very anxious until the document queued to be printed. Once the printing commences they loosen up a bit. This anxiety occurs due to uncertainty of output.
-                                    </BodyText>
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="px-6 py-6 w-full">
+                            <div className="flex w-full flex-col rounded-sm bg-[#98c985] px-0.5 pt-0.5 pb-2">
+                                <div className="flex w-full flex-col overflow-hidden rounded-sm bg-bg-default">
+                                    <div className="flex w-full items-center gap-2 bg-[#bce7ab] px-6 py-3 ">
+                                        <h3 className="font-h3 text-status-success-fg">
+                                            User’s mental model🧠
+                                        </h3>
+                                    </div>
+                                    <div className="flex w-full flex-col gap-3 px-6 py-3">
+                                        <BodyText>
+                                            An interesting insight while observing and talking to user that I came across was:
+                                        </BodyText>
+                                        <BodyText>
+                                            People usually are very anxious until the document queued to be printed. Once the printing commences they loosen up a bit. This anxiety occurs due to uncertainty of output.
+                                        </BodyText>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
+
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 07. IT SHOULD JUST WORK ──                                */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-5 w-full">
-                        <SubHeading>It should just work</SubHeading>
-                        <BodyText>
-                            In an ideal world, Printhub experience should just work. It should be there when it’s needed, does the printing without wasting time and get out of the picture as soon as that’s done.
-                        </BodyText>
-                        <BodyText>
-                            While talking with founders, they said - “The material 3 facelift will optimise user experience.”
-                        </BodyText>
-                        <BodyText>
-                            It was pretty clear the goal was on optimisation. So we decided that the “task-completion-time” was ideal metric for us.
-                        </BodyText>
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col px-6 py-4 gap-5 w-full">
+                            <SubHeading>It should just work</SubHeading>
+                            <BodyText>
+                                In an ideal world, Printhub experience should just work. It should be there when it’s needed, does the printing without wasting time and get out of the picture as soon as that’s done.
+                            </BodyText>
+                            <BodyText>
+                                While talking with founders, they said - <span className="text-text-primary">“The material 3 facelift will optimise user experience.”</span>
+                            </BodyText>
+                            <BodyText>
+                                It was pretty clear the goal was on optimisation. So we decided that the “task-completion-time” was ideal metric for us.
+                            </BodyText>
+                        </div>
                     </section>
+
+                    <Divider/>
 
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 08. REFRAMING THE PROBLEM ──                                */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-6 w-full">
-                        <div className="flex flex-col gap-5 w-full">
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col px-6 py-4 gap-5 w-full">
                             <div className="flex flex-col w-full gap-3">
                                 <SectionLabel>Reframing the Problem</SectionLabel>
                                 <SubHeading>Invisible feedback on action cause increase in task completion time.</SubHeading>
@@ -334,24 +358,28 @@ export default function PrinthubPage() {
                             <div className="relative w-full aspect-1024/600">
                                 <Image src={`/printhub/AnxietyMap-01.svg`} alt="AnxietyMap" fill quality={90} className="object-contain" />
                             </div>
-                            <p className="text-body-mono text-neutral-300">
-                                Based on talking to few users and our assumptions.
-                            </p>
+                            <div className="px-6 pb-4">
+                                <SectionLabel>
+                                    Based on talking to few users and our assumptions.
+                                </SectionLabel>
+                            </div>
                         </div>
                     </section>
+
+                    <Hatching height="h-12"/>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. USER FLOW JOURNEY ──                                    */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-border-default">
-                        <div className="flex flex-col gap-8 w-full">
+                    <section className="flex flex-col border border-border-default gap-16 w-full pt-8">
+                        <div className="flex flex-col gap-8 px-6 py-4 w-full">
                             <Heading>How redesigned Printhub reduces user anxiety</Heading>
                             <BodyText>
                                 Yash, a college student, needs to print his practical before submission. He has used Printhub for a long time. He heard the app just got a major refresh. Let’s see how this app refresh helps Yash to print his files faster.
                             </BodyText>
                         </div>
 
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col px-8 items-center">
                             {/* --- Step 1 --- */}
                             <JourneyStep
                                 id={1}
@@ -487,21 +515,27 @@ export default function PrinthubPage() {
                                 </div>
                             </JourneyStep>
                         </div>
+                        <div className="px-6 py-4">
                         <BodyText>
                             Yash felt relieved that he could print without standing in long queues outside the print shop, it was a quick scan → pay → grab for him.
                         </BodyText>
+                        </div>
                     </section>
+
+                    <Hatching height="h-12" />
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 07. DECISION STORIES ──                                     */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full">
-                        <div className="flex flex-col gap-5 w-full">
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-4 gap-5 w-full">
                             <Heading>Decisions that shaped the experience</Heading>
                         </div>
+                    </section>
 
-                        {/* --- Decision 1 --- */}
-                        <div className="flex flex-col gap-6 w-full"> {/* Parent container for 24px transitions */}
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full"> {/* Parent container for 24px transitions */}
                             <div className="flex flex-col gap-5"> {/* Container for 20px transition (Title to Body) */}
                                 <div className="flex flex-col gap-3"> {/* Container for 12px transition (Badge to Title) */}
                                     <div className="flex self-start">
@@ -513,190 +547,217 @@ export default function PrinthubPage() {
                                     I realised that the problem wasn’t in UI but how people used it. Printing is irreversible. Wrong prints waste time and money. To avoid this, users repeatedly reopened customization settings to verify their own actions.
                                 </BodyText>
                             </div>
+                        </div>
+                    </section>
 
-                            <GrayBox title="Current Card Design" className="">
-                                <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-                                    <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
-                                        <Image src={`${A}/Decision1-01.png`} alt="Current Design" fill quality={90} className="object-cover" />
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <GrayBox title="Current Card Design" className="">
+                            <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
+                                <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
+                                    <Image src={`${A}/Decision1-01.png`} alt="Current Design" fill quality={90} className="object-cover" />
+                                </div>
+                                <div className="flex flex-col gap-4 max-w-[480px]">
+                                    <ProConCard variant="con" full>“Customize” does not tell users what they can change</ProConCard>
+                                    <ProConCard variant="con" full>Users only use preview when they are unsure about document</ProConCard>
+                                    <ProConCard variant="con" full>Card doesn’t follow material standards</ProConCard>
+                                </div>
+                            </div>
+                        </GrayBox>
+
+                        <div className="flex flex-col px-6 py-6 gap-3"> {/* Container for 12px gap between paragraphs */}
+                            <BodyText>
+                                My initial assumption was that people were forced to recall previous action. To avoid monetary loss they reverified the settings. Following recognition rather than recall principle, the goal was to surface past actions in order to reduce uncertainty without increasing cognitive load.
+                            </BodyText>
+                            <BodyText>
+                                To support this, I explored two options:
+                            </BodyText>
+                        </div>
+                    </section>
+
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full max-w-[1024px]">
+                            <div className="flex flex-col gap-2 border-r border-border-default">
+                                <GrayBox title="Visual indicators Only" className="aspect-video bg-bg-subtle rounded-lg p-8 flex items-center justify-center">
+                                    <div className="relative w-full h-full">
+                                        <Image src={`${A}/Decision1-02.png`} alt="Option 1" fill quality={90} className="object-contain" />
                                     </div>
-                                    <div className="flex flex-col gap-4 max-w-[480px]">
-                                        <ProConCard variant="con" full>“Customize” does not tell users what they can change</ProConCard>
-                                        <ProConCard variant="con" full>Users only use preview when they are unsure about document</ProConCard>
-                                        <ProConCard variant="con" full>Card doesn’t follow material standards</ProConCard>
+                                </GrayBox>
+                                <div className="flex flex-col">
+                                    <ProConCard variant="pro" full>Changes in a features are clearly visible.</ProConCard>
+                                    <ProConCard variant="pro" full>Visuals are processed faster and reduces cognitive load.</ProConCard>
+                                    <ProConCard variant="con" full>Can cause confusion due to different interpretation of icons.</ProConCard>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-2 border-l border-border-default">
+                                <GrayBox title="Textual Indicators" className="aspect-video bg-bg-subtle p-8 rounded-lg flex items-center justify-center">
+                                    <div className="relative w-full h-full">
+                                        <Image src={`${A}/Decision1-03.png`} alt="Option 2" fill quality={90} className="object-contain" />
+                                    </div>
+                                </GrayBox>
+                                <div className="flex flex-col">
+                                    <ProConCard variant="pro" full>Clearly tell which options are used to print the item.</ProConCard>
+                                    <ProConCard variant="pro" full>Removing guesswork on what is active and what’s not active.</ProConCard>
+                                    <ProConCard variant="con" full>This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>
+                                    <ProConCard variant="con" full>Excessive card height wastes screen space and forces unnecessary scrolling when multiple items are added.</ProConCard>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-6 gap-6">
+                            <div className="flex flex-col gap-3">
+                                <BodyText>
+                                    When presented with two options, most users chose option one. Further talking showed that option two caused higher cognitive load as each option had to be read. Stakeholders reached the same conclusion, so we proceeded with option one.
+                                </BodyText>
+                                <BodyText>
+                                    As I removed customise button, we needed a new interaction to enter customisaton mode. We also needed a clear way to show and select files.
+                                </BodyText>
+                                <BodyText>
+                                    I explored two options:
+                                </BodyText>
+                            </div>
+                        </div>
+                    </section>
+
+                    <Divider />
+                    <div className="px-6 y-4 border-x border-border-default">
+                    <SectionLabel>Main Card Interaction Ideas</SectionLabel>
+                    </div>
+
+        
+
+                    <section className="flex flex-col border-x border-border-default w-full">
+                        <div className="flex flex-col gap-6 w-full">
+                            {/* --- Idea 1: Click and Hold --- */}
+                            <div className="flex flex-col px-6 pt-4 gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex self-start">
+                                        <Badge variant="error">Idea 1</Badge>
+                                    </div>
+                                    <Heading>Click and hold to customise while retaining the checkbox to preserve existing user habits.</Heading>
+                                </div>
+                                <BodyText>
+                                    I kept the checkbox for selection and added a preview so users could see whether a file needed editing. Customisation was available through click and hold. This assumed that most users rarely need to customise files.
+                                </BodyText>
+                            </div>
+                            <GrayBox className=" p-8 md:p-12">
+                                <div className="flex flex-col gap-8 items-center justify-center">
+                                    <div className="relative w-full max-w-[614px] aspect-614/120 rounded-xl overflow-hidden shadow-lg">
+                                        <Image src={`${A}/Decision1-04.png`} alt="Idea 1 Design" fill quality={90} className="object-cover" />
+                                    </div>
+                                    <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                                        <ProConCard variant="con" full>I was wrong. Users used customisation lot more.</ProConCard>
+                                        <ProConCard variant="con" full>Interaction on hold remains unclear, and users do not understand how it works.</ProConCard>
                                     </div>
                                 </div>
                             </GrayBox>
+                        </div>
+                    </section>
 
-                            <div className="flex flex-col gap-3"> {/* Container for 12px gap between paragraphs */}
-                                <BodyText>
-                                    My initial assumption was that people were forced to recall previous action. To avoid monetary loss they reverified the settings. Following recognition rather than recall principle, the goal was to surface past actions in order to reduce uncertainty without increasing cognitive load.
-                                </BodyText>
-                                <BodyText>
-                                    To support this, I explored two options:
-                                </BodyText>
-                            </div>
 
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 w-full max-w-[1078px]">
-                                <div className="flex flex-col gap-2">
-                                    <GrayBox title="Visual indicators Only" className="aspect-video bg-bg-subtle rounded-lg p-8 flex items-center justify-center">
-                                        <div className="relative w-full h-full">
-                                            <Image src={`${A}/Decision1-02.png`} alt="Option 1" fill quality={90} className="object-contain" />
-                                        </div>
-                                    </GrayBox>
-                                    <div className="flex flex-col gap-2">
-                                        <ProConCard variant="pro" full>Changes in a features are clearly visible.</ProConCard>
-                                        <ProConCard variant="pro" full>Visuals are processed faster and reduces cognitive load.</ProConCard>
-                                        <ProConCard variant="con" full>Can cause confusion due to different interpretation of icons.</ProConCard>
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <GrayBox title="Textual Indicators" className="aspect-video bg-bg-subtle p-8 rounded-lg flex items-center justify-center">
-                                        <div className="relative w-full h-full">
-                                            <Image src={`${A}/Decision1-03.png`} alt="Option 2" fill quality={90} className="object-contain" />
-                                        </div>
-                                    </GrayBox>
-                                    <div className="flex flex-col gap-2">
-                                        <ProConCard variant="pro" full>Clearly tell which options are used to print the item.</ProConCard>
-                                        <ProConCard variant="pro" full>Removing guesswork on what is active and what’s not active.</ProConCard>
-                                        <ProConCard variant="con" full>This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>
-                                        <ProConCard variant="con" full>Excessive card height wastes screen space and forces unnecessary scrolling when multiple items are added.</ProConCard>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* --- Main Card Interaction Ideas Section --- */}
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-3">
-                                    <BodyText>
-                                        When presented with two options, most users chose option one. Further talking showed that option two caused higher cognitive load as each option had to be read. Stakeholders reached the same conclusion, so we proceeded with option one.
-                                    </BodyText>
-                                    <BodyText>
-                                        As I removed customise button, we needed a new interaction to enter customisaton mode. We also needed a clear way to show and select files.
-                                    </BodyText>
-                                    <BodyText>
-                                        I explored two options:
-                                    </BodyText>
-                                </div>
-
-                                <SectionLabel>Main Card Interaction Ideas</SectionLabel>
-                            </div>
-
-                            {/* --- Idea 1: Click and Hold --- */}
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-5">
-                                    <div className="flex flex-col gap-3">
-                                        <div className="flex self-start">
-                                            <Badge variant="error">Idea 1</Badge>
-                                        </div>
-                                        <Heading>Click and hold to customise while retaining the checkbox to preserve existing user habits.</Heading>
-                                    </div>
-                                    <BodyText>
-                                        I kept the checkbox for selection and added a preview so users could see whether a file needed editing. Customisation was available through click and hold. This assumed that most users rarely need to customise files.
-                                    </BodyText>
-                                </div>
-                                <GrayBox className=" p-8 md:p-12">
-                                    <div className="flex flex-col gap-8 items-center justify-center">
-                                        <div className="relative w-full max-w-[614px] aspect-614/120 rounded-xl overflow-hidden shadow-lg">
-                                            <Image src={`${A}/Decision1-04.png`} alt="Idea 1 Design" fill quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="flex flex-col gap-2 w-full max-w-[614px]">
-                                            <ProConCard variant="con" full>I was wrong. Users used customisation lot more.</ProConCard>
-                                            <ProConCard variant="con" full>Interaction on hold remains unclear, and users do not understand how it works.</ProConCard>
-                                        </div>
-                                    </div>
-                                </GrayBox>
-                            </div>
-
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
                             {/* --- Preview Dropped Notice --- */}
                             <div className="flex w-full flex-col rounded-[32px] bg-border-default px-0.5 pt-0.5 pb-2">
                                 <div className="flex w-full flex-col overflow-hidden rounded-[30px] bg-bg-default">
                                     <div className="flex w-full items-center gap-2 bg-bg-subtle px-6 py-4">
-                                        <p className="text-h3 text-text-primary">Preview Dropped!</p>
+                                        <p className="font-h3 text-text-primary">Preview Dropped!</p>
                                     </div>
                                     <div className="flex w-full flex-col gap-3 p-6 text-text-primary">
                                         <BodyText>It was technically complex to implement and did not fit within the project timeline.</BodyText>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </section>
 
+                    <div className="border border-border-default h-8 w-full"></div>
+
+                    <section className="flex flex-col border-x border-border-default w-full">
+                        <div className="flex flex-col gap-6 w-full">
                             {/* --- Idea 2: Edit Icon --- */}
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-5">
-                                    <div className="flex flex-col gap-3">
-                                        <div className="flex self-start">
-                                            <Badge variant="error">Idea 2</Badge>
-                                        </div>
-                                        <Heading>Introduce edit icon instead of the preview.</Heading>
+                            <div className="flex flex-col px-6 pt-4 gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex self-start">
+                                        <Badge variant="error">Idea 2</Badge>
                                     </div>
-                                    <BodyText>
-                                        Following removal of preview, I added a Customize icon instead of using a hidden gesture. I kept the checkbox, even though it did not fully match Material 3. This decision was to preserve existing user behaviour.
-                                    </BodyText>
+                                    <Heading>Introduce edit icon instead of the preview.</Heading>
                                 </div>
-                                <GrayBox className=" p-8 md:p-12">
-                                    <div className="flex flex-col gap-8 items-center justify-center">
-                                        <div className="relative w-full max-w-[602px] aspect-602/107 rounded-xl overflow-hidden shadow-lg">
-                                            <Image src={`${A}/Decision1-05.png`} alt="Idea 2 Design" fill quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="flex flex-col gap-2 w-full max-w-[602px]">
-                                            <ProConCard variant="con" full>Users had to stretch their thumbs to reach the customize icon, making it hard to tap.</ProConCard>
-                                            <ProConCard variant="pro" full>Placing the Customize icon on the left helped users immediately understand how to change settings instead of experimenting to find the action.</ProConCard>
-                                        </div>
-                                    </div>
-                                </GrayBox>
+                                <BodyText>
+                                    Following removal of preview, I added a Customize icon instead of using a hidden gesture. I kept the checkbox, even though it did not fully match Material 3. This decision was to preserve existing user behaviour.
+                                </BodyText>
                             </div>
+                            <GrayBox className=" p-8 md:p-12">
+                                <div className="flex flex-col gap-8 items-center justify-center">
+                                    <div className="relative w-full max-w-[602px] aspect-602/107 rounded-xl overflow-hidden shadow-lg">
+                                        <Image src={`${A}/Decision1-05.png`} alt="Idea 2 Design" fill quality={90} className="object-cover" />
+                                    </div>
+                                    <div className="flex flex-col gap-2 w-full max-w-[602px]">
+                                        <ProConCard variant="con" full>Users had to stretch their thumbs to reach the customize icon, making it hard to tap.</ProConCard>
+                                        <ProConCard variant="pro" full>Placing the Customize icon on the left helped users immediately understand how to change settings instead of experimenting to find the action.</ProConCard>
+                                    </div>
+                                </div>
+                            </GrayBox>
+                        </div>
+                    </section>
 
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
                             {/* --- Research Insight Section --- */}
-                            <div className="flex flex-col gap-6">
-                                <BodyText>
-                                    I was unsure how can we conserve user behaviour and follow design standards as well. I went to other apps to see how they tackled the the problem of keep selection and edit (secondary action) viable. When I saw Gmail it become very clear what I was missing out.
-                                </BodyText>
+                            <BodyText>
+                                I was unsure how can we conserve user behaviour and follow design standards as well. I went to other apps to see how they tackled the the problem of keep selection and edit (secondary action) viable. When I saw Gmail it become very clear what I was missing out.
+                            </BodyText>
 
-                                <GrayBox className=" p-8 md:p-12">
-                                    <div className="flex flex-col gap-8 items-center justify-center">
-                                        <div className="flex flex-col md:flex-row gap-6 w-full items-center justify-center">
-                                            <div className="relative w-full max-w-[492px] aspect-492/106 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision1-06.png`} alt="Gmail Example 1" fill quality={90} className="object-cover" />
-                                            </div>
-                                            <div className="relative w-full max-w-[487px] aspect-487/110 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision1-07.png`} alt="Gmail Example 2" fill quality={90} className="object-cover" />
-                                            </div>
+                            <GrayBox className=" p-8 md:p-12">
+                                <div className="flex flex-col gap-8 items-center justify-center">
+                                    <div className="flex flex-col md:flex-row gap-6 w-full items-center justify-center">
+                                        <div className="relative w-full max-w-[492px] aspect-492/106 rounded-xl overflow-hidden shadow-lg bg-white">
+                                            <Image src={`${A}/Decision1-06.png`} alt="Gmail Example 1" fill quality={90} className="object-cover" />
                                         </div>
-                                        <div className="flex flex-col gap-2 w-full max-w-[552px]">
-                                            <ProConCard variant="pro" full>One click on the item avatar selects it and UI enters selection mode.</ProConCard>
-                                            <ProConCard variant="pro" full>Secondary action like starring was on right and still viable.</ProConCard>
+                                        <div className="relative w-full max-w-[487px] aspect-487/110 rounded-xl overflow-hidden shadow-lg bg-white">
+                                            <Image src={`${A}/Decision1-07.png`} alt="Gmail Example 2" fill quality={90} className="object-cover" />
                                         </div>
                                     </div>
-                                </GrayBox>
-
-                                <BodyText>
-                                    When I talked to users about Gmail, a comment similar to “it is how it is” came up in every conversation. This meant that they felt safe while interacting with card, so much so that it became second nature. This made me realise that following same pattern won’t cause much friction in users.
-                                </BodyText>
-                            </div>
-
-                            {/* --- Final Design Section --- */}
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-5">
-                                    <div className="flex flex-col gap-3">
-                                        <div className="flex self-start">
-                                            <Badge variant="success">Final Design</Badge>
-                                        </div>
-                                        <Heading>By making applied settings visible, the final design removed reverification and reduced decision time during printing</Heading>
+                                    <div className="flex flex-col gap-2 w-full max-w-[552px]">
+                                        <ProConCard variant="pro" full>One click on the item avatar selects it and UI enters selection mode.</ProConCard>
+                                        <ProConCard variant="pro" full>Secondary action like starring was on right and still viable.</ProConCard>
                                     </div>
-                                    <BodyText>
-                                        By prioritising recognition, user moved through flow much faster as they had higher confidence on their decision.
-                                    </BodyText>
                                 </div>
-                                <GrayBox className=" p-8 md:p-12">
-                                    <div className="flex items-center justify-center">
-                                        <div className="relative w-full max-w-[602px] aspect-602/253">
-                                            <Image src={`${A}/Decision1-08.png`} alt="Final Card Design" fill quality={90} className="object-contain" />
-                                        </div>
+                            </GrayBox>
+
+                            <BodyText>
+                                When I talked to users about Gmail, a comment similar to “it is how it is” came up in every conversation. This meant that they felt safe while interacting with card, so much so that it became second nature. This made me realise that following same pattern won’t cause much friction in users.
+                            </BodyText>
+                        </div>
+                    </section>
+
+                    <Divider/>
+
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col  gap-6 w-full">
+                            {/* --- Final Design Section --- */}
+                            <div className="flex flex-col px-6 pt-4 gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex self-start">
+                                        <Badge variant="success">Final Design</Badge>
                                     </div>
-                                </GrayBox>
+                                    <Heading>By making applied settings visible, the final design removed reverification and reduced decision time during printing</Heading>
+                                </div>
+                                <BodyText>
+                                    By prioritising recognition, user moved through flow much faster as they had higher confidence on their decision.
+                                </BodyText>
                             </div>
+                            <GrayBox className=" p-8 md:p-12">
+                                <div className="flex items-center justify-center">
+                                    <div className="relative w-full max-w-[602px] aspect-602/253">
+                                        <Image src={`${A}/Decision1-08.png`} alt="Final Card Design" fill quality={90} className="object-contain" />
+                                    </div>
+                                </div>
+                            </GrayBox>
 
-
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-col px-6 pb-8 gap-3">
                                 <BodyText>
                                     In testing, we noticed most of the users already knew what to do, without much guidance.
                                 </BodyText>
@@ -705,10 +766,14 @@ export default function PrinthubPage() {
                                 </BodyText>
                             </div>
                         </div>
+                    </section>
 
-                        {/* --- Decision 2 --- */}
+                    <Hatching />
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
                         <div className="flex flex-col gap-6 w-full">
-                            <div className="flex flex-col gap-5">
+                            {/* --- Decision 2 --- */}
+                            <div className="flex flex-col px-6 pt-8 gap-5">
                                 <div className="flex flex-col gap-3">
                                     <div className="flex self-start">
                                         <Badge variant="info">Decision 2</Badge>
@@ -726,7 +791,7 @@ export default function PrinthubPage() {
                             </div>
 
                             <GrayBox title="Current Design Analysis" >
-                                <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6 items-center justify-center">
+                                <div className="flex lg:flex-row flex-col gap-4 items-center justify-center p-8">
                                     <div className="flex items-center">
                                         <div className="relative w-[140px] md:w-[170px] aspect-170/378 rounded-xl overflow-hidden shadow-lg ">
                                             <Image src={`${A}/Decision2-01.png`} alt="Before" fill sizes="(max-width: 768px) 140px, 170px" quality={90} className="object-cover" />
@@ -745,54 +810,63 @@ export default function PrinthubPage() {
                                     </div>
                                 </div>
                             </GrayBox>
+                        </div>
+                    </section>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-5">
-                                    <div className="flex flex-col gap-3">
-                                        <BodyText>
-                                            Observation showed that many users missed the button change, and no one understood what “Print Summary” meant. New users were forced to click it just to learn its function.
-                                        </BodyText>
-                                        <BodyText>
-                                            I realised the problem wasn’t the button itself but how the button behaved and meant to users.
-                                        </BodyText>
-                                        <BodyText>
-                                            My initial assumption was to stick to material guidelines, this led me to two ideas:
-                                        </BodyText>
-                                    </div>
-
-                                    <div className="flex flex-col gap-3">
-                                        <div className="flex self-start">
-                                            <Badge variant="error">Idea 1</Badge>
-                                        </div>
-                                        <Heading>Floating Action Buttons</Heading>
-                                    </div>
-
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                                <div className="flex flex-col gap-3">
                                     <BodyText>
-                                        I decided to keep the “Add files” button as primary button and “Print Files” as secondary FAB as Printing was depended on adding file. This made adding files primary action.
+                                        Observation showed that many users missed the button change, and no one understood what “Print Summary” meant. New users were forced to click it just to learn its function.
+                                    </BodyText>
+                                    <BodyText>
+                                        I realised the problem wasn’t the button itself but how the button behaved and meant to users.
+                                    </BodyText>
+                                    <BodyText>
+                                        My initial assumption was to stick to material guidelines, this led me to two ideas:
                                     </BodyText>
                                 </div>
+                                </div>
+                                </section>
 
-                                <GrayBox className=" p-8">
-                                    <div className="flex flex-col gap-6 items-center justify-center">
-                                        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
-                                            <div className="relative w-[40cqw] max-w-[391px] aspect-391/151 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-03.png`} alt="Idea 1 Design 1" fill sizes="(max-width: 768px) 40vw, 391px" quality={90} className="object-cover" />
-                                            </div>
-                                            <div className="relative w-[40cqw] max-w-[174px] aspect-174/152 rounded-xl overflow-hidden shadow-lg bg-white">
-                                                <Image src={`${A}/Decision2-04.png`} alt="Idea 1 Design 2" fill sizes="(max-width: 768px) 40vw, 174px" quality={90} className="object-cover" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col gap-2 w-full max-w-[614px]">
-                                            <ProConCard variant="con" full>This reduced importance of ”Print files” which is essential to completion of flow.</ProConCard>
-                                            <ProConCard variant="con" full>Users where confused what button does because the print icon was associated with changing printer rather than printing itself.</ProConCard>
-                                        </div>
+                                <Divider/>
+                                
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex self-start">
+                                        <Badge variant="error">Idea 1</Badge>
                                     </div>
-                                </GrayBox>
+                                    <Heading>Floating Action Buttons</Heading>
+                                </div>
+
+                                <BodyText>
+                                    I decided to keep the “Add files” button as primary button and “Print Files” as secondary FAB as Printing was depended on adding file. This made adding files primary action.
+                                </BodyText>
                             </div>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-5">
-                                    <div className="flex flex-col gap-3">
+                            <GrayBox className="p-8" t>
+                                <div className="flex flex-col gap-6 items-center justify-center">
+                                    <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                                        <div className="relative w-[40cqw] max-w-[391px] aspect-391/151 rounded-xl overflow-hidden shadow-lg bg-white">
+                                            <Image src={`${A}/Decision2-03.png`} alt="Idea 1 Design 1" fill sizes="(max-width: 768px) 40vw, 391px" quality={90} className="object-cover" />
+                                        </div>
+                                        <div className="relative w-[40cqw] max-w-[174px] aspect-174/152 rounded-xl overflow-hidden shadow-lg bg-white">
+                                            <Image src={`${A}/Decision2-04.png`} alt="Idea 1 Design 2" fill sizes="(max-width: 768px) 40vw, 174px" quality={90} className="object-cover" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                                        <ProConCard variant="con" full>This reduced importance of ”Print files” which is essential to completion of flow.</ProConCard>
+                                        <ProConCard variant="con" full>Users where confused what button does because the print icon was associated with changing printer rather than printing itself.</ProConCard>
+                                    </div>
+                                </div>
+                            </GrayBox>
+                        
+                        
+                    </section>
+
+                    <section className="flex flex-col border border-border-default w-full">
+                                    <div className="flex flex-col px-6 py-4 gap-3">
                                         <BodyText>
                                             This revealed a key insight. “Print Files” depends on “Add Files,” but printing is the primary action because it drives revenue. It cannot be deprioritized relative to adding files.
                                         </BodyText>
@@ -800,7 +874,13 @@ export default function PrinthubPage() {
                                             Following insight, I mapped user journey and understood that one specific moments act as pivot i.e. when user selects file. So I decided to experiment with contextual buttons.
                                         </BodyText>
                                     </div>
+                                    
+                    </section>
 
+                    <Divider/>
+
+                                    <section className="flex flex-col border border-border-default w-full">
+                                    <div className="flex flex-col px-6 py-8 gap-6 w-full">
                                     <div className="flex flex-col gap-3">
                                         <div className="flex self-start">
                                             <Badge variant="error">Idea 2</Badge>
@@ -813,7 +893,7 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
 
-                                <GrayBox className="p-8 ">
+                                <GrayBox className="p-8" t>
                                     <div className="flex flex-col gap-6 items-center justify-center">
                                         <div className="relative w-full max-w-[610px] aspect-610/238 rounded-xl overflow-hidden shadow-lg">
                                             <Image src={`${A}/Decision2-05.png`} alt="Idea 2 Design" fill sizes="(max-width: 768px) 100vw, 610px" quality={90} className="object-cover" />
@@ -825,8 +905,10 @@ export default function PrinthubPage() {
                                         </div>
                                     </div>
                                 </GrayBox>
-                            </div>
+                   
 
+                    
+                        <div className="flex flex-col px-6 py-4 border-t border-border-default gap-6 w-full">
                             <div className="flex flex-col gap-6">
                                 <BodyText>
                                     We tested this idea with users got the following feedback.
@@ -839,7 +921,7 @@ export default function PrinthubPage() {
                                             <Image src={`${A}/Person-01.png`} alt="User 1" fill sizes="(max-width: 768px) 100px, 156px" quality={90} className="object-contain" />
                                         </div>
                                         <div className="bg-bg-default border-2 border-border-default rounded-3xl px-6 py-4 max-w-[400px]">
-                                            <p className="text-body-sm text-text-primary">
+                                            <p className="font-body-sm text-text-primary">
                                                 “How do I print file, I have added them already. At least in I knew what to do earlier”
                                             </p>
                                         </div>
@@ -850,17 +932,17 @@ export default function PrinthubPage() {
                                             <Image src={`${A}/Person-02.png`} alt="User 2" fill sizes="(max-width: 768px) 100px, 156px" quality={90} className="object-contain" />
                                         </div>
                                         <div className="bg-bg-default border-2 border-border-default rounded-3xl px-6 py-4 max-w-[400px]">
-                                            <p className="text-label text-text-primary text-right">
+                                            <p className="font-body-sm text-text-primary text-right">
                                                 “I have to select so many files 🥲”
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>              
 
-                            <div className="flex flex-col gap-6">
-
-                                <div className="flex flex-col gap-3">
+                        
+                                <div className="flex flex-col border-y border-border-default px-6 py-4 gap-3">
                                     <BodyText>
                                         The comment “I knew what to do earlier” was a frequent. Stakeholders were concerned that this change would cause a lot of confusion between users so we reimplemented original logic.
                                     </BodyText>
@@ -869,7 +951,9 @@ export default function PrinthubPage() {
                                     </BodyText>
                                 </div>
 
-                                <div className="flex flex-col gap-5">
+                                <Divider/>
+
+                                <div className="flex flex-col px-6 border-y border-border-default py-4 gap-5">
                                     <div className="flex flex-col gap-3">
                                         <div className="flex self-start">
                                             <Badge variant="success">Final Design</Badge>
@@ -898,8 +982,10 @@ export default function PrinthubPage() {
                                         </div>
                                     </div>
                                 </GrayBox>
-                            </div>
+                    </section>
 
+                    <section className="flex flex-col border-x border-b border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
                             <div className="flex flex-col gap-3">
                                 <BodyText>
                                     As the deadline approached, we could not test this change and released it to users.
@@ -909,281 +995,326 @@ export default function PrinthubPage() {
                                 </BodyText>
                             </div>
                         </div>
-
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 08. HOW PEOPLE USE PRINTHUB ──                              */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full">
-                        <Heading>How people use Printhub</Heading>
+                    <Hatching height="h-12"/>
 
-                        {/* --- Nina's Story --- */}
-                        <div className="flex flex-col gap-6 w-full">
-                            <div className="flex flex-col gap-5">
-                                <p className="text-h3 text-text-primary">Nina can’t remember her submission.</p>
-                                <div className="flex flex-col gap-3">
-                                    <BodyText>
-                                        Nina, a daily Printhub user, can't remember if she submitted her coding assignment. Her friends mention the coding assignment that was due yesterday. She tries to recall whether she actually submitted it. To find out, she opens the app, to check if she printed it or not.
-                                    </BodyText>
-                                    <BodyText>
-                                        She bypasses the main print functions, and heads directly to her past order history to see if a print job for it exists.
-                                    </BodyText>
-                                </div>
-                            </div>
-
-                            {/* Sequence 1: Nina opening history */}
-                            <GrayBox>
-                                <div className="flex w-full py-4 overflow-x-auto scrollbar-hide">
-                                    <div className="flex items-center justify-center min-w-max mx-auto p-4">
-                                        <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story1-01.png`} alt="Nina opens app" fill sizes="(max-width: 768px) 140px, 320px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-5 md:w-16 aspect-100/10">
-                                            <Image src={`/printhub/Story1Arrow-01.svg`} alt="Then" fill sizes="(max-width: 768px) 20px, 64px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[140px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story1-02.png`} alt="Nina checks history" fill sizes="(max-width: 768px) 140px, 320px" quality={90} className="object-cover" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </GrayBox>
-
-                            <BodyText>
-                                She doesn’t remember the orderID, so she starts looking for all the prints from yesterday.
-                            </BodyText>
-
-                            {/* Sequence 2: Nina looking for prints */}
-                            <GrayBox className="py-8">
-                                <div className="flex items-center justify-center overflow-x-auto pb-4 scrollbar-hide">
-                                    <div className="flex items-center px-4 min-w-max">
-                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px] shadow-xl">
-                                            <Image src={`/printhub/Story1-03.png`} alt="Step 1" fill sizes="(max-width: 768px) 110px, 200px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
-                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 16px, 32px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-04.png`} alt="Step 2" fill sizes="(max-width: 768px) 110px, 200px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-8 aspect-10/20">
-                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-05.png`} alt="Step 3" fill sizes="(max-width: 768px) 110px, 200px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-6 md:w-8 aspect-10/20">
-                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 16px, 32px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[110px] md:w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[64px]  shadow-xl">
-                                            <Image src={`/printhub/Story1-06.png`} alt="Step 4" fill sizes="(max-width: 768px) 110px, 200px" quality={90} className="object-cover" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </GrayBox>
-
-                            <BodyText>
-                                She found it: 'final_final_assignment.pdf' in yesterday's print history. A huge sigh of relief. Since it was printed, it should’ve been submitted.
-                            </BodyText>
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                            <Heading>How people use Printhub</Heading>
                         </div>
+                    </section>
 
-                        {/* --- Raju's Story --- */}
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
                         <div className="flex flex-col gap-6 w-full">
-                            <div className="flex flex-col gap-5">
-                                <p className="text-h3 text-text-primary">Raju Is Too Busy to Wait for His Prints.</p>
+                            {/* --- Nina's Story --- */}
+                            <div className="flex flex-col gap-6 w-full">
+                                <div className="flex flex-col px-6 py-4 gap-5">
+                                    <SubHeading>Nina can’t remember her submission.</SubHeading>
+                                    <div className="flex flex-col gap-3">
+                                        <BodyText>
+                                            Nina, a daily Printhub user, can't remember if she submitted her coding assignment. Her friends mention the coding assignment that was due yesterday. She tries to recall whether she actually submitted it. To find out, she opens the app, to check if she printed it or not.
+                                        </BodyText>
+                                        <BodyText>
+                                            She bypasses the main print functions, and heads directly to her past order history to see if a print job for it exists.
+                                        </BodyText>
+                                    </div>
+                                </div>
+
+                                {/* Sequence 1: Nina opening history */}
+                                <GrayBox t b>
+                                    <div className="flex w-full py-8 md:py-4">
+                                        <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
+                                            <div className="relative w-[240px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story1-01.png`} alt="Nina opens app" fill sizes="(max-width: 768px) 240px, 320px" quality={90} className="object-cover" />
+                                            </div>
+                                            <div className="relative shrink-0 w-8 md:w-16 aspect-square md:aspect-100/10 rotate-90 md:rotate-0 flex items-center justify-center">
+                                                <Image src={`/printhub/Story1Arrow-01.svg`} alt="Then" fill sizes="(max-width: 768px) 32px, 64px" quality={90} className="object-contain" />
+                                            </div>
+                                            <div className="relative w-[240px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story1-02.png`} alt="Nina checks history" fill sizes="(max-width: 768px) 240px, 320px" quality={90} className="object-cover" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </GrayBox>
+
+                                <div className="px-6 py-4">
                                 <BodyText>
-                                    Raju works at a government office. With an audit approaching, his workload is heavy. He needs some files printed. He opens PrintHub to get it done. He uploads the files to be printed and completes the process.
+                                    She doesn’t remember the orderID, so she starts looking for all the prints from yesterday.
                                 </BodyText>
+                                </div>
+
+                                {/* Sequence 2: Nina looking for prints */}
+                                <GrayBox className="py-8" t b>
+                                    <div className="flex w-full flex-col md:flex-row items-center justify-center p-4">
+                                        <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
+                                            <Image src={`/printhub/Story1-03.png`} alt="Step 1" fill sizes="200px" quality={90} className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-6 h-6 md:w-8 md:h-16 rotate-90 md:rotate-0 flex items-center justify-center">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 24px, 32px" quality={90} className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
+                                            <Image src={`/printhub/Story1-04.png`} alt="Step 2" fill sizes="200px" quality={90} className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-6 h-6 md:w-8 md:h-16 rotate-90 md:rotate-0 flex items-center justify-center">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 24px, 32px" quality={90} className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
+                                            <Image src={`/printhub/Story1-05.png`} alt="Step 3" fill sizes="200px" quality={90} className="object-cover" />
+                                        </div>
+                                        <div className="relative shrink-0 w-6 h-6 md:w-8 md:h-16 rotate-90 md:rotate-0 flex items-center justify-center">
+                                            <Image src={`/printhub/Story1Arrow-02.svg`} alt="Next" fill sizes="(max-width: 768px) 24px, 32px" quality={90} className="object-contain" />
+                                        </div>
+                                        <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
+                                            <Image src={`/printhub/Story1-06.png`} alt="Step 4" fill sizes="200px" quality={90} className="object-cover" />
+                                        </div>
+                                    </div>
+                                </GrayBox>
+                                <div className="px-6 py-4">
+                                <BodyText>
+                                    She found it: 'final_final_assignment.pdf' in yesterday's print history. A huge sigh of relief. Since it was printed, it should’ve been submitted.
+                                </BodyText>
+                                </div>
                             </div>
+                        </div>
+                    </section>
 
-                            {/* Sequence 1: Raju placing order */}
-                            <GrayBox className=" p-8 md:p-12">
-                                <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
-                                    <div className="flex items-center px-2 min-w-max">
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-01.png`} alt="Start" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-02.png`} alt="Placed" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-03.png`} alt="Processing" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
+                    <div className="border border-border-default h-8 w-full"></div>
+
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col gap-6 w-full">
+                            {/* --- Raju's Story --- */}
+                            <div className="flex flex-col gap-6 w-full">
+                                <div className="flex flex-col px-6 py-4  gap-5">
+                                    <SubHeading>Raju Is Too Busy to Wait for His Prints.</SubHeading>
+                                    <BodyText>
+                                        Raju works at a government office. With an audit approaching, his workload is heavy. He needs some files printed. He opens PrintHub to get it done. He uploads the files to be printed and completes the process.
+                                    </BodyText>
+                                </div>
+
+                                {/* Sequence 1: Raju placing order */}
+                                <GrayBox className="" t b>
+                                    <div className="flex w-full py-8 md:py-4">
+                                        <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-01.png`} alt="Start" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
+                                            <div className="relative shrink-0 w-8 h-8 md:w-12 md:h-12 aspect-square rotate-90 md:rotate-0 flex items-center justify-center">
+                                                <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 32px, 48px" quality={90} className="object-contain" />
+                                            </div>
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-02.png`} alt="Placed" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
+                                            <div className="relative shrink-0 w-8 h-8 md:w-12 md:h-12 aspect-square rotate-90 md:rotate-0 flex items-center justify-center">
+                                                <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 32px, 48px" quality={90} className="object-contain" />
+                                            </div>
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-03.png`} alt="Processing" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
                                         </div>
                                     </div>
+                                </GrayBox>
+
+                                <div className="px-6 py-4">
+                                <BodyText>
+                                    Once order is placed, he observes that the status is pending, so he goes back to work. After about 15 minutes, he checks in again.
+                                </BodyText>
                                 </div>
-                            </GrayBox>
 
-                            <BodyText>
-                                Once order is placed, he observes that the status is pending, so he goes back to work. After about 15 minutes, he checks in again.
-                            </BodyText>
-
-                            {/* Sequence 2: Raju collecting prints */}
-                            <GrayBox className="p-8 md:p-12">
-                                <div className="flex items-center justify-center overflow-x-auto scrollbar-hide">
-                                    <div className="flex items-center px-2 min-w-max">
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-04.png`} alt="Ready" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-4 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 16px, 48px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-05.png`} alt="Collected" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
-                                        </div>
-                                        <div className="relative shrink-0 w-6 md:w-12 aspect-square">
-                                            <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 24px, 48px" quality={90} className="object-contain" />
-                                        </div>
-                                        <div className="relative w-[130px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
-                                            <Image src={`/printhub/Story2-06.png`} alt="Back to history" fill sizes="(max-width: 768px) 130px, 240px" quality={90} className="object-cover" />
+                                {/* Sequence 2: Raju collecting prints */}
+                                <GrayBox className="p-8 md:p-12" t b>
+                                    <div className="flex w-full py-8 md:py-4">
+                                        <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-04.png`} alt="Ready" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
+                                            <div className="relative shrink-0 w-8 h-8 md:w-12 md:h-12 aspect-square rotate-90 md:rotate-0 flex items-center justify-center">
+                                                <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 32px, 48px" quality={90} className="object-contain" />
+                                            </div>
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-05.png`} alt="Collected" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
+                                            <div className="relative shrink-0 w-8 h-8 md:w-12 md:h-12 aspect-square rotate-90 md:rotate-0 flex items-center justify-center">
+                                                <Image src={`/printhub/Story2Arrow.svg`} alt="Then" fill sizes="(max-width: 768px) 32px, 48px" quality={90} className="object-contain" />
+                                            </div>
+                                            <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
+                                                <Image src={`/printhub/Story2-06.png`} alt="Back to history" fill sizes="(max-width: 768px) 240px, 240px" quality={90} className="object-cover" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </GrayBox>
+                                </GrayBox>
 
-                            <BodyText>
-                                He notices his last order is still processing, so he walks to the printer to collect it. He was happy, that quick visual nudges show him the moment the prints are ready, letting him pick them up without losing time.
-                            </BodyText>
+                                <div className="px-6 py-4">
+                                <BodyText>
+                                    He notices his last order is still processing, so he walks to the printer to collect it. He was happy, that quick visual nudges show him the moment the prints are ready, letting him pick them up without losing time.
+                                </BodyText>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. UI SYSTEM ──                                            */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full">
-                        {/* Intro Block */}
-                        <div className="flex flex-col gap-6">
-                            <Heading>UI System I created for better handoff</Heading>
-                            <div className="relative w-full aspect-1550/920 rounded-lg overflow-hidden shadow-sm border border-black/5">
-                                <Image src={`/printhub/Comp-01.png`} alt="Full UI System" fill quality={90} className="object-contain" />
-                            </div>
-                        </div>
+                    <Hatching height="h-12"/>
 
-                        {/* Material Design Block */}
-                        <div className="flex flex-col gap-6">
-                            <BodyText>
-                                The original app was based on Flutter, so I decided to use Material Design. Components from the new Material 3 Expressive system were used and selectively modified to fit the product.
-                            </BodyText>
-
-                            <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6">
-                                {/* Left Column: Component Sheets */}
-                                <div className="flex flex-col gap-4">
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
-                                        <Image
-                                            src={`/printhub/Comp-02.png`}
-                                            alt="Component Sheet 1"
-                                            fill
-                                            quality={90}
-                                            className="object-contain"
-                                        />
-                                    </div>
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
-                                        <Image
-                                            src={`/printhub/Comp-06.png`}
-                                            alt="Component Sheet 2"
-                                            fill
-                                            quality={90}
-                                            className="object-contain"
-                                            style={{ objectPosition: '5% 48%' }}
-                                        />
-                                    </div>
-                                    <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
-                                        <Image
-                                            src={`/printhub/Comp-04.png`}
-                                            alt="Component Sheet 3"
-                                            fill
-                                            quality={90}
-                                            className="object-contain"
-                                            style={{ objectPosition: '0% 5%' }}
-                                        />
-                                    </div>
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col gap-6 w-full">
+                            {/* Intro Block */}
+                            <div className="flex flex-col gap-6">
+                                <div className="px-6 py-4">
+                                <Heading>UI System I created for better handoff</Heading>
                                 </div>
-                                {/* Right Column: Buttons & Icons */}
-                                <div className="flex flex-col gap-6">
-                                    <div className="relative w-full aspect-378/380 rounded-xl">
-                                        <Image src={`/printhub/Comp-05.png`} alt="Primary Buttons" fill quality={90} className="object-contain" />
-                                    </div>
-                                    <div className="relative w-full aspect-387/384 rounded-xl">
-                                        <Image src={`/printhub/Comp-03.png`} alt="App Icons" fill quality={90} className="object-contain" />
-                                    </div>
+                                <div className="relative w-full aspect-1550/920">
+                                    <Image src={`/printhub/Comp-01.png`} alt="Full UI System" fill quality={90} className="object-contain" />
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Variable Tokens Section */}
-                        <div className="flex flex-col gap-6">
-                            <BodyText>
-                                I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable; with empty tokens ready for new colours. This ensured the new design met Material Design colour standards.
-                            </BodyText>
-                            <div className="relative w-full aspect-4096/2686 rounded-[32px] overflow-hidden bg-white shadow-sm border border-border-default">
-                                <Image src={`/printhub/Comp-07.png`} alt="Token System Variables" fill quality={90} className="object-cover" />
-                            </div>
-                        </div>
-
-                        {/* Atomic Components Section */}
-                        <div className="flex flex-col gap-6">
-                            <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
-                                <div className="relative w-[180px] md:w-[226px] aspect-455/1000 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-08.png`} alt="Custom Component Structure" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
-                                </div>
-                                <div className="flex flex-col gap-4 max-w-[420px] text-center">
-                                    <BodyText>
-                                        Clear nomenclature and mixture of various components allowed me to customise components to fit various situations and use cases.
-                                    </BodyText>
-                                </div>
-                                <div className="relative w-[180px] md:w-[226px] aspect-224/248 rounded-xl overflow-hidden shadow-lg border border-black/5">
-                                    <Image src={`/printhub/UI-09.png`} alt="Atomic Component Mix" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
-                                </div>
-                            </div>
-                            <BodyText>
-                                I built bigger components as a mixture of smaller atomic components. Auto Layout was used in order to maintain a consistent spacing and arranged even when the size of component changes.
-                            </BodyText>
                         </div>
                     </section>
+
+                    <div className="border border-border-default h-8 w-full"></div>
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col gap-6 w-full">
+                            {/* Material Design Block */}
+                            <div className="flex flex-col gap-6">
+                                <div className="px-6 py-4">
+                                <BodyText>
+                                    The original app was based on Flutter, so I decided to use Material Design. Components from the new Material 3 Expressive system were used and selectively modified to fit the product.
+                                </BodyText>
+                                </div>
+
+                                <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-6">
+                                    {/* Left Column: Component Sheets */}
+                                    <div className="flex flex-col gap-4">
+                                        <div className="relative w-full aspect-1013/310  ">
+                                            <Image
+                                                src={`/printhub/Comp-02.png`}
+                                                alt="Component Sheet 1"
+                                                fill
+                                                quality={90}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
+                                            <Image
+                                                src={`/printhub/Comp-06.png`}
+                                                alt="Component Sheet 2"
+                                                fill
+                                                quality={90}
+                                                className="object-contain"
+                                                style={{ objectPosition: '5% 48%' }}
+                                            />
+                                        </div>
+                                        <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
+                                            <Image
+                                                src={`/printhub/Comp-04.png`}
+                                                alt="Component Sheet 3"
+                                                fill
+                                                quality={90}
+                                                className="object-contain"
+                                                style={{ objectPosition: '0% 5%' }}
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Right Column: Buttons & Icons */}
+                                    <div className="flex flex-col gap-6">
+                                        <div className="relative w-full aspect-378/380 ">
+                                            <Image src={`/printhub/Comp-05.png`} alt="Primary Buttons" fill quality={90} className="object-contain" />
+                                        </div>
+                                        <div className="relative w-full aspect-387/384 ">
+                                            <Image src={`/printhub/Comp-03.png`} alt="App Icons" fill quality={90} className="object-contain" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                            {/* Variable Tokens Section */}
+                            <div className="flex flex-col gap-6">
+                                <BodyText>
+                                    I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable; with empty tokens ready for new colours. This ensured the new design met Material Design colour standards.
+                                </BodyText>
+                                <div className="relative w-full aspect-4096/2686 rounded-[32px] overflow-hidden bg-white shadow-sm border border-border-default">
+                                    <Image src={`/printhub/Comp-07.png`} alt="Token System Variables" fill quality={90} className="object-cover" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="flex flex-col border border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                            {/* Atomic Components Section */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
+                                    <div className="relative w-[180px] md:w-[226px] aspect-455/1000 rounded-xl overflow-hidden shadow-lg border border-black/5">
+                                        <Image src={`/printhub/UI-08.png`} alt="Custom Component Structure" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
+                                    </div>
+                                    <div className="flex flex-col gap-4 max-w-[420px] text-center">
+                                        <BodyText>
+                                            Clear nomenclature and mixture of various components allowed me to customise components to fit various situations and use cases.
+                                        </BodyText>
+                                    </div>
+                                    <div className="relative w-[180px] md:w-[226px] aspect-224/248 rounded-xl overflow-hidden shadow-lg border border-black/5">
+                                        <Image src={`/printhub/UI-09.png`} alt="Atomic Component Mix" fill sizes="(max-width: 768px) 180px, 226px" quality={90} className="object-cover" />
+                                    </div>
+                                </div>
+                                <BodyText>
+                                    I built bigger components as a mixture of smaller atomic components. Auto Layout was used in order to maintain a consistent spacing and arranged even when the size of component changes.
+                                </BodyText>
+                            </div>
+                        </div>
+                    </section>
+
+                    <Hatching height="h-12"/>
 
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 10. CONCLUSION ──                                           */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-12 w-full">
-                        {/* Part 1: What if I had more time? */}
-                        <div className="flex flex-col gap-5 max-w-[1024px]">
-                            <SubHeading>What if I had more time?</SubHeading>
-                            <div className="flex flex-col gap-3">
-                                <BodyText>
-                                    My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.
-                                </BodyText>
-                                <BodyText>
-                                    Moreover, some initial assumptions were green-lit quickly by stakeholders, we would like to conduct a thorough testing and make sure these really work.
-                                </BodyText>
-                                <BodyText>
-                                    Future versions of Printhub could introduce features like user presets, deeper customization, and quick-print options tailored to individual needs.
-                                </BodyText>
+                    <section className="flex flex-col border-x border-t border-border-default w-full">
+                        <div className="flex flex-col px-6 py-8 gap-12 w-full">
+                            {/* Part 1: What if I had more time? */}
+                            <div className="flex flex-col gap-5 max-w-[1024px]">
+                                <Heading>What if I had more time?</Heading>
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>
+                                        My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.
+                                    </BodyText>
+                                    <BodyText>
+                                        Moreover, some initial assumptions were green-lit quickly by stakeholders, we would like to conduct a thorough testing and make sure these really work.
+                                    </BodyText>
+                                    <BodyText>
+                                        Future versions of Printhub could introduce features like user presets, deeper customization, and quick-print options tailored to individual needs.
+                                    </BodyText>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Part 2: Main takeaway */}
-                        <div className="flex flex-col gap-5 max-w-[1024px]">
-                            <SubHeading>Main takeaway</SubHeading>
-                            <div className="flex flex-col gap-3">
-                                <BodyText>
-                                    The main takeaway from this project was on my process. Just providing design wasn’t enough, designer and developers have to actively communicate in order to provide a experience as it is designed.
-                                </BodyText>
-                                <BodyText>
-                                    Biggest change in my process is focusing on the bigger picture rather than just work as a designer.
-                                </BodyText>
-                                <BodyText>
-                                    A great design that can scale is always better than a perfect one that can never be fully built.
-                                </BodyText>
+                            {/* Part 2: Main takeaway */}
+                            <div className="flex flex-col gap-5 max-w-[1024px]">
+                                <Heading>Main takeaway</Heading>
+                                <div className="flex flex-col gap-3">
+                                    <BodyText>
+                                        The main takeaway from this project was on my process. Just providing design wasn’t enough, designer and developers have to actively communicate in order to provide a experience as it is designed.
+                                    </BodyText>
+                                    <BodyText>
+                                        Biggest change in my process is focusing on the bigger picture rather than just work as a designer.
+                                    </BodyText>
+                                    <BodyText>
+                                        A great design that can scale is always better than a perfect one that can never be fully built.
+                                    </BodyText>
+                                </div>
                             </div>
+                            <Heading>Thank you!</Heading>
                         </div>
-                        <SubHeading>Thank you!</SubHeading>
                     </section>
 
+                    <div className="border border-border-default h-8 w-full"></div>
 
                     <Footer />
                 </div>
