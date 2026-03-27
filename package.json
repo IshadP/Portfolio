@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
-    "@yet3/tailwindcss-bg-patterns": "^2.2.0",
     "framer-motion": "^12.35.2",
     "next": "16.1.6",
     "pdfjs-dist": "^5.5.207",
