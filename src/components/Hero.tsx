@@ -26,21 +26,25 @@ export default function Hero() {
     }
 
     return (
-        <section className="sticky top-0 left-0 w-full flex justify-center z-0 py-32 items-center">
+        <section className="sticky top-0 left-0 w-full flex justify-center z-0 pb-32 items-center">
             <motion.div
-                className="flex flex-col items-start justify-center w-full max-w-[1024px] px-3"
+                className="flex flex-col md:h-96 h-64 items-start gap-24 justify-center w-full max-w-[1024px] px-3"
                 initial="initial"
                 animate="animate"
                 variants={heroVariants}
                 transition={heroTransition}
             >
                 {pathname === "/" && (
-                    <p className="font-hero">
+                    <div className="font-hero flex flex-col gap-24">
+                        <div className="w-full flex flex-row justify-between items-center font-label-lg-mono text-text-disabled">
+                            <p>Ishad Pande</p>
+                            <p>Nagpur, India</p>
+                        </div>
                         Engineer turned Product Designer, designing experiences and building them with code.
-                    </p>
+                    </div>
                 )}
 
-                {pathname === "/ai-experiments" && (
+                {pathname === "/experiments" && (
                     <div className="flex items-center w-full justify-center gap-4">
                         <div className="relative w-16 h-16 overflow-hidden">
                             <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />

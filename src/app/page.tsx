@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import FadeIn from "@/components/FadeIn";
 import Experience from "@/components/Landing/Experience";
+import Hatching from "@/components/Hatching";
 
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
                         <Navbar />
 
                         {/* Hatching */}
-                        <div className="relative h-6 shrink-0 w-full border-x border-border-default bg-[image:repeating-linear-gradient(315deg,_var(--color-border-default)_0,_var(--color-border-default)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px]"></div>
+                        <Hatching />
 
                         {/* Projects Section */}
                         <div className="w-full flex flex-col border border-border-default max-w-[1024px] overflow-hidden">
@@ -73,7 +74,7 @@ export default function Home() {
                         <Experience />
 
                         {/* Hatching */}
-                        <div className="relative h-6 w-full border-x border-border-default bg-[image:repeating-linear-gradient(315deg,_var(--color-border-default)_0,_var(--color-border-default)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px]"></div>
+                        <Hatching />
 
                         {/* Footer */}
                         <Footer />

@@ -155,6 +155,19 @@
       @apply font-display md:text-6xl text-4xl font-semibold md:leading-16 leading-10;
    }
 
+   .font-h2 {
+      @apply font-display md:text-4xl text-2xl font-semibold md:leading-12 leading-10;
+   }
+
+   .font-h3 {
+      @apply font-display md:text-2xl text-xl font-semibold;
+   }
+
+   .font-h4 {
+      @apply font-display md:text-xl text-lg font-semibold ;
+   }
+
+
    /* Label — sans (Geist) */
    .font-label-lg {
       @apply font-sans text-lg font-medium leading-6;
@@ -173,13 +186,25 @@
       @apply font-sans md:text-2xl text-xl font-semibold;
    }
 
+   .font-body-md {
+      @apply font-sans md:text-xl text-lg font-medium;
+   }
+
    .font-body-md-bold {
       @apply font-sans md:text-xl text-lg font-semibold;
    }
 
+   .font-body-sm {
+      @apply font-sans md:text-lg text-sm font-medium;
+   }
+
+   .font-body-sm-bold {
+      @apply font-sans md:text-lg text-sm font-semibold;
+   }
+
    /* Label — mono (Geist Mono) */
    .font-label-lg-mono {
-      @apply font-mono md:text-lg text-base font-medium leading-6;
+      @apply font-mono md:text-lg text-sm font-medium leading-6;
    }
 
    .font-label-md-mono {

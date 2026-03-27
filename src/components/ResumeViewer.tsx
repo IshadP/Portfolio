@@ -2,15 +2,57 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist";
+import { motion, useAnimation } from "framer-motion";
 import { DownloadSimpleIcon } from "@phosphor-icons/react";
 
 // Set worker path
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
+/* ── Motion config ── */
+const spring = { type: "spring", stiffness: 300, damping: 25 } as const;
+
+const ctaWrapperVariants = {
+  rest: {
+    paddingBottom: "0.375rem",
+    marginTop: "0rem"
+  },
+  tap: {
+    paddingBottom: "0rem",
+    marginTop: "0.300rem"
+  },
+};
+
 export default function ResumeViewer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const controls = useAnimation();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Prevent triggering if user is typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      if (e.key.toLowerCase() === 'v') {
+        controls.start("tap");
+        linkRef.current?.click();
+      }
+    };
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === 'v') {
+        controls.start("rest");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [controls]);
 
   useEffect(() => {
     let renderTask: pdfjsLib.RenderTask | null = null;
@@ -73,19 +115,38 @@ export default function ResumeViewer() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-8 w-full">
+    <div className="flex flex-col items-center gap-8 my-8 w-full">
       <div className="flex justify-center items-center w-full">
-        <a
-          href="/resume.pdf"
-          download="Ishad_Pande_Resume.pdf"
-          className="flex items-center gap-2 hover:bg-text-primary hover:text-bg-primary bg-bg-subtle text-text-primary hover:text-bg-default duration-300 px-6 py-3 rounded-full text-label transition-all"
+        <motion.a
+          ref={linkRef}
+          href="/Ishad_Pande.pdf"
+          download="Ishad_Pande.pdf"
+          className="w-full max-w-[280px]"
+          initial="rest"
+          animate={controls}
+          whileHover="hover"
+          whileTap="tap"
         >
-          <DownloadSimpleIcon size={20} weight="bold" />
-          <span>Download PDF</span>
-        </a>
+          <motion.div
+            variants={ctaWrapperVariants}
+            transition={spring}
+            className="w-full px-0.5 pt-0.5 bg-blue-950 rounded-sm flex"
+          >
+            <motion.div
+              transition={spring}
+              className="self-stretch w-full p-3 bg-blue-800 rounded-xs inline-flex justify-center items-center gap-2 overflow-hidden"
+            >
+              <DownloadSimpleIcon size={20} weight="bold" className="text-active-fg" />
+              <span className="font-label-sm-mono text-active-fg">DOWNLOAD PDF</span>
+              <div className="h-6 w-6 bg-blue-900 rounded-sm flex justify-center items-center">
+                <span className="font-label-sm-mono text-active-fg">V</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </motion.a>
       </div>
 
-      <div className="w-full bg-bg-subtle rounded-2xl p-4 md:p-8 flex justify-center overflow-auto border-2 border-border-default shadow-sm min-h-[600px] relative">
+      <div className="w-full bg-bg-subtle p-4 md:p-8 flex justify-center overflow-auto border-y border-border-default shadow-sm min-h-[600px] relative">
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
             <div className="w-8 h-8 border-4 border-text-primary border-t-transparent rounded-full animate-spin"></div>
@@ -96,7 +157,7 @@ export default function ResumeViewer() {
           <div className="flex flex-col items-center justify-center gap-4 text-center py-20">
             <p className="text-body text-text-secondary">{error}</p>
             <a
-              href="/resume.pdf"
+              href="/Ishad_Pande.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-primary underline text-body"

@@ -61,7 +61,7 @@ export default function SecondaryProjectCard({
     const containerVariants = {
         rest:  { 
             backgroundColor: "var(--color-neutral-100)", 
-            borderColor: "var(--color-neutral-300)",
+            borderColor: "var(--color-border-default)",
             boxShadow: "inset 0 0 0 0px var(--color-accent-border)"
         },
         hover: { 

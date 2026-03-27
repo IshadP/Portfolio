@@ -5,41 +5,43 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import FadeIn from "@/components/FadeIn";
-import PrimaryProjectCard from "@/components/Landing/PrimaryProjectCard";
+import SecondaryProjectCard from "@/components/Landing/SecondaryProjectCard";
 import BuildingWithAiCard from "@/components/BuildingWithAiCard";
+import Hatching from "@/components/Hatching";
 
 export default function AiExperimentsPage() {
   return (
     <div className="flex flex-col min-h-screen items-center relative px-6">
-      <div className="w-full flex justify-center max-w-[1024px] @container">
+      <div className="w-full flex flex-col justify-center max-w-[1024px] @container">
         {/* Hero Background */}
         <Hero />
 
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
-          <motion.div className="flex mt-[40vh] max-w-[1024px] w-full flex-col bg-bg-subtle gap-4">
+          <motion.div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle">
             <Navbar />
 
-            <div className="flex flex-col gap-4">
-              <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2" id="experiments">
-                <PrimaryProjectCard
+            <Hatching />
+            <div className="flex flex-col">
+              <div className="grid w-full grid-cols-1 md:grid-cols-2" id="experiments">
+                <SecondaryProjectCard
                   title="Prototype for User Testing"
-                  subtitle="Printhub"
+                  slug="Printhub"
                   imageCenter="/cards/Print1-01.png"
                   imageLeft="/cards/Print1-02.png"
                   imageRight="/cards/Print1-03.png"
-                  routeText="/PRINTHUB"
+                  ctaText="View Live"
                   href="https://printproto.vercel.app/"
                   variant="two-pages"
                 />
 
-                <PrimaryProjectCard
+                <SecondaryProjectCard
                   title="Retro Pomodoro App"
-                  subtitle="POMDOM"
+                  slug="POMDOM"
                   imageCenter="/cards/Printhub2-01.png"
                   imageLeft="/cards/pomdom-screenshot.png"
                   imageRight="/cards/pomdom-screenshot.png"
-                  routeText="/POMDOM"
+                  ctaText="View Github"
                   href="https://github.com/IshadP/Pomdom"
                   variant="two-pages"
                 />

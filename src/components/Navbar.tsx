@@ -9,7 +9,7 @@ import { useEmailShortcut } from "../hooks/useEmailShortcut";
 
 const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Experiments", href: "/ai-experiments" },
+    { label: "Experiments", href: "/experiments" },
     { label: "Resume", href: "/resume" },
 ];
 

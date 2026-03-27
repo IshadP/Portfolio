@@ -343,7 +343,7 @@ export default function PrinthubPage() {
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
                     {/* ── 09. USER FLOW JOURNEY ──                                    */}
                     {/* ────────────────────────────────────────────────────────────────────────────── */}
-                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-neutral-300">
+                    <section className="flex flex-col gap-16 w-full pt-8 border-t border-border-default">
                         <div className="flex flex-col gap-8 w-full">
                             <Heading>How redesigned Printhub reduces user anxiety</Heading>
                             <BodyText>

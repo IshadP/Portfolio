@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://ishadpande.com",
     siteName: "Ishad Pande",
-    title: "Ishad Pande — Product Designer",
+    title: "Ishad Pande",
     description:
-      "The portfolio of Ishad Pande, a product designer crafting thoughtful digital experiences.",
+      "The portfolio of Ishad Pande, a product designer who can code.",
     images: [
       {
         url: "/og-image.png",
