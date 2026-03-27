@@ -256,3 +256,8 @@
          /* 5. End of total cycle */
       );
 }
+
+.image-render-high-quality {
+  image-rendering: -webkit-optimize-contrast; /* Sharpens the image in Webkit browsers */
+  image-rendering: high-quality;
+}

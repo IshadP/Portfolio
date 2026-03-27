@@ -81,7 +81,7 @@ export default function Home() {
                                 <p className="font-label-lg-mono text-text-muted">Person behind the designs</p>
                                 </div>
                                 <div className="flex md:flex-row flex-col border-t border-border-default">
-                                    <div className="w-full h-full flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
+                                    <div className="w-full md:w-1/2 flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
                                         <p>Hello, I'm Ishad,</p>
                                         <p>Currently in Senior Year of B.Tech in Computer Science and Engineering at Government College of Engineering, Nagpur.</p>
                                         <p>My first introduction to design was in 6th grade when I wondered "Why do these cars look so good?".</p>
@@ -89,7 +89,16 @@ export default function Home() {
                                         <p> I have been designig ever since. But I go back to development once in a while just for fun.</p>
                                         <p>PS: About us page coming soon!</p>
                                     </div>
-                                    <Image src="/Photo.jpg" alt="Photo" width={100} height={100} quality={100} className="w-full h-full object-cover" />
+                                    <div className="w-full md:w-1/2 relative min-h-[500px]">
+                                        <Image 
+                                            src="/Photo.jpg" 
+                                            alt="Photo" 
+                                            fill 
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px" 
+                                            priority
+                                            className="object-cover image-rendering-high-quality" 
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         
