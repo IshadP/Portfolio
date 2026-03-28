@@ -77,31 +77,31 @@ export default function Home() {
                         <Hatching />
 
                         <div className="w-full flex flex-col  border border-border-default max-w-[1024px] overflow-hidden">
-                                <div className="p-6">
+                            <div className="p-6">
                                 <p className="font-label-lg-mono text-text-muted">Person behind the designs</p>
+                            </div>
+                            <div className="flex md:flex-row flex-col border-t border-border-default">
+                                <div className="w-full md:w-1/2 flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
+                                    <p>Hello, I'm Ishad,</p>
+                                    <p>Currently in Senior Year of B.Tech in Computer Science and Engineering at Government College of Engineering, Nagpur.</p>
+                                    <p>My first introduction to design was in 6th grade when I wondered "Why do these cars look so good?".</p>
+                                    <p>Fast forward to my second year, I picked up designing again to answer a single question "How should this app look and feel?".</p>
+                                    <p> I have been designing ever since. But I go back to development once in a while just for fun.</p>
+                                    <p>PS: About us page coming soon!</p>
                                 </div>
-                                <div className="flex md:flex-row flex-col border-t border-border-default">
-                                    <div className="w-full md:w-1/2 flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
-                                        <p>Hello, I'm Ishad,</p>
-                                        <p>Currently in Senior Year of B.Tech in Computer Science and Engineering at Government College of Engineering, Nagpur.</p>
-                                        <p>My first introduction to design was in 6th grade when I wondered "Why do these cars look so good?".</p>
-                                        <p>Fast forward to my second year, I picked up designing again to answer a single question "How should this app look and feel?".</p>
-                                        <p> I have been designig ever since. But I go back to development once in a while just for fun.</p>
-                                        <p>PS: About us page coming soon!</p>
-                                    </div>
-                                    <div className="w-full md:w-1/2 relative min-h-[500px]">
-                                        <Image 
-                                            src="/Photo.jpg" 
-                                            alt="Photo" 
-                                            fill 
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px" 
-                                            priority
-                                            className="object-cover image-rendering-high-quality" 
-                                        />
-                                    </div>
+                                <div className="w-full md:w-1/2 relative min-h-[500px]">
+                                    <Image
+                                        src="/Photo.jpg"
+                                        alt="Photo"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                                        priority
+                                        className="object-cover image-rendering-high-quality"
+                                    />
                                 </div>
                             </div>
-                        
+                        </div>
+
 
                         <Hatching />
 
