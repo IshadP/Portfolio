@@ -41,7 +41,7 @@ export default function AiExperimentsPage() {
                 <SecondaryProjectCard
                   title="Retro Pomodoro App"
                   slug="POMDOM"
-                  imageCenter="/cards/Printhub2-01.png"
+                  imageCenter="/cards/pomdom-screenshot.png"
                   imageLeft="/cards/pomdom-screenshot.png"
                   imageRight="/cards/pomdom-screenshot.png"
                   ctaText="View Github"

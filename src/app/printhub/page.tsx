@@ -123,7 +123,7 @@ export default function PrinthubPage() {
             {/* ── Main Content ── */}
             <FadeIn className="w-full flex flex-col justify-center bg-bg-subtle z-10">
 
-                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col  px-4">
+                <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col ">
                     {/* Top Gradient Fade Overlay */}
                     <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
 
@@ -583,7 +583,7 @@ export default function PrinthubPage() {
                                         <Image src={`${A}/Decision1-02.png`} alt="Option 1" fill quality={90} className="object-contain" />
                                     </div>
                                 </GrayBox>
-                                <div className="flex flex-col">
+                                <div className="flex gap-1 flex-col">
                                     <ProConCard variant="pro" full>Changes in a features are clearly visible.</ProConCard>
                                     <ProConCard variant="pro" full>Visuals are processed faster and reduces cognitive load.</ProConCard>
                                     <ProConCard variant="con" full>Can cause confusion due to different interpretation of icons.</ProConCard>
@@ -595,7 +595,7 @@ export default function PrinthubPage() {
                                         <Image src={`${A}/Decision1-03.png`} alt="Option 2" fill quality={90} className="object-contain" />
                                     </div>
                                 </GrayBox>
-                                <div className="flex flex-col">
+                                <div className="flex gap-1 flex-col">
                                     <ProConCard variant="pro" full>Clearly tell which options are used to print the item.</ProConCard>
                                     <ProConCard variant="pro" full>Removing guesswork on what is active and what’s not active.</ProConCard>
                                     <ProConCard variant="con" full>This becomes unnecessary for users who print only a few items and adds avoidable cognitive load.</ProConCard>

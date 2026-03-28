@@ -87,19 +87,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} ${caveat.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} ${caveat.variable} antialiased min-flex flex-col`}h-screen 
       >
         <main className="grow bg-bg-subtle">{children}</main>
-        <div className="w-full mt-auto">
-          <Image
-            src="/minecraft-landscape.png"
-            alt="Minecraft Landscape"
-            width={1920}
-            height={200}
-            quality={90}
-            className="w-full bg-bg-subtle h-auto block"
-          />
-        </div>
+        <p className="text-center bg-bg-subtle font-label-lg-mono text-text-muted p-8"> Designed and built by Ishad Pande</p>
       </body>
     </html>
   );

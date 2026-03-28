@@ -14,7 +14,7 @@ export default function Badge({
 }) {
     // 1. Map colors to variants
     const colors: Record<BadgeVariant, string> = {
-        error: "bg-status-error-bg text-text-red border border-border-error",
+        error: "bg-status-error-bg text-status-error-fg border border-border-error",
         info: "bg-status-info-bg text-status-info-fg border border-border-info",
         success: "bg-status-success-bg text-status-success-fg border border-border-success",
     };

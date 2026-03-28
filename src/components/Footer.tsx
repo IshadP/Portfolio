@@ -55,13 +55,13 @@ export default function Footer() {
         <footer className="w-full flex flex-col items-center">
             {/* Nav style footer block */}
             <div className="w-full max-w-[1024px] h-fit bg-bg-subtle border border-border-default flex md:flex-row flex-col justify-between items-center">
-                
+
                 {/* Social Links */}
                 <div className="flex w-full md:w-fit justify-start items-stretch border-border-default">
                     {[
-                        { 
-                            name: "X", 
-                            href: "https://x.com/ishadpande", 
+                        {
+                            name: "X",
+                            href: "https://x.com/ishadpande",
                             color: "#000000",
                             icon: (
                                 <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -69,9 +69,9 @@ export default function Footer() {
                                 </svg>
                             )
                         },
-                        { 
-                            name: "LinkedIn", 
-                            href: "https://www.linkedin.com/in/ishadpande", 
+                        {
+                            name: "LinkedIn",
+                            href: "https://www.linkedin.com/in/ishadpande",
                             color: "#0A66C2",
                             icon: (
                                 <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -79,9 +79,9 @@ export default function Footer() {
                                 </svg>
                             )
                         },
-                        { 
-                            name: "Behance", 
-                            href: "https://www.behance.net/ishadpande", 
+                        {
+                            name: "Behance",
+                            href: "https://www.behance.net/ishadpande",
                             color: "#0057FF",
                             icon: (
                                 <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -98,10 +98,10 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`flex flex-1 md:flex-none md:w-16 h-16 aspect-square items-center justify-center border-r border-border-default no-underline group transition-colors duration-200`}
-                            style={{ 
+                            style={{
                                 backgroundColor: isMobile ? platform.color : "transparent"
                             }}
-                            whileHover={{ 
+                            whileHover={{
                                 backgroundColor: platform.color,
                             }}
                         >
@@ -180,11 +180,12 @@ export default function Footer() {
             </div>
 
             {/* Thanks for visiting block */}
-            <div className="w-full max-w-[1024px] h-96 relative border-l border-r border-border-default overflow-hidden rounded-bl-lg rounded-br-lg bg-bg-subtle">
-                <div className="absolute inset-0 flex flex-col justify-center items-center">
-                    <span className="text-text-disabled text-3xl md:text-6xl font-bold font-caveat">Thanks for visiting. </span>
-                    <span className="text-[#eab308] text-3xl md:text-6xl font-bold font-caveat">Have a great day!</span>
+            <div className="w-full max-w-[1024px] pt-16 flex flex-col justify-center items-stretch relative border-l border-r border-border-default overflow-hidden rounded-bl-lg rounded-br-lg bg-bg-subtle">
+                <div className="flex flex-col justify-center items-center">
+                    <span className="text-text-disabled text-4xl md:text-6xl font-bold font-caveat">Thanks for visiting. </span>
+                    <span className="text-[#eab308] text-4xl md:text-6xl font-bold font-caveat">Have a great day!</span>
                 </div>
+                <Image src="/bg.webp" alt="Hero" width={1024} height={1024} quality={90} className="object-contain" />
             </div>
         </footer>
     );
