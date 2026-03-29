@@ -87,7 +87,7 @@ export default function Home() {
                                     <p>My first introduction to design was in 6th grade when I wondered "Why do these cars look so good?".</p>
                                     <p>Fast forward to my second year, I picked up designing again to answer a single question "How should this app look and feel?".</p>
                                     <p> I have been designing ever since. But I go back to development once in a while just for fun.</p>
-                                    <p>PS: About us page coming soon!</p>
+                                    <p>PS: About me page coming soon!</p>
                                 </div>
                                 <div className="w-full md:w-1/2 relative min-h-[500px]">
                                     <Image
