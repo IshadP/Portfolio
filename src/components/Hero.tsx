@@ -50,7 +50,7 @@ export default function Hero() {
                             <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />
                         </div>
                         <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
-                            AI Experiments
+                            AI Experiment
                         </p>
                     </div>
                 )}

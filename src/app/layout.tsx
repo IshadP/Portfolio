@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter_Tight, Caveat } from "next/font/google";
+import { Geist, Geist_Mono, Caveat, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 
 const geistSans = Geist({
-  variable: "--font-sans", // Fixed: matched to standard Tailwind sans
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-mono", // Fixed: matched to standard Tailwind mono
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
-const interTight = Inter_Tight({
-  variable: "--font-display", // This was already correct!
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 const caveat = Caveat({
@@ -87,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} ${caveat.variable} antialiased min-flex flex-col`}h-screen 
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} antialiased flex flex-col min-h-screen`}
       >
         <main className="grow bg-bg-subtle">{children}</main>
         <p className="text-center bg-bg-subtle font-label-lg-mono text-text-muted p-8"> Designed and built by Ishad Pande</p>

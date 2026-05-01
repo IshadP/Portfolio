@@ -21,7 +21,7 @@
      ---------------------------------------------------------- */
    --font-sans: "Geist", sans-serif;
    --font-mono: "Geist Mono", monospace;
-   --font-display: "Inter Display", sans-serif;
+   --font-display: var(--font-display), serif;
    --font-caveat: var(--font-caveat), cursive;
 
    /* ----------------------------------------------------------
@@ -153,7 +153,7 @@
 
    /* Display / Hero */
    .font-hero {
-      @apply font-display md:text-6xl text-4xl font-semibold md:leading-16 leading-10;
+      @apply font-display md:text-7xl text-4xl font-semibold;
    }
 
    .font-h2 {
@@ -161,11 +161,11 @@
    }
 
    .font-h3 {
-      @apply font-display md:text-2xl text-xl font-semibold;
+      @apply font-display md:text-3xl text-xl font-semibold;
    }
 
    .font-h4 {
-      @apply font-display md:text-xl text-lg font-semibold ;
+      @apply font-display md:text-xl text-lg font-semibold;
    }
 
 
@@ -202,7 +202,7 @@
    .font-body-sm-bold {
       @apply font-sans md:text-lg text-sm font-semibold;
    }
-   
+
    .font-body-xs {
       @apply font-sans md:text-base text-sm font-medium;
    }
@@ -259,6 +259,7 @@
 }
 
 .image-render-high-quality {
-  image-rendering: -webkit-optimize-contrast; /* Sharpens the image in Webkit browsers */
-  image-rendering: high-quality;
+   image-rendering: -webkit-optimize-contrast;
+   /* Sharpens the image in Webkit browsers */
+   image-rendering: high-quality;
 }
