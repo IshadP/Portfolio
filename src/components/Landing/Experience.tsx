@@ -3,8 +3,13 @@ import React from 'react';
 const experiences = [
     {
         title: "UX Design Intern",
+        company: "Grid Insight, Nagpur",
+        date: "Apr 2026 - Present",
+    },
+    {
+        title: "UX Design Intern",
         company: "Drona Well Played, Nagpur",
-        date: "Feb 2026 - Present",
+        date: "Feb 2026 - Apr 2026",
     },
     {
         title: "Freelance Design Consultant",
