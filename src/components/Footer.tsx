@@ -178,15 +178,6 @@ export default function Footer() {
                     </motion.button>
                 </div>
             </div>
-
-            {/* Thanks for visiting block */}
-            <div className="w-full max-w-[1024px] pt-16 flex flex-col justify-center items-stretch relative border-l border-r border-border-default overflow-hidden rounded-bl-lg rounded-br-lg bg-bg-subtle">
-                <div className="flex flex-col justify-center items-center">
-                    <span className="text-text-disabled text-4xl md:text-6xl font-bold font-caveat">Thanks for visiting. </span>
-                    <span className="text-[#eab308] text-4xl md:text-6xl font-bold font-caveat">Have a great day!</span>
-                </div>
-                <Image src="/bg.webp" alt="Hero" width={1024} height={1024} quality={90} className="object-contain" />
-            </div>
         </footer>
     );
 }
