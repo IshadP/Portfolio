@@ -1,8 +1,5 @@
-"use client"
-
-import React, { useState, useEffect } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
@@ -11,55 +8,7 @@ import Badge from "../../components/caseStudy/Badge";
 import GrayBox from "../../components/caseStudy/GrayBox";
 import ProConCard from "../../components/caseStudy/ProConCard";
 import Hatching from "@/components/Hatching";
-
-// ──────────────────────────────────────────────────────────────────────────────
-// ── Shared UI Components (extracted from YoutubeCaseStudyUI.tsx) ──
-// ──────────────────────────────────────────────────────────────────────────────
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-label-lg-mono text-text-disabled w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function BodyText({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-body-sm text-text-secondary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Heading({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h2 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-function SubHeading({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h3 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Title({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h2 px-6 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Divider() {
-    return (
-        <div className="border-x border-border-default h-8 w-full"></div>
-    );
-}
+import { BodyText, Divider, Heading, SectionLabel, SubHeading, Title } from "@/components/caseStudy/LayoutPrimitives";
 
 
 const A = "/printhub";
@@ -77,7 +26,7 @@ function JourneyStep({
     narrative: string;
     screen: string;
     arrow?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }) {
     return (
         <div className="flex flex-col items-center w-full group">
@@ -379,6 +328,23 @@ export default function PrinthubPage() {
                             </BodyText>
                         </div>
 
+                        <div className="w-full pb-8">
+                            <div className="relative w-full overflow-hidden">
+                                <Image
+        src={`${A}/Journey.avif`}
+        alt="Redesigned Printhub journey"
+        width={1024}
+        height={8561}
+        sizes="100vw"
+        quality={90}
+        className="w-full h-auto"
+    />
+                            </div>
+                        </div>
+
+                        {/* Previous step-by-step journey kept for reference. */}
+                        {false && (
+                        <>
                         <div className="flex flex-col px-8 items-center">
                             {/* --- Step 1 --- */}
                             <JourneyStep
@@ -520,6 +486,8 @@ export default function PrinthubPage() {
                             Yash felt relieved that he could print without standing in long queues outside the print shop, it was a quick scan → pay → grab for him.
                         </BodyText>
                         </div>
+                        </>
+                        )}
                     </section>
 
                     <Hatching height="h-12" />
@@ -535,9 +503,9 @@ export default function PrinthubPage() {
 
 
                     <section className="flex flex-col border-x border-t border-border-default w-full">
-                        <div className="flex flex-col px-6 py-8 gap-6 w-full"> {/* Parent container for 24px transitions */}
-                            <div className="flex flex-col gap-5"> {/* Container for 20px transition (Title to Body) */}
-                                <div className="flex flex-col gap-3"> {/* Container for 12px transition (Badge to Title) */}
+                        <div className="flex flex-col px-6 py-8 gap-6 w-full">
+                            <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-3">
                                     <div className="flex self-start">
                                         <Badge variant="info">Decision 1</Badge>
                                     </div>
@@ -1205,8 +1173,7 @@ export default function PrinthubPage() {
                                                 alt="Component Sheet 2"
                                                 fill
                                                 quality={90}
-                                                className="object-contain"
-                                                style={{ objectPosition: '5% 48%' }}
+                                                className="object-contain object-[5%_48%]"
                                             />
                                         </div>
                                         <div className="relative w-full aspect-1013/310 rounded-lg overflow-hidden bg-bg-subtle ">
@@ -1215,8 +1182,7 @@ export default function PrinthubPage() {
                                                 alt="Component Sheet 3"
                                                 fill
                                                 quality={90}
-                                                className="object-contain"
-                                                style={{ objectPosition: '0% 5%' }}
+                                                className="object-contain object-[0%_5%]"
                                             />
                                         </div>
                                     </div>

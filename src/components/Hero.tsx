@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ReadCvLogoIcon } from "@phosphor-icons/react";
@@ -15,15 +14,6 @@ const heroTransition = { duration: 0.6, ease: "easeOut" } as const;
 
 export default function Hero() {
     const pathname = usePathname();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        return <section className="fixed top-0 left-0 w-full flex justify-center z-1 min-h-[20vh] items-center opacity-0"></section>;
-    }
 
     return (
         <section className="sticky top-0 left-0 w-full flex justify-center z-0 pb-32 items-center">
@@ -37,10 +27,10 @@ export default function Hero() {
                 {pathname === "/" && (
                     <div className="font-hero flex flex-col gap-24">
                         <div className="w-full flex flex-row justify-between items-center font-label-lg-mono text-text-disabled">
-                            <p>Ishad Pande</p>
+                            <p className="">Ishad Pande</p>
                             <p>Nagpur, India</p>
                         </div>
-                        Engineer turned Product Designer, designing experiences and building them with code.
+                        Engineer turned Product Designer, designing and building experiences.
                     </div>
                 )}
 
@@ -50,7 +40,7 @@ export default function Hero() {
                             <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />
                         </div>
                         <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
-                            AI Experiment
+                            Experiments
                         </p>
                     </div>
                 )}
@@ -58,7 +48,7 @@ export default function Hero() {
                 {pathname === "/resume" && (
                     <div className="flex items-center w-full justify-center gap-4">
                         <ReadCvLogoIcon size={64} className="text-text-primary" />
-                        <p className="font-sans font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
+                        <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Resume
                         </p>
                     </div>

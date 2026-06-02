@@ -1,6 +1,4 @@
-"use client"
-
-import React from "react";
+import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -10,58 +8,9 @@ import Badge from "../../components/caseStudy/Badge";
 import GrayBox from "../../components/caseStudy/GrayBox";
 import ProConCard from "../../components/caseStudy/ProConCard";
 import Hatching from "../../components/Hatching";
+import { BodyText, Divider, Heading, SectionLabel, SubHeading, Title } from "@/components/caseStudy/LayoutPrimitives";
 
-// ──────────────────────────────────────────────────────────────────────────────
-// ── Shared UI Components (Aligned with Printhub Pattern) ──
-// ──────────────────────────────────────────────────────────────────────────────
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-label-lg-mono text-text-disabled w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function BodyText({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-body-sm text-text-secondary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Heading({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h2 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function SubHeading({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h3 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Title({ children }: { children: React.ReactNode }) {
-    return (
-        <p className="font-h2 px-6 text-text-primary w-full max-w-[1024px]">
-            {children}
-        </p>
-    );
-}
-
-function Divider() {
-    return (
-        <div className="border-x border-border-default h-8 w-full"></div>
-    );
-}
-
-function ActionIndicator({ children }: { children: React.ReactNode }) {
+function ActionIndicator({ children }: { children: ReactNode }) {
     return (
         <div className="flex flex-col items-center justify-center py-12 relative w-full h-[140px] lg:h-[180px]">
             <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 -z-10 w-[2px] h-full flex flex-col gap-2 overflow-hidden">
@@ -86,7 +35,7 @@ function JourneyStep({
 }: {
     narrative: string;
     screen: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }) {
     return (
         <div className="flex flex-col items-center w-full group">
@@ -668,7 +617,7 @@ export default function YouTubeCaseStudy() {
                             <GrayBox title="Applying Filters" className="flex flex-col p-8 md:p-12" t b>
                                 <div className="flex flex-wrap items-center justify-center w-full">
                                     {[1, 2, 3, 4].map((i) => (
-                                        <React.Fragment key={i}>
+                                        <Fragment key={i}>
                                             <div className="relative w-[140px] md:w-[180px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0 border border-border-default bg-white">
                                                 <Image src={`${A}/Story1-0${i}.png`} alt={`Applying Filters Step ${i}`} fill sizes="(max-width: 768px) 140px, 180px" quality={100} className="object-cover" />
                                             </div>
@@ -677,7 +626,7 @@ export default function YouTubeCaseStudy() {
                                                     <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" quality={100} className="object-contain" />
                                                 </div>
                                             )}
-                                        </React.Fragment>
+                                        </Fragment>
                                     ))}
                                 </div>
                             </GrayBox>
@@ -689,7 +638,7 @@ export default function YouTubeCaseStudy() {
                             <GrayBox title="Finding the video" className="flex flex-col p-8 md:p-12" t b>
                                 <div className="flex flex-wrap items-center justify-center w-full">
                                     {[5, 6, 7, 8].map((i) => (
-                                        <React.Fragment key={i}>
+                                        <Fragment key={i}>
                                             <div className="relative w-[140px] md:w-[180px] aspect-218/485 rounded-xl overflow-hidden shadow-lg shrink-0 border border-border-default bg-white">
                                                 <Image src={`${A}/Story1-0${i}.png`} alt={`Finding Video Step ${i}`} fill sizes="(max-width: 768px) 140px, 180px" quality={100} className="object-cover" />
                                             </div>
@@ -698,7 +647,7 @@ export default function YouTubeCaseStudy() {
                                                     <Image src={`${A}/arrow.svg`} alt="arrow" fill sizes="28px" quality={100} className="object-contain" />
                                                 </div>
                                             )}
-                                        </React.Fragment>
+                                        </Fragment>
                                     ))}
                                 </div>
                             </GrayBox>

@@ -33,6 +33,7 @@ export default function PrimaryProjectCard({
     imageAlt = "",
     imageLeft,
     imageRight,
+    priorityImages = false,
     className,
     href,
     side = "left",
@@ -154,8 +155,7 @@ export default function PrimaryProjectCard({
         <motion.div
             variants={dividerVariants}
             transition={spring}
-            className={`hidden md:flex col-span-1 self-stretch p-6 md:p-8 flex-col justify-between items-start overflow-hidden ${side === "left" ? "border-r" : "border-l"}`}
-            style={{ borderColor: "var(--color-border-default)" }}
+            className={`hidden md:flex col-span-1 self-stretch p-6 md:p-8 flex-col justify-between items-start overflow-hidden border-border-default ${side === "left" ? "border-r" : "border-l"}`}
         >
             {headerRow}
             {contentBox}
@@ -172,7 +172,7 @@ export default function PrimaryProjectCard({
                     transition={spring}
                     className="absolute inset-0 origin-center"
                 >
-                    <Image src={leftSrc} alt="" fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority />
+                    <Image src={leftSrc} alt="" fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority={priorityImages} />
                 </motion.div>
 
                 {/* Right image */}
@@ -181,7 +181,7 @@ export default function PrimaryProjectCard({
                     transition={spring}
                     className="absolute inset-0 origin-center"
                 >
-                    <Image src={rightSrc} alt="" fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority />
+                    <Image src={rightSrc} alt="" fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority={priorityImages} />
                 </motion.div>
 
                 {/* Center image */}
@@ -190,7 +190,7 @@ export default function PrimaryProjectCard({
                     transition={spring}
                     className="absolute inset-0 origin-center"
                 >
-                    <Image src={imageCenter} alt={imageAlt} fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority />
+                    <Image src={imageCenter} alt={imageAlt} fill sizes="(max-width: 768px) 200px, 280px" quality={90} className="object-contain" priority={priorityImages} />
                 </motion.div>
             </div>
 
@@ -217,7 +217,7 @@ export default function PrimaryProjectCard({
             transition={spring}
         >
             {/* MOBILE ONLY: Header Top */}
-            <motion.div variants={dividerVariants} transition={spring} className="md:hidden w-full border-b flex p-4" style={{ borderColor: 'var(--color-border-default)' }}>
+            <motion.div variants={dividerVariants} transition={spring} className="md:hidden w-full border-b border-border-default flex p-4">
                 {headerRow}
             </motion.div>
 
@@ -235,7 +235,7 @@ export default function PrimaryProjectCard({
             )}
 
             {/* MOBILE ONLY: Footer Content */}
-            <motion.div variants={dividerVariants} transition={spring} className="md:hidden w-full border-t flex p-4 relative z-20" style={{ borderColor: 'var(--color-border-default)' }}>
+            <motion.div variants={dividerVariants} transition={spring} className="md:hidden w-full border-t border-border-default flex p-4 relative z-20">
                 {contentBox}
             </motion.div>
         </Wrapper>

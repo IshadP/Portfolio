@@ -2,10 +2,9 @@
 
 import { useState, useCallback } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import { motion } from "framer-motion";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
 interface PdfViewerProps {
     fileUrl: string;
@@ -41,9 +40,13 @@ export default function PdfViewer({ fileUrl }: PdfViewerProps) {
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={
                     <div className="flex items-center justify-center py-20">
-                        <p className="text-code text-lg text-text-disabled animate-pulse">
+                        <motion.p
+                            className="text-code text-lg text-text-disabled"
+                            animate={{ opacity: [0.45, 1, 0.45] }}
+                            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                        >
                             Loading resume…
-                        </p>
+                        </motion.p>
                     </div>
                 }
                 error={

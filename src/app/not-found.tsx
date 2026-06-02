@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const springTransition = { type: "spring", stiffness: 200, damping: 25 } as const;
+const MotionLink = motion.create(Link);
 
 export default function NotFound() {
     return (
@@ -36,18 +37,15 @@ export default function NotFound() {
             </div>
 
             {/* Back Home Button */}
-            <motion.div
+            <MotionLink
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full bg-[#333333] px-6 py-3 font-sans text-base font-medium text-white no-underline"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 transition={springTransition}
             >
-                <Link
-                    href="/"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#333333] px-6 py-3 font-sans text-base font-medium text-white no-underline transition-colors hover:bg-[#111]"
-                >
-                    ← Back to Home
-                </Link>
-            </motion.div>
+                ← Back to Home
+            </MotionLink>
         </div>
     );
 }

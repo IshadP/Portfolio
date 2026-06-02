@@ -1,31 +1,63 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { WarningDiamond, List, X, CaretLeft, Check } from "@phosphor-icons/react";
+import { useState } from "react";
+import { ListIcon, XIcon, CaretLeftIcon, CheckIcon, CopySimpleIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEmailShortcut } from "../hooks/useEmailShortcut";
 
 const navLinks = [
-    { label: "Home", href: "/" },
+    { label: "Designs", href: "/" },
     { label: "Experiments", href: "/experiments" },
     { label: "Resume", href: "/resume" },
 ];
 
+function EmailCopiedTooltip({ visible }: { visible: boolean }) {
+    return (
+        <AnimatePresence>
+            {visible && (
+                <motion.span
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.15 }}
+                    className="pointer-events-none absolute bottom-full left-1/2 z-100 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-green-100 border border-border-default px-2 py-1 font-label-sm normal-case text-green-800 "
+                    role="status"
+                    aria-live="polite"
+                >
+                    Email copied
+                </motion.span>
+            )}
+        </AnimatePresence>
+    );
+}
+
+function EmailTooltip({ visible }: { visible: boolean }) {
+    return (
+        <AnimatePresence>
+            {visible && (
+                <motion.span
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.15 }}
+                    className="pointer-events-none absolute bottom-full left-1/2 z-100 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-bg-subtle border border-border-default px-2 py-1 font-label-sm normal-case text-text-primary "
+                    role="status"
+                    aria-live="polite"
+                >
+                    C to copy
+                </motion.span>
+            )}
+        </AnimatePresence>
+    );
+}
+
+
 export default function Navbar() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-
-    // Detect mobile vs desktop
-    useEffect(() => {
-        const mql = window.matchMedia("(max-width: 767px)");
-        setIsMobile(mql.matches);
-        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-        mql.addEventListener("change", handler);
-        return () => mql.removeEventListener("change", handler);
-    }, []);
+    const [emailTooltipVisible, setEmailTooltipVisible] = useState(false);
 
     // Map path slugs to display names
     const projectNames: Record<string, string> = {
@@ -45,20 +77,22 @@ export default function Navbar() {
     return (
         <nav className="sticky top-4 z-90 flex flex-col items-center w-full">
             {/* ── Desktop Tab-Strip Nav ── */}
-            <div className="hidden md:flex items-stretch justify-between w-full max-w-[1024px] h-16 bg-surface-light rounded-tl-lg rounded-tr-lg border border-border-default overflow-hidden">
+            <div className="hidden md:flex items-stretch justify-between w-full max-w-[1024px] h-16 bg-surface-light rounded-tl-lg rounded-tr-lg border border-border-default">
 
                 {/* Left: Tab Links */}
-                <div className="flex items-stretch">
+                <div className="flex items-stretch rounded-tl-lg overflow-hidden">
                     {isProjectPage ? (
                         <Link
                             href="/"
-                            className="flex items-center gap-2 self-stretch px-6 py-2 border-r border-border-default hover:bg-bg-muted transition-colors no-underline group"
+                            className="group flex items-center gap-2 self-stretch px-6 py-2 border-r border-border-default no-underline hover:bg-bg-muted transition-colors"
                         >
-                            <CaretLeft
-                                size={18}
-                                weight="bold"
-                                className="text-text-secondary transition-transform group-hover:-translate-x-1"
-                            />
+                            <span className="transition-transform group-hover:-translate-x-1">
+                                <CaretLeftIcon
+                                    size={18}
+                                    weight="bold"
+                                    className="text-text-secondary"
+                                />
+                            </span>
                             <span className="font-label-lg text-text-secondary">Back to Home</span>
                         </Link>
                     ) : (
@@ -68,9 +102,9 @@ export default function Navbar() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className={`self-stretch px-6 py-2 border-r border-border-default flex items-center justify-center overflow-hidden no-underline transition-colors ${isActive
+                                    className={`self-stretch px-6 py-2 border-r border-border-default flex items-center justify-center overflow-hidden no-underline ${isActive
                                             ? "bg-active-bg"
-                                            : "hover:bg-bg-subtle"
+                                            : "bg-surface-light hover:bg-bg-muted transition-colors"
                                         }`}
                                 >
                                     <span
@@ -87,7 +121,7 @@ export default function Navbar() {
 
                 {/* Right: Let's Talk + Email + Copy Key */}
                 <div className="flex items-stretch">
-                    <div className="self-stretch px-6 py-2 flex items-center gap-1 overflow-hidden">
+                    <div className="self-stretch px-6 py-2 flex items-center gap-1">
                         {/* "Let's Talk →" muted label */}
                         <span className="font-label-lg text-text-disabled">Let&apos;s Talk</span>
                         <span className="font-label-lg text-text-disabled">→</span>
@@ -105,10 +139,14 @@ export default function Navbar() {
                         {/* Keyboard-style copy key */}
                         <motion.button
                             onClick={copy}
-                            className="bg-text-primary rounded-xs outline-1 outline-border-strong inline-flex flex-col justify-start items-start ml-1 cursor-pointer"
+                            onMouseEnter={() => setEmailTooltipVisible(true)}
+                            onMouseLeave={() => setEmailTooltipVisible(false)}
+                            onFocus={() => setEmailTooltipVisible(true)}
+                            onBlur={() => setEmailTooltipVisible(false)}
+                            className="relative ml-1 inline-flex cursor-pointer items-center justify-center text-text-primary"
                             variants={{
-                                rest: { paddingBottom: "3px", marginTop: "0px" },
-                                pressed: { paddingBottom: "0px", marginTop: "3px" }
+                                rest: { y: 0 },
+                                pressed: { y: 3 }
                             }}
                             initial="rest"
                             animate={isPressed ? "pressed" : "rest"}
@@ -116,11 +154,9 @@ export default function Navbar() {
                             transition={springTransition}
                             title={copied ? "Copied!" : "Copy Email (C)"}
                         >
-                            <div className={`w-6 h-[22px] rounded-xs outline-1 outline-border-strong flex justify-center items-center ${copied ? "bg-green-100" : "bg-bg-subtle"}`}>
-                                <span className={`font-label-sm uppercase leading-none flex items-center justify-center ${copied ? "text-green-800" : "text-text-primary"}`}>
-                                    {copied ? <Check size={12} weight="bold" /> : "c"}
-                                </span>
-                            </div>
+                            <EmailTooltip visible={emailTooltipVisible && !copied} />
+                            <EmailCopiedTooltip visible={copied} />
+                            {copied ? <CheckIcon size={20} weight="bold" /> : <CopySimpleIcon size={20} />}
                         </motion.button>
                     </div>
                 </div>
@@ -136,7 +172,7 @@ export default function Navbar() {
                         <>
                             {/* Back arrow */}
                             <Link href="/" className="z-20 p-2 -ml-2" onClick={(e) => e.stopPropagation()}>
-                                <CaretLeft size={24} weight="bold" className="text-text-primary" />
+                                <CaretLeftIcon size={24} weight="bold" className="text-text-primary" />
                             </Link>
                             {/* Centered project name */}
                             <div className="absolute inset-x-0 flex justify-center pointer-events-none">
@@ -156,7 +192,7 @@ export default function Navbar() {
                                             exit={{ rotate: 90, opacity: 0 }}
                                             transition={{ duration: 0.15 }}
                                         >
-                                            <X size={28} className="text-text-primary" weight="regular" />
+                                            <XIcon size={28} className="text-text-primary" weight="regular" />
                                         </motion.div>
                                     ) : (
                                         <motion.div
@@ -166,7 +202,7 @@ export default function Navbar() {
                                             exit={{ rotate: -90, opacity: 0 }}
                                             transition={{ duration: 0.15 }}
                                         >
-                                            <List size={28} className="text-text-primary" weight="regular" />
+                                            <ListIcon size={28} className="text-text-primary" weight="regular" />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -187,7 +223,7 @@ export default function Navbar() {
                                             exit={{ rotate: 90, opacity: 0 }}
                                             transition={{ duration: 0.15 }}
                                         >
-                                            <X size={28} className="text-text-primary" weight="regular" />
+                                            <XIcon size={28} className="text-text-primary" weight="regular" />
                                         </motion.div>
                                     ) : (
                                         <motion.div
@@ -197,7 +233,7 @@ export default function Navbar() {
                                             exit={{ rotate: -90, opacity: 0 }}
                                             transition={{ duration: 0.15 }}
                                         >
-                                            <List size={28} className="text-text-primary" weight="regular" />
+                                            <ListIcon size={28} className="text-text-primary" weight="regular" />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -227,9 +263,9 @@ export default function Navbar() {
                                             key={item.label}
                                             href={item.href}
                                             onClick={() => setMenuOpen(false)}
-                                            className={`flex items-center no-underline transition-colors duration-200 p-4 border-b border-border-default  ${isActive
+                                            className={`flex items-center no-underline p-4 border-b border-border-default  ${isActive
                                                     ? "bg-active-bg text-active-fg"
-                                                    : "text-text-secondary hover:text-text-primary"
+                                                    : "text-text-secondary hover:text-text-primary transition-colors"
                                                 }`}
                                         >
                                             <span className="font-label-lg">{item.label}</span>
@@ -247,6 +283,8 @@ export default function Navbar() {
 
                                     {/* 3D padding/margin swap button */}
                                     <motion.button
+                                        onClick={copy}
+                                        className="relative"
                                         variants={{
                                             rest: { paddingBottom: "3px", marginTop: "0px" },
                                             pressed: { paddingBottom: "0px", marginTop: "3px" }
@@ -257,9 +295,10 @@ export default function Navbar() {
                                         transition={springTransition}
                                         title={copied ? "Copied!" : "Copy Email"}
                                     >
+                                    <EmailCopiedTooltip visible={copied} />
                                     <div className={`h-[22px] px-2 rounded-xs outline-1 outline-border-strong flex justify-center items-center ${copied ? "bg-green-300" : "bg-bg-subtle"}`}>
                                         <span className={`font-label-sm uppercase leading-none flex items-center justify-center ${copied ? "text-green-800" : "text-text-primary"}`}>
-                                            {copied ? <Check size={12} weight="bold" /> : "Copy"}
+                                            {copied ? <CheckIcon size={12} weight="bold" /> : "Copy"}
                                             </span>
                                         </div>
                                     </motion.button>

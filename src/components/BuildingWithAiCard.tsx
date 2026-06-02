@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function BuildingWithAiCard() {
   const steps = [
     {
@@ -19,7 +15,7 @@ export default function BuildingWithAiCard() {
   ];
 
   return (
-    <div className="bg-bg-subtle md:p-8 p-6 border-x border-border-default flex flex-col gap-6 w-full">
+    <div className="bg-bg-subtle md:p-8 p-6 border-x border-b border-border-default flex flex-col gap-6 w-full">
       <h3 className="font-h3 text-text-primary">
         How I build with AI?
       </h3>

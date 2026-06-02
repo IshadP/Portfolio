@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Caveat, Instrument_Serif } from "next/font/google";
-import "./globals.css";
-import Image from "next/image";
+import { Geist, Geist_Mono, Inter_Tight } from "next/font/google";
+import localFont from "next/font/local"
+import "./globals.css"
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const intert = Inter_Tight({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap"
 });
 
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
-});
+// const generalSans = localFont({
+//   src: "../../public/fonts/GeneralSans-Variable.woff2",
+//   variable: "--font-display",
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${intert.variable} $ antialiased flex flex-col min-h-screen`}
       >
         <main className="grow bg-bg-subtle">{children}</main>
         <p className="text-center bg-bg-subtle font-label-lg-mono text-text-muted p-8"> Designed and built by Ishad Pande</p>

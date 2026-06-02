@@ -8,6 +8,7 @@ export interface ProjectCardProps {
     imageAlt?: string;
     imageLeft?: string;
     imageRight?: string;
+    priorityImages?: boolean;
     href?: string;
     variant?: 'three-pages' | 'two-pages';
     /** Which side the text panel sits on */

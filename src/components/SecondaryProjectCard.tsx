@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variants = {
     content: {
@@ -23,7 +23,6 @@ const variants = {
 };
 
 const springTransition = { type: "spring", stiffness: 300, damping: 25 } as const;
-const tooltipTransition = { type: "spring", stiffness: 400, damping: 25 } as const;
 
 type Props = {
     title?: string;
@@ -47,8 +46,6 @@ export default function SecondaryProjectCard({
     imageRight = "/2e9b6401fca89e7b203d8dcd6dfa64d939ba12b4.png",
     routeText = "/YOUTUBE",
     href,
-    hoverLabelBg,
-    hoverLabelText,
     side = "left",
     className = "",
 }: Props) {

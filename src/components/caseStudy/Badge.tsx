@@ -1,6 +1,7 @@
 "use client";
 
 import { XIcon, TargetIcon, CheckIcon } from "@phosphor-icons/react";
+import type { ReactNode } from "react";
 
 // Define the 3 variants
 type BadgeVariant = "error" | "info" | "success" ;
@@ -9,7 +10,7 @@ export default function Badge({
     children,
     variant,
 }: {
-    children: React.ReactNode;
+    children: ReactNode;
     variant: BadgeVariant;
 }) {
     // 1. Map colors to variants
@@ -20,7 +21,7 @@ export default function Badge({
     };
 
     // 2. Map icons to variants
-    const icons: Record<BadgeVariant, React.ReactNode> = {
+    const icons: Record<BadgeVariant, ReactNode> = {
         error: <XIcon size={20} weight="bold" />,
         info: <TargetIcon size={20} weight="bold" />,
         success: <CheckIcon size={20} weight="bold" />,

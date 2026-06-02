@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { motion, useAnimation } from "framer-motion";
 import { DownloadSimpleIcon } from "@phosphor-icons/react";
 
-// Set worker path
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/legacy/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString();
 
 /* ── Motion config ── */
 const spring = { type: "spring", stiffness: 300, damping: 25 } as const;
@@ -25,6 +27,7 @@ const ctaWrapperVariants = {
 export default function ResumeViewer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const renderTaskRef = useRef<pdfjsLib.RenderTask | null>(null);
   const controls = useAnimation();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,14 +58,44 @@ export default function ResumeViewer() {
   }, [controls]);
 
   useEffect(() => {
-    let renderTask: pdfjsLib.RenderTask | null = null;
+    let loadingTask: pdfjsLib.PDFDocumentLoadingTask | null = null;
     let isMounted = true;
+
+    const ignoreCancelledRender = (err: unknown) => {
+      if (err instanceof Error && err.name === "RenderingCancelledException") {
+        return;
+      }
+
+      throw err;
+    };
+
+    const cancelActiveRender = async () => {
+      const activeRenderTask = renderTaskRef.current;
+      if (!activeRenderTask) return;
+
+      activeRenderTask.cancel();
+
+      try {
+        await activeRenderTask.promise;
+      } catch (err: unknown) {
+        ignoreCancelledRender(err);
+      } finally {
+        if (renderTaskRef.current === activeRenderTask) {
+          renderTaskRef.current = null;
+        }
+      }
+    };
 
     const renderPDF = async () => {
       try {
-        const loadingTask = pdfjsLib.getDocument("/Ishad_Pande.pdf");
+        await cancelActiveRender();
+
+        loadingTask = pdfjsLib.getDocument("/Ishad_Pande.pdf");
         const pdf = await loadingTask.promise;
+        if (!isMounted) return;
+
         const page = await pdf.getPage(1);
+        if (!isMounted) return;
 
         const viewport = page.getViewport({ scale: 1.5 });
         const canvas = canvasRef.current;
@@ -82,16 +115,21 @@ export default function ResumeViewer() {
         };
 
         // Assign the task to our variable so we can cancel it if the component unmounts
-        renderTask = page.render(renderContext);
+        const renderTask = page.render(renderContext);
+        renderTaskRef.current = renderTask;
 
         await renderTask.promise;
+
+        if (renderTaskRef.current === renderTask) {
+          renderTaskRef.current = null;
+        }
 
         if (isMounted) {
           setLoading(false);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         // Ignore errors caused by us explicitly cancelling the render task
-        if (err?.name === "RenderingCancelledException") {
+        if (err instanceof Error && err.name === "RenderingCancelledException") {
           return;
         }
 
@@ -108,14 +146,24 @@ export default function ResumeViewer() {
     // Cleanup function: Cancel the render task if the component unmounts or re-renders
     return () => {
       isMounted = false;
-      if (renderTask) {
-        renderTask.cancel();
+      loadingTask?.destroy();
+
+      const activeRenderTask = renderTaskRef.current;
+      if (activeRenderTask) {
+        activeRenderTask.cancel();
+        activeRenderTask.promise.catch((err: unknown) => {
+          if (err instanceof Error && err.name === "RenderingCancelledException") {
+            return;
+          }
+
+          console.error("Error cancelling PDF render:", err);
+        });
       }
     };
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-8 my-8 w-full">
+    <div className="flex flex-col items-center gap-8 mt-8 w-full">
       <div className="flex justify-center items-center w-full">
         <motion.a
           ref={linkRef}
@@ -146,10 +194,14 @@ export default function ResumeViewer() {
         </motion.a>
       </div>
 
-      <div className="w-full bg-bg-subtle p-4 md:p-8 flex justify-center overflow-auto border-y border-border-default shadow-sm min-h-[600px] relative">
+      <div className="w-full bg-bg-subtle p-4 md:p-8 flex justify-center overflow-auto border-y border-border-default min-h-[600px] relative">
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
-            <div className="w-8 h-8 border-4 border-text-primary border-t-transparent rounded-full animate-spin"></div>
+            <motion.div
+              className="w-8 h-8 border-4 border-text-primary border-t-transparent rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+            />
           </div>
         )}
 

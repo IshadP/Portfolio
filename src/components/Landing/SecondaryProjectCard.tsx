@@ -23,6 +23,7 @@ export default function SecondaryProjectCard({
     ctaText = "View Case Study",
     imageCenter,
     imageAlt = "",
+    priorityImages = false,
     className,
     href,
 }: ProjectCardProps) {
@@ -138,7 +139,7 @@ export default function SecondaryProjectCard({
                     transition={spring}
                     className="absolute inset-0 origin-center"
                 >
-                    <Image src={imageCenter} alt={imageAlt} fill sizes="(max-width: 768px) 200px, 240px" quality={90} className="object-contain" priority />
+                    <Image src={imageCenter} alt={imageAlt} fill sizes="(max-width: 768px) 200px, 240px" quality={90} className="object-contain" priority={priorityImages} />
                 </motion.div>
             </div>
         </div>
@@ -156,7 +157,7 @@ export default function SecondaryProjectCard({
             transition={spring}
         >
             {/* Header Top */}
-            <motion.div variants={dividerVariants} transition={spring} className="w-full border-b flex p-4" style={{ borderColor: 'var(--color-border-default)' }}>
+            <motion.div variants={dividerVariants} transition={spring} className="w-full border-b border-border-default flex p-4">
                 {headerRow}
             </motion.div>
 
@@ -164,7 +165,7 @@ export default function SecondaryProjectCard({
             {imagePanel}
 
             {/* Footer Content */}
-            <motion.div variants={dividerVariants} transition={spring} className="w-full border-t flex p-4 relative z-20" style={{ borderColor: 'var(--color-border-default)' }}>
+            <motion.div variants={dividerVariants} transition={spring} className="w-full border-t border-border-default flex p-4 relative z-20">
                 {contentBox}
             </motion.div>
         </Wrapper>

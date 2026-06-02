@@ -1,12 +1,12 @@
+"use client";
+
 import { useCopyEmail } from "../../hooks/useCopyEmail";
 import { CopyIcon, CheckIcon } from "@phosphor-icons/react";
 
 export default function CopyEmailButton({
     iconSize = 18,
-    color = "currentColor",
 }: {
     iconSize?: number;
-    color?: string;
 }) {
     const { copied, copy } = useCopyEmail();
 

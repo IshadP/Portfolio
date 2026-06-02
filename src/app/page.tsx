@@ -1,8 +1,5 @@
-"use client"
-
 import Image from "next/image";
 import PrimaryProjectCard from "../components/Landing/PrimaryProjectCard";
-import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -21,7 +18,7 @@ export default function Home() {
 
                 {/* Content wrapper that scrolls over the hero */}
                 <FadeIn className="w-full flex justify-center ">
-                    <motion.div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle rounded-lg relative">
+                    <div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle rounded-lg relative">
 
                         {/* Top Gradient Fade Overlay */}
                         <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
@@ -43,6 +40,7 @@ export default function Home() {
                                 imageRight="/cards/Print1-03.png"
                                 href="/printhub"
                                 side="left"
+                                priorityImages
                                 className="rounded-none! outline-0! border-0!"
                             />
 
@@ -96,7 +94,7 @@ export default function Home() {
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                                         priority
-                                        className="object-cover image-rendering-high-quality"
+                                        className="object-cover"
                                     />
                                 </div>
                             </div>
@@ -107,7 +105,7 @@ export default function Home() {
 
                         {/* Footer */}
                         <Footer />
-                    </motion.div>
+                    </div>
                 </FadeIn>
             </div>
         </div>
