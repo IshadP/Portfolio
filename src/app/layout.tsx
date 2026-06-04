@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} $ antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
       >
         <main className="grow bg-bg-subtle">{children}</main>
         <p className="text-center bg-bg-subtle font-label-lg-mono text-text-muted p-8"> Designed and built by Ishad Pande</p>

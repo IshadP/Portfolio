@@ -16,9 +16,9 @@ export default function Hero() {
     const pathname = usePathname();
 
     return (
-        <section className="sticky top-0 left-0 w-full flex justify-center z-0 pb-32 items-center">
+        <section className="sticky top-0 left-0 w-full flex justify-center z-0 md:pb-32 pb-16 items-center">
             <motion.div
-                className="flex flex-col md:h-96 h-64 items-start gap-24 justify-center w-full max-w-[1024px] px-3"
+                className="flex flex-col md:h-96 h-64 items-start gap-24 justify-center w-full max-w-5xl md:px-3 px-0"
                 initial="initial"
                 animate="animate"
                 variants={heroVariants}
@@ -26,17 +26,20 @@ export default function Hero() {
             >
                 {pathname === "/" && (
                     <div className="font-hero flex flex-col gap-24">
-                        <div className="w-full flex flex-row justify-between items-center font-label-lg-mono text-text-disabled">
+                        <div className="w-full md:flex hidden flex-row justify-between items-center font-label-lg-mono text-text-disabled">
                             <p className="">Ishad Pande</p>
                             <p>Nagpur, India</p>
                         </div>
-                        Engineer turned Product Designer, designing and building experiences.
+                        <div className="flex flex-col md:gap-1">
+                        <span>Engineer turned Product Designer,</span> 
+                        <span>designing and building experiences.</span>
+                        </div>
                     </div>
                 )}
 
                 {pathname === "/experiments" && (
                     <div className="flex items-center w-full justify-center gap-4">
-                        <div className="relative w-16 h-16 overflow-hidden">
+                        <div className="relative flex justify-center items-center w-16 h-16 overflow-hidden">
                             <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />
                         </div>
                         <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
@@ -47,7 +50,9 @@ export default function Hero() {
 
                 {pathname === "/resume" && (
                     <div className="flex items-center w-full justify-center gap-4">
-                        <ReadCvLogoIcon size={64} className="text-text-primary" />
+                        <div className="relative flex justify-center items-center w-16 h-16 overflow-hidden">
+                            <ReadCvLogoIcon size={64} className="text-text-primary" />
+                        </div>
                         <p className="font-display font-semibold tracking-tight text-text-primary text-4xl md:text-6xl">
                             Resume
                         </p>
