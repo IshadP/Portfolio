@@ -8,7 +8,7 @@ import Hatching from "@/components/Hatching";
 
 export default function AiExperimentsPage() {
   return (
-    <div className="flex flex-col min-h-screen items-center relative px-6">
+    <div className="flex flex-col min-h-screen items-center relative px-2">
       <div className="w-full flex flex-col justify-center max-w-[1024px] @container">
         {/* Hero Background */}
         <Hero />
@@ -23,7 +23,10 @@ export default function AiExperimentsPage() {
 
             <Hatching />
             <div className="flex flex-col">
-              <div className="grid w-full grid-cols-1 md:grid-cols-2" id="experiments">
+              <div
+                className="grid w-full grid-cols-1 md:grid-cols-2"
+                id="experiments"
+              >
                 <SecondaryProjectCard
                   title="Prototype for User Testing"
                   slug="Printhub"
@@ -60,7 +63,7 @@ export default function AiExperimentsPage() {
 
               <BuildingWithAiCard />
             </div>
-            <Hatching/>
+            <Hatching />
 
             <Footer />
           </div>
