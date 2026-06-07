@@ -95,12 +95,16 @@ export default function Footer() {
   return (
     <footer className="w-full flex flex-col items-center">
       {/* Nav style footer block */}
-      <div className="w-full max-w-[1024px] h-fit bg-bg-subtle border border-border-default flex md:flex-row flex-col justify-between items-center md:rounded-bl-lg md:rounded-br-lg ">
+      <div className="w-full max-w-5xl h-fit bg-bg-subtle border border-border-default flex md:flex-row flex-col justify-between items-center md:rounded-bl-lg md:rounded-br-lg ">
         {/* Social Links */}
         <div className="flex w-full md:w-fit md:rounded-bl-lg overflow-hidden">
           {socialLinks.map((platform, i) => (
             <a
               key={platform.name}
+              href={platform.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={platform.name}
               className={`group flex flex-1 md:flex-none md:w-16 h-16 aspect-square items-center justify-center no-underline md:border-r md:border-border-default
               ${platform.mobileClassName}
               md:bg-transparent ${platform.hoverClassName}
@@ -147,6 +151,7 @@ export default function Footer() {
               whileTap="pressed"
               transition={springTransition}
               title={copied ? "Copied!" : "Copy Email (C)"}
+              aria-label={copied ? "Email Copied" : "Copy Email"}
             >
               <EmailTooltip visible={emailTooltipVisible && !copied} />
               <EmailCopiedTooltip visible={copied} />
@@ -182,6 +187,7 @@ export default function Footer() {
             transition={springTransition}
             className="relative bg-border-strong rounded-md flex cursor-pointer"
             title={copied ? "Copied!" : "Copy Email"}
+            aria-label={copied ? "Email Copied" : "Copy Email"}
           >
             <EmailCopiedTooltip visible={copied} />
             <div

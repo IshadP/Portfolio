@@ -27,7 +27,7 @@ export default function PrinthubPage() {
 
       {/* ── Main Content ── */}
       <FadeIn className="w-full flex flex-col justify-center bg-bg-subtle z-10 px-2">
-        <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-[1024px] flex-col ">
+        <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-5xl flex-col ">
           {/* Top Gradient Fade Overlay */}
           <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
 
@@ -50,7 +50,7 @@ export default function PrinthubPage() {
                   fill
                   priority
                   sizes="100vw"
-                  quality={90}
+                  quality={80}
                   className="object-cover"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function PrinthubPage() {
                   redesign aimed to make printing fast and routine. Going into
                   this project we had 2 high level goals:
                 </BodyText>
-                <ul className="list-decimal pl-6 flex flex-col gap-3 text-body w-full text-text-primary max-w-[1024px] mx-auto">
+                <ul className="list-decimal pl-6 flex flex-col gap-3 text-body w-full text-text-primary max-w-5xl mx-auto">
                   <li>
                     <BodyText>
                       Implement Material 3 to standardise app design.
@@ -115,14 +115,14 @@ export default function PrinthubPage() {
               </div>
             </div>
 
-            <GrayBox title="Current Design" className="p-4" t>
+            <GrayBox title="Current Design" padding="sm" t>
               <div className="relative w-full aspect-984/480">
                 <Image
                   src={`${A}/image-2.webp`}
                   alt="Old Design 1"
                   fill
                   sizes="100vw"
-                  quality={90}
+                  quality={80}
                   className="object-cover"
                 />
               </div>
@@ -153,7 +153,7 @@ export default function PrinthubPage() {
               <div className="flex flex-col border-b border-r border-border-default">
                 <GrayBox
                   title="Unnecessary actions"
-                  className="flex w-full justify-center items-center"
+                  padding="sm"
                   t
                   b
                 >
@@ -162,9 +162,8 @@ export default function PrinthubPage() {
                       src={`${A}/image-3.webp`}
                       alt="Customisation Screen"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                 </GrayBox>
                 <div className="flex flex-col gap-3 px-6 py-4">
@@ -187,7 +186,7 @@ export default function PrinthubPage() {
               <div className="flex flex-col border-b border-l border-border-default">
                 <GrayBox
                   title="Goal Failure"
-                  className="flex w-full justify-center items-center"
+                  padding="sm"
                   t
                   b
                 >
@@ -196,9 +195,8 @@ export default function PrinthubPage() {
                       src={`${A}/image-4.webp`}
                       alt="Payment Screen"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                 </GrayBox>
                 <div className="flex flex-col gap-3 px-6 py-4">
@@ -332,9 +330,8 @@ export default function PrinthubPage() {
                   src={`${A}/image-5.webp`}
                   alt="AnxietyMap"
                   fill
-                  quality={90}
-                  className="object-cover"
-                />
+                  quality={80}
+                  className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
               </div>
               <div className="px-6 pb-4">
                 <SectionLabel>
@@ -369,7 +366,7 @@ export default function PrinthubPage() {
                     width={1024}
                     height={1400}
                     sizes="(max-width: 1024px) 100vw, 1024px"
-                    quality={90}
+                    quality={80}
                     className="h-auto w-full"
                   />
                 </div>
@@ -411,16 +408,14 @@ export default function PrinthubPage() {
           </section>
 
           <section className="flex flex-col border-x border-t border-border-default w-full">
-            <GrayBox title="Current Card Design" className="">
-              <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
+            <GrayBox title="Current Card Design" padding="lg" layout="row" gap="lg">
                 <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src={`${A}/deci-11.webp`}
                     alt="Current Design"
                     fill
-                    quality={90}
-                    className="object-cover"
-                  />
+                    quality={80}
+                    className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
                 </div>
                 <div className="flex flex-col gap-4 max-w-[480px]">
                   <ProConCard variant="con" full>
@@ -433,7 +428,6 @@ export default function PrinthubPage() {
                     Card doesn’t follow material standards
                   </ProConCard>
                 </div>
-              </div>
             </GrayBox>
 
             <div className="flex flex-col px-6 py-6 gap-3">
@@ -451,11 +445,13 @@ export default function PrinthubPage() {
           </section>
 
           <section className="flex flex-col border-x border-t border-border-default w-full">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full max-w-[1024px]">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full max-w-5xl">
               <div className="flex flex-col gap-2 border-r  border-border-default">
                 <GrayBox
                   title="Visual indicators Only"
-                  className=" aspect-video bg-bg-subtle p-8 rounded-lg flex items-center justify-center"
+                  className="aspect-video rounded-lg"
+                  innerClassName="bg-bg-subtle"
+                  padding="md"
                 >
                   <div className="relative w-full h-full">
                     <Image
@@ -463,7 +459,7 @@ export default function PrinthubPage() {
                       alt="Option 1"
                       fill
                       sizes={"100vw"}
-                      quality={90}
+                      quality={80}
                       className="object-contain"
                     />
                   </div>
@@ -484,16 +480,17 @@ export default function PrinthubPage() {
               <div className="flex flex-col gap-2 border-l border-border-default">
                 <GrayBox
                   title="Textual Indicators"
-                  className="aspect-video bg-bg-subtle p-8 rounded-lg flex items-center justify-center"
+                  className="aspect-video rounded-lg"
+                  innerClassName="bg-bg-subtle"
+                  padding="md"
                 >
                   <div className="relative w-full h-full">
                     <Image
                       src={`${A}/deci-13.webp`}
                       alt="Option 2"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                 </GrayBox>
                 <div className="flex gap-1 flex-col">
@@ -560,15 +557,14 @@ export default function PrinthubPage() {
                   rarely need to customise files.
                 </BodyText>
               </div>
-              <GrayBox className=" p-8 md:p-12">
-                <div className="flex flex-col gap-8 items-center justify-center">
+              <GrayBox padding="lg" layout="centered" gap="lg">
                   <div className="relative w-full max-w-[614px] aspect-602/118 overflow-hidden">
                     <Image
                       src={`${A}/deci-14.webp`}
                       alt="Idea 1 Design"
                       fill
                       sizes={"100vw"}
-                      quality={90}
+                      quality={80}
                       className="object-contain"
                     />
                   </div>
@@ -581,7 +577,6 @@ export default function PrinthubPage() {
                       understand how it works.
                     </ProConCard>
                   </div>
-                </div>
               </GrayBox>
             </div>
           </section>
@@ -626,16 +621,14 @@ export default function PrinthubPage() {
                   existing user behaviour.
                 </BodyText>
               </div>
-              <GrayBox className=" p-8 md:p-12">
-                <div className="flex flex-col gap-8 items-center justify-center">
+              <GrayBox padding="lg" layout="centered" gap="lg">
                   <div className="relative w-full max-w-[602px] aspect-602/107 overflow-hidden ">
                     <Image
                       src={`${A}/deci-15.webp`}
                       alt="Idea 2 Design"
                       fill
-                      quality={90}
-                      className="object-cover"
-                    />
+                      quality={80}
+                      className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                   <div className="flex flex-col gap-2 w-full max-w-[602px]">
                     <ProConCard variant="con" full>
@@ -648,7 +641,6 @@ export default function PrinthubPage() {
                       experimenting to find the action.
                     </ProConCard>
                   </div>
-                </div>
               </GrayBox>
             </div>
           </section>
@@ -664,16 +656,14 @@ export default function PrinthubPage() {
                 missing out.
               </BodyText>
 
-              <GrayBox className=" p-8 md:p-12">
-                <div className="flex flex-col gap-8 items-center justify-center">
+              <GrayBox padding="lg" layout="centered" gap="lg">
                   <div className="relative w-full aspect-1006/110 overflow-hidden">
                     <Image
                       src={`${A}/deci-16.webp`}
                       alt="Gmail Example 1"
                       fill
-                      quality={90}
-                      className="object-cover"
-                    />
+                      quality={80}
+                      className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                   <div className="flex flex-col gap-2 w-full max-w-[552px]">
                     <ProConCard variant="pro" full>
@@ -685,7 +675,6 @@ export default function PrinthubPage() {
                       viable.
                     </ProConCard>
                   </div>
-                </div>
               </GrayBox>
 
               <BodyText>
@@ -718,18 +707,15 @@ export default function PrinthubPage() {
                   faster as they had higher confidence on their decision.
                 </BodyText>
               </div>
-              <GrayBox className=" p-8 md:p-12">
-                <div className="flex items-center justify-center">
+              <GrayBox padding="lg" layout="centered">
                   <div className="relative w-full max-w-[602px] aspect-602/253">
                     <Image
                       src={`${A}/deci-17.webp`}
                       alt="Final Card Design"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
-                </div>
               </GrayBox>
 
               <div className="flex flex-col px-6 pb-8 gap-3">
@@ -776,15 +762,14 @@ export default function PrinthubPage() {
                 </div>
               </div>
 
-              <GrayBox title="Current Design Analysis">
-                <div className="flex lg:flex-row flex-col gap-4 items-center justify-center p-8">
+              <GrayBox title="Current Design Analysis" padding="lg" layout="row" gap="sm">
                   <div className="relative w-95 aspect-sqaure overflow-hidden ">
                     <Image
                       src={`${A}/deci-21.webp`}
                       alt="Before"
                       fill
                       sizes={"100vw"}
-                      quality={90}
+                      quality={80}
                       className="object-cover"
                     />
                   </div>
@@ -801,7 +786,6 @@ export default function PrinthubPage() {
                       Buttons doesn’t follow material standards
                     </ProConCard>
                   </div>
-                </div>
               </GrayBox>
             </div>
           </section>
@@ -844,8 +828,7 @@ export default function PrinthubPage() {
               </BodyText>
             </div>
 
-            <GrayBox className="p-8" t>
-              <div className="flex flex-col gap-6 items-center justify-center">
+            <GrayBox padding="lg" layout="centered" gap="md" t>
                 <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                   <div className="relative w-[40cqw] max-w-[598px] aspect-598/152 overflow-hidden ">
                     <Image
@@ -853,7 +836,7 @@ export default function PrinthubPage() {
                       alt="Idea 1 Design 1"
                       fill
                       sizes="(max-width: 768px) 40vw, 391px"
-                      quality={90}
+                      quality={80}
                       className="object-cover"
                     />
                   </div>
@@ -869,7 +852,6 @@ export default function PrinthubPage() {
                     itself.
                   </ProConCard>
                 </div>
-              </div>
             </GrayBox>
           </section>
 
@@ -907,15 +889,14 @@ export default function PrinthubPage() {
               </BodyText>
             </div>
 
-            <GrayBox className="p-8" t>
-              <div className="flex flex-col gap-6 items-center justify-center">
+            <GrayBox padding="lg" layout="centered" gap="md" t>
                 <div className="relative w-full max-w-[610px] aspect-610/238 overflow-hidden">
                   <Image
                     src={`${A}/deci-23.webp`}
                     alt="Idea 2 Design"
                     fill
                     sizes="(max-width: 768px) 100vw, 610px"
-                    quality={90}
+                    quality={80}
                     className="object-cover"
                   />
                 </div>
@@ -935,7 +916,6 @@ export default function PrinthubPage() {
                     have to scroll.
                   </ProConCard>
                 </div>
-              </div>
             </GrayBox>
 
             <div className="flex flex-col px-6 py-4 border-t border-border-default gap-6 w-full">
@@ -953,7 +933,7 @@ export default function PrinthubPage() {
                         alt="User 1"
                         fill
                         sizes="(max-width: 768px) 100px, 156px"
-                        quality={90}
+                        quality={80}
                         className="object-contain"
                       />
                     </div>
@@ -972,7 +952,7 @@ export default function PrinthubPage() {
                         alt="User 2"
                         fill
                         sizes="(max-width: 768px) 100px, 156px"
-                        quality={90}
+                        quality={80}
                         className="object-contain"
                       />
                     </div>
@@ -1021,7 +1001,7 @@ export default function PrinthubPage() {
               </BodyText>
             </div>
 
-            <GrayBox className="p-8 md:p-12">
+            <GrayBox padding="lg">
               <div className="flex flex-col gap-6 items-center justify-center">
                 <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                   <div className="relative w-[40cqw] max-w-[588px] aspect-588/118 overflow-hidden">
@@ -1030,7 +1010,7 @@ export default function PrinthubPage() {
                       alt="Final Design 1"
                       fill
                       sizes={"100vw"}
-                      quality={90}
+                      quality={80}
                       className="object-cover"
                     />
                   </div>
@@ -1099,16 +1079,16 @@ export default function PrinthubPage() {
                 </div>
 
                 {/* Sequence 1: Nina opening history */}
-                <GrayBox t b>
+                <GrayBox padding="none" t b>
                   <div className="flex w-full py-8 md:py-4">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
                       <div className="relative w-[240px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story1-01.png`}
+                          src={`/printhub/Story1-01.webp`}
                           alt="Nina opens app"
                           fill
                           sizes="(max-width: 768px) 240px, 320px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1118,17 +1098,17 @@ export default function PrinthubPage() {
                           alt="Then"
                           fill
                           sizes="(max-width: 768px) 32px, 64px"
-                          quality={90}
+                          quality={80}
                           className="object-contain"
                         />
                       </div>
                       <div className="relative w-[240px] md:w-[320px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story1-02.png`}
+                          src={`/printhub/Story1-02.webp`}
                           alt="Nina checks history"
                           fill
                           sizes="(max-width: 768px) 240px, 320px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1144,15 +1124,15 @@ export default function PrinthubPage() {
                 </div>
 
                 {/* Sequence 2: Nina looking for prints */}
-                <GrayBox className="py-8" t b>
+                <GrayBox padding="sm" t b>
                   <div className="flex w-full flex-col md:flex-row items-center justify-center p-4">
                     <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
                       <Image
-                        src={`/printhub/Story1-03.png`}
+                        src={`/printhub/Story1-03.webp`}
                         alt="Step 1"
                         fill
                         sizes="200px"
-                        quality={90}
+                        quality={80}
                         className="object-cover"
                       />
                     </div>
@@ -1162,17 +1142,17 @@ export default function PrinthubPage() {
                         alt="Next"
                         fill
                         sizes="(max-width: 768px) 24px, 32px"
-                        quality={90}
+                        quality={80}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
                       <Image
-                        src={`/printhub/Story1-04.png`}
+                        src={`/printhub/Story1-04.webp`}
                         alt="Step 2"
                         fill
                         sizes="200px"
-                        quality={90}
+                        quality={80}
                         className="object-cover"
                       />
                     </div>
@@ -1182,17 +1162,17 @@ export default function PrinthubPage() {
                         alt="Next"
                         fill
                         sizes="(max-width: 768px) 24px, 32px"
-                        quality={90}
+                        quality={80}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
                       <Image
-                        src={`/printhub/Story1-05.png`}
+                        src={`/printhub/Story1-05.webp`}
                         alt="Step 3"
                         fill
                         sizes="200px"
-                        quality={90}
+                        quality={80}
                         className="object-cover"
                       />
                     </div>
@@ -1202,17 +1182,17 @@ export default function PrinthubPage() {
                         alt="Next"
                         fill
                         sizes="(max-width: 768px) 24px, 32px"
-                        quality={90}
+                        quality={80}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-[200px] shrink-0 aspect-200/427 rounded-[24px] md:rounded-[48px] shadow-xl">
                       <Image
-                        src={`/printhub/Story1-06.png`}
+                        src={`/printhub/Story1-06.webp`}
                         alt="Step 4"
                         fill
                         sizes="200px"
-                        quality={90}
+                        quality={80}
                         className="object-cover"
                       />
                     </div>
@@ -1248,16 +1228,16 @@ export default function PrinthubPage() {
                 </div>
 
                 {/* Sequence 1: Raju placing order */}
-                <GrayBox className="" t b>
+                <GrayBox padding="none" t b>
                   <div className="flex w-full py-8 md:py-4">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-01.png`}
+                          src={`/printhub/Story2-01.webp`}
                           alt="Start"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1267,17 +1247,17 @@ export default function PrinthubPage() {
                           alt="Then"
                           fill
                           sizes="(max-width: 768px) 32px, 48px"
-                          quality={90}
+                          quality={80}
                           className="object-contain"
                         />
                       </div>
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-02.png`}
+                          src={`/printhub/Story2-02.webp`}
                           alt="Placed"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1287,17 +1267,17 @@ export default function PrinthubPage() {
                           alt="Then"
                           fill
                           sizes="(max-width: 768px) 32px, 48px"
-                          quality={90}
+                          quality={80}
                           className="object-contain"
                         />
                       </div>
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-03.png`}
+                          src={`/printhub/Story2-03.webp`}
                           alt="Processing"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1314,16 +1294,16 @@ export default function PrinthubPage() {
                 </div>
 
                 {/* Sequence 2: Raju collecting prints */}
-                <GrayBox className="p-8 md:p-12" t b>
+                <GrayBox padding="lg" t b>
                   <div className="flex w-full py-8 md:py-4">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full p-4">
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-04.png`}
+                          src={`/printhub/Story2-04.webp`}
                           alt="Ready"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1333,17 +1313,17 @@ export default function PrinthubPage() {
                           alt="Then"
                           fill
                           sizes="(max-width: 768px) 32px, 48px"
-                          quality={90}
+                          quality={80}
                           className="object-contain"
                         />
                       </div>
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-05.png`}
+                          src={`/printhub/Story2-05.webp`}
                           alt="Collected"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1353,17 +1333,17 @@ export default function PrinthubPage() {
                           alt="Then"
                           fill
                           sizes="(max-width: 768px) 32px, 48px"
-                          quality={90}
+                          quality={80}
                           className="object-contain"
                         />
                       </div>
                       <div className="relative w-[240px] md:w-[240px] shrink-0 aspect-300/640 rounded-[32px] md:rounded-[64px] shadow-2xl">
                         <Image
-                          src={`/printhub/Story2-06.png`}
+                          src={`/printhub/Story2-06.webp`}
                           alt="Back to history"
                           fill
                           sizes="(max-width: 768px) 240px, 240px"
-                          quality={90}
+                          quality={80}
                           className="object-cover"
                         />
                       </div>
@@ -1400,9 +1380,8 @@ export default function PrinthubPage() {
                     src={`${A}/ui-1.webp`}
                     alt="Full UI System"
                     fill
-                    quality={90}
-                    className="object-contain"
-                  />
+                    quality={80}
+                    className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                 </div>
               </div>
             </div>
@@ -1430,9 +1409,8 @@ export default function PrinthubPage() {
                       src={`${A}/ui-2.webp`}
                       alt="Component Sheet 1"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                   {/* Right Column: Buttons & Icons */}
                   <div className="relative w-full aspect-388/808 ">
@@ -1440,9 +1418,8 @@ export default function PrinthubPage() {
                       src={`${A}/ui-3.webp`}
                       alt="Primary Buttons"
                       fill
-                      quality={90}
-                      className="object-contain"
-                    />
+                      quality={80}
+                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
                   </div>
                 </div>
               </div>
@@ -1465,9 +1442,8 @@ export default function PrinthubPage() {
                     src={`${A}/ui-4.webp`}
                     alt="Token System Variables"
                     fill
-                    quality={90}
-                    className="object-cover"
-                  />
+                    quality={80}
+                    className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
                 </div>
               </div>
             </div>
@@ -1484,7 +1460,7 @@ export default function PrinthubPage() {
                       alt="Custom Component Structure"
                       fill
                       sizes="(max-width: 768px) 180px, 226px"
-                      quality={90}
+                      quality={80}
                       className="object-cover"
                     />
                   </div>
@@ -1501,7 +1477,7 @@ export default function PrinthubPage() {
                       alt="Atomic Component Mix"
                       fill
                       sizes="(max-width: 768px) 180px, 226px"
-                      quality={90}
+                      quality={80}
                       className="object-cover"
                     />
                   </div>
@@ -1524,7 +1500,7 @@ export default function PrinthubPage() {
           <section className="flex flex-col border-x border-t border-border-default w-full">
             <div className="flex flex-col px-6 py-8 gap-12 w-full">
               {/* Part 1: What if I had more time? */}
-              <div className="flex flex-col gap-5 max-w-[1024px]">
+              <div className="flex flex-col gap-5 max-w-5xl">
                 <Heading>What if I had more time?</Heading>
                 <div className="flex flex-col gap-3">
                   <BodyText>
@@ -1545,7 +1521,7 @@ export default function PrinthubPage() {
               </div>
 
               {/* Part 2: Main takeaway */}
-              <div className="flex flex-col gap-5 max-w-[1024px]">
+              <div className="flex flex-col gap-5 max-w-5xl">
                 <Heading>Main takeaway</Heading>
                 <div className="flex flex-col gap-3">
                   <BodyText>

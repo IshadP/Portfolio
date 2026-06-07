@@ -18,15 +18,10 @@ const inter = Inter_Tight({
   display: "swap"
 });
 
-// const generalSans = localFont({
-//   src: "../../public/fonts/GeneralSans-Variable.woff2",
-//   variable: "--font-display",
-//   display: "swap",
-// });
 
 export const metadata: Metadata = {
   title: {
-    default: "Ishad Pande — Product Designer",
+    default: "Ishad Pande",
     template: "%s | Ishad Pande",
   },
   description:
@@ -52,10 +47,10 @@ export const metadata: Metadata = {
       "The portfolio of Ishad Pande, a product designer who can code.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Ishad Pande — Product Designer",
+        alt: "Ishad Pande",
       },
     ],
   },
@@ -64,7 +59,7 @@ export const metadata: Metadata = {
     title: "Ishad Pande — Product Designer",
     description:
       "The portfolio of Ishad Pande, a product designer crafting thoughtful digital experiences.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
     creator: "@ishadpande",
   },
   robots: {
@@ -85,8 +80,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Ishad Pande",
+    url: "https://ishadpande.com",
+    image: "https://ishadpande.com/Photo.jpg",
+    jobTitle: "Product Designer",
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Government College of Engineering, Nagpur",
+    },
+    sameAs: [
+      "https://x.com/ishadpande",
+      "https://www.linkedin.com/in/ishadpande",
+      "https://www.behance.net/ishadpande",
+    ],
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
       >

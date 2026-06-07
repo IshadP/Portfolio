@@ -9,13 +9,13 @@ import Hatching from "@/components/Hatching";
 export default function AiExperimentsPage() {
   return (
     <div className="flex flex-col min-h-screen items-center relative px-2">
-      <div className="w-full flex flex-col justify-center max-w-[1024px] @container">
+      <div className="w-full flex flex-col justify-center max-w-5xl @container">
         {/* Hero Background */}
         <Hero />
 
         {/* Content wrapper */}
         <FadeIn className="w-full flex justify-center z-10">
-          <div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle">
+          <div className="flex max-w-5xl w-full flex-col bg-bg-subtle">
             {/* Top Gradient Fade Overlay */}
             <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
 
@@ -30,9 +30,9 @@ export default function AiExperimentsPage() {
                 <SecondaryProjectCard
                   title="Prototype for User Testing"
                   slug="Printhub"
-                  imageCenter="/cards/Print1-01.png"
-                  imageLeft="/cards/Print1-02.png"
-                  imageRight="/cards/Print1-03.png"
+                  imageCenter="/cards/Print1-01.webp"
+                  imageLeft="/cards/Print1-02.webp"
+                  imageRight="/cards/Print1-03.webp"
                   ctaText="View Live"
                   href="https://printproto.vercel.app/"
                   variant="two-pages"
@@ -41,9 +41,9 @@ export default function AiExperimentsPage() {
                 <SecondaryProjectCard
                   title="Retro Pomodoro App"
                   slug="POMDOM"
-                  imageCenter="/cards/pomdom-screenshot.png"
-                  imageLeft="/cards/pomdom-screenshot.png"
-                  imageRight="/cards/pomdom-screenshot.png"
+                  imageCenter="/cards/pomdom-screenshot.webp"
+                  imageLeft="/cards/pomdom-screenshot.webp"
+                  imageRight="/cards/pomdom-screenshot.webp"
                   ctaText="View Github"
                   href="https://github.com/IshadP/Pomdom"
                   variant="two-pages"
@@ -52,9 +52,9 @@ export default function AiExperimentsPage() {
                 {/* <PrimaryProjectCard
                   title="Intelligent Layout Systems"
                   subtitle="Research"
-                  imageCenter="/cards/Printhub1-03.png"
-                  imageLeft="/cards/Printhub2-01.png"
-                  imageRight="/cards/Printhub2-02.png"
+                  imageCenter="/cards/Printhub1-03.webp"
+                  imageLeft="/cards/Printhub2-01.webp"
+                  imageRight="/cards/Printhub2-02.webp"
                   routeText="/RESEARCH"
                   href="#"
                   variant="two-pages"

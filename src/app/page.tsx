@@ -10,13 +10,13 @@ import Hatching from "@/components/Hatching";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center relative bg-bg-subtle ">
-      <div className="w-full flex flex-col justify-center max-w-[1024px] z-1 @container">
+      <div className="w-full flex flex-col justify-center max-w-5xl z-1 @container">
         {/* {Hero - Fixed in Background} */}
         <Hero />
 
         {/* Content wrapper that scrolls over the hero */}
         <FadeIn className="w-full flex justify-center px-2">
-          <div className="flex max-w-[1024px] w-full flex-col bg-bg-subtle rounded-lg relative">
+          <div className="flex max-w-5xl w-full flex-col bg-bg-subtle rounded-lg relative">
             {/* Top Gradient Fade Overlay */}
             <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
 
@@ -26,15 +26,15 @@ export default function Home() {
             <Hatching />
 
             {/* Projects Section */}
-            <div className="w-full flex flex-col border border-border-default max-w-[1024px] overflow-hidden">
+            <section aria-label="Selected Projects" className="w-full flex flex-col border border-border-default max-w-5xl overflow-hidden">
               <PrimaryProjectCard
                 title="Reduced Task Completion Time by 30% on Printhub"
                 description="Redesigned the main checkout flow to optimise user intent."
                 slug="/PRINTHUB"
                 ctaText="View Case Study"
-                imageCenter="/cards/Print1-01.png"
-                imageLeft="/cards/Print1-02.png"
-                imageRight="/cards/Print1-03.png"
+                imageCenter="/cards/Print1-01.webp"
+                imageLeft="/cards/Print1-02.webp"
+                imageRight="/cards/Print1-03.webp"
                 href="/printhub"
                 side="left"
                 priorityImages
@@ -53,14 +53,14 @@ export default function Home() {
                 description="Rethought the search experience to better surface user intent."
                 slug="/YOUTUBE"
                 ctaText="View Case Study"
-                imageCenter="/cards/Youtube1-01.png"
-                imageLeft="/cards/Youtube1-02.png"
-                imageRight="/cards/Youtube1-03.png"
+                imageCenter="/cards/Youtube1-01.webp"
+                imageLeft="/cards/Youtube1-02.webp"
+                imageRight="/cards/Youtube1-03.webp"
                 href="/youtube"
                 side="right"
                 className="rounded-none! outline-0! border-0!"
               />
-            </div>
+            </section>
 
             {/* Hatching */}
             <Hatching />
@@ -71,11 +71,11 @@ export default function Home() {
             {/* Hatching */}
             <Hatching />
 
-            <div className="w-full flex flex-col  border border-border-default max-w-[1024px] overflow-hidden">
+            <section aria-label="About Me" className="w-full flex flex-col border border-border-default max-w-5xl overflow-hidden">
               <div className="p-6">
-                <p className="font-label-lg-mono text-text-muted">
+                <h2 className="font-label-lg-mono text-text-muted">
                   Person behind the designs
-                </p>
+                </h2>
               </div>
               <div className="flex md:flex-row flex-col border-t border-border-default">
                 <div className="w-full md:w-1/2 flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
@@ -103,7 +103,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 relative min-h-[500px]">
                   <Image
                     src="/Photo.jpg"
-                    alt="Photo"
+                    alt="Ishad Pande - Product Designer and Developer"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
@@ -111,7 +111,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </section>
 
             <Hatching />
 
