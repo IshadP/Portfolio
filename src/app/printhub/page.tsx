@@ -151,19 +151,16 @@ export default function PrinthubPage() {
             <div className="flex flex-col md:flex-row">
               {/* --- Problem 1 --- */}
               <div className="flex flex-col border-b border-r border-border-default">
-                <GrayBox
-                  title="Unnecessary actions"
-                  padding="sm"
-                  t
-                  b
-                >
+                <GrayBox title="Unnecessary actions" padding="sm" t b>
                   <div className="relative h-[200px] md:h-[320px] w-full">
                     <Image
                       src={`${A}/image-3.webp`}
                       alt="Customisation Screen"
                       fill
                       quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
                   </div>
                 </GrayBox>
                 <div className="flex flex-col gap-3 px-6 py-4">
@@ -184,19 +181,16 @@ export default function PrinthubPage() {
 
               {/* --- Problem 2 --- */}
               <div className="flex flex-col border-b border-l border-border-default">
-                <GrayBox
-                  title="Goal Failure"
-                  padding="sm"
-                  t
-                  b
-                >
+                <GrayBox title="Goal Failure" padding="sm" t b>
                   <div className="relative h-[200px] md:h-[320px] w-full">
                     <Image
                       src={`${A}/image-4.webp`}
                       alt="Payment Screen"
                       fill
                       quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
                   </div>
                 </GrayBox>
                 <div className="flex flex-col gap-3 px-6 py-4">
@@ -331,7 +325,9 @@ export default function PrinthubPage() {
                   alt="AnxietyMap"
                   fill
                   quality={80}
-                  className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
               </div>
               <div className="px-6 pb-4">
                 <SectionLabel>
@@ -408,26 +404,33 @@ export default function PrinthubPage() {
           </section>
 
           <section className="flex flex-col border-x border-t border-border-default w-full">
-            <GrayBox title="Current Card Design" padding="lg" layout="row" gap="lg">
-                <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src={`${A}/deci-11.webp`}
-                    alt="Current Design"
-                    fill
-                    quality={80}
-                    className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
-                </div>
-                <div className="flex flex-col gap-4 max-w-[480px]">
-                  <ProConCard variant="con" full>
-                    “Customize” does not tell users what they can change
-                  </ProConCard>
-                  <ProConCard variant="con" full>
-                    Users only use preview when they are unsure about document
-                  </ProConCard>
-                  <ProConCard variant="con" full>
-                    Card doesn’t follow material standards
-                  </ProConCard>
-                </div>
+            <GrayBox
+              title="Current Card Design"
+              padding="lg"
+              layout="row"
+              gap="lg"
+            >
+              <div className="relative w-full lg:w-[400px] aspect-400/136 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={`${A}/deci-11.webp`}
+                  alt="Current Design"
+                  fill
+                  quality={80}
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
+              </div>
+              <div className="flex flex-col gap-4 max-w-[480px]">
+                <ProConCard variant="con" full>
+                  “Customize” does not tell users what they can change
+                </ProConCard>
+                <ProConCard variant="con" full>
+                  Users only use preview when they are unsure about document
+                </ProConCard>
+                <ProConCard variant="con" full>
+                  Card doesn’t follow material standards
+                </ProConCard>
+              </div>
             </GrayBox>
 
             <div className="flex flex-col px-6 py-6 gap-3">
@@ -490,7 +493,9 @@ export default function PrinthubPage() {
                       alt="Option 2"
                       fill
                       quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
                   </div>
                 </GrayBox>
                 <div className="flex gap-1 flex-col">
@@ -558,25 +563,25 @@ export default function PrinthubPage() {
                 </BodyText>
               </div>
               <GrayBox padding="lg" layout="centered" gap="lg">
-                  <div className="relative w-full max-w-[614px] aspect-602/118 overflow-hidden">
-                    <Image
-                      src={`${A}/deci-14.webp`}
-                      alt="Idea 1 Design"
-                      fill
-                      sizes={"100vw"}
-                      quality={80}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full max-w-[614px]">
-                    <ProConCard variant="con" full>
-                      I was wrong. Users used customisation lot more.
-                    </ProConCard>
-                    <ProConCard variant="con" full>
-                      Interaction on hold remains unclear, and users do not
-                      understand how it works.
-                    </ProConCard>
-                  </div>
+                <div className="relative w-full max-w-[614px] aspect-602/118 overflow-hidden">
+                  <Image
+                    src={`${A}/deci-14.webp`}
+                    alt="Idea 1 Design"
+                    fill
+                    sizes={"100vw"}
+                    quality={80}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                  <ProConCard variant="con" full>
+                    I was wrong. Users used customisation lot more.
+                  </ProConCard>
+                  <ProConCard variant="con" full>
+                    Interaction on hold remains unclear, and users do not
+                    understand how it works.
+                  </ProConCard>
+                </div>
               </GrayBox>
             </div>
           </section>
@@ -622,25 +627,27 @@ export default function PrinthubPage() {
                 </BodyText>
               </div>
               <GrayBox padding="lg" layout="centered" gap="lg">
-                  <div className="relative w-full max-w-[602px] aspect-602/107 overflow-hidden ">
-                    <Image
-                      src={`${A}/deci-15.webp`}
-                      alt="Idea 2 Design"
-                      fill
-                      quality={80}
-                      className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full max-w-[602px]">
-                    <ProConCard variant="con" full>
-                      Users had to stretch their thumbs to reach the customize
-                      icon, making it hard to tap.
-                    </ProConCard>
-                    <ProConCard variant="pro" full>
-                      Placing the Customize icon on the left helped users
-                      immediately understand how to change settings instead of
-                      experimenting to find the action.
-                    </ProConCard>
-                  </div>
+                <div className="relative w-full max-w-[602px] aspect-602/107 overflow-hidden ">
+                  <Image
+                    src={`${A}/deci-15.webp`}
+                    alt="Idea 2 Design"
+                    fill
+                    quality={80}
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 w-full max-w-[602px]">
+                  <ProConCard variant="con" full>
+                    Users had to stretch their thumbs to reach the customize
+                    icon, making it hard to tap.
+                  </ProConCard>
+                  <ProConCard variant="pro" full>
+                    Placing the Customize icon on the left helped users
+                    immediately understand how to change settings instead of
+                    experimenting to find the action.
+                  </ProConCard>
+                </div>
               </GrayBox>
             </div>
           </section>
@@ -657,24 +664,26 @@ export default function PrinthubPage() {
               </BodyText>
 
               <GrayBox padding="lg" layout="centered" gap="lg">
-                  <div className="relative w-full aspect-1006/110 overflow-hidden">
-                    <Image
-                      src={`${A}/deci-16.webp`}
-                      alt="Gmail Example 1"
-                      fill
-                      quality={80}
-                      className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full max-w-[552px]">
-                    <ProConCard variant="pro" full>
-                      One click on the item avatar selects it and UI enters
-                      selection mode.
-                    </ProConCard>
-                    <ProConCard variant="pro" full>
-                      Secondary action like starring was on right and still
-                      viable.
-                    </ProConCard>
-                  </div>
+                <div className="relative w-full aspect-1006/110 overflow-hidden">
+                  <Image
+                    src={`${A}/deci-16.webp`}
+                    alt="Gmail Example 1"
+                    fill
+                    quality={80}
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 w-full max-w-[552px]">
+                  <ProConCard variant="pro" full>
+                    One click on the item avatar selects it and UI enters
+                    selection mode.
+                  </ProConCard>
+                  <ProConCard variant="pro" full>
+                    Secondary action like starring was on right and still
+                    viable.
+                  </ProConCard>
+                </div>
               </GrayBox>
 
               <BodyText>
@@ -708,14 +717,16 @@ export default function PrinthubPage() {
                 </BodyText>
               </div>
               <GrayBox padding="lg" layout="centered">
-                  <div className="relative w-full max-w-[602px] aspect-602/253">
-                    <Image
-                      src={`${A}/deci-17.webp`}
-                      alt="Final Card Design"
-                      fill
-                      quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
-                  </div>
+                <div className="relative w-full max-w-[602px] aspect-602/253">
+                  <Image
+                    src={`${A}/deci-17.webp`}
+                    alt="Final Card Design"
+                    fill
+                    quality={80}
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
+                </div>
               </GrayBox>
 
               <div className="flex flex-col px-6 pb-8 gap-3">
@@ -762,30 +773,35 @@ export default function PrinthubPage() {
                 </div>
               </div>
 
-              <GrayBox title="Current Design Analysis" padding="lg" layout="row" gap="sm">
-                  <div className="relative w-95 aspect-sqaure overflow-hidden ">
-                    <Image
-                      src={`${A}/deci-21.webp`}
-                      alt="Before"
-                      fill
-                      sizes={"100vw"}
-                      quality={80}
-                      className="object-cover"
-                    />
-                  </div>
+              <GrayBox
+                title="Current Design Analysis"
+                padding="lg"
+                layout="row"
+                gap="sm"
+              >
+                <div className="relative w-full aspect-767/758 overflow-hidden ">
+                  <Image
+                    src={`${A}/deci-21.webp`}
+                    alt="Before"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                    quality={80}
+                    className="object-cover"
+                  />
+                </div>
 
-                  <div className="flex flex-col gap-2 w-full">
-                    <ProConCard variant="con" full>
-                      The path to final goal is unclear to users.
-                    </ProConCard>
-                    <ProConCard variant="con" full>
-                      Visual Feedback is very subtle after item selection
-                      causing change blindness
-                    </ProConCard>
-                    <ProConCard variant="con" full>
-                      Buttons doesn’t follow material standards
-                    </ProConCard>
-                  </div>
+                <div className="flex flex-col gap-2 w-full">
+                  <ProConCard variant="con" full>
+                    The path to final goal is unclear to users.
+                  </ProConCard>
+                  <ProConCard variant="con" full>
+                    Visual Feedback is very subtle after item selection causing
+                    change blindness
+                  </ProConCard>
+                  <ProConCard variant="con" full>
+                    Buttons doesn’t follow material standards
+                  </ProConCard>
+                </div>
               </GrayBox>
             </div>
           </section>
@@ -829,29 +845,29 @@ export default function PrinthubPage() {
             </div>
 
             <GrayBox padding="lg" layout="centered" gap="md" t>
-                <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
-                  <div className="relative w-[40cqw] max-w-[598px] aspect-598/152 overflow-hidden ">
-                    <Image
-                      src={`${A}/deci-22.webp`}
-                      alt="Idea 1 Design 1"
-                      fill
-                      sizes="(max-width: 768px) 40vw, 391px"
-                      quality={80}
-                      className="object-cover"
-                    />
-                  </div>
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                <div className="relative w-[40cqw] max-w-[598px] aspect-598/152 overflow-hidden ">
+                  <Image
+                    src={`${A}/deci-22.webp`}
+                    alt="Idea 1 Design 1"
+                    fill
+                    sizes="(max-width: 768px) 40vw, 391px"
+                    quality={80}
+                    className="object-cover"
+                  />
                 </div>
-                <div className="flex flex-col gap-2 w-full max-w-[614px]">
-                  <ProConCard variant="con" full>
-                    This reduced importance of ”Print files” which is essential
-                    to completion of flow.
-                  </ProConCard>
-                  <ProConCard variant="con" full>
-                    Users where confused what button does because the print icon
-                    was associated with changing printer rather than printing
-                    itself.
-                  </ProConCard>
-                </div>
+              </div>
+              <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                <ProConCard variant="con" full>
+                  This reduced importance of ”Print files” which is essential to
+                  completion of flow.
+                </ProConCard>
+                <ProConCard variant="con" full>
+                  Users where confused what button does because the print icon
+                  was associated with changing printer rather than printing
+                  itself.
+                </ProConCard>
+              </div>
             </GrayBox>
           </section>
 
@@ -890,32 +906,31 @@ export default function PrinthubPage() {
             </div>
 
             <GrayBox padding="lg" layout="centered" gap="md" t>
-                <div className="relative w-full max-w-[610px] aspect-610/238 overflow-hidden">
-                  <Image
-                    src={`${A}/deci-23.webp`}
-                    alt="Idea 2 Design"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 610px"
-                    quality={80}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 w-full max-w-[614px]">
-                  <ProConCard variant="pro" full>
-                    Screen now had one primary action effectively reducing the
-                    time to decide
-                  </ProConCard>
-                  <ProConCard variant="con" full>
-                    User still suffered with goal gradient problem as they
-                    didn’t know what to do once file was added (but not
-                    selected)
-                  </ProConCard>
-                  <ProConCard variant="con" full>
-                    In case of more than a 4-5 files, it would become tedious to
-                    select each and every file one by one because the user might
-                    have to scroll.
-                  </ProConCard>
-                </div>
+              <div className="relative w-full max-w-[610px] aspect-610/238 overflow-hidden">
+                <Image
+                  src={`${A}/deci-23.webp`}
+                  alt="Idea 2 Design"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 610px"
+                  quality={80}
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-2 w-full max-w-[614px]">
+                <ProConCard variant="pro" full>
+                  Screen now had one primary action effectively reducing the
+                  time to decide
+                </ProConCard>
+                <ProConCard variant="con" full>
+                  User still suffered with goal gradient problem as they didn’t
+                  know what to do once file was added (but not selected)
+                </ProConCard>
+                <ProConCard variant="con" full>
+                  In case of more than a 4-5 files, it would become tedious to
+                  select each and every file one by one because the user might
+                  have to scroll.
+                </ProConCard>
+              </div>
             </GrayBox>
 
             <div className="flex flex-col px-6 py-4 border-t border-border-default gap-6 w-full">
@@ -1381,7 +1396,9 @@ export default function PrinthubPage() {
                     alt="Full UI System"
                     fill
                     quality={80}
-                    className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
                 </div>
               </div>
             </div>
@@ -1410,7 +1427,9 @@ export default function PrinthubPage() {
                       alt="Component Sheet 1"
                       fill
                       quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
                   </div>
                   {/* Right Column: Buttons & Icons */}
                   <div className="relative w-full aspect-388/808 ">
@@ -1419,7 +1438,9 @@ export default function PrinthubPage() {
                       alt="Primary Buttons"
                       fill
                       quality={80}
-                      className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
                   </div>
                 </div>
               </div>
@@ -1443,7 +1464,9 @@ export default function PrinthubPage() {
                     alt="Token System Variables"
                     fill
                     quality={80}
-                    className="object-cover" sizes="(max-width: 1024px) 100vw, 1024px" />
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
                 </div>
               </div>
             </div>
