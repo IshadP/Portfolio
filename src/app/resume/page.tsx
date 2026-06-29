@@ -1,33 +1,37 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import FadeIn from "@/components/FadeIn";
-import Hatching from "@/components/Hatching";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import Hero from "@/components/ui/Hero";
+import FadeIn from "@/components/ui/FadeIn";
+import Divider from "@/components/ui/Divider";
 import ResumeViewer from "@/components/ResumeViewer";
 
 export default function ResumePage() {
   return (
-    <div className="flex flex-col min-h-screen items-center relative bg-bg-subtle px-2">
-      <div className="w-full flex flex-col justify-center max-w-5xl z-1 @container">
-        {/* Hero Background */}
+    <div className="flex flex-col items-center w-full relative bg-bg-default">
+      <div className="w-content flex flex-col gap-0 bg-bg-default">
         <Hero />
+        <FadeIn className="relative w-content z-10 bg-bg-default">
+          
+          <div className="border border-outline rounded-2xl overflow-hidden mt-4 bg-bg-default flex flex-col">
+            
+            {/* 1. Header & Quick Actions Bento Grid */}
+            <div className="w-full flex flex-col md:flex-row justify-start items-stretch border-b border-outline">
+              
+              {/* Left Column: Professional Summary */}
+              <div className="flex-1 p-10 flex flex-col justify-start items-start gap-6 border-b md:border-b-0 md:border-r border-outline">
+                <h2 className="text-text-primary font-h3">
+                  My Resume
+                </h2>
+        
+                </div>
+            </div>
 
-        {/* Content wrapper */}
-        <FadeIn className="w-full flex justify-center ">
-          <div className="flex max-w-5xl w-full flex-col bg-bg-subtle rounded-lg  relative">
-            {/* Top Gradient Fade Overlay */}
-            <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
-
-            <Navbar />
-
-            <Hatching />
-
-            <div className="w-full border-x border-t border-border-default overflow-hidden flex flex-col items-center">
+            {/* 2. Interactive Resume Viewer */}
+            <div className="w-full">
               <ResumeViewer />
             </div>
 
-            <Hatching />
-
+            <Divider />
             <Footer />
           </div>
         </FadeIn>
@@ -35,3 +39,4 @@ export default function ResumePage() {
     </div>
   );
 }
+

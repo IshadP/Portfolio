@@ -1,10 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import FadeIn from "@/components/FadeIn";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import Hero from "@/components/ui/Hero";
+import FadeIn from "@/components/ui/FadeIn";
 import SecondaryProjectCard from "@/components/Landing/SecondaryProjectCard";
 import BuildingWithAiCard from "@/components/BuildingWithAiCard";
-import Hatching from "@/components/Hatching";
+import Hatching from "@/components/ui/Hatching";
 
 export default function AiExperimentsPage() {
   return (

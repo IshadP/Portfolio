@@ -163,8 +163,8 @@ export default function ResumeViewer() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-8 mt-8 w-full">
-      <div className="flex justify-center items-center w-full">
+    <div className="flex flex-col items-center w-full bg-bg-subtle">
+      <div className="flex justify-center items-center w-full py-6 bg-bg-default border-b border-outline">
         <motion.a
           ref={linkRef}
           href="/Ishad_Pande.pdf"
@@ -178,23 +178,23 @@ export default function ResumeViewer() {
           <motion.div
             variants={ctaWrapperVariants}
             transition={spring}
-            className="w-full px-0.5 pt-0.5 bg-blue-950 rounded-sm flex"
+            className="w-full px-0.5 pt-0.5 bg-primary/20 rounded-sm flex"
           >
             <motion.div
               transition={spring}
-              className="self-stretch w-full p-3 bg-blue-800 rounded-xs inline-flex justify-center items-center gap-2 overflow-hidden"
+              className="self-stretch w-full p-3 bg-primary rounded-xs inline-flex justify-center items-center gap-2 overflow-hidden"
             >
-              <DownloadSimpleIcon size={20} weight="bold" className="text-active-fg" />
-              <span className="font-label-sm-mono text-active-fg">DOWNLOAD PDF</span>
-              <div className="h-6 w-6 bg-blue-900 rounded-sm flex justify-center items-center">
-                <span className="font-label-sm-mono text-active-fg">V</span>
+              <DownloadSimpleIcon size={20} weight="bold" className="text-text-white" />
+              <span className="font-label-sm-mono text-text-white">DOWNLOAD PDF</span>
+              <div className="h-6 w-6 bg-primary-muted rounded-sm flex justify-center items-center">
+                <span className="font-label-sm-mono text-primary font-bold">V</span>
               </div>
             </motion.div>
           </motion.div>
         </motion.a>
       </div>
 
-      <div className="w-full bg-bg-subtle p-4 md:p-8 flex justify-center overflow-auto border-y border-border-default min-h-[600px] relative">
+      <div className="w-full bg-bg-subtle p-4 md:p-8 flex justify-center overflow-auto min-h-[600px] relative">
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
             <motion.div
@@ -218,7 +218,7 @@ export default function ResumeViewer() {
             </a>
           </div>
         ) : (
-          <canvas ref={canvasRef} className="max-w-full h-auto rounded-lg shadow-md bg-white" />
+          <canvas ref={canvasRef} className="max-w-full h-auto rounded-lg border border-outline bg-white shadow-sm" />
         )}
       </div>
     </div>

@@ -1,13 +1,14 @@
+/*
 import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import Hero from "../../components/Hero";
-import FadeIn from "../../components/FadeIn";
+import Navbar from "../../components/ui/Navbar";
+import Footer from "../../components/ui/Footer";
+import Hero from "../../components/ui/Hero";
+import FadeIn from "../../components/ui/FadeIn";
 import Badge from "../../components/caseStudy/Badge";
 import GrayBox from "../../components/caseStudy/GrayBox";
 import ProConCard from "../../components/caseStudy/ProConCard";
-import Hatching from "../../components/Hatching";
+import Hatching from "../../components/ui/Hatching";
 import {
   BodyText,
   Divider,
@@ -37,7 +38,7 @@ function ActionIndicator({ children }: { children: ReactNode }) {
   );
 }
 
-/* ── Journey Step Component (Printhub-style Abstracted for YouTube) ── */
+/* ── Journey Step Component (Printhub-style Abstracted for YouTube) ── * /
 function JourneyStep({
   narrative,
   screen,
@@ -50,7 +51,7 @@ function JourneyStep({
   return (
     <div className="flex flex-col items-center w-full group">
       <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative max-w-[1078px]">
-        {/* Left Side: Narrative */}
+        {/* Left Side: Narrative * /}
         <div className="flex w-full justify-center lg:justify-end lg:pt-12">
           <div className="flex flex-col gap-4 w-full lg:max-w-[320px]">
             <p className="font-h4 text-[#306192] leading-tight text-center lg:text-right">
@@ -59,7 +60,7 @@ function JourneyStep({
           </div>
         </div>
 
-        {/* Center: Mobile Screen */}
+        {/* Center: Mobile Screen * /}
         <div className="relative z-10 flex justify-center">
           <div className="relative w-[245px] aspect-245/545 rounded-xl overflow-hidden shrink-0 shadow-2xl border border-border-default bg-white">
             <Image
@@ -73,7 +74,7 @@ function JourneyStep({
           </div>
         </div>
 
-        {/* Right Side: Insights */}
+        {/* Right Side: Insights * /}
         <div className="flex flex-col gap-6 md:gap-4 lg:max-w-[320px] w-full justify-center lg:justify-start items-center lg:pt-12">
           <div className="flex flex-col gap-4 w-full">{children}</div>
         </div>
@@ -87,21 +88,21 @@ const A = "/youtube";
 export default function YouTubeCaseStudy() {
   return (
     <div className="bg-bg-subtle relative">
-      {/* ── Hero Background ── */}
+      {/* ── Hero Background ── * /}
       <Hero />
 
-      {/* ── Main Content ── */}
+      {/* ── Main Content ── * /}
       <FadeIn className="w-full flex justify-center z-10">
         <div className="relative z-10 mx-auto flex w-full bg-bg-subtle max-w-5xl flex-col px-4">
-          {/* Top Gradient Fade Overlay */}
+          {/* Top Gradient Fade Overlay * /}
           <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
 
-          {/* ── Navbar ── */}
+          {/* ── Navbar ── * /}
           <Navbar />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 01. HERO SECTION ──                                                         */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 01. HERO SECTION ──                                                         * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-b border-border-default w-full">
             <div className="px-2 py-8">
               <Title>
@@ -146,9 +147,9 @@ export default function YouTubeCaseStudy() {
 
           <Divider />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 02. CONTEXT & PROBLEM ──                                                    */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 02. CONTEXT & PROBLEM ──                                                    * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-border-default w-full">
             <div className="flex flex-col px-6 py-4 gap-5 w-full">
               <SectionLabel>Context</SectionLabel>
@@ -191,7 +192,7 @@ export default function YouTubeCaseStudy() {
             </div>
 
             <div className="flex flex-col md:flex-row border-t gap-2 border-border-default">
-              {/* --- Problem 1 --- */}
+              {/* --- Problem 1 --- * /}
               <div className="flex flex-col border-b md:border-b-0 md:border-r border-border-default flex-1">
                 <GrayBox
                   title="Current Search Experience"
@@ -225,7 +226,7 @@ export default function YouTubeCaseStudy() {
                 </div>
               </div>
 
-              {/* --- Problem 2 --- */}
+              {/* --- Problem 2 --- * /}
               <div className="flex flex-col flex-1 md:border-b-0 md:border-l border-border-default">
                 <GrayBox
                   title="Search Results"
@@ -260,9 +261,9 @@ export default function YouTubeCaseStudy() {
 
           <Hatching height="h-12" />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 03. USER FLOW JOURNEY ──                                                    */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 03. USER FLOW JOURNEY ──                                                    * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-b border-border-default gap-16 w-full pt-8 pb-8">
             <div className="flex flex-col gap-8 px-6 py-4 w-full">
               <Heading>
@@ -280,7 +281,7 @@ export default function YouTubeCaseStudy() {
             </div>
 
             <div className="flex flex-col px-8 items-center w-full">
-              {/* --- Step 1 --- */}
+              {/* --- Step 1 --- * /}
               <JourneyStep
                 narrative="Aman opens YouTube. He notices a banner on top, which indicates that Figma is streaming. This reminds him of the buzz his friends where talking about. Curious he clicks on search to find what the new feature is."
                 screen="FlowImg-01.webp"
@@ -298,7 +299,7 @@ export default function YouTubeCaseStudy() {
 
               <ActionIndicator>User taps on Search Icon</ActionIndicator>
 
-              {/* --- Step 2 --- */}
+              {/* --- Step 2 --- * /}
               <JourneyStep
                 narrative="Aman opens the search page, pauses for a moment and glances down to see if anything is useful"
                 screen="FlowImg-02.webp"
@@ -326,7 +327,7 @@ export default function YouTubeCaseStudy() {
 
               <ActionIndicator>Aman starts typing the phrase</ActionIndicator>
 
-              {/* --- Step 3 --- */}
+              {/* --- Step 3 --- * /}
               <JourneyStep
                 narrative="Focused on typing the phrase, he is unsure whether it will provide correct result or not. So he glances down...."
                 screen="FlowImg-03.webp"
@@ -355,7 +356,7 @@ export default function YouTubeCaseStudy() {
                 User starts typing the new phrase
               </ActionIndicator>
 
-              {/* --- Step 4 --- */}
+              {/* --- Step 4 --- * /}
               <JourneyStep
                 narrative="He notices the results aren’t what he required, so he start to type a more specific query until he gets the right results."
                 screen="FlowImg-04.webp"
@@ -372,7 +373,7 @@ export default function YouTubeCaseStudy() {
 
               <ActionIndicator>Aman clicks Enter</ActionIndicator>
 
-              {/* --- Step 5 --- */}
+              {/* --- Step 5 --- * /}
               <JourneyStep
                 narrative="As soon as he clicks the search button, a list of shorts appear. He is quickly frustrated as he wants to watch a deep dive. So he attempt to change the query, just then he notices “Type” filter below search bar..."
                 screen="FlowImg-05.webp"
@@ -394,7 +395,7 @@ export default function YouTubeCaseStudy() {
 
               <ActionIndicator>Aman clicks on “Type” Filter</ActionIndicator>
 
-              {/* --- Step 6 (Custom render due to bottom sheet) --- */}
+              {/* --- Step 6 (Custom render due to bottom sheet) --- * /}
               <div className="flex flex-col items-center w-full group">
                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative max-w-[1078px]">
                   <div className="flex w-full justify-center lg:justify-end lg:pt-12">
@@ -464,7 +465,7 @@ export default function YouTubeCaseStudy() {
                 Aman sees results and decides to swipe for “unwatched” Filter
               </ActionIndicator>
 
-              {/* --- Step 7 (Custom render) --- */}
+              {/* --- Step 7 (Custom render) --- * /}
               <div className="flex flex-col items-center w-full group">
                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_245px_1fr] w-full items-center lg:items-start gap-8 lg:gap-20 relative max-w-[1078px]">
                   <div className="flex w-full justify-center lg:justify-end lg:pt-12">
@@ -541,7 +542,7 @@ export default function YouTubeCaseStudy() {
 
               <ActionIndicator>Aman clicks on unwatched</ActionIndicator>
 
-              {/* --- Step 8 --- */}
+              {/* --- Step 8 --- * /}
               <JourneyStep
                 narrative="Finally, Aman has the result he wants, satisfied he open the second video to watch it!"
                 screen="FlowImg-10.webp"
@@ -561,16 +562,16 @@ export default function YouTubeCaseStudy() {
 
           <Hatching height="h-12" />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 04. DESIGN DECISIONS ──                                                     */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 04. DESIGN DECISIONS ──                                                     * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-border-default w-full">
             <div className="flex flex-col px-6 py-4 gap-5 w-full">
               <Heading>Decisions that reshaped the YouTube experience.</Heading>
             </div>
           </section>
 
-          {/* Decision 1 */}
+          {/* Decision 1 * /}
           <section className="flex flex-col border-x border-t border-b border-border-default w-full">
             <div className="flex flex-col px-6 py-8 gap-6 w-full border-b border-border-default">
               <div className="flex flex-col gap-5">
@@ -876,7 +877,7 @@ export default function YouTubeCaseStudy() {
 
           <Hatching />
 
-          {/* Decision 2 */}
+          {/* Decision 2 * /}
           <section className="flex flex-col border-x border-t border-b border-border-default w-full">
             <div className="flex flex-col px-6 py-8 gap-6 w-full border-b border-border-default">
               <div className="flex flex-col gap-5">
@@ -1121,15 +1122,15 @@ export default function YouTubeCaseStudy() {
 
           <Hatching height="h-12" />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 05. USER STORIES ──                                                         */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 05. USER STORIES ──                                                         * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-b border-border-default w-full">
             <div className="flex flex-col px-6 py-8 gap-6 w-full border-b border-border-default">
               <Heading>How users search better using new experience.</Heading>
             </div>
 
-            {/* Story 1 */}
+            {/* Story 1 * /}
             <div className="flex flex-col gap-6 w-full pb-8 border-b border-border-default">
               <div className="flex flex-col px-6 pt-6 gap-5">
                 <div className="flex self-start">
@@ -1227,7 +1228,7 @@ export default function YouTubeCaseStudy() {
               </GrayBox>
             </div>
 
-            {/* Story 2 */}
+            {/* Story 2 * /}
             <div className="flex flex-col gap-6 w-full pb-8">
               <div className="flex flex-col px-6 pt-6 gap-5">
                 <div className="flex self-start">
@@ -1300,9 +1301,9 @@ export default function YouTubeCaseStudy() {
 
           <Hatching height="h-12" />
 
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
-          {/* ── 06. FINAL REFLECTIONS ──                                                    */}
-          {/* ────────────────────────────────────────────────────────────────────────────── */}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
+          {/* ── 06. FINAL REFLECTIONS ──                                                    * /}
+          {/* ────────────────────────────────────────────────────────────────────────────── * /}
           <section className="flex flex-col border-x border-t border-b border-border-default w-full">
             <div className="flex flex-col gap-8 w-full">
               <div className="flex flex-col gap-8 w-full max-w-5xl mx-auto">
@@ -1457,10 +1458,16 @@ export default function YouTubeCaseStudy() {
 
           <Divider />
 
-          {/* ── Footer ── */}
+          {/* ── Footer ── * /}
           <Footer />
         </div>
       </FadeIn>
     </div>
   );
+}
+
+*/
+
+export default function Page() {
+  return null;
 }

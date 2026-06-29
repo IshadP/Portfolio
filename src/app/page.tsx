@@ -1,123 +1,40 @@
-import Image from "next/image";
-import PrimaryProjectCard from "../components/Landing/PrimaryProjectCard";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import FadeIn from "@/components/FadeIn";
-import Experience from "@/components/Landing/Experience";
-import Hatching from "@/components/Hatching";
+"use client";
+
+import { useEffect } from "react";
+import { ProjectsSection } from "@/components/sections/Projects";
+import Divider from "@/components/ui/Divider";
+import { CraftSection } from "@/components/sections/CraftSection";
+import Hero from "@/components/ui/Hero";
+import FadeIn from "@/components/ui/FadeIn";
+import { Experience } from "@/components/sections/Experience";
+import Footer from "@/components/ui/Footer";
+import AboutSection from "@/components/sections/Aboutme";
+
 
 export default function Home() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen items-center relative bg-bg-subtle ">
-      <div className="w-full flex flex-col justify-center max-w-5xl z-1 @container">
-        {/* {Hero - Fixed in Background} */}
+    <div className="flex flex-col items-center w-full relative ">
+      <div className="w-content flex flex-col gap-0">
         <Hero />
+        <Divider />
+        <FadeIn className="relative flex flex-col w-content z-10 bg-bg-default gap-6">
 
-        {/* Content wrapper that scrolls over the hero */}
-        <FadeIn className="w-full flex justify-center px-2">
-          <div className="flex max-w-5xl w-full flex-col bg-bg-subtle rounded-lg relative">
-            {/* Top Gradient Fade Overlay */}
-            <div className="sticky top-0 inset-x-0 w-full h-32 bg-linear-to-b from-bg-subtle from-20% to-transparent to-100% pointer-events-none z-40 -mb-32"></div>
+          <ProjectsSection />
 
-            <Navbar />
+          <CraftSection />
 
-            {/* Hatching */}
-            <Hatching />
+          <Experience />
 
-            {/* Projects Section */}
-            <section aria-label="Selected Projects" className="w-full flex flex-col border border-border-default max-w-5xl overflow-hidden">
-              <PrimaryProjectCard
-                title="Reduced Task Completion Time by 30% on Printhub"
-                description="Redesigned the main checkout flow to optimise user intent."
-                slug="/PRINTHUB"
-                ctaText="View Case Study"
-                imageCenter="/cards/Print1-01.webp"
-                imageLeft="/cards/Print1-02.webp"
-                imageRight="/cards/Print1-03.webp"
-                href="/printhub"
-                side="left"
-                priorityImages
-                className="rounded-none! outline-0! border-0!"
-              />
+          <AboutSection />
 
-              {/* Internal layout separator */}
-              <div className="w-full h-10 border-t border-b border-border-default flex justify-between items-center">
-                <div className="flex-1 h-full p-2 border-r border-border-default" />
-                <div className="flex-1 h-full p-2" />
-                <div className="flex-1 h-full p-2 border-l border-border-default" />
-              </div>
-
-              <PrimaryProjectCard
-                title="Redesigned Search for User Intent on Youtube"
-                description="Rethought the search experience to better surface user intent."
-                slug="/YOUTUBE"
-                ctaText="View Case Study"
-                imageCenter="/cards/Youtube1-01.webp"
-                imageLeft="/cards/Youtube1-02.webp"
-                imageRight="/cards/Youtube1-03.webp"
-                href="/youtube"
-                side="right"
-                className="rounded-none! outline-0! border-0!"
-              />
-            </section>
-
-            {/* Hatching */}
-            <Hatching />
-
-            {/* Experience Section */}
-            <Experience />
-
-            {/* Hatching */}
-            <Hatching />
-
-            <section aria-label="About Me" className="w-full flex flex-col border border-border-default max-w-5xl overflow-hidden">
-              <div className="p-6">
-                <h2 className="font-label-lg-mono text-text-muted">
-                  Person behind the designs
-                </h2>
-              </div>
-              <div className="flex md:flex-row flex-col border-t border-border-default">
-                <div className="w-full md:w-1/2 flex flex-col gap-4 border-r border-border-default p-6 font-body-md text-text-muted">
-                  <p>Hello, I'm Ishad,</p>
-                  <p>
-                    Currently in Senior Year of B.Tech in Computer Science and
-                    Engineering at Government College of Engineering, Nagpur.
-                  </p>
-                  <p>
-                    My first introduction to design was in 6th grade when I
-                    wondered "Why do these cars look so good?".
-                  </p>
-                  <p>
-                    Fast forward to my second year, I picked up designing again
-                    to answer a single question "How should this app look and
-                    feel?".
-                  </p>
-                  <p>
-                    {" "}
-                    I have been designing ever since. But I go back to
-                    development once in a while just for fun.
-                  </p>
-                  <p>PS: About me page coming soon!</p>
-                </div>
-                <div className="w-full md:w-1/2 relative min-h-[500px]">
-                  <Image
-                    src="/Photo.jpg"
-                    alt="Ishad Pande - Product Designer and Developer"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                    priority
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <Hatching />
-
-            {/* Footer */}
-            <Footer />
-          </div>
+          <Footer />
         </FadeIn>
       </div>
     </div>
