@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="w-full flex flex-col items-center">
       {/* Nav style footer block */}
-      <div className="w-content h-fit bg-bg-default border border-outline flex md:flex-row flex-col justify-between items-center rounded-2xl">
+      <div className="w-full md:w-content h-fit bg-bg-default border border-outline flex md:flex-row flex-col justify-between items-center rounded-2xl">
         {/* Social Links */}
         <div className="flex w-full md:w-fit h-full overflow-hidden">
           {socialLinks.map((platform) => (

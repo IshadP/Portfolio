@@ -113,7 +113,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Media Section */}
         {hasShowcase ? (
-          <div className="relative z-10 w-full overflow-hidden rounded-2xl aspect-[16/10] flex items-center justify-center p-4 sm:p-8 md:p-12">
+          <div className="relative z-10 w-full overflow-hidden rounded-2xl aspect-[16/10] flex items-center justify-center p-4 sm:p-8 md:p-0">
             <Image
               src={bgImage}
               alt={title}

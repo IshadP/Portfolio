@@ -113,12 +113,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${Mono.variable} antialiased bg-bg-default flex flex-col items-center min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${Mono.variable} antialiased bg-bg-default flex flex-col items-center min-h-screenn overflow-x-hidden`}
       >
         <div className="sticky top-0 z-90 w-full">
           <Navbar />
         </div>
-        <main className="grow">{children}</main>
+        <main className="grow w-full flex flex-col justify-center items-center">{children}</main>
         <p className="text-center font-label-lg-mono text-text-muted p-16"> Designed and built by Ishad Pande</p>
       </body>
     </html>

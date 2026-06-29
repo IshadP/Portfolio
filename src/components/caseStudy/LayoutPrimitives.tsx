@@ -106,7 +106,7 @@ export function CaseHighlights({
   results: [HighlightResult, HighlightResult?, HighlightResult?];
 }) {
   return (
-    <section className="w-full rounded-2xl bg-bg-default border border-outline p-4 flex flex-col gap-2 overflow-hidden">
+    <section className="w-full md:rounded-2xl bg-bg-default border border-outline md:p-4 flex flex-col gap-2 overflow-hidden">
       {/* Title */}
       <div className=" flex flex-col gap-4 px-8 py-4">
         <p className="font-label-md-mono text-primary ">Highlights</p>
@@ -118,7 +118,7 @@ export function CaseHighlights({
         if (!img) return null;
         return (
           <div key={i} className="flex flex-col items-end gap-1 pb-4">
-            <div className="w-full rounded-2xl overflow-hidden aspect-video relative bg-success">
+            <div className="w-full md:rounded-2xl overflow-hidden aspect-video relative bg-success">
               {img.type === "video" ? (
                 <video src={img.src} autoPlay loop muted playsInline className="w-full h-full object-cover" />
               ) : (
@@ -129,15 +129,15 @@ export function CaseHighlights({
               <span className="font-label-sm-mono text-text-muted font-semibold">
                 {String(i + 1).padStart(2, "0")}:
               </span>
-              <span className="font-label-sm-mono text-text-muted">{img.caption}</span>
+              <span className="font-label-sm-mono md:px-8 text-text-muted">{img.caption}</span>
             </div>
           </div>
         );
       })}
 
       {/* Results */}
-      <div className="border-t border-b border-white py-4 px-6 grid grid-cols-1 md:grid-cols-2 gap-2">
-        <p className="font-h3 text-text-primary -">Result</p>
+      <div className="border-t border-b border-white py-4 md:px-6 px-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+        <p className="font-h3 text-text-primary md:px-4">Result</p>
         <div className="rounded-2xl flex flex-col gap-3 overflow-hidden">
           {results.map((result, i) => {
             if (!result) return null;
@@ -211,7 +211,7 @@ export function DisplayImage({
   card?: boolean;
 }) {
   const fitClass = fit === "cover" ? "object-cover" : "object-contain";
-  const cardClass = card ? "rounded-2xl" : "";
+  const cardClass = card ? "md:rounded-2xl" : "";
   return (
     <div className="w-full md:w-content mx-auto flex flex-col gap-2">
       <div className={`relative w-full aspect-video ${cardClass} overflow-hidden bg-bg-subtle`}>
@@ -259,7 +259,7 @@ export function Hero({
         </Heading>
       </div>
 
-      <div className="w-full md:w-content aspect-video  relative rounded-2xl flex flex-col justify-start items-center gap-2 overflow-hidden">
+      <div className="w-full md:w-content aspect-video  relative md:rounded-2xl flex flex-col justify-start items-center gap-2 overflow-hidden">
         <div className="">
           <Image
             src={image1}
@@ -425,7 +425,7 @@ export function OptionComparison({ columns, layout = "centered" }: OptionCompari
     const rightColsClass = rightColumns.length >= 2 ? "md:grid-cols-2" : "grid-cols-1";
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-content mx-auto items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-content mx-auto px-4 items-start">
         {/* Left Side: Single Image */}
         <div className="flex flex-col w-full gap-4">
           {layout === "cover" ? (
@@ -495,7 +495,7 @@ export function OptionComparison({ columns, layout = "centered" }: OptionCompari
   const colsClass = columns.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
 
   return (
-    <div className={`grid grid-cols-1 ${colsClass} gap-6 w-full md:w-content mx-auto`}>
+    <div className={`grid grid-cols-1 ${colsClass} gap-6 w-full md:w-content mx-auto px-4`}>
       {columns.map((col, colIdx) => (
         <div key={colIdx} className="flex flex-col w-full gap-4">
           {/* Image & Label container */}
