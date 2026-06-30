@@ -46,7 +46,7 @@ export default function AboutSection() {
                     <Image
                         fill
                         className="object-cover"
-                        src="/photo.jpg"
+                        src="/Photo.jpg"
                         alt="Ishad Pande"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority
