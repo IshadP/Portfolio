@@ -119,7 +119,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         <main className="grow w-full flex flex-col justify-center items-center">{children}</main>
-        <p className="text-center font-label-lg-mono text-text-muted p-16"> Designed and built by Ishad Pande</p>
+        <p className="text-center font-label-lg-mono text-text-muted md:p-16 p-4"> Designed and built by Ishad Pande</p>
       </body>
     </html>
   );

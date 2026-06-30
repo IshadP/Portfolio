@@ -18,6 +18,9 @@ export default function Navbar() {
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const currentLink = navLinks.find(link => link.href === pathname);
+  const currentPageLabel = currentLink ? currentLink.label : pathname?.replace("/", "") || "";
+
   const isCaseStudy = pathname?.startsWith("/casestudy/");
 
   if (isCaseStudy) {
@@ -66,7 +69,10 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Hamburger Button */}
-      <div className="flex md:hidden w-full justify-end">
+      <div className="flex md:hidden w-full justify-between items-center">
+        <span className="font-body-sm text-text-primary font-semibold">
+          {currentPageLabel}
+        </span>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 -mr-2 rounded-full hover:bg-bg-subtle text-text-primary transition-colors focus:outline-none"
@@ -93,9 +99,8 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl no-underline font-body-md transition-colors ${
-                    isActive ? "bg-primary-muted text-primary" : "text-text-muted hover:bg-bg-subtle hover:text-text-primary"
-                  }`}
+                  className={`p-4  no-underline font-body-sm transition-colors rounded-full ${isActive ? "bg-primary-muted text-primary" : "text-text-muted hover:bg-bg-subtle hover:text-text-primary"
+                    }`}
                 >
                   {item.label}
                 </Link>

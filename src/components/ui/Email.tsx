@@ -73,7 +73,7 @@ export default function Email({
 
   if (layout === "mobile") {
     return (
-      <div className={`flex items-center justify-between p-2 ${className}`}>
+      <div className={`flex items-center justify-between gap-2 py-2 ${className}`}>
         <div className="border-b-2 border-dotted border-text-muted flex items-center">
           <Link
             href={`mailto:${EMAIL}`}
@@ -83,34 +83,21 @@ export default function Email({
           </Link>
         </div>
         <motion.button
-          variants={{
-            rest: { paddingBottom: "3px", marginTop: "0px" },
-            pressed: { paddingBottom: "0px", marginTop: "3px" },
-          }}
+          onClick={copy}
+          className="relative inline-flex cursor-pointer items-center justify-center text-text-primary bg-transparent border-none p-0 outline-none"
+          variants={{ rest: { y: 0 }, pressed: { y: 3 } }}
           initial="rest"
           animate={isPressed ? "pressed" : "rest"}
           whileTap="pressed"
-          onClick={copy}
           transition={springTransition}
-          className="relative bg-outline rounded-md flex cursor-pointer border-none p-0 outline-none"
           title={copied ? "Copied!" : "Copy Email"}
           aria-label={copied ? "Email Copied" : "Copy Email"}
         >
-          <div
-            className={`h-[24px] px-2 rounded-[4px] flex justify-center items-center transition-colors ${copied ? "bg-success" : "bg-bg-subtle"
-              }`}
-          >
-            <span
-              className={`font-label-sm uppercase leading-none flex items-center justify-center gap-1 ${copied ? "text-on-surface" : "text-text-primary"
-                }`}
-            >
-              {copied ? (
-                <CopyIconSuccess size={12} checkColor="currentColor" iconColor="currentColor" />
-              ) : (
-                "Copy"
-              )}
-            </span>
-          </div>
+          {copied ? (
+            <CopyIconSuccess size={20} iconColor="var(--color-success)" checkColor="var(--color-on-surface)" />
+          ) : (
+            <CopyIcon size={20} iconColor="currentColor" letterColor="currentColor" />
+          )}
         </motion.button>
       </div>
     );
@@ -122,12 +109,9 @@ export default function Email({
   const iconSize = isLarge ? 24 : 20;
 
   return (
-    <div className={`flex items-center gap-1 ${showLabel ? "px-4 py-4" : "px-4"} ${className}`}>
+    <div className={`flex items-center gap-1 ${showLabel ? "px-4 py-4" : "p-0 ml-1.5"} ${className}`}>
       {showLabel && (
-        <>
-          <p className={`${textClass} text-text-muted whitespace-nowrap`}>Let's Talk</p>
-          <span className={`${textClass} text-text-muted`}>→</span>
-        </>
+        <span className="font-body-sm text-text-muted ">Let's Talk &#8594;</span>
       )}
       <div className="border-b-2 border-dotted border-text-muted flex items-center">
         <a
@@ -139,7 +123,7 @@ export default function Email({
       </div>
       <motion.button
         onClick={copy}
-        className="relative ml-1 inline-flex cursor-pointer items-center justify-center text-text-primary bg-transparent border-none p-0 outline-none"
+        className="relative inline-flex cursor-pointer items-center justify-center text-text-primary bg-transparent border-none p-0 outline-none"
         variants={{ rest: { y: 0 }, pressed: { y: 3 } }}
         initial="rest"
         animate={isPressed ? "pressed" : "rest"}

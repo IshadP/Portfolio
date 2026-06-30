@@ -25,10 +25,10 @@ export interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video, component }) => {
   return (
-    <div className="flex-1 pb-4 rounded-lg flex flex-col justify-start items-start gap-3 cursor-[url('/cards/pointinghand.svg')_24_24,pointer] group">
+    <div className="flex-1 pb-4 rounded-2xl flex flex-col justify-start items-start gap-3 cursor-[url('/cards/pointinghand.svg')_24_24,pointer] group">
       <div className="relative w-full aspect-square bg-bg-subtle rounded-2xl overflow-hidden">
         {component ? (
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute w-full inset-0 flex items-center justify-center">
             {component}
           </div>
         ) : video ? (
@@ -38,7 +38,7 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
+            className="absolute inset-0 w-full object-cover transition-transform duration-500 ease-out"
           />
         ) : image ? (
           <Image
@@ -46,7 +46,7 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
             alt={`${title} preview`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[0.92]"
+            className="object-cover transition-transform w-full duration-500 ease-out group-hover:scale-[0.92]"
           />
         ) : null}
       </div>

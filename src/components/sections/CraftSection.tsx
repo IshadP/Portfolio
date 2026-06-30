@@ -5,7 +5,7 @@ import { CRAFT_ITEMS } from "@/data/craft";
 
 export const CraftSection = () => {
     return (
-        <section className="w-content flex mt-8 flex-col items-start gap-4">
+        <section className="w-full md:w-content flex mt-8 flex-col items-start gap-4">
             {/* Section Header */}
             <p className="px-4 pt-4 w-full pb-2 border-b border-outline font-label-md-mono text-text-muted">Craft</p>
 

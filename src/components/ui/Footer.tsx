@@ -10,7 +10,7 @@ const socialLinks = [
   {
     name: "X",
     href: "https://x.com/ishadpande",
-    mobileClassName: "bg-black",
+    mobileClassName: "focus:bg-black",
     hoverClassName: "hover:bg-black",
     icon: (
       <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -21,7 +21,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/ishadpande",
-    mobileClassName: "bg-[#0A66C2]",
+    mobileClassName: "focus:bg-[#0A66C2]",
     hoverClassName: "hover:bg-[#0A66C2]",
     icon: (
       <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -32,7 +32,7 @@ const socialLinks = [
   {
     name: "Behance",
     href: "https://www.behance.net/ishadpande",
-    mobileClassName: "bg-[#0057FF]",
+    mobileClassName: "focus:bg-[#0057FF]",
     hoverClassName: "hover:bg-[#0057FF]",
     icon: (
       <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor">
@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="w-full flex flex-col items-center">
       {/* Nav style footer block */}
-      <div className="w-full md:w-content h-fit bg-bg-default border border-outline flex md:flex-row flex-col justify-between items-center rounded-2xl">
+      <div className="w-full md:w-content h-fit bg-bg-default border border-outline flex md:flex-row flex-col justify-between items-center overflow-hidden rounded-2xl">
         {/* Social Links */}
         <div className="flex w-full md:w-fit h-full overflow-hidden">
           {socialLinks.map((platform) => (
@@ -70,12 +70,12 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={platform.name}
-              className={`group flex flex-1 md:flex-none p-5 aspect-square items-center justify-center no-underline md:border-r md:border-outline
+              className={`group flex flex-1 md:flex-none p-2 md:p-5 md:aspect-square aspect-4/3 items-center justify-center no-underline md:border-r md:border-outline
               ${platform.mobileClassName}
               md:bg-transparent ${platform.hoverClassName}
               transition-colors`}
             >
-              <div className="text-bg-default md:text-text-primary md:group-hover:text-bg-default transition-colors">
+              <div className="text-text-primary md:group-hover:text-bg-default group-focus:text-bg-default transition-colors">
                 {platform.icon}
               </div>
             </a>
@@ -88,7 +88,10 @@ export default function Footer() {
         </div>
 
         {/* Email Row - MOBILE ONLY */}
-        <Email layout="mobile" className="md:hidden border-t border-outline h-16 w-full" />
+        <div className="md:hidden flex flex-row w-full justify-between items-center px-4 py-2 border-t border-outline">
+          <p className="font-label-md-mono text-text-muted">Email</p>
+          <Email layout="mobile" className="py-0" />
+        </div>
       </div>
     </footer>
   );

@@ -6,16 +6,16 @@ import { ArrowRightIcon } from "@phosphor-icons/react";
 
 export default function AboutSection() {
     return (
-        <div className="w-full bg-bg-default flex flex-col justify-start items-start">
+        <div className="w-full bg-bg-default flex flex-col  justify-start items-start">
 
             <p className="px-4 pt-4 mb-4 pb-2 border-b border-outline font-label-md-mono text-text-muted w-full">About me</p>
-            <div className=" grid grid-cols-2">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0">
                 {/* Content Area */}
-                <div className="w-full px-4 col-span-1 flex flex-col justify-start items-start gap-6">
+                <div className="w-full px-4 col-span-1 flex flex-col justify-start items-start gap-4 md:gap-6">
 
 
 
-                    <div className="flex flex-col gap-4 text-text-muted font-body-sm">
+                    <div className="flex flex-col gap-2 md:gap-4 text-text-muted font-body-sm">
                         <p>
                             My first introduction to design was in 6th grade when I wondered &quot;Why do these cars look so good?&quot;.
                         </p>

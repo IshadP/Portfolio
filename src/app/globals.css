@@ -135,7 +135,7 @@
   }
 
   .font-body-lg {
-    @apply font-sans md:text-xl text-xl font-medium;
+    @apply font-sans md:text-xl text-base font-medium;
   }
 
   .font-body-md-bold {
@@ -151,7 +151,7 @@
   }
 
   .font-body-sm {
-    @apply font-sans text-[1.0625rem] leading-6 font-medium;
+    @apply font-sans md:text-[1.0625rem] text-sm leading-6 font-medium;
   }
 
   /* Label — mono (Geist Mono) */

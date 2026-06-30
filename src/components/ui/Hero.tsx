@@ -43,11 +43,6 @@ const heroRoutes: Record<
     icon: <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />,
     iconClass: "flex justify-center items-center w-16 h-16",
   },
-  "/resume": {
-    title: "Resume",
-    icon: <ReadCvLogoIcon size={64} className="text-text-primary" />,
-    iconClass: "flex justify-center items-center w-16 h-16",
-  },
   "/about": {
     title: "Started from cars, Ended In Products",
   },
@@ -91,36 +86,40 @@ export default function Hero() {
   const currentRoute = heroRoutes[pathname];
 
   return (
-    <section className="sticky top-[80px] z-0 w-full flex justify-center py-16 md:py-24 ">
+    <section className="sticky top-[80px] z-0 w-full flex justify-center py-4 md:py-24 ">
       <motion.div
-        className="flex flex-col items-start w-full max-w-(--width-content) px-6 md:px-3 gap-8"
+        className="flex flex-col items-start w-full max-w-(--width-content) md:px-3 gap-8"
         initial="initial"
         animate="animate"
         variants={parentVariants}
       >
         {pathname === "/" ? (
-          <div className="flex flex-col gap-10 max-w-3xl">
+          <div className="flex flex-col md:gap-10  gap-4 w-full">
             {/* Introduction and Headline */}
             <motion.div
               variants={childVariants}
-              style={{ willChange: "transform, opacity" }}
-              className="flex flex-col gap-4"
+              style={{
+                willChange: "transform, opacity, filter",
+                transform: "translateZ(0) rotate(0.001deg)",
+                backfaceVisibility: "hidden",
+              }}
+              className="flex flex-col gap-4 mb-4 md:mb-0 w-full"
             >
-              <h1 className="font-h1-display text-primary">
+              <h1 className="font-h1-display text-primary w-full">
                 <Image
                   src="/ascii-engineer.svg"
                   alt="Engineer Turned"
-                  className="w-full h-auto"
+                  className="object-contain w-full h-auto"
                   width={754}
                   height={62}
                   priority
                 />
               </h1>
-              <h1 className="font-h1-display text-primary">
+              <h1 className="font-h1-display text-primary w-full">
                 <Image
                   src="/ascii-designer.svg"
                   alt="Product Designer"
-                  className="w-full h-auto"
+                  className="object-contain w-full h-auto"
                   width={754}
                   height={62}
                   priority
@@ -131,8 +130,12 @@ export default function Hero() {
             {/* Sub-context description paragraphs */}
             <motion.div
               variants={childVariants}
-              style={{ willChange: "transform, opacity" }}
-              className="flex flex-col gap-4 font-body-lg text-text-muted"
+              style={{
+                willChange: "transform, opacity",
+                transform: "translateZ(0) rotate(0.001deg)",
+                backfaceVisibility: "hidden",
+              }}
+              className="flex flex-col md:gap-4 gap-2 font-body-lg text-text-muted"
             >
               <p>
                 Designing at <span className="text-text-primary">Grid Insight</span> in Nagpur, India.
@@ -145,8 +148,12 @@ export default function Hero() {
             {/* Call to Action with Custom Email Component */}
             <motion.div
               variants={childVariants}
-              style={{ willChange: "transform, opacity" }}
-              className="flex flex-wrap items-center font-body-lg text-text-muted mt-4"
+              style={{
+                willChange: "transform, opacity",
+                transform: "translateZ(0) rotate(0.001deg)",
+                backfaceVisibility: "hidden",
+              }}
+              className="flex flex-wrap items-center font-body-lg text-text-muted md:mt-4"
             >
               <span>Want to work together or chat? Email me at</span>
               <Email type="hidelabel" size="large" />

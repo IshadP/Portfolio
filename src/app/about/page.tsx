@@ -4,17 +4,17 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="flex flex-col items-center w-full relative bg-bg-default">
-      <div className="w-content flex flex-col bg-bg-default  overflow-hidden">
+      <div className="w-full md:w-content flex flex-col bg-bg-default overflow-hidden">
 
         {/* 1. Story Section */}
-        <div className="w-full grid grid-cols-2">
+        <div className="w-full flex flex-col md:grid grid-cols-2 gap-6 md:gap-0">
           {/* Image Block */}
-          <div className="col-span-1  relative">
+          <div className="col-span-1 relative w-full h-120 md:h-auto">
             <Image
               src="/Photo.jpg"
               alt="Ishad Pande story preview"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover md:rounded-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
@@ -45,13 +45,13 @@ export default function AboutPage() {
         </div>
 
         {/* 2. What I Like to Do Section */}
-        <div className="w-full flex flex-col my-8 justify-start items-stretch ">
+        <div className="w-full flex flex-col my-8 justify-start items-stretch gap-8">
           {/* Content Area */}
           <div className="flex-1 p-4 flex flex-col justify-start items-start gap-6">
             <h2 className="text-text-muted w-full border-b border-outline pb-2 font-h3">
               What I like to do
             </h2>
-            <div className="gap-6 grid-cols-2 grid-rows-2 grid w-full">
+            <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 w-full">
               {/* Item 1 */}
               <div className="flex flex-col gap-4">
                 <h3 className="text-text-primary font-body-sm-bold">
@@ -90,41 +90,34 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          {/* Collage Images Block */}
 
-          <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full p-6 aspect-3/2">
-            {/* Column 1: Row 1 & 2 */}
-            <div className="relative col-start-1 row-start-1 row-span-2 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/trip1.webp" fill className="object-cover" alt="trip" />
+          {/* Collage Images Block - single column on all sizes, smaller fixed heights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 grid-rows-4 gap-2 w-full p-4 mx-auto md:max-w-full md:mx-0">
+            <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/trip1.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            {/* Column 2: Row 1 */}
-            <div className="relative col-start-2 row-start-1 row-span-1 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/photo2.webp" fill className="object-cover" alt="photo" />
+            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/photo2.webp" fill className="object-cover" alt="photo" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            {/* Column 3: Row 1 & 2 */}
-            <div className="relative col-start-3 row-start-1 row-span-2 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/CSMT.webp" fill className="object-cover" alt="CSMT Mumbai" />
+            <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/CSMT.webp" fill className="object-cover" alt="CSMT Mumbai" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            {/* Column 2: Row 2 & 3 */}
-            <div className="relative col-start-2 row-start-2 row-span-2 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/jedif.webp" fill className="object-cover" alt="jedi" />
+            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/jedif.webp" fill className="object-cover" alt="jedi" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            {/* Column 1: Row 3 */}
-            <div className="relative col-start-1 row-start-3 row-span-1 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/basketball.webp" fill className="object-cover" alt="basketball" />
+            <div className="relative md:col-span-1 md:row-span-1 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/basketball.webp" fill className="object-cover" alt="basketball" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            {/* Column 3: Row 3 */}
-            <div className="relative col-start-3 row-start-3 row-span-1 rounded-2xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" />
+            <div className="relative md:col-span-1 md:row-span-1 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+              <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
           </div>
-
         </div>
 
         {/* 3. Sci-fi Section */}
         <div className="w-full flex flex-col md:flex-row justify-start items-stretch">
           {/* Left spacer block */}
-          <div className="flex-1 p-10 border-b md:border-b-0 md:border-r border-outline flex items-center justify-center bg-bg-subtle min-h-[200px] md:min-h-full relative overflow-hidden">
+          {/* <div className="flex-1 p-6 md:p-10 w-full border-b md:border-b-0 md:border-r border-outline flex items-center justify-center bg-bg-subtle h-40 sm:h-56 md:h-auto md:min-h-full relative overflow-hidden">
             <Image
               src="/bg.webp"
               alt="Sci-fi wallpaper theme background"
@@ -132,9 +125,9 @@ export default function AboutPage() {
               className="object-cover opacity-60 mix-blend-luminosity"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
+          </div> */}
           {/* Content Area */}
-          <div className="flex-1 p-10 flex flex-col justify-start items-start gap-6">
+          <div className="flex-1 w-full p-6 md:p-10 flex flex-col justify-start items-start gap-6">
             <h2 className="text-text-primary font-h3">
               Last but not the least
             </h2>
@@ -158,7 +151,7 @@ export default function AboutPage() {
                   <li>and many more...</li>
                 </ul>
               </div>
-              <p className="mt-4">
+              {/* <p className="mt-4">
                 I even make wallpaper of them.
               </p>
               <Link
@@ -168,7 +161,7 @@ export default function AboutPage() {
                 className="text-primary hover:underline underline-offset-4 font-semibold"
               >
                 Check them out here
-              </Link>
+              </Link> */}
 
             </div>
           </div>

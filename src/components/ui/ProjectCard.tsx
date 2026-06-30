@@ -39,7 +39,7 @@ const PhoneMockup: React.FC<{
         damping: 15,
         delay: index * 0.05,
       }}
-      className="relative h-[98%] aspect-202/431"
+      className="relative md:h-[80%] h-[100%] aspect-202/431"
       style={{ willChange: "transform" }}
     >
 
@@ -92,15 +92,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
 
-      className={`group relative block w-full cursor-pointer transition-colors rounded-2xl ${className}`}
+      className={`group relative flex flex-col gap-4 mt-4 md:mt-0  w-full cursor-pointer transition-colors rounded-2xl ${className}`}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
     >
       {/* Custom Floating Cursor Label */}
       <div className="absolute inset-0 z-0 bg-transparent group-hover:bg-bg-subtle transition-colors duration-300 rounded-3xl pointer-events-none scale-[1.02]" />
 
-      <div className="relative z-10 flex flex-col p-4 justify-between gap-12 md:flex-row md:items-start">
-        <h2 className="max-w-xl font-h3 text-text-primary">
+      <div className="relative z-10 flex flex-col md:p-4 px-2 justify-between gap-4 md:gap-12 md:flex-row items-start">
+        <h2 className="max-w-xl w-full font-h3 text-text-primary">
           {title}
         </h2>
         <p className="max-w-xs font-label-md-mono text-text-muted md:text-right">
