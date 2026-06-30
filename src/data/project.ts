@@ -20,7 +20,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   {
     title: "Redesigned Search for User Intent on Youtube",
     description: "Rethought the search experience to better surface user intent.",
-    slug: "Printhub",
+    slug: "Youtube",
     href: "/casestudy/youtube",
     bgImage: "/cards/bg2.webp",
     showcaseMedia: [

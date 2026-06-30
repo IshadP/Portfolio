@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { TECH_STYLES } from "@/data/craft";
 
-export const Tag = ({ tech }: { tech: string }) => {
+const Tag = ({ tech }: { tech: string }) => {
   const style = TECH_STYLES[tech] || TECH_STYLES["React"];
 
   return (
-    <div className={`px-2 py-1 rounded-sm flex justify-center items-center gap-2 ${style.bg}`}>
+    <div className={`px-2 py-1 rounded-sm flex justify-center items-center gap-2  ${style.bg}`}>
       <span className={`font-label-sm-mono ${style.text}`}>{tech}</span>
     </div>
   );
@@ -21,11 +21,15 @@ export interface CardProps {
   image?: string;
   video?: string;
   component?: React.ReactNode;
+  link?: string;
 }
 
-export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video, component }) => {
+export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video, component, link }) => {
+  const Wrapper = link ? 'a' : 'div';
+  const wrapperProps = link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <div className="flex-1 pb-4 rounded-2xl flex flex-col justify-start items-start gap-3 cursor-[url('/cards/pointinghand.svg')_24_24,pointer] group">
+    <Wrapper {...wrapperProps} className="flex-1 pb-4 rounded-2xl flex flex-col justify-start items-start cursor-pointer gap-3 group no-underline">
       <div className="relative w-full aspect-square bg-bg-subtle rounded-2xl overflow-hidden">
         {component ? (
           <div className="absolute w-full inset-0 flex items-center justify-center">
@@ -46,7 +50,7 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
             alt={`${title} preview`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform w-full duration-500 ease-out group-hover:scale-[0.92]"
+            className="object-cover transition-transform w-full duration-500 ease-out"
           />
         ) : null}
       </div>
@@ -66,6 +70,6 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
           </div>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 };

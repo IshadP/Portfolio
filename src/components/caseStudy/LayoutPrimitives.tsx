@@ -252,7 +252,7 @@ export function Hero({
   overview: string;
 }) {
   return (
-    <section id="hero" className=" flex flex-col justify-start items-center gap-6 w-full [counter-reset:image-counter]">
+    <section id="hero" className=" mt-4 flex flex-col justify-start items-center gap-6 w-full [counter-reset:image-counter]">
       <div className="w-full md:w-content px-6 md:px-32 flex flex-col justify-start items-center">
         <Heading>
           {title}

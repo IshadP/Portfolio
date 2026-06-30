@@ -1,0 +1,2319 @@
+{
+  "kind": "combined",
+  "schema_version": 7,
+  "version": "2.103.0",
+  "elapsed_ms": 141,
+  "check": {
+    "schema_version": 7,
+    "version": "2.103.0",
+    "elapsed_ms": 55,
+    "total_issues": 16,
+    "entry_points": {
+      "total": 12,
+      "sources": {
+        "plugin": 12
+      }
+    },
+    "summary": {
+      "total_issues": 16,
+      "unused_files": 7,
+      "unused_exports": 6,
+      "unused_types": 0,
+      "private_type_leaks": 0,
+      "unused_dependencies": 2,
+      "unused_enum_members": 0,
+      "unused_class_members": 0,
+      "unused_store_members": 0,
+      "unprovided_injects": 0,
+      "unrendered_components": 0,
+      "unused_component_props": 0,
+      "unused_component_emits": 0,
+      "unused_component_inputs": 0,
+      "unused_component_outputs": 0,
+      "unused_svelte_events": 0,
+      "unused_server_actions": 0,
+      "unused_load_data_keys": 0,
+      "unresolved_imports": 0,
+      "unlisted_dependencies": 0,
+      "duplicate_exports": 0,
+      "type_only_dependencies": 0,
+      "test_only_dependencies": 1,
+      "circular_dependencies": 0,
+      "re_export_cycles": 0,
+      "boundary_violations": 0,
+      "boundary_coverage_violations": 0,
+      "boundary_call_violations": 0,
+      "policy_violations": 0,
+      "stale_suppressions": 0,
+      "unused_catalog_entries": 0,
+      "empty_catalog_groups": 0,
+      "unresolved_catalog_references": 0,
+      "unused_dependency_overrides": 0,
+      "misconfigured_dependency_overrides": 0,
+      "invalid_client_exports": 0,
+      "mixed_client_server_barrels": 0,
+      "misplaced_directives": 0,
+      "route_collisions": 0,
+      "dynamic_segment_name_conflicts": 0
+    },
+    "unused_files": [
+      {
+        "path": "src/components/AiExperimentCard.tsx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/components/Landing/AboutCard.tsx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/components/Landing/Experience.tsx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/components/PdfViewer.tsx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/data/casestudies/printhub/page.mdx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/data/casestudies/youtube/page.mdx",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      },
+      {
+        "path": "src/hooks/useKeyboardPress.ts",
+        "actions": [
+          {
+            "type": "delete-file",
+            "auto_fixable": false,
+            "description": "Delete this file",
+            "note": "File deletion may remove runtime functionality not visible to static analysis"
+          },
+          {
+            "type": "suppress-file",
+            "auto_fixable": false,
+            "description": "Suppress with a file-level comment at the top of the file",
+            "comment": "// fallow-ignore-file unused-file"
+          }
+        ]
+      }
+    ],
+    "unused_exports": [
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "export_name": "SubHeadingSection",
+        "is_type_only": false,
+        "line": 53,
+        "col": 16,
+        "span_start": 1752,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "export_name": "ContextSection",
+        "is_type_only": false,
+        "line": 301,
+        "col": 16,
+        "span_start": 10541,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export, complexity"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "export_name": "DecisionHeading",
+        "is_type_only": false,
+        "line": 349,
+        "col": 16,
+        "span_start": 11885,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "export_name": "Card",
+        "is_type_only": false,
+        "line": 375,
+        "col": 16,
+        "span_start": 12584,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "export_name": "OptionComparison",
+        "is_type_only": false,
+        "line": 418,
+        "col": 16,
+        "span_start": 13763,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export, complexity"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/CraftCard.tsx",
+        "export_name": "Tag",
+        "is_type_only": false,
+        "line": 7,
+        "col": 13,
+        "span_start": 138,
+        "is_re_export": false,
+        "actions": [
+          {
+            "type": "remove-export",
+            "auto_fixable": true,
+            "description": "Remove the unused export from the public API"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the line",
+            "comment": "// fallow-ignore-next-line unused-export"
+          }
+        ]
+      }
+    ],
+    "unused_types": [],
+    "private_type_leaks": [],
+    "unused_dependencies": [
+      {
+        "package_name": "@mdx-js/loader",
+        "location": "dependencies",
+        "path": "package.json",
+        "line": 12,
+        "actions": [
+          {
+            "type": "remove-dependency",
+            "auto_fixable": true,
+            "description": "Remove from dependencies in package.json"
+          },
+          {
+            "type": "add-to-config",
+            "auto_fixable": false,
+            "description": "Add \"@mdx-js/loader\" to ignoreDependencies in fallow config",
+            "config_key": "ignoreDependencies",
+            "value": "@mdx-js/loader",
+            "value_schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json#/properties/ignoreDependencies/items"
+          }
+        ]
+      },
+      {
+        "package_name": "@mdx-js/react",
+        "location": "dependencies",
+        "path": "package.json",
+        "line": 13,
+        "actions": [
+          {
+            "type": "remove-dependency",
+            "auto_fixable": true,
+            "description": "Remove from dependencies in package.json"
+          },
+          {
+            "type": "add-to-config",
+            "auto_fixable": false,
+            "description": "Add \"@mdx-js/react\" to ignoreDependencies in fallow config",
+            "config_key": "ignoreDependencies",
+            "value": "@mdx-js/react",
+            "value_schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json#/properties/ignoreDependencies/items"
+          }
+        ]
+      }
+    ],
+    "unused_dev_dependencies": [],
+    "unused_optional_dependencies": [],
+    "unused_enum_members": [],
+    "unused_class_members": [],
+    "unresolved_imports": [],
+    "unlisted_dependencies": [],
+    "duplicate_exports": [],
+    "type_only_dependencies": [],
+    "test_only_dependencies": [
+      {
+        "package_name": "@next/mdx",
+        "path": "package.json",
+        "line": 14,
+        "actions": [
+          {
+            "type": "move-to-dev",
+            "auto_fixable": false,
+            "description": "Move to devDependencies (only test files import this)",
+            "note": "Only test files import this package so it does not need to be a production dependency"
+          },
+          {
+            "type": "add-to-config",
+            "auto_fixable": false,
+            "description": "Add \"@next/mdx\" to ignoreDependencies in fallow config",
+            "config_key": "ignoreDependencies",
+            "value": "@next/mdx",
+            "value_schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json#/properties/ignoreDependencies/items"
+          }
+        ]
+      }
+    ],
+    "circular_dependencies": [],
+    "re_export_cycles": [],
+    "boundary_violations": [],
+    "boundary_coverage_violations": [],
+    "boundary_call_violations": [],
+    "policy_violations": [],
+    "stale_suppressions": [],
+    "unused_catalog_entries": [],
+    "empty_catalog_groups": [],
+    "unresolved_catalog_references": [],
+    "unused_dependency_overrides": [],
+    "misconfigured_dependency_overrides": [],
+    "invalid_client_exports": [],
+    "mixed_client_server_barrels": [],
+    "misplaced_directives": [],
+    "route_collisions": [],
+    "dynamic_segment_name_conflicts": []
+  },
+  "dupes": {
+    "clone_groups": [
+      {
+        "instances": [
+          {
+            "file": "src/components/caseStudy/LayoutPrimitives.tsx",
+            "start_line": 475,
+            "end_line": 489,
+            "start_col": 95,
+            "end_col": 14,
+            "fragment": "</div>}\n                  {col.body && (\n                    Array.isArray(col.body) ? (\n                      col.body.map((text, idx) => (\n                        <BodyText key={idx}>{text}</BodyText>\n                      ))\n                    ) : (\n                      <BodyText>{col.body}</BodyText>\n                    )\n                  )}\n                </div>\n              )}\n            </div>\n          ))}\n        </div>"
+          },
+          {
+            "file": "src/components/caseStudy/LayoutPrimitives.tsx",
+            "start_line": 542,
+            "end_line": 560,
+            "start_col": 61,
+            "end_col": 10,
+            "fragment": "</SubHeading>}\n              {col.body && (\n                Array.isArray(col.body) ? (\n                  col.body.map((text, idx) => (\n                    <BodyText key={idx}>\n                      {text}\n                    </BodyText>\n                  ))\n                ) : (\n                  <BodyText>\n                    {col.body}\n                  </BodyText>\n                )\n              )}\n            </div>\n          )}\n        </div>\n      ))}\n    </div>"
+          }
+        ],
+        "token_count": 64,
+        "line_count": 19,
+        "fingerprint": "dup:2e3d98a9",
+        "suggested_name": "BodyText",
+        "actions": [
+          {
+            "type": "extract-shared",
+            "auto_fixable": false,
+            "description": "Extract duplicated code (19 lines, 2 instances) into a shared function"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the duplicated code",
+            "comment": "// fallow-ignore-next-line code-duplication"
+          }
+        ]
+      },
+      {
+        "instances": [
+          {
+            "file": "src/components/ui/Email.tsx",
+            "start_line": 60,
+            "end_line": 72,
+            "start_col": 17,
+            "end_col": 11,
+            "fragment": "false;\n        });\n      }\n    };\n\n    window.addEventListener(\"keydown\", handleKeyDown);\n    window.addEventListener(\"keyup\", handleKeyUp);\n\n    return () => {\n      window.removeEventListener(\"keydown\", handleKeyDown);\n      window.removeEventListener(\"keyup\", handleKeyUp);\n    };\n  }, [copy]"
+          },
+          {
+            "file": "src/hooks/useKeyboardPress.ts",
+            "start_line": 15,
+            "end_line": 26,
+            "start_col": 29,
+            "end_col": 18,
+            "fragment": "false);\r\n            }\r\n        };\r\n\r\n        window.addEventListener(\"keydown\", handleKeyDown);\r\n        window.addEventListener(\"keyup\", handleKeyUp);\r\n\r\n        return () => {\r\n            window.removeEventListener(\"keydown\", handleKeyDown);\r\n            window.removeEventListener(\"keyup\", handleKeyUp);\r\n        };\r\n    }, [targetKey]"
+          }
+        ],
+        "token_count": 52,
+        "line_count": 13,
+        "fingerprint": "dup:81cd4448",
+        "suggested_name": "window",
+        "actions": [
+          {
+            "type": "extract-shared",
+            "auto_fixable": false,
+            "description": "Extract duplicated code (13 lines, 2 instances) into a shared function"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the duplicated code",
+            "comment": "// fallow-ignore-next-line code-duplication"
+          }
+        ]
+      }
+    ],
+    "clone_families": [
+      {
+        "files": [
+          "src/components/caseStudy/LayoutPrimitives.tsx"
+        ],
+        "groups": [
+          {
+            "instances": [
+              {
+                "file": "src/components/caseStudy/LayoutPrimitives.tsx",
+                "start_line": 475,
+                "end_line": 489,
+                "start_col": 95,
+                "end_col": 14,
+                "fragment": "</div>}\n                  {col.body && (\n                    Array.isArray(col.body) ? (\n                      col.body.map((text, idx) => (\n                        <BodyText key={idx}>{text}</BodyText>\n                      ))\n                    ) : (\n                      <BodyText>{col.body}</BodyText>\n                    )\n                  )}\n                </div>\n              )}\n            </div>\n          ))}\n        </div>"
+              },
+              {
+                "file": "src/components/caseStudy/LayoutPrimitives.tsx",
+                "start_line": 542,
+                "end_line": 560,
+                "start_col": 61,
+                "end_col": 10,
+                "fragment": "</SubHeading>}\n              {col.body && (\n                Array.isArray(col.body) ? (\n                  col.body.map((text, idx) => (\n                    <BodyText key={idx}>\n                      {text}\n                    </BodyText>\n                  ))\n                ) : (\n                  <BodyText>\n                    {col.body}\n                  </BodyText>\n                )\n              )}\n            </div>\n          )}\n        </div>\n      ))}\n    </div>"
+              }
+            ],
+            "token_count": 64,
+            "line_count": 19,
+            "fingerprint": "dup:2e3d98a9",
+            "suggested_name": "BodyText",
+            "actions": [
+              {
+                "type": "extract-shared",
+                "auto_fixable": false,
+                "description": "Extract duplicated code (19 lines, 2 instances) into a shared function"
+              },
+              {
+                "type": "suppress-line",
+                "auto_fixable": false,
+                "description": "Suppress with an inline comment above the duplicated code",
+                "comment": "// fallow-ignore-next-line code-duplication"
+              }
+            ]
+          }
+        ],
+        "total_duplicated_lines": 19,
+        "total_duplicated_tokens": 64,
+        "suggestions": [
+          {
+            "kind": "ExtractFunction",
+            "description": "Extract shared function (19 lines) from LayoutPrimitives.tsx, LayoutPrimitives.tsx",
+            "estimated_savings": 19
+          }
+        ],
+        "actions": [
+          {
+            "type": "extract-shared",
+            "auto_fixable": false,
+            "description": "Extract 1 duplicated code block (19 lines) into a shared module",
+            "note": "These clone groups share the same files, indicating a structural relationship; refactor together"
+          },
+          {
+            "type": "apply-suggestion",
+            "auto_fixable": false,
+            "description": "Extract shared function (19 lines) from LayoutPrimitives.tsx, LayoutPrimitives.tsx"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the duplicated code",
+            "comment": "// fallow-ignore-next-line code-duplication"
+          }
+        ]
+      },
+      {
+        "files": [
+          "src/components/ui/Email.tsx",
+          "src/hooks/useKeyboardPress.ts"
+        ],
+        "groups": [
+          {
+            "instances": [
+              {
+                "file": "src/components/ui/Email.tsx",
+                "start_line": 60,
+                "end_line": 72,
+                "start_col": 17,
+                "end_col": 11,
+                "fragment": "false;\n        });\n      }\n    };\n\n    window.addEventListener(\"keydown\", handleKeyDown);\n    window.addEventListener(\"keyup\", handleKeyUp);\n\n    return () => {\n      window.removeEventListener(\"keydown\", handleKeyDown);\n      window.removeEventListener(\"keyup\", handleKeyUp);\n    };\n  }, [copy]"
+              },
+              {
+                "file": "src/hooks/useKeyboardPress.ts",
+                "start_line": 15,
+                "end_line": 26,
+                "start_col": 29,
+                "end_col": 18,
+                "fragment": "false);\r\n            }\r\n        };\r\n\r\n        window.addEventListener(\"keydown\", handleKeyDown);\r\n        window.addEventListener(\"keyup\", handleKeyUp);\r\n\r\n        return () => {\r\n            window.removeEventListener(\"keydown\", handleKeyDown);\r\n            window.removeEventListener(\"keyup\", handleKeyUp);\r\n        };\r\n    }, [targetKey]"
+              }
+            ],
+            "token_count": 52,
+            "line_count": 13,
+            "fingerprint": "dup:81cd4448",
+            "suggested_name": "window",
+            "actions": [
+              {
+                "type": "extract-shared",
+                "auto_fixable": false,
+                "description": "Extract duplicated code (13 lines, 2 instances) into a shared function"
+              },
+              {
+                "type": "suppress-line",
+                "auto_fixable": false,
+                "description": "Suppress with an inline comment above the duplicated code",
+                "comment": "// fallow-ignore-next-line code-duplication"
+              }
+            ]
+          }
+        ],
+        "total_duplicated_lines": 13,
+        "total_duplicated_tokens": 52,
+        "suggestions": [
+          {
+            "kind": "ExtractFunction",
+            "description": "Extract shared function (13 lines) from Email.tsx, useKeyboardPress.ts",
+            "estimated_savings": 13
+          }
+        ],
+        "actions": [
+          {
+            "type": "extract-shared",
+            "auto_fixable": false,
+            "description": "Extract 1 duplicated code block (13 lines) into a shared module",
+            "note": "These clone groups share the same files, indicating a structural relationship; refactor together"
+          },
+          {
+            "type": "apply-suggestion",
+            "auto_fixable": false,
+            "description": "Extract shared function (13 lines) from Email.tsx, useKeyboardPress.ts"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the duplicated code",
+            "comment": "// fallow-ignore-next-line code-duplication"
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "total_files": 37,
+      "files_with_clones": 3,
+      "total_lines": 3433,
+      "duplicated_lines": 59,
+      "total_tokens": 11123,
+      "duplicated_tokens": 116,
+      "clone_groups": 2,
+      "clone_instances": 4,
+      "duplication_percentage": 1.7186134576172445
+    }
+  },
+  "health": {
+    "findings": [
+      {
+        "path": "src/components/ui/Email.tsx",
+        "name": "Email",
+        "line": 19,
+        "col": 15,
+        "cyclomatic": 14,
+        "cognitive": 21,
+        "line_count": 125,
+        "param_count": 1,
+        "react_hook_count": 4,
+        "react_jsx_max_depth": 3,
+        "react_prop_count": 4,
+        "react_hook_profile": {
+          "state": 2,
+          "effect": 1,
+          "memo": 0,
+          "callback": 1,
+          "custom": 0,
+          "max_effect_dep_arity": 1
+        },
+        "exceeded": "cognitive_crap",
+        "severity": "critical",
+        "crap": 210.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `Email` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "refactor-function",
+            "auto_fixable": false,
+            "description": "Refactor `Email` to reduce complexity (extract helper functions, simplify branching)",
+            "note": "Consider splitting into smaller functions with single responsibilities"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "<arrow>",
+        "line": 499,
+        "col": 19,
+        "cyclomatic": 12,
+        "cognitive": 11,
+        "line_count": 61,
+        "param_count": 2,
+        "react_jsx_max_depth": 4,
+        "exceeded": "crap",
+        "severity": "critical",
+        "crap": 156.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `<arrow>` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/app/resume/page.tsx",
+        "name": "renderPDF",
+        "line": 49,
+        "col": 22,
+        "cyclomatic": 12,
+        "cognitive": 13,
+        "line_count": 51,
+        "param_count": 0,
+        "exceeded": "crap",
+        "severity": "critical",
+        "crap": 156.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `renderPDF` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "OptionComparison",
+        "line": 418,
+        "col": 7,
+        "cyclomatic": 10,
+        "cognitive": 10,
+        "line_count": 145,
+        "param_count": 1,
+        "react_jsx_max_depth": 5,
+        "react_prop_count": 2,
+        "exceeded": "crap",
+        "severity": "critical",
+        "crap": 110.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `OptionComparison` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line unused-export, complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "<arrow>",
+        "line": 461,
+        "col": 28,
+        "cyclomatic": 8,
+        "cognitive": 8,
+        "line_count": 28,
+        "param_count": 2,
+        "react_jsx_max_depth": 3,
+        "exceeded": "crap",
+        "severity": "high",
+        "crap": 72.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `<arrow>` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/Email.tsx",
+        "name": "handleKeyDown",
+        "line": 44,
+        "col": 26,
+        "cyclomatic": 7,
+        "cognitive": 4,
+        "line_count": 9,
+        "param_count": 1,
+        "exceeded": "crap",
+        "severity": "high",
+        "crap": 56.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `handleKeyDown` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/CraftCard.tsx",
+        "name": "Card",
+        "line": 26,
+        "col": 41,
+        "cyclomatic": 7,
+        "cognitive": 10,
+        "line_count": 46,
+        "param_count": 1,
+        "react_jsx_max_depth": 3,
+        "react_prop_count": 6,
+        "exceeded": "crap",
+        "severity": "high",
+        "crap": 56.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `Card` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/ProjectCard.tsx",
+        "name": "ProjectCard",
+        "line": 72,
+        "col": 48,
+        "cyclomatic": 7,
+        "cognitive": 12,
+        "line_count": 99,
+        "param_count": 1,
+        "react_hook_count": 2,
+        "react_jsx_max_depth": 4,
+        "react_prop_count": 8,
+        "react_hook_profile": {
+          "state": 1,
+          "effect": 0,
+          "memo": 0,
+          "callback": 0,
+          "custom": 1
+        },
+        "exceeded": "crap",
+        "severity": "high",
+        "crap": 56.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `ProjectCard` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/Landing/SecondaryProjectCard.tsx",
+        "name": "SecondaryProjectCard",
+        "line": 19,
+        "col": 15,
+        "cyclomatic": 6,
+        "cognitive": 11,
+        "line_count": 155,
+        "param_count": 1,
+        "react_jsx_max_depth": 4,
+        "react_prop_count": 9,
+        "exceeded": "crap",
+        "severity": "moderate",
+        "crap": 42.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `SecondaryProjectCard` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/Navbar.tsx",
+        "name": "Navbar",
+        "line": 16,
+        "col": 15,
+        "cyclomatic": 6,
+        "cognitive": 8,
+        "line_count": 99,
+        "param_count": 0,
+        "react_hook_count": 3,
+        "react_jsx_max_depth": 4,
+        "react_hook_profile": {
+          "state": 2,
+          "effect": 0,
+          "memo": 0,
+          "callback": 0,
+          "custom": 1
+        },
+        "exceeded": "crap",
+        "severity": "moderate",
+        "crap": 42.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `Navbar` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "ContextSection",
+        "line": 301,
+        "col": 7,
+        "cyclomatic": 5,
+        "cognitive": 4,
+        "line_count": 46,
+        "param_count": 1,
+        "react_jsx_max_depth": 4,
+        "react_prop_count": 4,
+        "exceeded": "crap",
+        "severity": "moderate",
+        "crap": 30.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `ContextSection` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line unused-export, complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/ProjectCard.tsx",
+        "name": "PhoneMockup",
+        "line": 24,
+        "col": 5,
+        "cyclomatic": 5,
+        "cognitive": 4,
+        "line_count": 47,
+        "param_count": 1,
+        "react_jsx_max_depth": 3,
+        "react_prop_count": 4,
+        "exceeded": "crap",
+        "severity": "moderate",
+        "crap": 30.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `PhoneMockup` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      },
+      {
+        "path": "src/hooks/useKeyboardPress.ts",
+        "name": "handleKeyDown",
+        "line": 7,
+        "col": 30,
+        "cyclomatic": 5,
+        "cognitive": 2,
+        "line_count": 5,
+        "param_count": 1,
+        "exceeded": "crap",
+        "severity": "moderate",
+        "crap": 30.0,
+        "coverage_tier": "none",
+        "coverage_source": "estimated",
+        "actions": [
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `handleKeyDown` to lower its CRAP score (coverage reduces risk even without refactoring)",
+            "note": "CRAP = CC^2 * (1 - cov/100)^3 + CC; higher coverage is the fastest way to bring CRAP under threshold"
+          },
+          {
+            "type": "suppress-line",
+            "auto_fixable": false,
+            "description": "Suppress with an inline comment above the function declaration",
+            "comment": "// fallow-ignore-next-line complexity",
+            "placement": "above-function-declaration"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "files_analyzed": 45,
+      "functions_analyzed": 142,
+      "functions_above_threshold": 13,
+      "max_cyclomatic_threshold": 20,
+      "max_cognitive_threshold": 15,
+      "max_crap_threshold": 30.0,
+      "files_scored": 36,
+      "average_maintainability": 93.0,
+      "coverage_model": "static_estimated",
+      "coverage_source_consistency": "uniform",
+      "severity_critical_count": 4,
+      "severity_high_count": 4,
+      "severity_moderate_count": 5
+    },
+    "vital_signs": {
+      "dead_file_pct": 15.6,
+      "dead_export_pct": 8.8,
+      "avg_cyclomatic": 2.0,
+      "critical_complexity_pct": 0.0,
+      "p90_cyclomatic": 4,
+      "hotspot_count": 1,
+      "hotspot_top_pct_count": 1,
+      "maintainability_avg": 93.0,
+      "maintainability_low_pct": 0.0,
+      "unused_dep_count": 2,
+      "unused_deps_per_k_files": 44.4,
+      "circular_dep_count": 0,
+      "circular_deps_per_k_files": 0.0,
+      "counts": {
+        "total_files": 45,
+        "total_exports": 68,
+        "dead_files": 7,
+        "dead_exports": 6,
+        "total_lines": 5512,
+        "files_scored": 36,
+        "total_deps": 0
+      },
+      "unit_size_profile": {
+        "low_risk": 63.4,
+        "medium_risk": 12.0,
+        "high_risk": 13.4,
+        "very_high_risk": 11.3
+      },
+      "functions_over_60_loc_per_k": 112.7,
+      "unit_interfacing_profile": {
+        "low_risk": 100.0,
+        "medium_risk": 0.0,
+        "high_risk": 0.0,
+        "very_high_risk": 0.0
+      },
+      "p95_fan_in": 4,
+      "coupling_high_pct": 0.0,
+      "p95_render_fan_in": 3,
+      "render_fan_in_high_pct": 0.0,
+      "max_render_fan_in": 5,
+      "top_render_fan_in": [
+        {
+          "component": "BodyText",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 8,
+          "distinct_parents": 5
+        },
+        {
+          "component": "Footer",
+          "path": "src/components/ui/Footer.tsx",
+          "render_sites": 4,
+          "distinct_parents": 4
+        },
+        {
+          "component": "SubHeading",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 4,
+          "distinct_parents": 3
+        },
+        {
+          "component": "Heading",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 3,
+          "distinct_parents": 3
+        },
+        {
+          "component": "FadeIn",
+          "path": "src/components/ui/FadeIn.tsx",
+          "render_sites": 3,
+          "distinct_parents": 3
+        },
+        {
+          "component": "Email",
+          "path": "src/components/ui/Email.tsx",
+          "render_sites": 3,
+          "distinct_parents": 2
+        },
+        {
+          "component": "SectionLabel",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 2,
+          "distinct_parents": 2
+        },
+        {
+          "component": "Hero",
+          "path": "src/components/ui/Hero.tsx",
+          "render_sites": 2,
+          "distinct_parents": 2
+        },
+        {
+          "component": "Navbar",
+          "path": "src/components/ui/Navbar.tsx",
+          "render_sites": 2,
+          "distinct_parents": 2
+        },
+        {
+          "component": "SecondaryProjectCard",
+          "path": "src/components/Landing/SecondaryProjectCard.tsx",
+          "render_sites": 2,
+          "distinct_parents": 1
+        },
+        {
+          "component": "Card",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 2,
+          "distinct_parents": 1
+        },
+        {
+          "component": "Hatching",
+          "path": "src/components/ui/Hatching.tsx",
+          "render_sites": 2,
+          "distinct_parents": 1
+        },
+        {
+          "component": "BuildingWithAiCard",
+          "path": "src/components/BuildingWithAiCard.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "CaseStudyIndex",
+          "path": "src/components/caseStudy/CaseStudyIndex.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "Divider",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "Title",
+          "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "AboutSection",
+          "path": "src/components/sections/Aboutme.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "CraftSection",
+          "path": "src/components/sections/CraftSection.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "Experience",
+          "path": "src/components/sections/Experience.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        },
+        {
+          "component": "ExperienceItem",
+          "path": "src/components/sections/Experience.tsx",
+          "render_sites": 1,
+          "distinct_parents": 1
+        }
+      ],
+      "total_loc": 5512
+    },
+    "file_scores": [
+      {
+        "path": "src/components/ui/Email.tsx",
+        "fan_in": 2,
+        "fan_out": 2,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.21,
+        "maintainability_index": 89.3,
+        "total_cyclomatic": 30,
+        "total_cognitive": 28,
+        "function_count": 8,
+        "lines": 144,
+        "crap_max": 210.0,
+        "crap_above_threshold": 2
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.28,
+        "complexity_density": 0.13,
+        "maintainability_index": 90.5,
+        "total_cyclomatic": 73,
+        "total_cognitive": 48,
+        "function_count": 30,
+        "lines": 564,
+        "crap_max": 156.0,
+        "crap_above_threshold": 4
+      },
+      {
+        "path": "src/app/resume/page.tsx",
+        "fan_in": 0,
+        "fan_out": 2,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.16,
+        "maintainability_index": 90.8,
+        "total_cyclomatic": 28,
+        "total_cognitive": 28,
+        "function_count": 7,
+        "lines": 178,
+        "crap_max": 156.0,
+        "crap_above_threshold": 1
+      },
+      {
+        "path": "src/components/ui/CraftCard.tsx",
+        "fan_in": 1,
+        "fan_out": 1,
+        "dead_code_ratio": 0.5,
+        "complexity_density": 0.14,
+        "maintainability_index": 83.0,
+        "total_cyclomatic": 10,
+        "total_cognitive": 11,
+        "function_count": 3,
+        "lines": 71,
+        "crap_max": 56.0,
+        "crap_above_threshold": 1
+      },
+      {
+        "path": "src/components/ui/ProjectCard.tsx",
+        "fan_in": 2,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.09,
+        "maintainability_index": 97.3,
+        "total_cyclomatic": 15,
+        "total_cognitive": 16,
+        "function_count": 5,
+        "lines": 172,
+        "crap_max": 56.0,
+        "crap_above_threshold": 2
+      },
+      {
+        "path": "src/components/ui/Navbar.tsx",
+        "fan_in": 3,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.14,
+        "maintainability_index": 95.8,
+        "total_cyclomatic": 16,
+        "total_cognitive": 11,
+        "function_count": 8,
+        "lines": 115,
+        "crap_max": 42.0,
+        "crap_above_threshold": 1
+      },
+      {
+        "path": "src/components/Landing/SecondaryProjectCard.tsx",
+        "fan_in": 1,
+        "fan_out": 1,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.03,
+        "maintainability_index": 96.3,
+        "total_cyclomatic": 6,
+        "total_cognitive": 11,
+        "function_count": 1,
+        "lines": 174,
+        "crap_max": 42.0,
+        "crap_above_threshold": 1
+      },
+      {
+        "path": "src/hooks/useKeyboardPress.ts",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 1.0,
+        "complexity_density": 0.33,
+        "maintainability_index": 74.1,
+        "total_cyclomatic": 10,
+        "total_cognitive": 5,
+        "function_count": 5,
+        "lines": 30,
+        "crap_max": 30.0,
+        "crap_above_threshold": 1
+      },
+      {
+        "path": "src/components/AiExperimentCard.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 1.0,
+        "complexity_density": 0.09,
+        "maintainability_index": 77.3,
+        "total_cyclomatic": 9,
+        "total_cognitive": 6,
+        "function_count": 5,
+        "lines": 102,
+        "crap_max": 20.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/ui/Hero.tsx",
+        "fan_in": 2,
+        "fan_out": 1,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.05,
+        "maintainability_index": 95.7,
+        "total_cyclomatic": 9,
+        "total_cognitive": 6,
+        "function_count": 4,
+        "lines": 185,
+        "crap_max": 20.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/caseStudy/CaseStudyIndex.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.22,
+        "maintainability_index": 93.4,
+        "total_cyclomatic": 20,
+        "total_cognitive": 12,
+        "function_count": 13,
+        "lines": 92,
+        "crap_max": 12.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/casestudy/%5Bslug%5D/page.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.21,
+        "maintainability_index": 95.1,
+        "total_cyclomatic": 8,
+        "total_cognitive": 3,
+        "function_count": 5,
+        "lines": 39,
+        "crap_max": 12.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/PdfViewer.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 1.0,
+        "complexity_density": 0.1,
+        "maintainability_index": 77.0,
+        "total_cyclomatic": 7,
+        "total_cognitive": 5,
+        "function_count": 5,
+        "lines": 72,
+        "crap_max": 6.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/Landing/Experience.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 1.0,
+        "complexity_density": 0.05,
+        "maintainability_index": 78.5,
+        "total_cyclomatic": 3,
+        "total_cognitive": 1,
+        "function_count": 2,
+        "lines": 60,
+        "crap_max": 6.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/Landing/AboutCard.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 1.0,
+        "complexity_density": 0.01,
+        "maintainability_index": 79.7,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 104,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/page.tsx",
+        "fan_in": 0,
+        "fan_out": 8,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.07,
+        "maintainability_index": 89.4,
+        "total_cyclomatic": 3,
+        "total_cognitive": 2,
+        "function_count": 2,
+        "lines": 43,
+        "crap_max": 6.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/sections/Experience.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.05,
+        "maintainability_index": 98.5,
+        "total_cyclomatic": 4,
+        "total_cognitive": 1,
+        "function_count": 3,
+        "lines": 73,
+        "crap_max": 6.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/icons/copyIconSuccess.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.04,
+        "maintainability_index": 98.8,
+        "total_cyclomatic": 2,
+        "total_cognitive": 1,
+        "function_count": 1,
+        "lines": 48,
+        "crap_max": 6.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/experiments/page.tsx",
+        "fan_in": 0,
+        "fan_out": 7,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.01,
+        "maintainability_index": 91.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 75,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/mdx-components.tsx",
+        "fan_in": 0,
+        "fan_out": 2,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.12,
+        "maintainability_index": 92.1,
+        "total_cyclomatic": 6,
+        "total_cognitive": 0,
+        "function_count": 6,
+        "lines": 49,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/casestudy/layout.tsx",
+        "fan_in": 0,
+        "fan_out": 5,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.05,
+        "maintainability_index": 92.2,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 20,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/sections/Projects.tsx",
+        "fan_in": 1,
+        "fan_out": 3,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.1,
+        "maintainability_index": 93.2,
+        "total_cyclomatic": 2,
+        "total_cognitive": 0,
+        "function_count": 2,
+        "lines": 21,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/sections/CraftSection.tsx",
+        "fan_in": 1,
+        "fan_out": 2,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.07,
+        "maintainability_index": 94.4,
+        "total_cyclomatic": 2,
+        "total_cognitive": 0,
+        "function_count": 2,
+        "lines": 28,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/layout.tsx",
+        "fan_in": 0,
+        "fan_out": 2,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.01,
+        "maintainability_index": 95.3,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 127,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/ui/Footer.tsx",
+        "fan_in": 4,
+        "fan_out": 1,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.02,
+        "maintainability_index": 96.6,
+        "total_cyclomatic": 2,
+        "total_cognitive": 0,
+        "function_count": 2,
+        "lines": 99,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/experiments/DepthStack.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.08,
+        "maintainability_index": 97.6,
+        "total_cyclomatic": 8,
+        "total_cognitive": 7,
+        "function_count": 8,
+        "lines": 102,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/BuildingWithAiCard.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.05,
+        "maintainability_index": 98.9,
+        "total_cyclomatic": 2,
+        "total_cognitive": 0,
+        "function_count": 2,
+        "lines": 38,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "next.config.ts",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.03,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 32,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/not-found.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.02,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 52,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/icons/copyIcon.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.02,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 47,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/sections/Aboutme.tsx",
+        "fan_in": 1,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.02,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 58,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/ui/Divider.tsx",
+        "fan_in": 2,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.09,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 11,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/ui/FadeIn.tsx",
+        "fan_in": 4,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.04,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 25,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/components/ui/Hatching.tsx",
+        "fan_in": 3,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.06,
+        "maintainability_index": 99.4,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 18,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/about/page.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.01,
+        "maintainability_index": 99.7,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 173,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      },
+      {
+        "path": "src/app/youtube/page.tsx",
+        "fan_in": 0,
+        "fan_out": 0,
+        "dead_code_ratio": 0.0,
+        "complexity_density": 0.0,
+        "maintainability_index": 100.0,
+        "total_cyclomatic": 1,
+        "total_cognitive": 0,
+        "function_count": 1,
+        "lines": 1474,
+        "crap_max": 2.0,
+        "crap_above_threshold": 0
+      }
+    ],
+    "hotspots": [
+      {
+        "path": "src/app/resume/page.tsx",
+        "score": 62.4,
+        "commits": 10,
+        "weighted_commits": 6.78,
+        "lines_added": 257,
+        "lines_deleted": 80,
+        "complexity_density": 0.16,
+        "fan_in": 0,
+        "trend": "stable",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/resume/page.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/resume/page.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/app/page.tsx",
+        "score": 43.8,
+        "commits": 19,
+        "weighted_commits": 10.86,
+        "lines_added": 497,
+        "lines_deleted": 455,
+        "complexity_density": 0.07,
+        "fan_in": 0,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/page.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/page.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "score": 27.2,
+        "commits": 4,
+        "weighted_commits": 3.63,
+        "lines_added": 592,
+        "lines_deleted": 29,
+        "complexity_density": 0.13,
+        "fan_in": 1,
+        "trend": "stable",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/caseStudy/LayoutPrimitives.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/caseStudy/LayoutPrimitives.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/ProjectCard.tsx",
+        "score": 15.5,
+        "commits": 3,
+        "weighted_commits": 2.99,
+        "lines_added": 177,
+        "lines_deleted": 5,
+        "complexity_density": 0.09,
+        "fan_in": 2,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/ui/ProjectCard.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/ui/ProjectCard.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/PdfViewer.tsx",
+        "score": 12.3,
+        "commits": 4,
+        "weighted_commits": 2.13,
+        "lines_added": 80,
+        "lines_deleted": 9,
+        "complexity_density": 0.1,
+        "fan_in": 0,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/PdfViewer.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/PdfViewer.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/AiExperimentCard.tsx",
+        "score": 11.0,
+        "commits": 4,
+        "weighted_commits": 2.12,
+        "lines_added": 111,
+        "lines_deleted": 10,
+        "complexity_density": 0.09,
+        "fan_in": 0,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/AiExperimentCard.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/AiExperimentCard.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/BuildingWithAiCard.tsx",
+        "score": 7.6,
+        "commits": 5,
+        "weighted_commits": 2.64,
+        "lines_added": 51,
+        "lines_deleted": 14,
+        "complexity_density": 0.05,
+        "fan_in": 1,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/BuildingWithAiCard.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/BuildingWithAiCard.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/Landing/Experience.tsx",
+        "score": 6.0,
+        "commits": 3,
+        "weighted_commits": 2.09,
+        "lines_added": 107,
+        "lines_deleted": 48,
+        "complexity_density": 0.05,
+        "fan_in": 0,
+        "trend": "accelerating",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/Landing/Experience.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/Landing/Experience.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "next.config.ts",
+        "score": 6.0,
+        "commits": 5,
+        "weighted_commits": 3.49,
+        "lines_added": 35,
+        "lines_deleted": 4,
+        "complexity_density": 0.03,
+        "fan_in": 0,
+        "trend": "stable",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `next.config.ts`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `next.config.ts` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/app/layout.tsx",
+        "score": 5.8,
+        "commits": 15,
+        "weighted_commits": 10.1,
+        "lines_added": 197,
+        "lines_deleted": 71,
+        "complexity_density": 0.01,
+        "fan_in": 0,
+        "trend": "stable",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/layout.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/layout.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/components/ui/Footer.tsx",
+        "score": 3.4,
+        "commits": 3,
+        "weighted_commits": 2.99,
+        "lines_added": 106,
+        "lines_deleted": 8,
+        "complexity_density": 0.02,
+        "fan_in": 4,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/components/ui/Footer.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/components/ui/Footer.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/app/experiments/page.tsx",
+        "score": 2.8,
+        "commits": 7,
+        "weighted_commits": 4.91,
+        "lines_added": 99,
+        "lines_deleted": 25,
+        "complexity_density": 0.01,
+        "fan_in": 0,
+        "trend": "stable",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/experiments/page.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/experiments/page.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/app/not-found.tsx",
+        "score": 2.5,
+        "commits": 4,
+        "weighted_commits": 2.13,
+        "lines_added": 63,
+        "lines_deleted": 12,
+        "complexity_density": 0.02,
+        "fan_in": 0,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/not-found.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/not-found.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      },
+      {
+        "path": "src/app/youtube/page.tsx",
+        "score": 0.0,
+        "commits": 14,
+        "weighted_commits": 7.57,
+        "lines_added": 3252,
+        "lines_deleted": 1779,
+        "complexity_density": 0.0,
+        "fan_in": 0,
+        "trend": "cooling",
+        "actions": [
+          {
+            "type": "refactor-file",
+            "auto_fixable": false,
+            "description": "Refactor `src/app/youtube/page.tsx`, high complexity combined with frequent changes makes this a maintenance risk",
+            "note": "Prioritize extracting complex functions, adding tests, or splitting the module"
+          },
+          {
+            "type": "add-tests",
+            "auto_fixable": false,
+            "description": "Add test coverage for `src/app/youtube/page.tsx` to reduce change risk",
+            "note": "Frequently changed complex files benefit most from comprehensive test coverage"
+          }
+        ]
+      }
+    ],
+    "hotspot_summary": {
+      "since": "6 months",
+      "min_commits": 3,
+      "files_analyzed": 14,
+      "files_excluded": 22,
+      "shallow_clone": false
+    },
+    "large_functions": [
+      {
+        "path": "src/app/about/page.tsx",
+        "name": "AboutPage",
+        "line": 4,
+        "line_count": 170
+      },
+      {
+        "path": "src/app/resume/page.tsx",
+        "name": "ResumePage",
+        "line": 15,
+        "line_count": 163
+      },
+      {
+        "path": "src/components/Landing/SecondaryProjectCard.tsx",
+        "name": "SecondaryProjectCard",
+        "line": 19,
+        "line_count": 155
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "OptionComparison",
+        "line": 418,
+        "line_count": 145
+      },
+      {
+        "path": "src/components/ui/Email.tsx",
+        "name": "Email",
+        "line": 19,
+        "line_count": 125
+      },
+      {
+        "path": "src/components/ui/Hero.tsx",
+        "name": "Hero",
+        "line": 84,
+        "line_count": 102
+      },
+      {
+        "path": "src/components/ui/Navbar.tsx",
+        "name": "Navbar",
+        "line": 16,
+        "line_count": 99
+      },
+      {
+        "path": "src/components/ui/ProjectCard.tsx",
+        "name": "ProjectCard",
+        "line": 72,
+        "line_count": 99
+      },
+      {
+        "path": "src/app/resume/page.tsx",
+        "name": "<arrow>",
+        "line": 21,
+        "line_count": 98
+      },
+      {
+        "path": "src/components/caseStudy/CaseStudyIndex.tsx",
+        "name": "CaseStudyIndex",
+        "line": 5,
+        "line_count": 87
+      },
+      {
+        "path": "src/experiments/DepthStack.tsx",
+        "name": "DepthStack",
+        "line": 16,
+        "line_count": 86
+      },
+      {
+        "path": "src/components/Landing/AboutCard.tsx",
+        "name": "AboutCard",
+        "line": 27,
+        "line_count": 77
+      },
+      {
+        "path": "src/components/AiExperimentCard.tsx",
+        "name": "AiExperimentCard",
+        "line": 32,
+        "line_count": 70
+      },
+      {
+        "path": "src/app/experiments/page.tsx",
+        "name": "AiExperimentsPage",
+        "line": 9,
+        "line_count": 66
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "Hero",
+        "line": 237,
+        "line_count": 62
+      },
+      {
+        "path": "src/components/caseStudy/LayoutPrimitives.tsx",
+        "name": "<arrow>",
+        "line": 499,
+        "line_count": 61
+      }
+    ],
+    "target_thresholds": {
+      "fan_in_p95": 5.0,
+      "fan_in_p75": 3.0,
+      "fan_out_p95": 8.0,
+      "fan_out_p90": 5
+    },
+    "framework_health": {
+      "detected_frameworks": [
+        "next",
+        "react"
+      ],
+      "detectors": [
+        {
+          "id": "invalid-client-export",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "mixed-client-server-barrel",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "misplaced-directive",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "route-collision",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "dynamic-segment-name-conflict",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "unused-server-action",
+          "framework": "next",
+          "status": "active"
+        },
+        {
+          "id": "unused-component-prop",
+          "framework": "react",
+          "status": "active"
+        },
+        {
+          "id": "prop-drilling",
+          "framework": "react",
+          "status": "disabled_by_config",
+          "reason": "disabled_by_config"
+        },
+        {
+          "id": "thin-wrapper",
+          "framework": "react",
+          "status": "disabled_by_config",
+          "reason": "disabled_by_config"
+        },
+        {
+          "id": "duplicate-prop-shape",
+          "framework": "react",
+          "status": "disabled_by_config",
+          "reason": "disabled_by_config"
+        }
+      ]
+    }
+  },
+  "next_steps": [
+    {
+      "id": "setup",
+      "command": "fallow schema",
+      "reason": "fallow has no config here; the manifest lists guided-setup commands (agent guide, commit gate) to offer the user"
+    },
+    {
+      "id": "trace-unused-export",
+      "command": "fallow dead-code --trace src/components/caseStudy/LayoutPrimitives.tsx:Card",
+      "reason": "verify an export is truly unused before deleting"
+    },
+    {
+      "id": "trace-clone",
+      "command": "fallow dupes --trace dup:2e3d98a9",
+      "reason": "see sibling locations and an extract-function suggestion"
+    }
+  ],
+  "_meta": {
+    "telemetry": {
+      "analysis_run_id": "run_b4eb97b6dc456903"
+    }
+  }
+}

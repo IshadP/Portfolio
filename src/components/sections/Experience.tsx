@@ -51,7 +51,7 @@ export const Experience = () => {
     ];
 
     return (
-        <div className="self-stretch py-4 border-y border-outline bg-bg-default w-full flex flex-col gap-8 md:gap-0 md:grid grid-cols-3">
+        <div className="self-stretch py-8 bg-bg-default w-full flex flex-col gap-8 md:gap-0 md:grid grid-cols-3">
             <div className="flex justify-start items-start col-span-1 gap-4">
                 <h2 className="text-text-muted font-label-md-mono">
                     Experience
@@ -61,7 +61,7 @@ export const Experience = () => {
                 {experiences.map((exp, idx) => (
                     <React.Fragment key={idx}>
                         <ExperienceItem {...exp} />
-                        {idx < experiences.length - 1 && (
+                        {idx < experiences.length && (
                             <div className="self-stretch h-px bg-outline" />
                         )}
                     </React.Fragment>

@@ -105,7 +105,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -115,7 +115,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${Mono.variable} antialiased bg-bg-default flex flex-col items-center min-h-screenn overflow-x-hidden`}
       >
-        <div className="sticky top-0 z-90 w-full">
+        <div className="sticky top-0 z-50 w-full">
           <Navbar />
         </div>
         <main className="grow w-full flex flex-col justify-center items-center">{children}</main>
