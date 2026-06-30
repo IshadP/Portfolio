@@ -91,12 +91,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Collage Images Block - single column on all sizes, smaller fixed heights */}
-          <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 grid-rows-4 gap-2 w-full p-4 mx-auto md:max-w-full md:mx-0">
+          {/* Collage Images Block - single column on all sizes, smaller fixed heights
+          <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 grid-rows-4 gap-2 h-autop w-full p-4 mx-auto md:max-w-full md:mx-0">
             <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
               <Image src="/about/trip1.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
-            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
+            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-auto rounded-xl overflow-hidden border border-outline bg-bg-default">
               <Image src="/about/photo2.webp" fill className="object-cover" alt="photo" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
             <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
@@ -112,7 +112,7 @@ export default function AboutPage() {
               <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* 3. Sci-fi Section */}
         <div className="w-full flex flex-col md:flex-row justify-start items-stretch">
