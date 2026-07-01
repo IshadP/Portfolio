@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ReadCvLogoIcon, Copy, Check } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import Email from "./Email";
+import { AsciiEngineer, AsciiDesigner } from "./AsciiText";
 
 // Clean, subtle animation configurations matching your style
 const parentVariants = {
@@ -98,32 +99,13 @@ export default function Hero() {
             {/* Introduction and Headline */}
             <motion.div
               variants={childVariants}
-              style={{
-                willChange: "transform, opacity, filter",
-                transform: "translateZ(0) rotate(0.001deg)",
-                backfaceVisibility: "hidden",
-              }}
               className="flex flex-col gap-4 mb-4 md:mb-0 w-full"
             >
               <h1 className="font-h1-display text-primary w-full">
-                <Image
-                  src="/ascii-engineer.svg"
-                  alt="Engineer Turned"
-                  className="object-contain w-full h-auto"
-                  width={754}
-                  height={62}
-                  priority
-                />
+                <AsciiEngineer className="w-full h-auto" aria-label="Engineer Turned" />
               </h1>
               <h1 className="font-h1-display text-primary w-full">
-                <Image
-                  src="/ascii-designer.svg"
-                  alt="Product Designer"
-                  className="object-contain w-full h-auto"
-                  width={754}
-                  height={62}
-                  priority
-                />
+                <AsciiDesigner className="w-full h-auto" aria-label="Product Designer" />
               </h1>
             </motion.div>
 

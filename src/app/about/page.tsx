@@ -92,26 +92,37 @@ export default function AboutPage() {
           </div>
 
           {/* Collage Images Block - single column on all sizes, smaller fixed heights */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 grid-rows-4 gap-2 h-autop w-full p-4 mx-auto md:max-w-full md:mx-0">
-            <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/trip1.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-auto rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/photo2.webp" fill className="object-cover" alt="photo" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative w-full md:col-span-1 row-span-2 h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/CSMT.webp" fill className="object-cover" alt="CSMT Mumbai" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative w-full md:col-span-1 md:row-span-2 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/jedif.webp" fill className="object-cover" alt="jedi" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative md:col-span-1 md:row-span-1 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/basketball.webp" fill className="object-cover" alt="basketball" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative md:col-span-1 md:row-span-1 h-40 sm:h-full rounded-xl overflow-hidden border border-outline bg-bg-default">
-              <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-          </div> */}
+          <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-4 md:grid-rows-3 aspect-[1/2] md:aspect-square gap-2 w-full p-4 mx-auto md:max-w-full md:mx-0">
+  {/* trip1 - tall on both */}
+  <div className="relative w-full h-full col-start-1 row-start-1 row-span-2 md:col-start-1 md:row-start-1 md:row-span-2 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/trip1.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+
+  {/* CSMT - tall on both */}
+  <div className="relative w-full h-full col-start-2 row-start-1 row-span-2 md:col-start-2 md:row-start-1 md:row-span-2 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/CSMT.webp" fill className="object-cover" alt="CSMT Mumbai" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+
+  {/* photo2 - square on both */}
+  <div className="relative w-full h-full col-start-1 row-start-3 md:col-start-3 md:row-start-1 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/photo2.webp" fill className="object-cover" alt="photo" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+
+  {/* jedi - square on mobile, tall on desktop */}
+  <div className="relative w-full h-full col-start-2 row-start-3 md:col-start-3 md:row-start-2 md:row-span-2 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/jedif.webp" fill className="object-cover" alt="jedi" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+
+  {/* basketball - square on both */}
+  <div className="relative w-full h-full col-start-1 row-start-4 md:col-start-1 md:row-start-3 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/basketball.webp" fill className="object-cover" alt="basketball" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+
+  {/* alibag - square on both */}
+  <div className="relative w-full h-full col-start-2 row-start-4 md:col-start-2 md:row-start-3 rounded-xl overflow-hidden border border-outline bg-bg-default">
+    <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 50vw, 33vw" />
+  </div>
+</div>
         </div>
 
         {/* 3. Sci-fi Section */}
