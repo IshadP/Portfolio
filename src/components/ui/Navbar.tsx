@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeftIcon, List, X } from "@phosphor-icons/react";
+import { Icon } from "@/components/ui/Icon";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -31,7 +31,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center font-body-sm gap-2 px-4 py-2 rounded-full no-underline outline-none hover:bg-bg-subtle text-text-muted hover:text-text-primary transition-colors duration-200"
           >
-            <ArrowLeftIcon className="size-4" weight="bold" />
+            <Icon name="arrow_back" size={16} />
             <span>Back</span>
           </Link>
           <span className=" font-body-md-mono uppercase text-text-muted">{pathname}</span>
@@ -59,7 +59,7 @@ export default function Navbar() {
               className={`relative px-4 py-2 rounded-full no-underline outline-none hover:bg-bg-subtle duration-200 transition-colors ${isActive ? "bg-primary-muted hover:bg-primary-muted" : ""} ${isActive ? "text-primary hover:text-primary" : "text-text-muted hover:text-text-primary"} `}
             >
               <span
-                className="relative z-10 font-body-sm transition-colors duration-200 "
+                className="relative z-10 font-nav transition-colors duration-200 "
               >
                 {item.label}
               </span>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {/* Mobile Hamburger Button */}
       <div className="flex md:hidden w-full justify-between items-center">
-        <span className="font-body-sm text-text-primary font-semibold">
+        <span className="font-nav text-text-primary font-semibold">
           {currentPageLabel}
         </span>
         <button
@@ -78,7 +78,7 @@ export default function Navbar() {
           className="p-2 -mr-2 rounded-full hover:bg-bg-subtle text-text-primary transition-colors focus:outline-none"
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
+          {isMobileMenuOpen ? <Icon name="close" size={24} /> : <Icon name="menu" size={24} />}
         </button>
       </div>
 

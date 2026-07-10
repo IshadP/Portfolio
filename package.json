@@ -12,7 +12,6 @@
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.2.9",
-    "@phosphor-icons/react": "^2.1.10",
     "framer-motion": "^12.35.2",
     "next": "16.1.6",
     "pdfjs-dist": "^5.5.207",

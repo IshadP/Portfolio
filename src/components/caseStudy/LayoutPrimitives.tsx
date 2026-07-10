@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { XIcon, TargetIcon, CheckIcon, CheckCircleIcon, XCircleIcon, InfoIcon } from "@phosphor-icons/react";
+import { Icon } from "@/components/ui/Icon";
 
 // SectionLabel displays a small monospace uppercase category/tag label for a section.
 export function SectionLabel({ children }: { children: ReactNode }) {
@@ -380,18 +380,18 @@ export function Card({ type = "normal", children }: CardProps) {
     fail: "bg-fail-bg text-fail-fg",
   };
 
-  const Icons = {
+  const iconNames: Record<string, string | null> = {
     normal: null,
-    info: InfoIcon,
-    success: CheckCircleIcon,
-    fail: XCircleIcon,
+    info: "info",
+    success: "check_circle",
+    fail: "cancel",
   };
 
-  const IconComponent = Icons[type];
+  const iconName = iconNames[type];
 
   return (
     <div className={`flex flex-row items-center gap-2 px-4 py-2 rounded-lg w-full ${styles[type]}`}>
-      {IconComponent && <IconComponent size={24} className="shrink-0" weight="regular" />}
+      {iconName && <Icon name={iconName} size={24} className="shrink-0" />}
       <div className="font-body-sm">{children}</div>
     </div>
   );

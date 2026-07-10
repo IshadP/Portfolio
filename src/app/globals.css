@@ -25,21 +25,7 @@
   --font-caveat: var(--font-caveat), cursive;
   --font-display-mono: var(--font-d-mono), monospace;
 
-  --width-content: 52.5rem;
-
-  --animate-fade-in: fade-in 0.5s ease-out 0.75s both;
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      filter: blur(2px);
-    }
-
-    to {
-      opacity: 1;
-      filter: blur(0px);
-    }
-  }
+  --width-content: 56.25rem;
 }
 
 /* ============================================================
@@ -51,12 +37,12 @@
 @theme inline {
   /* Background */
   --color-bg-default: #ffffff;
-  --color-bg-subtle: #f1f1f1;
+  --color-bg-subtle: #f5f5f5;
   --color-outline: #e7e7e7;
 
   --color-text-primary: #1e1e1e;
   --color-text-white: #ffffff;
-  --color-text-muted: #86868B;
+  --color-text-muted: #AAAAAA;
 
   --color-primary: #293DBD;
   --color-primary-muted: #DCE0FE;
@@ -80,38 +66,40 @@
   --width-wide: 57.5rem;
   --aspect-mobile: 320/683;
 
-  /*  
+  --pattern-my-shape: url('/public/pattern.svg');
+
+  /*
   --color-surface-dark: var(--color-neutral-900);
   --color-surface-mid: var(--color-neutral-300);
   --color-surface-warm: var(--color-neutral-500);
   --color-surface-light: var(--color-neutral-100);
 
-  
+
   --color-active-bg: var(--color-blue-800);
   --color-active-fg: var(--color-neutral-100);
 
-  
+
   --color-key-bg: var(--color-neutral-400);
   --color-key-fg: var(--color-neutral-300);
   --color-key-border: var(--color-neutral-300);
 
-  
+
   --color-status-success-bg: #D9FCCA;
   --color-status-error-bg: #FFC7C7;
   --color-status-info-bg: #CADAFC;
 
-  
+
   --color-status-success-fg: #00421F;
   --color-status-info-fg: #1B3262;
   --color-status-error-fg: #571C1C;
 
-  
+
   --color-accent-bg: var(--color-blue-50);
   --color-accent-border: var(--color-blue-800);
   --color-accent-fg: var(--color-blue-900);
   --color-accent-muted: var(--color-blue-600);
 
-  
+
   --pattern-fg: color-mix(in oklab, var(--color-white) 10%, transparent); */
 }
 
@@ -136,7 +124,7 @@
   }
 
   .font-h3 {
-    @apply font-display text-2xl leading-8 font-semibold tracking-wide antialiased;
+    @apply font-display text-xl md:text-2xl leading-6 md:leading-7 font-semibold tracking-wide antialiased;
   }
 
   .font-h4 {
@@ -145,19 +133,19 @@
 
   /* Body — sans (Geist) */
   .font-body-lg-bold {
-    @apply font-sans md:text-2xl text-xl font-semibold;
+    @apply font-sans md:text-2xl text-xl font-semibold leading-8;
   }
 
   .font-body-lg {
-    @apply font-sans md:text-xl text-base font-medium;
+    @apply font-sans md:text-2xl text-xl leading-8 font-medium;
   }
 
   .font-body-md-bold {
-    @apply font-sans text-xl leading-12 font-semibold;
+    @apply font-sans text-lg leading-6 font-semibold;
   }
 
   .font-body-md {
-    @apply font-sans text-xl leading-12 font-medium;
+    @apply font-sans text-base md:text-lg leading-6 font-medium;
   }
 
   .font-body-sm-bold {
@@ -165,19 +153,29 @@
   }
 
   .font-body-sm {
-    @apply font-sans md:text-[1.0625rem] text-sm leading-6 font-medium;
+    @apply font-sans text-base leading-6;
+  }
+
+  .font-nav {
+    @apply font-sans text-base font-medium leading-6;
   }
 
   /* Label — mono (Geist Mono) */
-  .font-label-lg-mono {
-    @apply font-mono md:text-lg text-sm font-medium tracking-normal leading-6;
+  .font-mono-lg {
+    @apply font-mono md:text-lg text-base font-medium tracking-normal leading-7;
   }
 
-  .font-label-md-mono {
-    @apply font-mono text-base leading-5 font-medium;
+  .font-mono-md {
+    @apply font-mono text-sm md:text-base leading-5 font-medium;
   }
 
-  .font-label-sm-mono {
+  .font-mono-sm {
     @apply font-mono text-sm leading-5 font-medium;
+  }
+
+  .pattern-dot {
+    background-image: var(--pattern-my-shape);
+    background-repeat: repeat;
+    background-size: 500px 500px; /* tile size */
   }
 }

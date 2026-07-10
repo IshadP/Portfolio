@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { motion } from "framer-motion";
-import { DownloadSimpleIcon } from "@phosphor-icons/react";
+import { Icon } from "@/components/ui/Icon";
 import Footer from "@/components/ui/Footer";
 import FadeIn from "@/components/ui/FadeIn";
 
@@ -135,7 +135,7 @@ export default function ResumePage() {
                 title="Download Resume"
                 aria-label="Download Resume"
               >
-                <DownloadSimpleIcon size={20} weight="bold" />
+                <Icon name="download" size={20} />
                 <p className="font-body-sm">Download Resume</p>
               </a>
             </div>

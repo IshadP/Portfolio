@@ -6,10 +6,11 @@ export interface ProjectItem extends ProjectCardProps {
 
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
-    title: "Reduced Task Completion Time by 30% on Printhub",
+    title: "How redesigned UX reduced task completion time",
     description: "Redesigned the main checkout flow to optimise user intent.",
+    projectType: "mobile",
     slug: "Printhub",
-    href: "/casestudy/printhub",
+    href: "https://www.behance.net/gallery/239087477/Revamping-Printhub-for-efficiency-and-trust",
     bgImage: "/cards/bg.webp",
     showcaseMedia: [
       { type: "image", src: "/cards/Print1-01.webp" },
@@ -18,10 +19,11 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     ],
   },
   {
-    title: "Redesigned Search for User Intent on Youtube",
+    title: "How redesigned Search help user search faster in Youtube",
     description: "Rethought the search experience to better surface user intent.",
+    projectType: "mobile",
     slug: "Youtube",
-    href: "/casestudy/youtube",
+    href: "https://www.behance.net/gallery/232680953/Enhancing-YouTube-Search-for-a-Smarter-User-Experience",
     bgImage: "/cards/bg2.webp",
     showcaseMedia: [
       { type: "image", src: "/cards/Youtube1-01.webp" },

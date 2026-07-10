@@ -9,7 +9,7 @@ const Tag = ({ tech }: { tech: string }) => {
 
   return (
     <div className={`px-2 py-1 rounded-sm flex justify-center items-center gap-2  ${style.bg}`}>
-      <span className={`font-label-sm-mono ${style.text}`}>{tech}</span>
+      <span className={`font-mono-sm ${style.text}`}>{tech}</span>
     </div>
   );
 };
@@ -20,6 +20,7 @@ export interface CardProps {
   tags?: string[];
   image?: string;
   video?: string;
+  external?: boolean;
   component?: React.ReactNode;
   link?: string;
 }
@@ -29,8 +30,8 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
   const wrapperProps = link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {};
 
   return (
-    <Wrapper {...wrapperProps} className="flex-1 pb-4 rounded-2xl flex flex-col justify-start items-start cursor-pointer gap-3 group no-underline">
-      <div className="relative w-full aspect-square bg-bg-subtle rounded-2xl overflow-hidden">
+    <Wrapper {...wrapperProps} className="flex-1 pb-4 md:rounded-2xl flex flex-col justify-start items-start cursor-pointer gap-3 group no-underline">
+      <div className="relative w-full aspect-square bg-bg-subtle md:rounded-2xl overflow-hidden">
         {component ? (
           <div className="absolute w-full inset-0 flex items-center justify-center">
             {component}
@@ -55,7 +56,8 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
         ) : null}
       </div>
 
-      <div className="w-full pl-2 pr-16 flex flex-col justify-center items-start gap-1.5">
+
+      <div className="w-full px-4 md:px-2 flex flex-col justify-center items-start gap-1">
         <h3 className="w-full text-text-primary font-h4">{title}</h3>
 
         {subtitle && (
@@ -63,7 +65,7 @@ export const Card: React.FC<CardProps> = ({ title, subtitle, tags, image, video,
         )}
 
         {tags && tags.length > 0 && (
-          <div className="flex flex-wrap justify-start items-start gap-[5px] mt-1">
+          <div className="flex flex-wrap justify-start items-start gap-3 mt-1">
             {tags.map((tech) => (
               <Tag key={tech} tech={tech} />
             ))}

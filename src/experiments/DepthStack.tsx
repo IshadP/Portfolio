@@ -34,7 +34,7 @@ export default function DepthStack() {
 
   return (
     <svg
-      className="w-full max-w-[800px] aspect-square border rounded-xl bg-black shadow-2xl cursor-crosshair"
+      className="w-full max-w-[800px] aspect-square border  bg-black shadow-2xl cursor-crosshair"
       viewBox="0 0 500 500"
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
