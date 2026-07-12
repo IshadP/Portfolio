@@ -1,8 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { m } from "framer-motion";
+import { delay, m, stagger } from "framer-motion";
 import Email from "../ui/Email";
 import { AsciiEngineer, AsciiDesigner } from "../ui/AsciiText";
 import FadeIn from "../ui/FadeIn";
@@ -26,9 +24,23 @@ import FadeIn from "../ui/FadeIn";
 // };
 
 // Lean animation preset
-const fadeInUp = {
-  initial: { opacity: 0, y: 20, filter: "blur(8px)" },
-  animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+const containerVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.175,
+    },
+  },
+} as const;
+
+const itemVariants = {
+  initial: { opacity: 0, y: 20, filter: "blur(4px)" },
+  animate: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 } as const;
 
 export default function Hero() {
@@ -41,20 +53,19 @@ export default function Hero() {
             {/* Introduction and Headline */}
             <m.div
               className="flex flex-col gap-4 mb-4 md:mb-0 w-full @container"
-              variants={fadeInUp}
+              variants={containerVariants}
               initial="initial"
               animate="animate"
-              transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h3 className="font-mono-lg  text-text-muted">
+              <m.h3 variants={itemVariants} className="font-mono-lg  text-text-muted">
                 Hello, I'm Ishad
-              </h3>
-              <h1 className="font-h1-display text-primary w-full overflow-visible">
+              </m.h3>
+              <m.h1 variants={itemVariants} className="font-h1-display text-primary w-full overflow-visible">
                 <AsciiEngineer className="h-[8.8cqw] w-auto max-w-none" aria-label="Engineer Turned" />
-              </h1>
-              <h1 className="font-h1-display text-primary w-full">
+              </m.h1>
+              <m.h1 variants={itemVariants} className="font-h1-display text-primary w-full">
                 <AsciiDesigner className="h-[8.8cqw] w-auto" aria-label="Product Designer" />
-              </h1>
+              </m.h1>
             </m.div>
 
             {/* Sub-context description paragraphs */}
@@ -66,11 +77,16 @@ export default function Hero() {
               <p>
                 I ship end-to-end, creating apps with Flutter and web interactions with Framer Motion and TailwindCSS.
               </p>
-              <div className="flex md:flex-row flex-col ">
+              <div className="flex md:flex-row flex-col gap-1 ">
                 <p>Want to work together or chat?</p>
                 <div className="flex flex-row">
                   <p>Email me at</p>
-                  <Email textStyle="mono" size="small" />
+                  <div className="hidden md:block">
+                  <Email textStyle="mono" size="large" />
+                </div>
+                  <div className="block md:hidden">
+                    <Email textStyle="mono" size="small" />
+                  </div>
                 </div>
               </div>
             </div>
