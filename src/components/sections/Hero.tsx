@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Email from "../ui/Email";
 import { AsciiEngineer, AsciiDesigner } from "../ui/AsciiText";
 import { DotPattern } from "../ui/DotPattern";
@@ -38,10 +38,10 @@ export default function Hero() {
   return (
     <section className="sticky top-20 w-full md:w-content px-4 md:px-0 z-0 flex justify-center py-4 md:py-24 overflow-hidden">
       <div className="flex flex-col items-start w-full max-w-(--width-content) md:px-3 gap-8">
-        {pathname === "/" ? (
+        
           <div className="flex flex-col md:gap-10 gap-4 w-full">
             {/* Introduction and Headline */}
-            <motion.div
+            <m.div
               className="flex flex-col gap-4 mb-4 md:mb-0 w-full @container"
               variants={fadeInUp}
               initial="initial"
@@ -57,10 +57,10 @@ export default function Hero() {
               <h1 className="font-h1-display text-primary w-full">
                 <AsciiDesigner className="h-[8.8cqw] w-auto" aria-label="Product Designer" />
               </h1>
-            </motion.div>
+            </m.div>
 
             {/* Sub-context description paragraphs */}
-            <motion.div
+            <m.div
               className="flex flex-col md:gap-4 gap-4 font-mono-lg  text-text-muted"
               variants={fadeInUp}
               initial="initial"
@@ -85,34 +85,9 @@ export default function Hero() {
                   <Email textStyle="mono" size="small" />
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
           </div>
-        ) : (
-          /* Fallback view for auxiliary routes mapped in heroRoutes */
-          currentRoute && (
-            <motion.div
-              key={pathname}
-              className="flex items-center w-full justify-center gap-4 py-12"
-              variants={fadeInUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              style={{
-                willChange: "transform, opacity",
-              }}
-            >
-              {currentRoute.icon && (
-                <div className={`relative overflow-hidden ${currentRoute.iconClass}`}>
-                  {currentRoute.icon}
-                </div>
-              )}
-              <p className="font-h1">
-                {currentRoute.title}
-              </p>
-            </motion.div>
-          )
-        )}
       </div>
     </section>
   );

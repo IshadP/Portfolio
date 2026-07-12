@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 
 const springTransition = { type: "spring", stiffness: 200, damping: 25 } as const;
-const MotionLink = motion.create(Link);
+const MotionLink = m(Link);
 
 export default function NotFound() {
     return (
         <div className="bg-bg-default min-h-screen flex flex-col items-center justify-center px-4 gap-8">
             {/* Animated Star */}
-            <motion.div
+            <m.div
                 className="flex items-center justify-center"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -24,7 +24,7 @@ export default function NotFound() {
                     quality={90}
                     className="object-contain"
                 />
-            </motion.div>
+            </m.div>
 
             {/* 404 Text */}
             <div className="flex flex-col items-center gap-3">

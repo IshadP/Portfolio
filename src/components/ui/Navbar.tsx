@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/ui/Icon";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Designs", href: "/" },
@@ -85,7 +85,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -106,7 +106,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

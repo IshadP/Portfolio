@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "./Icon";
@@ -32,7 +32,7 @@ function PhoneMockup({
   index: number;
 }) {
   return (
-    <motion.div
+    <m.div
       initial={{ y: 24, opacity: 0 }}
       animate={{ y: isHovering ? -12 : 0, opacity: 1 }}
       transition={{
@@ -61,7 +61,7 @@ function PhoneMockup({
           className="object-cover"
         />
       )}
-    </motion.div>
+    </m.div>
   );
 }
 

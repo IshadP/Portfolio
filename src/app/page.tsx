@@ -16,7 +16,7 @@ export default function Home() {
       <ScrollRestoration />
       <div className="w-full flex flex-col  items-center  gap-0 md:px-0">
         <Hero />
-        <Divider />
+
         <FadeIn className="relative flex flex-col pt-4 md:pt-0 w-full z-10 bg-bg-default gap-6">
 
           <ProjectsSection />

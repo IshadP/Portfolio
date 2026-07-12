@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useId, useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
@@ -82,7 +82,7 @@ export function DotPattern({
         </radialGradient>
       </defs>
       {dots.map((dot) => (
-        <motion.circle
+        <m.circle
           key={`${dot.x}-${dot.y}`}
           cx={dot.x}
           cy={dot.y}

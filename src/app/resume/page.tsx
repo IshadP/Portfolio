@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Icon } from "@/components/ui/Icon";
 import Footer from "@/components/ui/Footer";
 import FadeIn from "@/components/ui/FadeIn";
@@ -144,7 +144,7 @@ export default function ResumePage() {
             <div className="w-full bg-bg-subtle flex justify-center overflow-auto min-h-[600px] relative">
               {loading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
-                  <motion.div
+                  <m.div
                     className="w-8 h-8 border-4 border-text-primary border-t-transparent rounded-full"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}

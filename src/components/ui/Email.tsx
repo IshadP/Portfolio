@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import CopyIcon from "../icons/copyIcon";
 import CopyIconSuccess from "../icons/copyIconSuccess";
 
@@ -92,7 +92,7 @@ export default function Email({
           {EMAIL}
         </a>
       </div>
-      <motion.button
+      <m.button
         onClick={copy}
         className="relative inline-flex cursor-pointer items-center justify-center text-text-primary bg-transparent border-none p-0 outline-none"
         variants={{ rest: { y: 0 }, pressed: { y: 3 } }}
@@ -108,7 +108,7 @@ export default function Email({
         ) : (
           <CopyIcon size={iconSize} iconColor="currentColor" letterColor="currentColor" />
         )}
-      </motion.button>
+      </m.button>
     </div>
   );
 }

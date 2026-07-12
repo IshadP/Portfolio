@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter_Tight, PT_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -123,12 +124,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${ptMono.variable} antialiased bg-bg-default flex flex-col items-center min-h-screen overflow-x-hidden`}
       >
-        <div className="sticky top-0 z-50 w-full">
-          <Navbar />
-        </div>
-        <main className="grow w-full flex flex-col justify-center items-center">
-          {children}
-        </main>
+        <MotionProvider>
+          <div className="sticky top-0 z-50 w-full">
+            <Navbar />
+          </div>
+          <main className="grow w-full flex flex-col justify-center items-center">
+            {children}
+          </main>
+        </MotionProvider>
         <p className="text-center font-label-lg-mono text-text-muted md:p-16 p-4">
           Designed and built by Ishad Pande
         </p>
