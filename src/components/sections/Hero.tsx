@@ -6,6 +6,7 @@ import { m } from "framer-motion";
 import Email from "../ui/Email";
 import { AsciiEngineer, AsciiDesigner } from "../ui/AsciiText";
 import { DotPattern } from "../ui/DotPattern";
+import FadeIn from "../ui/FadeIn";
 
 const heroRoutes: Record<
   string,
@@ -38,7 +39,7 @@ export default function Hero() {
   return (
     <section className="sticky top-20 w-full md:w-content px-4 md:px-0 z-0 flex justify-center py-4 md:py-24 overflow-hidden">
       <div className="flex flex-col items-start w-full max-w-(--width-content) md:px-3 gap-8">
-        
+
           <div className="flex flex-col md:gap-10 gap-4 w-full">
             {/* Introduction and Headline */}
             <m.div
@@ -60,18 +61,7 @@ export default function Hero() {
             </m.div>
 
             {/* Sub-context description paragraphs */}
-            <m.div
-              className="flex flex-col md:gap-4 gap-4 font-mono-lg  text-text-muted"
-              variants={fadeInUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 }}
-              style={{
-                willChange: "transform, opacity",
-                transform: "translateZ(0) rotate(0.001deg)",
-                backfaceVisibility: "hidden",
-              }}
-            >
+            <FadeIn            >
               <p>
                 Designing at <span className="text-text-primary">Grid Insight</span> in Nagpur, India.
               </p>
@@ -85,7 +75,7 @@ export default function Hero() {
                   <Email textStyle="mono" size="small" />
                 </div>
               </div>
-            </m.div>
+            </FadeIn>
 
           </div>
       </div>
