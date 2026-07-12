@@ -5,26 +5,25 @@ import Image from "next/image";
 import { m } from "framer-motion";
 import Email from "../ui/Email";
 import { AsciiEngineer, AsciiDesigner } from "../ui/AsciiText";
-import { DotPattern } from "../ui/DotPattern";
 import FadeIn from "../ui/FadeIn";
 
-const heroRoutes: Record<
-  string,
-  {
-    title: string;
-    icon?: React.ReactNode;
-    iconClass?: string;
-  }
-> = {
-  "/experiments": {
-    title: "Experiments",
-    icon: <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />,
-    iconClass: "flex justify-center items-center w-16 h-16",
-  },
-  "/about": {
-    title: "Started from cars, Ended In Products",
-  },
-};
+// const heroRoutes: Record<
+//   string,
+//   {
+//     title: string;
+//     icon?: React.ReactNode;
+//     iconClass?: string;
+//   }
+// > = {
+//   "/experiments": {
+//     title: "Experiments",
+//     icon: <Image src="/star.svg" alt="Dark Star" width={54} height={54} quality={90} />,
+//     iconClass: "flex justify-center items-center w-16 h-16",
+//   },
+//   "/about": {
+//     title: "Started from cars, Ended In Products",
+//   },
+// };
 
 // Lean animation preset
 const fadeInUp = {
@@ -33,11 +32,9 @@ const fadeInUp = {
 } as const;
 
 export default function Hero() {
-  const pathname = usePathname();
-  const currentRoute = heroRoutes[pathname];
 
   return (
-    <section className="sticky top-20 w-full md:w-content px-4 md:px-0 z-0 flex justify-center py-4 md:py-24 overflow-hidden">
+    <section id="Hero" className="sticky top-20 w-full md:w-content px-4 md:px-0 z-0 flex justify-center py-4 md:py-24 overflow-hidden">
       <div className="flex flex-col items-start w-full max-w-(--width-content) md:px-3 gap-8">
 
           <div className="flex flex-col md:gap-10 gap-4 w-full">
@@ -61,7 +58,8 @@ export default function Hero() {
             </m.div>
 
             {/* Sub-context description paragraphs */}
-            <FadeIn            >
+          <FadeIn>
+            <div className="flex flex-col md:gap-4 gap-4 font-mono-lg  text-text-muted">
               <p>
                 Designing at <span className="text-text-primary">Grid Insight</span> in Nagpur, India.
               </p>
@@ -75,7 +73,8 @@ export default function Hero() {
                   <Email textStyle="mono" size="small" />
                 </div>
               </div>
-            </FadeIn>
+            </div>
+          </FadeIn>
 
           </div>
       </div>
