@@ -116,19 +116,19 @@
   }
 
   .font-h1 {
-    @apply font-display text-[2.5rem] leading-12 font-semibold antialiased;
+    @apply font-display text-[2rem] md:text-[2.5rem] leading-10 md:leading-12 font-semibold antialiased;
   }
 
   .font-h2 {
-    @apply font-display text-[2rem] leading-10 font-semibold antialiased;
+      @apply font-display text-2xl md:text-[1.75rem] leading-8 md:leading-12 font-semibold antialiased;
   }
 
   .font-h3 {
-    @apply font-display text-xl md:text-2xl leading-6 md:leading-7 font-semibold tracking-wide antialiased;
+    @apply font-display text-xl md:text-2xl leading-6 md:leading-8 font-semibold tracking-wide antialiased;
   }
 
   .font-h4 {
-    @apply font-display text-xl leading-10 font-semibold antialiased;
+    @apply font-display text-lg md:text-xl leading-7 font-semibold antialiased;
   }
 
   /* Body — sans (Geist) */
@@ -149,7 +149,7 @@
   }
 
   .font-body-sm-bold {
-    @apply font-sans text-base leading-10 font-semibold;
+    @apply font-sans text-base leading-6 font-semibold;
   }
 
   .font-body-sm {
@@ -177,5 +177,22 @@
     background-image: var(--pattern-my-shape);
     background-repeat: repeat;
     background-size: 500px 500px; /* tile size */
+  }
+
+  /* Initializes the section counter when the page loads */
+  .case-study-article {
+    counter-reset: section-counter 0;
+  }
+
+  /* Increments the section counter every time a Heading is used, and resets the image counter to 0 */
+  .auto-number-heading {
+    counter-increment: section-counter;
+    counter-reset: image-counter 0;
+  }
+
+  /* Increments the image counter and injects the "Section.Image " text before your label */
+  .auto-number-image::before {
+    counter-increment: image-counter;
+    content: counter(section-counter) "." counter(image-counter) " ";
   }
 }

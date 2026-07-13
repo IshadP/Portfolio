@@ -1,491 +1,104 @@
-import { ContextSection, OptionComparison, DecisionHeading, Card, SubHeadingSection, Heading } from "@/components/caseStudy/LayoutPrimitives";
-
-export const metadata = {
-  title: "Printhub Case Study",
-  description: "How refined components and better flows saved PrintHub users 30% of their time.",
-};
-
-export function HighlightBlock({ quote, body }) {
-  return (
-    <div className="w-full md:w-content mx-auto py-8 border-y border-outline flex flex-col gap-4 text-center justify-center items-center">
-      <h2 className="font-h2 p-4 md:px-32 text-success-fg">
-        “{quote}”
-      </h2>
-    </div>
-  );
-}
 
 <Hero
   title="Reduced Task Completion Time by 30% on Printhub by revamping user flow"
-  image1="/printhub/hero.webp"
+  image1="/casestudies/printhub/1.1.webp"
   role="Product Designer"
   team="3 Developers"
   duration="5-6 weeks"
-  overview="Printhub is a kiosk based printing solution that works through a mobile app and proprietary devices. Users upload files to the cloud and print them from any location. The system shows live print status and notifies users when prints are ready for pickup."
-/>
+  overview="PrintHub makes document printing simple, but the experience still required users to repeatedly verify their settings before placing an order. Because printing is irreversible and mistakes cost both time and money, users lacked confidence and spent unnecessary time double-checking every step.
 
-<Section id="Highlights">
-<CaseHighlights
-  title="Complete overhaul of flow to make it 30% faster than previous one"
-  images={[
-    { src: "/printhub/highlight2.webp", caption: "Dark Mode 1" },
-    { src: "/printhub/highlight3.webp", caption: "Dark Mode 2" },
-    { src: "/printhub/highlight4.webp", caption: "Light Mode 1" },
-      ]}
-  results={[
-    { label: "Reduced Printing time for 5+ files from", value: "1m 24s → 58s" },
-    { label: "Revamp User Experience with", value: "Material 3" },
-  ]}
-/>
-</Section>
-
-<Divider />
-
-<Section id="context" gap="gap-12">
-
-<ContextSection
-  label="Context"
-  heading="An Opportunity"
-  paragraphs={[
-    "PrintHub was growing rapidly, but its product had been built primarily by developers and was still in the MVP stage. As a result, users required guidance at nearly every step, leading to a frustrating experience.",
-    "This presented us with an opportunity to rebuild the app for users that not only looks better but functions according to user mental modes."
-  ]}
-/>
-
-<DisplayImage
-  src="/printhub/oldapp.webp"
-  alt="Current App"
-  fit="cover"
-  card={true}
+This redesign focused on reducing that uncertainty by improving visual feedback, clarifying primary actions, and rebuilding the interface using Material 3. The result was a faster, more predictable printing experience that reduced unnecessary interactions and helped users complete printing tasks 30% faster."
 />
 
 
+<Section id="Process">  
+<ContentSection 
+    sectionLabel="Problem" 
+    heading="Verification Tax on Users" 
+    >
+        <BodyText>Printhub wasn’t like your average ecommerce, people used it when they needed it. For a user it was meant to exist for exactly the time it requires them to print and then leave them later. Current experience was far from ideal, causing user to second guess their own choices and not surfacing information causing heavy cognitive load that made them reverify their own choices.</BodyText>
+        <CaseStats
+          labels={["Completion time for flow", "For 4+ files print job"]}
+          values={["1m 24s", "20+ Clicks"]}
+        />
+</ContentSection>
+
+<SkipBanner target="Decisions"/>
+
+<SubSection id="Mission">
+  <ContentSection 
+    sectionLabel="Our Mission" 
+    heading="Reduce Task Completion time " 
+    >
+        <BodyText>Printhub shouldn’t trap users but get out of their way faster. Moreover more time the user spends on the app more the queue increases. When discussing with founders they emphasised on efficiency being main point. So we decided to use task completion time as metric for success.</BodyText>
+  </ContentSection>
+  <ImageSection
+    src="/casestudies/printhub/1.1.webp"
+    label="Current App Flow"
+    alt="Current App Flow"
+  />
+</SubSection>
+
+<SubSection id="Research">
+  <ContentSection 
+    sectionLabel="Key Insights & Research" 
+    heading="The Real Friction" 
+    >
+        <BodyText>When observed, one behaviour was consistent ascross everyone, </BodyText>
+        <BodyText><span>Nobody trusted the app enough to place an order without checking everything twice</span></BodyText>
+        <BodyText>By talking to user I was able to map out 2 different issues that user faced in app.</BodyText>
+
+        <KeyPoints
+          items={[
+            ["Output Anxiety", "Users were unsure, if the output they will get will have all the setting applied."],
+          ],
+          ["Unclear Next Steps","New users sometimes got stuck on file addition page due unclear next actions."]}
+        />
+  </ContentSection>
+  <ImageSection
+    src="/casestudies/printhub/1.1.webp"
+    label="Current App Flow"
+    alt="Current App Flow"
+  />
+  
+  <ImageSection
+    src="/casestudies/printhub/1.1.webp"
+    label="Current App Flow"
+    alt="Current App Flow"
+  />
+  
+  <ContentSection 
+    heading="Where & Why?" 
+    >
+        <BodyText>I still wondered where was this anxiety striking the user. I mapped out the user jounrney in order to understand how user felt through out the flow</BodyText>
+       
+  </ContentSection>
+  <ImageSection
+    src="/casestudies/printhub/1.1.webp"
+    label="Current App Flow"
+    alt="Current App Flow"
+  />
+</SubSection>
+<ContentSection 
+  >
+      <BodyText>Why did this output anxiety exist at verification? I didn’t know, so I decided to talk to few more users. That’s when I got to know that <span> users already have a vague idea of how the final product should look in their head.</span> </BodyText>
+      <BodyText>If the system doesn’t match the user thinking, they instinctively moved to reverify their choice to reduce cognitive load. </BodyText>
+      <BodyText>What was the user mental model behind this? I found this out when I reviewed the all responses.</BodyText>
+     
+</ContentSection>
+
+<Callout
+label="User Mental Model"
+iconName="psychology"
+bgColorClass="bg-green-50"
+textColorClass="text-green-900"
+>
+  Printing was a irreversible process that costs money and time, if done wrong was worthless.
+</Callout>
+
+<ContentSection 
+  >
+      <BodyText>Understanding this made the product's failure clear: it gave users no indication of their current choices, and no way to draw a quick conclusion and move on, instead it was forcing them to hunt for confirmation rather than simply seeing it.</BodyText>     
+</ContentSection>
 
-<ContextSection
-  heading="Starting Without Direction"
-  paragraphs={[
-    "At the start of project, we didn’t have specific problem to solve. This was due to fact that we had no insights on how users used the app. I started observing users and how they use Printhub.",
-    "This presented us with an opportunity to rebuild the app for users that not only looks better but functions according to user mental modes."
-  ]}
-/>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/image-3.webp",
-      label: "Unnecessary actions",
-      subheading: "Frequent reverification of settings",
-      body: "Users opened customisation setting of each file and gave it quick glance before printing, even when they didn’t change a single setting."
-    },
-    {
-      image: "/printhub/image-4.webp",
-      label: "Goal Failure",
-      subheading: "Failure to reach the goal",
-      body: "New users weren’t able to complete process and needed human guidance to get their print. New users took 2-3 tries before getting the acquainted with flow."
-    }
-  ]}
-/>
-</Section>
-
-<Section id="About Users" gap="gap-12">
-<ContextSection
-  label="About Users"
-  heading="Users Expected It to Just Work"
-  paragraphs={[
-    "When I went through the flow, it felt pretty clear to me. This surprised me a bit, and made me ask - “why are users performing repetitive actions?”",
-    "So I talked to a few users, and one main insight I got was..."
-  ]}
-/>
-
-<HighlightBlock
-  quote="Printing was a irreversible process that costs money and time."
-/>
-
-<div className="w-full md:w-content mx-auto text-center">
-<BodyText>
-Getting wrong print means wastage of money. Users have to know clearly what they will get and how will it look.
-</BodyText>
-</div>
-
-<DisplayImage
-  src="/printhub/image-5.webp"
-  alt="User Anxiety Map"
-  fit="cover"
-  card={true}
-/>
-</Section>
-
-<Divider type="normal" />
-
-<Section id="Problem">
-<ContextSection
-layout="col"
-  label="Reframing the Problem"
-  heading="Invisible feedback on action cause increase in task completion time."
-  paragraphs={[
-    "The current PrintHub experience creates a 'verification tax.' Because the system hides critical settings and provides no visual feedback, users are forced into a repetitive loop of manual re-verification to soothe anxiety. This psychological friction directly increases task completion time and leads to self-doubt during a high-stakes, irreversible process."
-  ]}
-/>
-</Section>
-
-<Divider />
-
-<Section id="Decision 1" gap="gap-12">
-<ContextSection
-  layout="col"
-  label="Decision 1"
-  heading="Redesigning the print card helped users complete jobs 30% faster"
-  paragraphs={[
-    "Users repeatedly opened Print Preview to verify settings before printing. Interviews showed the issue wasn't the UI itself, but uncertainty about what settings were applied"
-  ]}
-/>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/deci-11.webp",
-      label: "Current Card Design"
-    },
-    {
-      cards: [
-        { type: "fail", text: "“Customize” doesn’t inform users about present options" },
-        { type: "fail", text: "Users only use preview when they are unsure about document." },
-        { type: "fail", text: "Card doesn’t follow material standards" }
-      ]
-    }
-  ]}
-/>
-
-<Body>
-  My initial assumption was that people were forced to recall previous action as it wasn’t clear in current UI. So the question was: how do you show users what's already been decided / changed?
-</Body>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/deci-12.webp",
-      label: "Visual indicators Only",
-      cards: [
-        { type: "success", text: "Available options and changes are clearly visible" },
-        { type: "success", text: "Allow “At a glance” understanding" },
-        { type: "fail", text: "Icons can be interpreted differently" }
-      ]
-    },
-    {
-      image: "/printhub/deci-13.webp",
-      label: "Textual Indicators",
-      cards: [
-        { type: "success", text: "Clearly tell which options are used to print the item." },
-        { type: "success", text: "Single interpretation of options" },
-        { type: "fail", text: "Addition of extra cognitive load" },
-        { type: "fail", text: "Reduction in list of items present in first fold due to increased height" }
-      ]
-    }
-  ]}
-/>
-
-<Body>
-  <span>When presented with two options, most users chose option one.</span> Further talking showed that option two caused higher cognitive load as each option had to be read. Stakeholders reached the same conclusion, so we proceeded with option one.
-</Body>
-<Body>
-  Now, we needed a way to enter customization mode.
-</Body>
-
-<Body>
-  I explored two interactions for entering customisation mode
-</Body>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/deci-14.webp",
-      label: "Click & Hold to Edit",
-      cards: [
-        { type: "fail", text: "My assumption here was most people rarely customise their print, which turned out to be wrong." },
-        { type: "fail", text: "Interaction on hold remains unclear, and users do not understand how it works." }
-      ]
-    },
-    {
-      image: "/printhub/deci-15.webp",
-      label: "Edit Icon on left",
-      cards: [
-        { type: "fail", text: "As preview was dropped, I took the opportunity to add the edit icon to left. But users had to stretch their hand a lot for such a simple action" },
-        { type: "success", text: "Pencil icon helped users immediately understand how to customise without needing to guide them." }
-      ]
-    }
-  ]}
-/>
-
-<Body>
-  Based on this, it was clear that edit option on the face value was very useful, But the question still remained on how to implement it in a better more compliant way. That’s when I landed on Gmail, and its implementation of card...
-</Body>
-
-<DisplayImage src="/printhub/deci-16.webp" alt="Gmail Card Interaction" card={true} />
-
-<Body>
-  When asked users about Gmail, a comment similar to “it is how it is” came up in every conversation. This meant that they felt safe while interacting with card, so much so that it became second nature. This made me realise that following the same pattern won’t cause much friction in users.
-</Body>
-
-
-
-<ContextSection
-  layout="col"
-  label="Final Design"
-  heading="Surface Edit Icon & Move Selection to Click"
-  paragraphs={[
-    "After presenting the case of Gmail, and some convincing the team accepted that the ideal approach would be to move edit icon to right and have a click interaction for selection.",
-    "In testing, we noticed most of the users already knew what to do, without much guidance."
-  ]}
-/>
-
-<DisplayImage
-  src="/printhub/deci-17.webp"
-  alt="Final Card Design"
-  card={true}
-/>
-
-<Body>
-  Finally, when we conducted testing with 7 students, on average they were able to complete the flow faster by 58s for around 4 files.
-</Body>
-</Section>
-
-<Divider />
-
-<Section id="Decision 2" gap="gap-12">
-<ContextSection
-  layout="col"
-  label="Decision 2"
-  heading="How I fixed two broken buttons to behave like users expected them to"
-  paragraphs={[
-    "The two buttons on the home screen were very integral to the whole flow, yet I myself found them to be a bit confusing on how they functioned as a new user.",
-    "The interaction was more confusing: the print summary button only appeared if an item was selected. Meaning if a user had items but none of them were selected, there wasn't any clear way forward."
-  ]}
-/>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/deci-21.webp",
-      label: "Current Layout"
-    },
-    {
-      cards: [
-        { type: "fail", text: "The path to the final goal is unclear to users." },
-        { type: "fail", text: "Visual feedback is very subtle after item selection, causing change blindness." },
-        { type: "fail", text: "Buttons don’t follow material standards." }
-      ]
-    }
-  ]}
-/>
-
-<Body>
-  Observation showed that many users missed the button change, and no one understood what “Print Summary” meant. New users were forced to click it just to learn its function.
-</Body>
-<Body>
-  I realised the problem wasn’t the button itself, but how the button behaved and what it meant to users.
-</Body>
-<Body>
-  My initial assumption was to stick to material guidelines, which led me to two ideas:
-</Body>
-
-<OptionComparison
-  columns={[
-    {
-      image: "/printhub/deci-22.webp",
-      label: "Idea 1: Floating Action Buttons",
-      subheading: "Floating Action Buttons",
-      body: "I decided to keep the “Add files” button as the primary FAB and “Print Files” as a secondary FAB since printing depends on adding files. This made adding files the primary action.",
-      cards: [
-        { type: "fail", text: "This reduced the importance of “Print files”, which is essential to the completion of the flow." },
-        { type: "fail", text: "Users were confused about what the button does because the print icon was associated with changing printer settings rather than printing itself." }
-      ]
-    },
-    {
-      image: "/printhub/deci-23.webp",
-      label: "Idea 2: Contextual Buttons",
-      subheading: "Contextual Buttons",
-      body: "I noticed that user intent shifted from adding files to printing files as soon as they select a file. Following this, I decided to replace the “Add file” button with “Print Files” on selection.",
-      cards: [
-        { type: "success", text: "The screen now had one primary action, effectively reducing the time to decide." },
-        { type: "fail", text: "Users still suffered from the goal gradient problem as they didn't know what to do once a file was added (but not selected)." },
-        { type: "fail", text: "In case of more than 4-5 files, selecting each file one-by-one became tedious." }
-      ]
-    }
-  ]}
-/>
-
-<Body>
-  We tested this idea with users and received the following feedback:
-</Body>
-
-<DisplayImage src="/printhub/quotes.webp" alt="User Feedback" card={true} />
-
-
-<Body>
-  The comment “I knew what to do earlier” was frequent. Stakeholders were concerned that this change would cause a lot of confusion among users, so we reimplemented the original logic.
-</Body>
-<Body>
-  But then I realised something: users were confused earlier and in Idea 2 because the goal wasn't visible. So I decided to only change the design slightly.
-</Body>
-
-
-<ContextSection
-  layout="col"
-  label="Final Design"
-  heading="Keep Selection Context Visible & Unify Goals"
-  paragraphs={[
-    "By making applied settings visible, the final design removed the need for reverification and reduced decision time during printing."
-  ]}
-/>
-
-<DisplayImage
-  src="/printhub/deci-26.webp"
-  alt="Final Design Layout"
-  card={true}
-/>
-
-<Body>
-  As the deadline approached, we could not test this change before releasing it to users.
-   However, follow-up conversations showed positive feedback, especially on removing the need for selection, allowing flexibility when wrong files were uploaded, and improving speed when printing many files.
-</Body>
-</Section>
-
-<Divider />
-
-<Section id="User Journeys" gap="gap-12">
-<ContextSection
-  layout="col"
-  label="User Journeys"
-  heading="How people use Printhub"
-  paragraphs={[]}
-/>
-
-<SubHeadingSection title="Nina can’t remember her submission">
-  Nina, a daily Printhub user, can't remember if she submitted her coding assignment. Her friends mention the coding assignment that was due yesterday. She tries to recall whether she actually submitted it. To find out, she opens the app, to check if she printed it or not.
-
-  She bypasses the main print functions, and heads directly to her past order history to see if a print job for it exists.
-</SubHeadingSection>
-
-<DisplayImage
-  src="/printhub/story1.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<Body>
-  She doesn’t remember the orderID, so she starts looking for all the prints from yesterday.
-</Body>
-<Body>
-  She found it: 'final_final_assignment.pdf' in yesterday's print history. A huge sigh of relief. Since it was printed, it should’ve been submitted.
-</Body>
-
-<DisplayImage
-  src="/printhub/story2.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<SubHeadingSection title="Raju is too busy to wait for his prints">
-  Raju works at a government office. With an audit approaching, his workload is heavy. He needs some files printed. He opens PrintHub to get it done. He uploads the files to be printed and completes the process.
-</SubHeadingSection>
-
-<DisplayImage
-  src="/printhub/story3.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<Body>
-  Once order is placed, he observes that the status is pending, so he goes back to work. After about 15 mins, he checks in again.
-</Body>
-
-<DisplayImage
-  src="/printhub/story4.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<Body>
-He notices his last order is still processing, so he walks to the printer to collect it. He was happy, that quick visual nudges show him the moment the prints are ready, letting him pick them up without losing time.
-</Body>
-
-</Section>
-
-<Divider type="section"/>
-
-<Section id="UI System" gap="gap-12">
-<ContextSection
-  layout="col"
-  label="UI System"
-  heading="UI System I created for better handoff"
-  paragraphs={[]}
-/>
-
-<DisplayImage
-  src="/printhub/ui-1.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<Body>
-  The original app was based on Flutter, so I decided to use Material Design. Components from the new Material 3 Expressive system were used and selectively modified to fit the product.
-</Body>
-
-<DisplayImage
-  src="/printhub/ui-2.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-<Body>
-  I used variables and a two-tiered token system to guarantee a clean, consistent build for development. This structure was designed to be scalable; with empty tokens ready for new colours. This ensured the new design met Material Design colour standards.
-</Body>
-
-<DisplayImage
-  src="/printhub/ui-3.webp"
-  alt=""
-  fit="cover"
-  card={true}
-/>
-
-
-<Body>
-  I built bigger components as a mixture of smaller atomic components. Auto Layout was used in order to maintain a consistent spacing and arrangement even when the size of the component changes.
-</Body>
-</Section>
-
-<Divider/>
-
-<Section id="Outro" gap="gap-12">
-<ContextSection
-  layout="row"
-  heading="What if I had more time?"
-  paragraphs={[
-    "My next immediate focus will be the web platform ensuring every user experiences the same consistent, unified design.",
-    "Moreover, some initial assumptions were green-lit quickly by stakeholders, we would like to conduct a thorough testing and make sure these really work.",
-    "Future versions of Printhub could introduce features like user presets, deeper customization, and quick-print options tailored to individual needs."
-  ]}
-/>
-
-<Divider type="normal" />
-
-<ContextSection
-  layout="row"
-  heading="Main takeaway"
-  paragraphs={[
-    "The main takeaway from this project was on my process. Just providing design wasn’t enough, designer and developers have to actively communicate in order to provide a experience as it is designed.",
-    "Biggest change in my process is focusing on the bigger picture rather than just work as a designer.",
-    "A great design that can scale is always better than a perfect one that can never be fully built."
-  ]}
-/>
-
-<div className="w-full md:w-content mx-auto py-8 text-center">
-  <Heading>Thank you!</Heading>
-</div>
 </Section>

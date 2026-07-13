@@ -1,6 +1,6 @@
 "use client";
 
-import { delay, m, stagger } from "framer-motion";
+import { m } from "framer-motion";
 import Email from "../ui/Email";
 import { AsciiEngineer, AsciiDesigner } from "../ui/AsciiText";
 import FadeIn from "../ui/FadeIn";
