@@ -20,6 +20,7 @@ import {
   Callout,
   CaseStats,
   KeyPoints,
+  InfoCard
 } from "@/components/caseStudy/LayoutPrimitives";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -52,6 +53,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Hatching,
     Image,
     Link,
+    InfoCard,
     // Allow merging with passed components
     ...components,
   };

@@ -133,44 +133,44 @@
 
   /* Body — sans (Geist) */
   .font-body-lg-bold {
-    @apply font-sans md:text-2xl text-xl font-semibold leading-8;
+    @apply font-sans md:text-2xl text-xl font-semibold leading-8 antialiased;
   }
 
   .font-body-lg {
-    @apply font-sans md:text-2xl text-xl leading-8 font-medium;
+    @apply font-sans md:text-2xl text-xl leading-8 font-medium antialiased;
   }
 
   .font-body-md-bold {
-    @apply font-sans text-lg leading-6 font-semibold;
+    @apply font-sans text-lg leading-6 font-semibold antialiased;
   }
 
   .font-body-md {
-    @apply font-sans text-base md:text-lg leading-6 font-medium;
+    @apply font-sans text-base md:text-lg leading-6 font-medium antialiased;
   }
 
   .font-body-sm-bold {
-    @apply font-sans text-base leading-6 font-semibold;
+    @apply font-sans text-base leading-6 font-semibold antialiased;
   }
 
   .font-body-sm {
-    @apply font-sans text-base leading-6;
+    @apply font-sans text-base leading-6 antialiased;
   }
 
   .font-nav {
-    @apply font-sans text-base font-medium leading-6;
+    @apply font-sans text-base font-medium leading-6 antialiased;
   }
 
   /* Label — mono (Geist Mono) */
   .font-mono-lg {
-    @apply font-mono md:text-lg text-base font-medium tracking-normal leading-7;
+    @apply font-mono md:text-lg text-base font-medium tracking-normal leading-7 antialiased;
   }
 
   .font-mono-md {
-    @apply font-mono text-sm md:text-base leading-5 font-medium;
+    @apply font-mono text-sm md:text-base leading-5 font-medium antialiased;
   }
 
   .font-mono-sm {
-    @apply font-mono text-sm leading-5 font-medium;
+    @apply font-mono text-sm leading-5 font-medium antialiased;
   }
 
   .pattern-dot {
@@ -179,18 +179,19 @@
     background-size: 500px 500px; /* tile size */
   }
 
-  /* Initializes the section counter when the page loads */
   .case-study-article {
     counter-reset: section-counter 0;
   }
 
-  /* Increments the section counter every time a Heading is used, and resets the image counter to 0 */
-  .auto-number-heading {
-    counter-increment: section-counter;
+  /* Each top-level Section gets its own fresh image-counter scope */
+  .case-study-section {
     counter-reset: image-counter 0;
   }
 
-  /* Increments the image counter and injects the "Section.Image " text before your label */
+  .auto-number-heading {
+    counter-increment: section-counter;
+  }
+
   .auto-number-image::before {
     counter-increment: image-counter;
     content: counter(section-counter) "." counter(image-counter) " ";

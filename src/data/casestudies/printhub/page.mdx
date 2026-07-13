@@ -25,18 +25,13 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
 
 <SkipBanner target="Decisions"/>
 
-<SubSection id="Mission">
+<SubSection>
   <ContentSection 
     sectionLabel="Our Mission" 
     heading="Reduce Task Completion time " 
     >
         <BodyText>Printhub shouldn’t trap users but get out of their way faster. Moreover more time the user spends on the app more the queue increases. When discussing with founders they emphasised on efficiency being main point. So we decided to use task completion time as metric for success.</BodyText>
   </ContentSection>
-  <ImageSection
-    src="/casestudies/printhub/1.1.webp"
-    label="Current App Flow"
-    alt="Current App Flow"
-  />
 </SubSection>
 
 <SubSection id="Research">
@@ -56,13 +51,13 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
         />
   </ContentSection>
   <ImageSection
-    src="/casestudies/printhub/1.1.webp"
+    src="/casestudies/printhub/2.1.webp"
     label="Current App Flow"
     alt="Current App Flow"
   />
   
   <ImageSection
-    src="/casestudies/printhub/1.1.webp"
+    src="/casestudies/printhub/2.2.webp"
     label="Current App Flow"
     alt="Current App Flow"
   />
@@ -74,31 +69,411 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
        
   </ContentSection>
   <ImageSection
-    src="/casestudies/printhub/1.1.webp"
+    src="/casestudies/printhub/2.3.webp"
     label="Current App Flow"
     alt="Current App Flow"
   />
+  <ContentSection 
+    >
+        <BodyText>Why did this output anxiety exist at verification? I didn’t know, so I decided to talk to few more users. That’s when I got to know that <span> users already have a vague idea of how the final product should look in their head.</span> </BodyText>
+        <BodyText>If the system doesn’t match the user thinking, they instinctively moved to reverify their choice to reduce cognitive load. </BodyText>
+        <BodyText>What was the user mental model behind this? I found this out when I reviewed the all responses.</BodyText>
+       
+  </ContentSection>
+  
+  <Callout
+  label="User Mental Model"
+  iconName="psychology"
+  bgColorClass="bg-green-50"
+  textColorClass="text-green-900"
+  >
+    <p>Printing was a irreversible process that costs money and time, if done wrong was worthless.</p>
+  </Callout>
+  
+  <ContentSection 
+    >
+        <BodyText>Understanding this made the product's failure clear: it gave users no indication of their current choices, and no way to draw a quick conclusion and move on, instead it was forcing them to hunt for confirmation rather than simply seeing it.</BodyText>     
+  </ContentSection>
+  
+  <ContentSection 
+    sectionLabel="Reframing the Problem" 
+    heading="Printhub was failing to surface feedback" 
+    >
+        <BodyText>The existing PrintHub experience imposes a verification tax. By <span>hiding critical information and providing insufficient feedback, the interface forces users to repeatedly check settings</span> to calm their anxiety. Instead of building confidence, it works with uncertainty, increasing both cognitive load and task completion time before every print</BodyText>
+  </ContentSection>
+
+  <ContentSection 
+    sectionLabel="Friction Points" 
+    heading="Suspected Elements" 
+    >
+        <BodyText>When understanding two elements became the main suspects in providing friction to users. These where very core to the experience yet designed poorly</BodyText>
+  </ContentSection>
+
+  <ImageSection
+    src="/casestudies/printhub/3.1.webp"
+    label="The Vague Product Card"
+    alt="The Vague Product Card"
+    rightCards={
+      <>
+        <InfoCard variant="con" iconName="visibility_off">
+          Users couldn't tell what settings were active at a glance. They had to open each file's settings to verify them.
+        </InfoCard>
+        <InfoCard variant="con" iconName="power_settings_new">
+          Preview was primarily used when users uploaded multiple files. Giving it the same prominence as Customize was based on an assumption.
+        </InfoCard>
+        <InfoCard variant="con" iconName="ads_click">
+          The checkbox had a small touch target and was always visible, unlike Material 3 guidelines.
+        </InfoCard>
+      </>
+    }
+  />
+
+  <ImageSection
+    src="/casestudies/printhub/3.2.webp"
+    label="The Two Buttons that stopped users"
+    alt="The Two Buttons that stopped users"
+    rightCards={
+      <>
+        <InfoCard variant="con" iconName="visibility_off">
+          Users couldn't tell what settings were active at a glance. They had to open each file's settings to verify them.
+        </InfoCard>
+        <InfoCard variant="con" iconName="power_settings_new">
+          Preview was primarily used when users uploaded multiple files. Giving it the same prominence as Customize was based on an assumption.
+        </InfoCard>
+        <InfoCard variant="con" iconName="ads_click">
+          The checkbox had a small touch target and was always visible, unlike Material 3 guidelines.
+        </InfoCard>
+      </>
+    }
+  />
 </SubSection>
-<ContentSection 
-  >
-      <BodyText>Why did this output anxiety exist at verification? I didn’t know, so I decided to talk to few more users. That’s when I got to know that <span> users already have a vague idea of how the final product should look in their head.</span> </BodyText>
-      <BodyText>If the system doesn’t match the user thinking, they instinctively moved to reverify their choice to reduce cognitive load. </BodyText>
-      <BodyText>What was the user mental model behind this? I found this out when I reviewed the all responses.</BodyText>
-     
-</ContentSection>
 
-<Callout
-label="User Mental Model"
-iconName="psychology"
-bgColorClass="bg-green-50"
-textColorClass="text-green-900"
->
-  Printing was a irreversible process that costs money and time, if done wrong was worthless.
-</Callout>
+</Section>
 
-<ContentSection 
-  >
-      <BodyText>Understanding this made the product's failure clear: it gave users no indication of their current choices, and no way to draw a quick conclusion and move on, instead it was forcing them to hunt for confirmation rather than simply seeing it.</BodyText>     
-</ContentSection>
 
+<Section id="decisions">
+  <SubSection>
+    <ContentSection 
+      sectionLabel="How I revamped the card to fix reverification problem" 
+      heading="Building Card to Glance" 
+      >
+          <BodyText>When redesigning the card, my goal was to help users quickly understand which print setting had been changed and which were still at their default values. I believed users kept rechecking settings because they had to remember their previous actions, leading to unnecessary verification.</BodyText>
+          <BodyText>Following the recognition over recall principle, I explored ways to make applied settings visible at a glance. Since <span>visual cues are faster to process than text, I began by exploring a visual-first approach using icons.</span></BodyText>
+    </ContentSection>
+
+    <ImageSection
+      src="/casestudies/printhub/4.1.webp"
+      label="The Two Buttons that stopped users"
+      alt="The Two Buttons that stopped users"
+      leftCards={
+        <>
+          <InfoCard variant="pro" iconName="visibility">
+            Dim Icons indicate which settings are default and lit icons indicate which are changed.
+          </InfoCard>
+          <InfoCard variant="pro" iconName="power_settings_new">
+            Moved Preview Left to standardise the design according to material 3 and Jakob's law
+          </InfoCard>
+          <InfoCard variant="pro" iconName="touch_app">
+            Increased the touch area size internally and used material component.
+          </InfoCard>
+        </>
+      }
+      rightCards={
+        <>
+          <InfoCard variant="con" iconName="psychology">
+            Interpretation of Icons was still very much user dependent.
+          </InfoCard>
+          <InfoCard variant="con" iconName="visibility_off">
+            As we removed customise button it was unclear how to open customisation menu.
+          </InfoCard>
+        </>
+      }
+    />
+
+    <ContentSection>
+        <BodyText>At this point in time, we dropped the preview on card feature as developing it would take longer time than our time line.</BodyText>
+        <BodyText>Removing the Customize button also removed the entry point to the customization menu. I also wanted to conserve user behaviour so I explored two interaction patterns to replace it.</BodyText>
+    </ContentSection>
+
+    <ComparisonSection
+      left={{
+        label: "Before Preview was dropped",
+        src: "/casestudies/printhub/4.2.webp",
+        alt: "Before Preview was dropped",
+        cards: (
+          <>
+            <InfoCard variant="pro" iconName="gesture">
+              User knew how to move forward as checkbox was still visible.
+            </InfoCard>
+            <InfoCard variant="con" iconName="visibility_off">
+              On 5+ cards, it was increasing task completion time.
+            </InfoCard>
+            <InfoCard variant="con" iconName="psychology">
+              Interaction was quite different and usually used to enter select mode, it was mostly confusing users and many weren't able to figure out how to do it at all.
+            </InfoCard>
+          </>
+        )
+      }}
+      right={{
+        label: "After Preview was dropped",
+        src: "/casestudies/printhub/4.3.webp",
+        alt: "After Preview was dropped",
+        cards: (
+          <>
+            <InfoCard variant="pro" iconName="edit">
+              Edit button gave clear entry point for customisation menu.
+            </InfoCard>
+            <InfoCard variant="pro" iconName="gesture">
+              Changed Icons to be more aligned how users thought they should be.
+            </InfoCard>
+            <InfoCard variant="pro" iconName="touch_app">
+              Increased the size of touch target in check box to ensure visibility and ease of click.
+            </InfoCard>
+            <InfoCard variant="con" iconName="power_settings_new">
+              The extreme left placement of edit icon cause right hand user to either stretch thumbs or hold phone by other hand and click on it.
+            </InfoCard>
+          </>
+        )
+      }}
+    />
+
+    <ContentSection>
+        <BodyText>This is when I came across Gmail. It's card pattern solved two problems at once. Its leading icon naturally handled selection, removing the need for a separate checkbox, and its familiar interaction made it easier to gain stakeholder confidence than introducing a new pattern.</BodyText>
+        <BodyText>After team discussions, we replaced the existing interaction with a Gmail-inspired card pattern.</BodyText>
+    </ContentSection>
+
+    <ImageSection
+      src="/casestudies/printhub/4.4.webp"
+      label="Gmail Inspired Design"
+      alt="Gmail Inspired Design"
+      rightCards={
+        <>
+          <InfoCard variant="pro" iconName="visibility">
+            Dim icons indicate which settings are default and lit icons indicate which are changed.
+          </InfoCard>
+          <InfoCard variant="pro" iconName="touch_app">
+            Click to select was implemented rather than dedicated selection mode due to fact that user many time wanted modify files after selection.
+          </InfoCard>
+          <InfoCard variant="pro" iconName="edit">
+            Edit Icon was viable and easily accessible
+          </InfoCard>
+        </>
+      }
+    />
+
+    <ContentSection
+      heading="Impact of Card Redesign"
+      >
+        <BodyText>We tested the card with 5 user with 5-6 files the times dropped and number of clicks remained were decreased massively.</BodyText>
+        
+        <CaseStats
+          labels={["Completion time for flow", "For 4+ files print job"]}
+          values={[
+            ["1m 24s", "1m 5s"],
+            ["20+", "13-15 Clicks"]
+          ]}
+        />
+
+        <BodyText>While users still sometimes reverified their setting, it occurred noticeably less time during testing</BodyText>
+    </ContentSection>
+  </SubSection>
+
+  <SubSection>
+    <ContentSection 
+      sectionLabel="Why I Iterated on 2 button thrice but didn't choose any" 
+      heading="Buttons of Confusion" 
+      >
+          <BodyText>Two button, in Fig 3.2, were core the reaching the goal. While redesigning this experience I came across to major discoveries that made the problem more difficult</BodyText>
+          
+          <KeyPoints
+            items={[
+              ["Interdependence of Button", "Both button were highly relevant during different parts of flow, without file addition nothing can be printed and without print, their is no point."],
+              ["Founder's Intent of Flexibility", "During discussions, the founders emphasized that users shouldn't be forced down a single path. Adding files and printing needed to remain accessible at all times."]
+            ]}
+          />
+
+          <BodyText>Following Material 3, I could think of two ideas that would work:</BodyText>
+    </ContentSection>
+
+    <ComparisonSection
+      left={{
+        label: "Before Preview was dropped",
+        src: "/casestudies/printhub/5.1.webp",
+        alt: "Before Preview was dropped",
+        cards: (
+          <>
+            <InfoCard variant="pro" iconName="touch_app">
+              It was easily understood by users and highly viable due to it being a common pattern
+            </InfoCard>
+            <InfoCard variant="con" iconName="psychology">
+              Users didn't knew what Small FAB does, they usually found out using exploration.
+            </InfoCard>
+            <InfoCard variant="con" iconName="visibility_off">
+              On 5+ cards, it was increasing task completion time.
+            </InfoCard>
+          </>
+        )
+      }}
+      right={{
+        label: "After Preview was dropped",
+        src: "/casestudies/printhub/5.2.webp",
+        alt: "After Preview was dropped",
+        cards: (
+          <>
+            <InfoCard variant="pro" iconName="touch_app">
+              Large Center button created clear indication of next step
+            </InfoCard>
+            <InfoCard variant="con" iconName="psychology">
+              This was similar to original app's context based, which locked users into a specific flow based on specific action. One user upload the file there was no way to restart the flow.
+            </InfoCard>
+          </>
+        )
+      }}
+    />
+
+    <ContentSection>
+        <BodyText><span>Several users preferred the original flow, with one saying, "I knew what to do earlier."</span></BodyText>
+        <BodyText>Both the old design and Idea 2 had the same problem: users couldn't tell what to do next. So I kept the original behaviour and improved its clarity instead.</BodyText>
+    </ContentSection>
+
+    <ImageSection
+      src="/casestudies/printhub/5.3.webp"
+      label="Gmail Inspired Design"
+      alt="Gmail Inspired Design"
+      rightCards={
+        <>
+          <InfoCard variant="pro" iconName="touch_app">
+            Add files button remained accessible through out the flow
+          </InfoCard>
+          <InfoCard variant="pro" iconName="visibility">
+            Grey out button allowed user to understand what next steps could be (Implied)
+          </InfoCard>
+          <InfoCard variant="pro" iconName="check_circle">
+            Once file added the button changed color, allowing user to perform the next action.
+          </InfoCard>
+          <InfoCard variant="pro" iconName="power_settings_new">
+            Printing all files no longer requires selection, but the original selection behavior is preserved for flexibility.
+          </InfoCard>
+        </>
+      }
+    />
+
+    <ContentSection
+      heading="Impact of Card Redesign"
+      >
+        <BodyText>We tested the card with 5 user with 5-6 files the times dropped and number of clicks remained were decreased massively.</BodyText>
+        
+        <CaseStats
+          labels={["Completion time for flow", "For 4+ files print job"]}
+          values={[
+            ["1m 5s", "58s"],
+            ["13-15", "<10 Clicks"]
+          ]}
+        />
+    </ContentSection>
+  </SubSection>
+</Section>
+
+<Section id="Use Cases">
+  <SubSection>
+    <ContentSection 
+      sectionLabel="How People use Printhub" 
+      heading="Riya needs to print 2 File Printed" 
+      >
+        <BodyText>Riya needs to print 2 documents printed before a 10am meeting. In the old flow, she'd add her files and then pause, unsure whether they were ready to print or needed another step; often rechecking settings she'd already confirmed.</BodyText>
+    </ContentSection>
+    
+    <ImageSection
+      src="/casestudies/printhub/6.1.webp"
+      label="4.1 The Two Buttons that stopped users"
+      alt="Riya old flow confusion"
+    />
+    
+    <ImageSection
+      src="/casestudies/printhub/6.2.webp"
+      label="4.2 The Two Buttons that stopped users"
+      alt="Riya new flow success"
+    />
+
+    <ContentSection>
+        <BodyText>With PrintHub, Riya adds her 3 files and the Print button turns active right away, telling her exactly what to do next. She selects all 3 and prints done in under a minute, no second-guessing.</BodyText>
+    </ContentSection>
+  </SubSection>
+
+  <SubSection>
+    <ContentSection 
+      heading="Arjun is printing 2 reports when he remembers a 3rd" 
+      >
+        <BodyText>In the old flow, once he'd started selecting files to print, but added new file after selection, he would have to select all file again to print them, causing increased frustration. Let's see how new flow improves on this.</BodyText>
+    </ContentSection>
+    
+    <ImageSection
+      src="/casestudies/printhub/6.3.webp"
+      label="4.3 The Two Buttons that stopped users"
+      alt="Arjun old flow selection loss"
+    />
+    
+    <ImageSection
+      src="/casestudies/printhub/6.4.webp"
+      label="4.4 The Two Buttons that stopped users"
+      alt="Arjun new flow selection retained"
+    />
+
+    <ContentSection>
+        <BodyText>With PrintHub, Arjun adds new file, clicks on Print button, it moves all files to print cart.</BodyText>
+    </ContentSection>
+  </SubSection>
+</Section>
+
+<Section id="UI System">
+  <ContentSection 
+    sectionLabel="UI System" 
+    heading="Material 3 Design System" 
+    >
+      <BodyText>To ensure consistency, scalability, and speed of development, the interface was built using the Material 3 design system guidelines, creating a clean, recognizable, and highly functional set of UI components.</BodyText>
+  </ContentSection>
+  
+  <ImageSection
+    src="/casestudies/printhub/7.1.webp"
+    label="Typography & Color Palette"
+    alt="PrintHub Design System Typography and Colors"
+  />
+  
+  <ImageSection
+    src="/casestudies/printhub/7.2.webp"
+    label="Components & Input Fields"
+    alt="PrintHub Design System Components"
+  />
+  <ImageSection
+    src="/casestudies/printhub/7.3.webp"
+    label="Cards & Elevation"
+    alt="PrintHub Design System Cards"
+  />
+  
+  <ImageSection
+    src="/casestudies/printhub/7.4.webp"
+    label="Layout Grid & Elevation"
+    alt="PrintHub Design System Grid"
+  />
+
+  <ContentSection>
+      <BodyText>Clear naming meant the same components reused across different contexts — a file card and a payment card share structure despite different data.</BodyText>
+  </ContentSection>
+</Section>
+
+<Section id="Learnings & OutCome">
+    <ContentSection 
+      sectionLabel="What I would do I had more time" 
+      heading="Web Platform & More Testing" 
+      >
+        <BodyText>The next step is extending the redesign to the web platform, creating a consistent experience across devices. Some design decisions were implemented based on stakeholder alignment rather than extensive validation, so I would conduct further usability testing to measure their impact. Future iterations could also introduce features like print presets, deeper customization, and one-tap quick print for frequent users.</BodyText>
+    </ContentSection>
+    <ContentSection 
+      sectionLabel="Reflection" 
+      heading="Understanding users & Stakeholder alignment" 
+      >
+        <BodyText>This was first time of me dealing with real stakeholder and real constraints. Managing what user expected and what stakeholder did was real challenge, especially in card redesign.</BodyText>
+        <BodyText>I tried guerrilla interview for first time as well, asking people what problem do they face, observing them doing prints and understanding them. </BodyText>
+    </ContentSection>
+    <SubHeading label="Thank you" />
 </Section>

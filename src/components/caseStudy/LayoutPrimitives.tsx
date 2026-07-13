@@ -80,7 +80,7 @@ export function Divider({ type = "normal" }: { type?: "section" | "normal" }) {
 // Section wraps content in a semantic section tag with spacing.
 export function Section({ id, children }: { id?: string; children: ReactNode }) {
   return (
-    <section id={id} className={`flex flex-col md:p-20 gap-18`}>
+    <section id={id} className={`case-study-section flex flex-col md:p-20 gap-18`}>
       {children}
     </section>
   );
@@ -109,7 +109,7 @@ export function ContentSection({
   children,
 }: ContentSectionProps) {
   return (
-    <section className="flex flex-col w-full mb-16">
+    <section className="flex flex-col w-full">
       {/* Conditionally render SectionLabel based on rule 1 */}
       {sectionLabel && (
         <div className="mb-8">
@@ -156,28 +156,28 @@ export function ContentSection({
 // Card
 // =========================================
 
-type CalloutVariant = "pro" | "con" | "info" | "fact";
+type InfoVariant = "pro" | "con" | "info" | "fact";
 
-interface CalloutCardProps {
-  variant: CalloutVariant;
+interface InfoCardProps {
+  variant: InfoVariant;
   iconName: string;
   children: ReactNode;
   className?: string;
 }
 
-const variantStyles: Record<CalloutVariant, string> = {
+const variantStyles: Record<InfoVariant, string> = {
   pro: "bg-green-50 text-green-900",
   con: "bg-red-50 text-red-900",
   info: "bg-blue-50 text-blue-900",
   fact: "bg-neutral-50 text-neutral-900",
 };
 
-export function CalloutCard({
+export function InfoCard({
   variant,
   iconName,
   children,
   className = "",
-}: CalloutCardProps) {
+}: InfoCardProps) {
   return (
     <div
       className={`flex w-full items-start gap-3 rounded-3xl p-5 ${variantStyles[variant]} ${className}`}
@@ -217,7 +217,7 @@ export function ImageSection({
   const isVideo = /\.(mp4|webm|mov|ogg)$/i.test(src);
 
   return (
-    <section className="flex flex-col w-full gap-4 mb-16">
+    <section className="flex flex-col w-full gap-1">
       {/* Rule 1: Label ABOVE if image has children */}
       {hasChildren && (
         <div className="w-full flex justify-end px-4">
@@ -226,7 +226,7 @@ export function ImageSection({
       )}
 
       {/* The Image/Video Wrapper */}
-      <div className="relative w-full aspect-video bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="relative w-full aspect-900/420 bg-gray-100 rounded-2xl overflow-hidden">
         {isVideo ? (
           <video
             src={src}
@@ -322,7 +322,7 @@ export function ComparisonSection({ left, right }: ComparisonSectionProps) {
   );
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 w-full mb-16">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 w-full ">
       {renderColumn(left)}
       {renderColumn(right)}
     </section>
@@ -419,7 +419,7 @@ export function SkipBanner({ targetId = "decisions" }: SkipBannerProps) {
   };
 
   return (
-    <div className="w-full flex items-center justify-between bg-blue-50 rounded-lg px-6 py-5 md:px-8 md:py-6 mb-16">
+    <div className="w-full flex items-center justify-between bg-blue-50 rounded-lg px-6 py-5 md:px-8 md:py-6">
 
       <p className="text-2xl md:text-3xl font-bold text-blue-900 tracking-tight">
         Short on time?
@@ -467,15 +467,15 @@ export function Callout({
   className = "",
 }: CalloutProps) {
   return (
-    <div className={`flex flex-col w-full mb-16 ${className}`}>
+    <div className={`flex flex-col w-full ${className}`}>
 
       {/* Top Tab */}
       {/* self-start prevents the tab from stretching full width */}
       <div
-        className={`self-start ml-6 inline-flex items-center gap-2 px-6 pt-3 pb-2 rounded-t-[24px] ${bgColorClass} ${textColorClass}`}
+        className={`self-start ml-6 inline-flex items-center gap-2 px-6 pt-2  rounded-t-3xl ${bgColorClass} ${textColorClass}`}
       >
         <Icon name={iconName} size={20} />
-        <span className="font-semibold text-[15px] leading-tight tracking-wide">
+        <span className="font-semibold font-sans text-[15px] leading-tight tracking-wide">
           {label}
         </span>
       </div>
@@ -483,9 +483,9 @@ export function Callout({
       {/* Main Body */}
       {/* rounded-tl-none ensures it perfectly flush-joins with the tab above it */}
       <div
-        className={`w-full px-6 py-8 md:px-10 md:py-10 rounded-3xl ${bgColorClass} `}
+        className={`w-full px-6 py-8 md:px-6 md:py-10 rounded-3xl ${bgColorClass} `}
       >
-        <div className={`text-2xl md:text-[32px] font-bold leading-snug md:leading-[40px] m-0 ${textColorClass}`}>
+        <div className={`font-sans text-2xl md:text-[32px] font-semibold leading-snug md:leading-[36px] m-0 ${textColorClass}`}>
           {children}
         </div>
       </div>
