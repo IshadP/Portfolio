@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
-import { m } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Icon } from "@/components/ui/Icon";
 import Footer from "@/components/ui/Footer";
-import FadeIn from "@/components/ui/FadeIn";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/legacy/build/pdf.worker.min.mjs",
@@ -17,6 +16,30 @@ export default function ResumePage() {
   const renderTaskRef = useRef<pdfjsLib.RenderTask | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { y:20, opacity: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  } as const;
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  } as const;
 
   useEffect(() => {
     let loadingTask: pdfjsLib.PDFDocumentLoadingTask | null = null;
@@ -120,11 +143,18 @@ export default function ResumePage() {
   return (
     <div className="flex flex-col items-center w-full relative bg-bg-default">
       <div className="w-full md:w-content flex flex-col gap-0 px-4 md:px-0 bg-bg-default">
-        <FadeIn className="relative flex flex-col w-full md:w-content z-10 bg-bg-default gap-6">
+        <m.div
+          className="relative flex flex-col w-full md:w-content z-10 bg-bg-default gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="mt-8 bg-bg-default flex flex-col gap-6">
             {/* Header */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-3">
-
+            <m.div
+              className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-3"
+              variants={itemVariants}
+            >
               <h2 className="text-text-primary font-h3">
                 My Resume
               </h2>
@@ -138,10 +168,13 @@ export default function ResumePage() {
                 <Icon name="download" size={20} />
                 <p className="font-body-sm">Download Resume</p>
               </a>
-            </div>
+            </m.div>
 
             {/* Canvas PDF Viewer */}
-            <div className="w-full bg-bg-subtle flex justify-center overflow-auto min-h-[600px] relative">
+            <m.div
+              className="w-full bg-bg-subtle flex justify-center overflow-auto min-h-[600px] relative"
+              variants={itemVariants}
+            >
               {loading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-bg-subtle z-10">
                   <m.div
@@ -167,10 +200,12 @@ export default function ResumePage() {
               ) : (
                 <canvas ref={canvasRef} className="max-w-full h-auto bg-bg-subtle p-4 rounded-2xl" />
               )}
-            </div>
+            </m.div>
           </div>
-          <Footer />
-        </FadeIn>
+          <m.div variants={itemVariants}>
+            <Footer />
+          </m.div>
+        </m.div>
       </div>
     </div>
   );

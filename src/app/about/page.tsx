@@ -1,13 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { m, useReducedMotion } from "framer-motion";
 
 export default function AboutPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  } as const;
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  } as const;
+
   return (
     <div className="flex flex-col items-center w-full relative bg-bg-default">
-      <div className="w-full md:w-content flex flex-col bg-bg-default overflow-hidden">
+      <m.div
+        className="w-full md:w-content flex flex-col bg-bg-default overflow-hidden"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
 
         {/* 1. Story Section */}
-        <div className="w-full flex flex-col md:grid grid-cols-2 gap-6 md:gap-0">
+        <m.div
+          className="w-full flex flex-col md:grid grid-cols-2 gap-6 md:gap-0"
+          variants={itemVariants}
+        >
           {/* Image Block */}
           <div className="col-span-1 relative w-full h-120 md:h-auto">
             <Image
@@ -24,7 +60,7 @@ export default function AboutPage() {
             <h2 className="text-text-primary font-h3">
               This is my story
             </h2>
-            <div className="flex flex-col gap-6 text-text-muted font-body-sm">
+            <div className="flex flex-col gap-6 text-text-muted font-body-md">
               <p>
                 I always liked cars, and how they looked, there was something amazing about sports car, something that just felt that these can drive faster than others. This was back in 6th standard.
               </p>
@@ -42,13 +78,16 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </m.div>
 
         {/* 2. What I Like to Do Section */}
-        <div className="w-full flex flex-col my-8 justify-start items-stretch gap-8">
+        <m.div
+          className="w-full flex flex-col my-8 justify-start items-stretch gap-8"
+          variants={itemVariants}
+        >
           {/* Content Area */}
           <div className="flex-1 p-4 flex flex-col justify-start items-start gap-6">
-            <h2 className="text-text-muted w-full border-b border-outline pb-2 font-h3">
+            <h2 className="text-text-primary w-full border-b border-outline pb-2 font-h3">
               What I like to do
             </h2>
             <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 w-full">
@@ -57,34 +96,34 @@ export default function AboutPage() {
                 <h3 className="text-text-primary font-body-sm-bold">
                   📱 Building Apps &amp; Interactions
                 </h3>
-                <p className="text-text-muted font-body-sm">
+                <p className="text-text-muted font-body-md">
                   Using Flutter and Framer Motion + Tailwind CSS. Noticing unique interaction and recreating them is always challenging but fun...
                 </p>
               </div>
               {/* Item 2 */}
               <div className="flex flex-col gap-3">
-                <h3 className="text-text-primary font-body-sm font-semibold">
+                <h3 className="text-text-primary font-body-sm-bold">
                   🎮 Gaming
                 </h3>
-                <p className="text-text-muted font-body-sm">
+                <p className="text-text-muted font-body-md">
                   Time to Time, I like to play games. I have played a lot of games in past like Jedi: Fallen Order, Minecraft, Need for Speed: Heat &amp; many more
                 </p>
               </div>
               {/* Item 3 */}
               <div className="flex flex-col gap-3">
-                <h3 className="text-text-primary font-body-sm font-semibold">
+                <h3 className="text-text-primary font-body-sm-bold">
                   ⛹️‍♂️ Basketball
                 </h3>
-                <p className="text-text-muted font-body-sm">
+                <p className="text-text-muted font-body-md">
                   Started in 5th grade, I played it for around 7 years consistently. I still play occasionally. Always fun to play!
                 </p>
               </div>
               {/* Item 4 */}
               <div className="flex flex-col gap-3">
-                <h3 className="text-text-primary font-body-sm font-semibold">
+                <h3 className="text-text-primary font-body-sm-bold">
                   📷 Photography
                 </h3>
-                <p className="text-text-muted font-body-sm">
+                <p className="text-text-muted font-body-md">
                   I picked this hobby around the same time I started designing, picturing sky, and viewing simple daily places in a different way is what its all about
                 </p>
               </div>
@@ -123,10 +162,13 @@ export default function AboutPage() {
     <Image src="/about/alibag.webp" fill className="object-cover" alt="trip" sizes="(max-width: 768px) 50vw, 33vw" />
   </div>
 </div>
-        </div>
+        </m.div>
 
         {/* 3. Sci-fi Section */}
-        <div className="w-full flex flex-col md:flex-row justify-start items-stretch">
+        <m.div
+          className="w-full flex flex-col md:flex-row justify-start items-stretch"
+          variants={itemVariants}
+        >
           {/* Left spacer block */}
           {/* <div className="flex-1 p-6 md:p-10 w-full border-b md:border-b-0 md:border-r border-outline flex items-center justify-center bg-bg-subtle h-40 sm:h-56 md:h-auto md:min-h-full relative overflow-hidden">
             <Image
@@ -142,18 +184,18 @@ export default function AboutPage() {
             <h2 className="text-text-primary font-h3">
               Last but not the least
             </h2>
-            <div className="flex flex-col gap-4 text-text-muted font-body-sm w-full">
-              <p className="text-text-primary font-semibold">
+            <div className="flex flex-col gap-4 text-text-muted font-body-md-bold w-full">
+              <p className="text-text-primary font-body-sm-bold">
                 I love Sci-Fi
               </p>
-              <p>
+              <p className="font-body-md text-text-muted">
                 Can talk hours about all about it!
               </p>
               <div className="flex flex-col gap-1 mt-2">
-                <p className="text-text-primary font-semibold">
+                <p className="text-text-primary font-body-md">
                   What I have watched / played:
                 </p>
-                <ul className="list-disc pl-5 flex flex-col">
+                <ul className="list-disc font-body-md text-text-muted pl-5 flex flex-col">
                   <li>Expanse</li>
                   <li>Halo</li>
                   <li>Star Wars</li>
@@ -176,9 +218,9 @@ export default function AboutPage() {
 
             </div>
           </div>
-        </div>
+        </m.div>
 
-      </div>
+      </m.div>
     </div>
   );
 }

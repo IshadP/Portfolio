@@ -6,8 +6,8 @@ export interface ProjectItem extends ProjectCardProps {
 
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
-    title: "How redesigned UX reduced task completion time",
-    description: "Redesigned the main checkout flow to optimise user intent.",
+    title: "How redesigned UX reduces Task Completion Time by 30%",
+    description: "Redesigned the main checkout flow to optimise user intent, reducing task completion time from 1m 24s to 58s",
     projectType: "mobile",
     slug: "Printhub",
     href: "/casestudy/printhub",
@@ -19,8 +19,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     ],
   },
   {
-    title: "How redesigned Search help user search faster in Youtube",
-    description: "Rethought the search experience to better surface user intent.",
+    title: "How redesigned search help user find videos faster",
+    description: "Rethought the search experience to work hand in hand with how user thinks.",
     projectType: "mobile",
     slug: "Youtube",
     href: "https://www.behance.net/gallery/232680953/Enhancing-YouTube-Search-for-a-Smarter-User-Experience",
