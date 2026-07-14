@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { Icon } from "@/components/ui/Icon";
+import { m, useReducedMotion } from "framer-motion";
 
 // SectionLabel displays a small monospace uppercase category/tag label for a section.
 export function SectionLabel({ label }: { label: string }) {
@@ -79,10 +80,19 @@ export function Divider({ type = "normal" }: { type?: "section" | "normal" }) {
 
 // Section wraps content in a semantic section tag with spacing.
 export function Section({ id, children }: { id?: string; children: ReactNode }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section id={id} className={`case-study-section flex flex-col md:p-20 gap-18`}>
+    <m.section
+      id={id}
+      className="case-study-section flex flex-col md:p-20 gap-18"
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+    >
       {children}
-    </section>
+    </m.section>
   );
 }
 
@@ -180,14 +190,14 @@ export function InfoCard({
 }: InfoCardProps) {
   return (
     <div
-      className={`flex w-full items-start gap-3 rounded-3xl p-5 ${variantStyles[variant]} ${className}`}
+      className={`flex w-full items-start gap-3 rounded-lg p-4 ${variantStyles[variant]} ${className}`}
     >
       {/* Since the icon size is 20px and the text line-height is 20px,
         items-start aligns them perfectly without needing manual top margins.
       */}
       <Icon name={iconName} size={20} />
 
-      <p className="text-[15px] leading-5 m-0">
+      <p className="font-sans text-[0.9375rem] leading-5 font-medium">
         {children}
       </p>
     </div>
@@ -220,13 +230,13 @@ export function ImageSection({
     <section className="flex flex-col w-full gap-1">
       {/* Rule 1: Label ABOVE if image has children */}
       {hasChildren && (
-        <div className="w-full flex justify-end px-4">
+        <div className="w-full flex justify-end px-4 md:px-0">
           <p className="font-mono-sm text-text-muted">{label}</p>
         </div>
       )}
 
       {/* The Image/Video Wrapper */}
-      <div className="relative w-full aspect-900/420 bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="relative w-full aspect-video bg-gray-100 rounded-none md:rounded-2xl overflow-hidden">
         {isVideo ? (
           <video
             src={src}
@@ -243,29 +253,29 @@ export function ImageSection({
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 80vw" // Best practice: gives hints to the browser for optimization
-            priority={false} // Set to true manually if this image is above the fold
+            loading="lazy" // Set to true manually if this image is above the fold
           />
         )}
       </div>
 
       {/* Rule 2: Label BELOW if image has NO children */}
       {!hasChildren && (
-        <div className="w-full flex justify-end px-4">
+        <div className="w-full flex justify-end px-4 md:px-0">
           <p className="font-mono-sm text-text-muted">{label}</p>
         </div>
       )}
 
       {/* Rule 3 & 4: Up to 2 divs, fill right first, left hugs content */}
       {hasChildren && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full mt-2 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 w-full mt-2 px-4 md:px-0">
 
           {/* Left Column */}
-          <div className="flex flex-col gap-4 items-start w-full">
+          <div className="flex flex-col gap-2 rounded-2xl overflow-hidden items-start w-full">
             {leftCards}
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-2 rounded-2xl overflow-hidden w-full">
             {rightCards}
           </div>
 
@@ -294,27 +304,28 @@ interface ComparisonSectionProps {
 export function ComparisonSection({ left, right }: ComparisonSectionProps) {
   // Helper function to render a column to ensure pixel-perfect consistency
   const renderColumn = (col: ColumnProps) => (
-    <div className="flex flex-col w-full gap-4">
+    <div className="flex flex-col w-full gap-2 rounded-none md:rounded-2xl">
 
       {/* Top Label (Updated to font-mono-sm) */}
-      <div className="w-full flex justify-end px-4">
+      <div className="w-full flex justify-end px-4 md:px-0">
         <p className="font-mono-sm text-text-muted">{col.label}</p>
       </div>
 
       {/* Square Image Wrapper */}
-      <div className="relative w-full aspect-square bg-gray-50 rounded-[32px] overflow-hidden">
+      <div className="relative w-full aspect-square bg-gray-50 rounded-none md:rounded-2xl overflow-hidden">
         <Image
           src={col.src}
           alt={col.alt || "Comparison visual"}
           fill
           className="object-contain p-4"
           sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
         />
       </div>
 
       {/* Cards Stack */}
       {col.cards && (
-        <div className="flex flex-col gap-4 mt-2 w-full">
+        <div className="flex flex-col gap-2 rounded-2xl overflow-hidden  w-full px-4 md:px-0">
           {col.cards}
         </div>
       )}
@@ -322,7 +333,7 @@ export function ComparisonSection({ left, right }: ComparisonSectionProps) {
   );
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 w-full ">
+    <section className="px-0 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full ">
       {renderColumn(left)}
       {renderColumn(right)}
     </section>
@@ -348,17 +359,53 @@ export function Hero({
   duration: string;
   overview: string;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.215, 0.61, 0.355, 1], // easeOutCubic
+      },
+    },
+  };
+
   return (
-    <section id="hero" className="pt-8 md:pt-12 pb-12 md:pb-20 flex flex-col justify-start items-center gap-6 md:gap-10 w-full [counter-reset:image-counter]">
+    <m.section
+      id="hero"
+      className="pt-8 md:pt-12 pb-12 md:pb-20 flex flex-col justify-start items-center gap-6 md:gap-10 w-full [counter-reset:image-counter]"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Title Area */}
-      <div className="w-full md:w-content px-6 md:px-12 flex flex-col justify-start items-center">
+      <m.div
+        className="w-full md:w-content px-6 md:px-12 flex flex-col justify-start items-center"
+        variants={childVariants}
+      >
         <h1 className="font-h1 text-text-primary text-center w-full">
           {title}
         </h1>
-      </div>
+      </m.div>
 
       {/* Image Container */}
-      <div className="w-full md:w-content aspect-[960/553] relative md:rounded-2xl overflow-hidden bg-bg-subtle flex flex-col justify-start items-center">
+      <m.div
+        className="w-full md:w-content aspect-[960/553] relative md:rounded-2xl overflow-hidden bg-bg-subtle flex flex-col justify-start items-center"
+        variants={childVariants}
+      >
         <Image
           src={image1}
           alt="Hero Image"
@@ -366,10 +413,13 @@ export function Hero({
           priority
           className="object-cover"
         />
-      </div>
+      </m.div>
 
       {/* Details Grid */}
-      <div className="w-full md:w-content px-6 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto mt-4">
+      <m.div
+        className="w-full md:w-content px-6 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto mt-4"
+        variants={childVariants}
+      >
         {/* Meta Info (Role, Team, Duration) - 1/3 width */}
         <div className="col-span-1 flex flex-col gap-3">
           <div className="flex flex-col gap-1">
@@ -395,8 +445,8 @@ export function Hero({
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </m.div>
+    </m.section>
   );
 }
 
@@ -518,11 +568,11 @@ export function CaseStats({ labels, values }: CaseStatsProps) {
             key={idx}
             className="flex-1 py-4 rounded-2xl inline-flex flex-col justify-start items-start"
           >
-            <div className="flex items-center gap-2 text-red-500 text-2xl font-semibold font-mono leading-7">
+            <div className="flex flex-col lg:flex-row items-center gap-2 text-red-500 text-2xl font-semibold font-mono leading-7">
               <span>{displayVal1}</span>
               {hasTransition && (
                 <>
-                  <Icon name="arrow_forward" size={24} className="text-red-500" />
+                  <Icon name="arrow_forward" size={24} className="text-red-500 rotate-90 lg:rotate-0" />
                   <span>{displayVal2}</span>
                 </>
               )}

@@ -46,14 +46,14 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
         <KeyPoints
           items={[
             ["Output Anxiety", "Users were unsure, if the output they will get will have all the setting applied."],
-          ],
-          ["Unclear Next Steps","New users sometimes got stuck on file addition page due unclear next actions."]}
+          
+          ["Unclear Next Steps","New users sometimes got stuck on file addition page due unclear next actions."]]}
         />
   </ContentSection>
   <ImageSection
     src="/casestudies/printhub/2.1.webp"
-    label="Current App Flow"
-    alt="Current App Flow"
+    label="Reverification Required"
+    alt="Goal Unclear"
   />
   
   <ImageSection
@@ -70,7 +70,7 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
   </ContentSection>
   <ImageSection
     src="/casestudies/printhub/2.3.webp"
-    label="Current App Flow"
+    label="User Journey vs Anxiety Map"
     alt="Current App Flow"
   />
   <ContentSection 
@@ -118,7 +118,7 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
         <InfoCard variant="con" iconName="visibility_off">
           Users couldn't tell what settings were active at a glance. They had to open each file's settings to verify them.
         </InfoCard>
-        <InfoCard variant="con" iconName="power_settings_new">
+        <InfoCard variant="con" iconName="crisis_alert">
           Preview was primarily used when users uploaded multiple files. Giving it the same prominence as Customize was based on an assumption.
         </InfoCard>
         <InfoCard variant="con" iconName="ads_click">
@@ -135,13 +135,10 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
     rightCards={
       <>
         <InfoCard variant="con" iconName="visibility_off">
-          Users couldn't tell what settings were active at a glance. They had to open each file's settings to verify them.
+        As “Print Summary” only appeared when a file was selected, users didn’t have a clear way until file was selected.
         </InfoCard>
-        <InfoCard variant="con" iconName="power_settings_new">
-          Preview was primarily used when users uploaded multiple files. Giving it the same prominence as Customize was based on an assumption.
-        </InfoCard>
-        <InfoCard variant="con" iconName="ads_click">
-          The checkbox had a small touch target and was always visible, unlike Material 3 guidelines.
+        <InfoCard variant="con" iconName="crisis_alert">
+        Many user, especially new ones were confused on how the mechanism works and needed guidance.
         </InfoCard>
       </>
     }
@@ -163,14 +160,14 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
 
     <ImageSection
       src="/casestudies/printhub/4.1.webp"
-      label="The Two Buttons that stopped users"
-      alt="The Two Buttons that stopped users"
+      label="Iteration 1"
+      alt="Iteration 1"
       leftCards={
         <>
           <InfoCard variant="pro" iconName="visibility">
             Dim Icons indicate which settings are default and lit icons indicate which are changed.
           </InfoCard>
-          <InfoCard variant="pro" iconName="power_settings_new">
+          <InfoCard variant="pro" iconName="crisis_alert">
             Moved Preview Left to standardise the design according to material 3 and Jakob's law
           </InfoCard>
           <InfoCard variant="pro" iconName="touch_app">
@@ -183,7 +180,7 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
           <InfoCard variant="con" iconName="psychology">
             Interpretation of Icons was still very much user dependent.
           </InfoCard>
-          <InfoCard variant="con" iconName="visibility_off">
+          <InfoCard variant="con" iconName="format_paint_off">
             As we removed customise button it was unclear how to open customisation menu.
           </InfoCard>
         </>
@@ -202,10 +199,10 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
         alt: "Before Preview was dropped",
         cards: (
           <>
-            <InfoCard variant="pro" iconName="gesture">
+            <InfoCard variant="pro" iconName="ads_click">
               User knew how to move forward as checkbox was still visible.
             </InfoCard>
-            <InfoCard variant="con" iconName="visibility_off">
+            <InfoCard variant="con" iconName="alarm_off">
               On 5+ cards, it was increasing task completion time.
             </InfoCard>
             <InfoCard variant="con" iconName="psychology">
@@ -220,16 +217,16 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
         alt: "After Preview was dropped",
         cards: (
           <>
-            <InfoCard variant="pro" iconName="edit">
+            <InfoCard variant="pro" iconName="ads_click">
               Edit button gave clear entry point for customisation menu.
             </InfoCard>
-            <InfoCard variant="pro" iconName="gesture">
+            <InfoCard variant="pro" iconName="edit">
               Changed Icons to be more aligned how users thought they should be.
             </InfoCard>
-            <InfoCard variant="pro" iconName="touch_app">
+            <InfoCard variant="pro" iconName="ads_click">
               Increased the size of touch target in check box to ensure visibility and ease of click.
             </InfoCard>
-            <InfoCard variant="con" iconName="power_settings_new">
+            <InfoCard variant="con" iconName="mobile_hand_off">
               The extreme left placement of edit icon cause right hand user to either stretch thumbs or hold phone by other hand and click on it.
             </InfoCard>
           </>
@@ -251,10 +248,10 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
           <InfoCard variant="pro" iconName="visibility">
             Dim icons indicate which settings are default and lit icons indicate which are changed.
           </InfoCard>
-          <InfoCard variant="pro" iconName="touch_app">
+          <InfoCard variant="pro" iconName="crisis_alert">
             Click to select was implemented rather than dedicated selection mode due to fact that user many time wanted modify files after selection.
           </InfoCard>
-          <InfoCard variant="pro" iconName="edit">
+          <InfoCard variant="pro" iconName="ads_click">
             Edit Icon was viable and easily accessible
           </InfoCard>
         </>
@@ -297,7 +294,7 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
 
     <ComparisonSection
       left={{
-        label: "Before Preview was dropped",
+        label: "Pattern 1",
         src: "/casestudies/printhub/5.1.webp",
         alt: "Before Preview was dropped",
         cards: (
@@ -308,14 +305,14 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
             <InfoCard variant="con" iconName="psychology">
               Users didn't knew what Small FAB does, they usually found out using exploration.
             </InfoCard>
-            <InfoCard variant="con" iconName="visibility_off">
+            <InfoCard variant="con" iconName="alarm_off">
               On 5+ cards, it was increasing task completion time.
             </InfoCard>
           </>
         )
       }}
       right={{
-        label: "After Preview was dropped",
+        label: "Pattern 2",
         src: "/casestudies/printhub/5.2.webp",
         alt: "After Preview was dropped",
         cards: (
@@ -338,7 +335,7 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
 
     <ImageSection
       src="/casestudies/printhub/5.3.webp"
-      label="Gmail Inspired Design"
+      label="Modified Original Design"
       alt="Gmail Inspired Design"
       rightCards={
         <>
@@ -348,10 +345,10 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
           <InfoCard variant="pro" iconName="visibility">
             Grey out button allowed user to understand what next steps could be (Implied)
           </InfoCard>
-          <InfoCard variant="pro" iconName="check_circle">
+          <InfoCard variant="pro" iconName="crisis_alert">
             Once file added the button changed color, allowing user to perform the next action.
           </InfoCard>
-          <InfoCard variant="pro" iconName="power_settings_new">
+          <InfoCard variant="pro" iconName="crisis_alert">
             Printing all files no longer requires selection, but the original selection behavior is preserved for flexibility.
           </InfoCard>
         </>
@@ -385,13 +382,13 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
     
     <ImageSection
       src="/casestudies/printhub/6.1.webp"
-      label="4.1 The Two Buttons that stopped users"
+      label="Riya Printing Two Files"
       alt="Riya old flow confusion"
     />
     
     <ImageSection
       src="/casestudies/printhub/6.2.webp"
-      label="4.2 The Two Buttons that stopped users"
+      label="Bills Page to Help see Status"
       alt="Riya new flow success"
     />
 
@@ -409,13 +406,13 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
     
     <ImageSection
       src="/casestudies/printhub/6.3.webp"
-      label="4.3 The Two Buttons that stopped users"
+      label="User Selected Files"
       alt="Arjun old flow selection loss"
     />
     
     <ImageSection
       src="/casestudies/printhub/6.4.webp"
-      label="4.4 The Two Buttons that stopped users"
+      label="Printing Without Selection of Files"
       alt="Arjun new flow selection retained"
     />
 
@@ -435,24 +432,24 @@ This redesign focused on reducing that uncertainty by improving visual feedback,
   
   <ImageSection
     src="/casestudies/printhub/7.1.webp"
-    label="Typography & Color Palette"
+    label="Component Library"
     alt="PrintHub Design System Typography and Colors"
   />
   
   <ImageSection
     src="/casestudies/printhub/7.2.webp"
-    label="Components & Input Fields"
+    label="Token System"
     alt="PrintHub Design System Components"
   />
   <ImageSection
     src="/casestudies/printhub/7.3.webp"
-    label="Cards & Elevation"
+    label="Component Creation"
     alt="PrintHub Design System Cards"
   />
   
   <ImageSection
     src="/casestudies/printhub/7.4.webp"
-    label="Layout Grid & Elevation"
+    label="Clear Fields for Modification"
     alt="PrintHub Design System Grid"
   />
 
