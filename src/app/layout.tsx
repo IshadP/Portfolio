@@ -125,10 +125,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${ptMono.variable} antialiased bg-bg-default flex flex-col items-center min-h-screen overflow-x-hidden`}
       >
         <MotionProvider>
-          <div className="sticky top-0 z-50 w-full">
+          <div className="sticky top-0 z-10 w-full">
             <Navbar />
           </div>
-          <main className="grow w-full flex flex-col justify-center items-center">
+          <main className=" w-full flex flex-col justify-center items-center">
             {children}
           </main>
         </MotionProvider>

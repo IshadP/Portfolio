@@ -1,13 +1,11 @@
 "use client";
-
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function CaseStudyIndex() {
   const [sections, setSections] = useState<{ id: string; label: string }[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const elements = document.querySelectorAll("section[id]");
@@ -20,30 +18,29 @@ export function CaseStudyIndex() {
       setActiveId(items[0].id);
     }
 
-    // Track active section
+    // Track which section is active. Pick the topmost intersecting entry
+    // rather than whichever the observer callback happens to visit last.
     const sectionObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
       },
       { root: null, rootMargin: "-20% 0px -50% 0px", threshold: 0.1 }
     );
     elements.forEach((el) => sectionObserver.observe(el));
 
-    // Track scroll position via a sentinel instead of a scroll listener —
-    // no unthrottled JS running on every scroll frame.
-    const sentinelObserver = new IntersectionObserver(
-      ([entry]) => setIsScrolled(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    if (sentinelRef.current) sentinelObserver.observe(sentinelRef.current);
+    // Simple scroll-depth flag, no need for a second observer + sentinel.
+    const onScroll = () => setIsScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       sectionObserver.disconnect();
-      sentinelObserver.disconnect();
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
@@ -56,35 +53,30 @@ export function CaseStudyIndex() {
   if (sections.length === 0) return null;
 
   return (
-    <>
-      {/* Invisible sentinel at ~80px scroll depth; add matching height/position in your layout */}
-      <div ref={sentinelRef} className="absolute top-20 h-px w-px" aria-hidden="true" />
-
-      <nav
-        aria-label="Case study sections"
-        className={`fixed left-[calc(50%+34rem)] ${
-          isScrolled ? "top-24" : "top-48"
-        } transition-[top] duration-300 ease-in-out hidden lg:flex flex-col pl-4 py-2 z-50`}
-      >
-        {sections.map(({ id, label }) => {
-          const isActive = activeId === id;
-          return (
-            <Link
-              key={id}
-              href={`#${id}`}
-              onClick={(e) => handleScroll(e, id)}
-              aria-current={isActive ? "true" : undefined}
-              className={`font-label-sm-mono transition-colors duration-150 py-2 px-4 rounded-full ${
-                isActive
-                  ? "text-text-primary font-semibold"
-                  : "text-text-muted hover:bg-bg-subtle hover:text-text-primary"
-              }`}
-            >
-              {label}
-            </Link>
-          );
-        })}
-      </nav>
-    </>
+    <nav
+      aria-label="Case study sections"
+      className={`fixed left-[calc(50%+34rem)] ${
+        isScrolled ? "top-24" : "top-48"
+      } transition-[top] duration-300 ease-in-out hidden lg:flex flex-col pl-4 py-2 z-50`}
+    >
+      {sections.map(({ id, label }) => {
+        const isActive = activeId === id;
+        return (
+          <Link
+            key={id}
+            href={`#${id}`}
+            onClick={(e) => handleScroll(e, id)}
+            aria-current={isActive ? "true" : undefined}
+            className={`font-label-sm-mono transition-colors duration-150 py-2 px-4 rounded-full ${
+              isActive
+                ? "text-text-primary font-semibold"
+                : "text-text-muted hover:bg-bg-subtle hover:text-text-primary"
+            }`}
+          >
+            {label}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }

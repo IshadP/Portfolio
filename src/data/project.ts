@@ -10,7 +10,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     description: "Redesigned the main checkout flow to optimise user intent.",
     projectType: "mobile",
     slug: "Printhub",
-    href: "https://www.behance.net/gallery/239087477/Revamping-Printhub-for-efficiency-and-trust",
+    href: "/casestudy/printhub",
     bgImage: "/cards/bg.webp",
     showcaseMedia: [
       { type: "image", src: "/cards/Print1-01.webp" },
