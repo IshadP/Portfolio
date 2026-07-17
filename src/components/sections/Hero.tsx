@@ -67,10 +67,10 @@ export default function Hero() {
             >
               <h1 className="flex gap-2 md:flex-row flex-col justify-start items-start font-h1-display text-primary w-full overflow-visible">
                 <m.div variants={itemVariants} className="inline-block">
-                  <Product className="md:h-[8.8cqw] h-[20cqw] w-auto max-w-none" aria-label="Engineer Turned" />
+                  <Product className="md:h-[8.8cqw] h-[15cqw] w-auto max-w-none" aria-label="Engineer Turned" />
                 </m.div>
                 <m.div variants={itemVariants} className="inline-block">
-                  <Designer className="md:h-[8.8cqw] h-[20cqw] w-auto max-w-none" aria-label="Engineer Turned" />
+                  <Designer className="md:h-[8.8cqw] h-[15cqw] w-auto max-w-none" aria-label="Engineer Turned" />
                 </m.div>
               </h1>
               <h1 className="font-h1-display text-primary w-full">
