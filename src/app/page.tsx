@@ -17,7 +17,7 @@ export default function Home() {
       <div className="w-full flex flex-col  items-center  gap-0 md:px-0">
         <Hero />
 
-        <FadeIn className="relative flex flex-col pt-4 md:pt-0 w-full z-10 bg-bg-default gap-6">
+        <FadeIn timerDelay={0.85} className="relative flex flex-col pt-4 md:pt-0 w-full z-10 bg-bg-default gap-6">
 
           <ProjectsSection />
 

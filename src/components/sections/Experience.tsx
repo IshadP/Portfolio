@@ -45,7 +45,7 @@ export const Experience = () => {
         {
             role: "UX Design Intern",
             company: "Grid Insight, Napgur",
-            duration: "May 2026 - Present",
+            duration: "May 2026 - July 2026",
             icon: "energy_solar",
             description: "Designing the product experience for Volt, a B2B SaaS energy auditing platform. Driving end-to-end UX across complex data workflows, building scalable design systems, and collaborating closely with engineers to ship production-ready experiences.",
         },
